@@ -1,7 +1,7 @@
 /**
  * file: karbytes_social_media_posts.txt
  * type: plain-text
- * date: 07_OCTOBER_2024
+ * date: 09_OCTOBER_2024
  * author: karbytes
  * license: PUBLIC_DOMAIN
  */
@@ -199,3 +199,23 @@ https://karbytesforlifeblog.wordpress.com/rsa_encryption_two/
 On 07_OCTOBER_2024 at approximately 5:30PM Pacific Standard Time, karbytes shared the following karbytes-created web page as a social media post on karbytes' Twitter dot Com page, on karbytes' Minds dot Com page, on karbytes' LinkedIn dot Com page, and on karbytes' Patreon dot Com page:
 
 https://karbytesforlifeblog.wordpress.com/karbytes_11_october_2024/ 
+
+* * *
+
+On 08_OCTOBER_2024 at approximately 1:00AM Pacific Standard Time, karbytes shared the following karbytes-created web page as a social media post on karbytes' Twitter dot Com page, on karbytes' Minds dot Com page, on karbytes' LinkedIn dot Com page, and on karbytes' Patreon dot Com page:
+
+https://karbytesforlifeblog.wordpress.com/karbytes_12_october_2024/ 
+
+* * *
+
+On 09_OCTOBER_2024 at approximately 1:00AM Pacific Standard Time, karbytes shared the following karbytes-created web page as a social media post on karbytes' Twitter dot Com page, on karbytes' Minds dot Com page, on karbytes' LinkedIn dot Com page, and on karbytes' Patreon dot Com page:
+
+https://karbytesforlifeblog.wordpress.com/best_of_the_baylands_2024/ 
+
+* * *
+
+On 09_OCTOBER_2024 at approximately 1:00AM Pacific Standard Time, karbytes shared the following two karbytes-created web pages each as a social media post on karbytes' Facebook page:
+
+slightly_older_post: https://karbytesforlifeblog.wordpress.com/software_engineering_portfolio/ 
+
+slightly_newer_post: https://karbytesforlifeblog.wordpress.com/best_of_the_baylands_2024/ 
