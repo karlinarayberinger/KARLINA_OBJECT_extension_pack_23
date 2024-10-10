@@ -219,3 +219,9 @@ On 09_OCTOBER_2024 at approximately 1:00AM Pacific Standard Time, karbytes share
 slightly_older_post: https://karbytesforlifeblog.wordpress.com/software_engineering_portfolio/ 
 
 slightly_newer_post: https://karbytesforlifeblog.wordpress.com/best_of_the_baylands_2024/ 
+
+* * *
+
+On 09_OCTOBER_2024 at approximately 9:00PM Pacific Standard Time, karbytes shared the following news article as a social media post on karbytes' Twitter dot Com page and on karbytes' Minds dot Com page:
+
+https://www.theverge.com/2024/10/9/24266419/internet-archive-ddos-attack-pop-up-message
