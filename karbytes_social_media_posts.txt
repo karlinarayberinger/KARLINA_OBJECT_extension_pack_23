@@ -1,7 +1,7 @@
 /**
  * file: karbytes_social_media_posts.txt
  * type: plain-text
- * date: 09_OCTOBER_2024
+ * date: 11_OCTOBER_2024
  * author: karbytes
  * license: PUBLIC_DOMAIN
  */
@@ -225,3 +225,9 @@ slightly_newer_post: https://karbytesforlifeblog.wordpress.com/best_of_the_bayla
 On 09_OCTOBER_2024 at approximately 9:00PM Pacific Standard Time, karbytes shared the following news article as a social media post on karbytes' Twitter dot Com page and on karbytes' Minds dot Com page:
 
 https://www.theverge.com/2024/10/9/24266419/internet-archive-ddos-attack-pop-up-message
+
+* * *
+
+On 11_OCTOBER_2024 at approximately 12:30PM Pacific Standard Time, karbytes shared the following news article as a social media post on karbytes' Twitter dot Com page and on karbytes' Minds dot Com page:
+
+https://www.wired.com/story/breeding-stronger-magic-mushrooms/
