@@ -14,7 +14,7 @@ Those data contents consist exclusively of all of the zip files which are enumer
 
 https://karbytesforlifeblog.wordpress.com/mdisc_karbytes_ultra_2024_edition_16/
 
-A single unwritten 25 gigabyte M_DISC has a data storage capacity sufficient to store all of karbytes (up to the point in time in which the “micro directory” named KARLINA_OBJECT_extension_pack_23 of the website named Karbytes For Life Blog dot WordPress dot Com named is determined by karbytes to be finalized (i.e. closed to further changes)).
+A single unwritten 25 gigabyte M_DISC has a data storage capacity sufficient to store all of karbytes (up to the point in time in which the “micro directory” named raw_github_files_directory_KARLINA_OBJECT_extension_pack_23 of the website named Karbytes For Life Blog dot WordPress dot Com named is determined by karbytes to be finalized (i.e. closed to further changes)).
 
 Sincerely,
 karbytes
