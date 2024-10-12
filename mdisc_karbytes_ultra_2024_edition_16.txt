@@ -12,6 +12,8 @@ As of 11:59PM Pacific Standard Time on 11_OCTOBER_2024, the aforementioned colle
 
 (Total megabytes in karbytes: 14192.1 = 1874.1 + 4154.5 + 611.8 + 3609.0 + 3942.7).
 
+The minimum data storage capacity of an M_DISC is approximately 4.7 gigabytes. More expensive versions of the M_DISC can store larger amounts of data. For example, some types of M_DISCs can individually store up to 25 gigabytes while some other types of M_DISCs can individually store up to 100 gigabytes. Whenever possible, karbytes intends to store all of karbytes (up to a specific point in time) to a single M_DISC instead of distributing that data collection across multiple M_DISCs.
+
 * * *
 
 Throughout all of karbytes' lifetime, karbytes intends to create at least three M_DISC copies of the M_DISC whose contents encompass all of the data referred to on this web page as karbytes_ultra_2024_edition_16.
