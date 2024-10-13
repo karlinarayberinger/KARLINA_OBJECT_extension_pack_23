@@ -7,3 +7,9 @@
 3. Updated the file sizes (which may be a result of operating system differences or differences between zip files which are directly downloaded from GitHub and zip files which are created by compressing folders on the local machine). Also re-listed the files within each (minimum M-DISC sized) folder on that web page to be in alphabetical order (according to how those files are listed on karbytes' local Ubuntu machine).
 
 Almost all of the zip file sizes were updated to larger file sizes while those that were not were already the correct file size.
+
+upload: 10.75 megabits per second
+
+download: 3.97 megabits per second
+
+Ookla Speed Test
