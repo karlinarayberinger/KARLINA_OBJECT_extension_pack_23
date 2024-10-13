@@ -6,7 +6,7 @@
  * license: PUBLIC_DOMAIN
  */
 
-1. On 12_OCTOBER_2024 karbytes downloaded each of the 107 zip files which comprise the collection of public domain digital artifacts named karbytes from a public Wi-Fi network. 
+1. On 12_OCTOBER_2024 karbytes downloaded each of the 107 zip files which comprise the collection of public domain digital artifacts named karbytes from a public Wi-Fi network.
 
 2. On 12_OCTOBER_2024 karbytes revised the prose in the following two web pages which describe the contents of karbytes:
 
@@ -14,18 +14,18 @@ web_page_0: https://karbytesforlifeblog.wordpress.com/preparing_to_make_mdisc_se
 
 web_page_1: https://karbytesforlifeblog.wordpress.com/mdisc_karbytes_ultra_2024_edition_16/
 
-3. On 12_OCTOBER_2024 and 13_OCTOBER_2024 karbytes updated the file sizes of the aforementioned zip files on the web page whose Uniform Resource Locator is prefaced with "web_page_1:" in this note. During that time, karbytes also re-listed the files within each (minimum M_DISC sized) folder on that web page to be in alphabetical order (according to how those files are listed on karbytes' local Ubuntu machine and how ChatGPT-4o listed them when karbytes asked ChatGPT-4o to arrange the file names (within a specific (minimum M_DISC sized) folder) in alphabetical order).
+3. On 12_OCTOBER_2024 and 13_OCTOBER_2024 karbytes updated the file sizes of the aforementioned zip files on the web page whose Uniform Resource Locator is prefaced with “web_page_1:” in this note. During that time, karbytes also re-listed the files within each (minimum M_DISC sized) folder on that web page to be in alphabetical order (according to how those files are listed on karbytes’ local Ubuntu machine and how ChatGPT-4o listed them when karbytes asked ChatGPT-4o to arrange the file names (within a specific (minimum M_DISC sized) folder) in alphabetical order).
 
-karbytes noticed that almost all of those zip file sizes were updated to larger file sizes while the zip files that were not were already the (apparent) correct file size. 
+karbytes noticed that almost all of those zip file sizes were updated to larger file sizes while the zip files that were not were already the (apparent) correct file size.
 
-karbytes thinks that the enlargement of most of the zip files is the result of downloading each of those zip files from its respective GitHub repository instead of generating that zip file by compressing a folder which is located on karbytes' local (Ubuntu) machine. (In order to keep the zip file sizes consistent (and to ensure that the zip file contains the most up-to-date files and all of the files of that zip file's respective karbytes "micro directory"), karbytes is now implementing a policy of downloading the the karbytes zip files directly from GitHub instead of generating them locally). GitHub might be adding some overhead data which causes the zip files it generates to be slightly larger than what the karbytes' laptop generates by compressing files inside of a folder into one zip file.
+karbytes thinks that the enlargement of most of the zip files is the result of downloading each of those zip files from its respective GitHub repository instead of generating that zip file by compressing a folder which is located on karbytes’ local (Ubuntu) machine. (In order to keep the zip file sizes consistent (and to ensure that the zip file contains the most up-to-date files and all of the files of that zip file’s respective karbytes “micro directory”), karbytes is now implementing a policy of downloading the karbytes zip files directly from GitHub instead of generating them locally). GitHub might be adding some overhead data which causes the zip files it generates to be slightly larger than what the karbytes’ laptop generates by compressing files inside of a folder into one zip file.
 
-karbytes used the following Ubuntu command line command to determine the file size (in megabytes) of a zip file whose file size was only being displayed in terms of gigabytes by the Ubuntu operating system's graphical user interface.
+karbytes used the following Ubuntu command line command to determine the file size (in megabytes) of a zip file whose file size was only being displayed in terms of gigabytes by the Ubuntu operating system’s graphical user interface.
 
-du -BM --apparent-size <file_name> | cut -f1
+du -BM --apparent-size  | cut -f1
 
-(That zip file is named KARLINA_OBJECT_extension_pack_16-main.zip and was originally displayed as 1.1 gigabytes and not in megabytes on the Ubuntu operating system's graphical user interface).
+(That zip file is named KARLINA_OBJECT_extension_pack_16-main.zip and was originally displayed as 1.1 gigabytes and not in megabytes on the Ubuntu operating system’s graphical user interface).
 
 (For some reason, that file named KARLINA_OBJECT_extension_pack_16-main.zip (which is the largest zip file in karbytes2024_0) is listed as being 1083.9 megabytes in the web page at the following Uniform Resource Locator (probably as a result of karbytes viewing that file on a Windows operating system instead of on Ubuntu)):
 
-legacy_web_page: https://karbytesforlifeblog.wordpress.com/mdisc_karbytes_ultra_2024_edition_15/
+legacy_web_page: https://karbytesforlifeblog.wordpress.com/mdisc_karbytes_ultra_2024_edition_15/ 
