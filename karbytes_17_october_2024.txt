@@ -8,8 +8,16 @@
 
 Almost all of the zip file sizes were updated to larger file sizes while those that were not were already the correct file size.
 
+* * *
+
 upload: 10.75 megabits per second
 
 download: 3.97 megabits per second
 
 Ookla Speed Test
+
+* * *
+
+du -BM --apparent-size <file_name> | cut -f1
+
+For KARLINA_OBJECT_extension_pack_16-main.zip which was originally displayed as 1.1 gigabytes and not in megabytes
