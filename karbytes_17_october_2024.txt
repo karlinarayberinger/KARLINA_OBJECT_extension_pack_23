@@ -20,6 +20,6 @@ du -BM --apparent-size <file_name> | cut -f1
 
 (That zip file is named KARLINA_OBJECT_extension_pack_16-main.zip and was originally displayed as 1.1 gigabytes and not in megabytes on the Ubuntu operating system's graphical user interface).
 
-(For some reason, that file named KARLINA_OBJECT_extension_pack_16-main.zip (which is the largest zip file in karbytes2024_0) is listed as being 1083.9 megabytes in the web page at the following Uniform Resource Locator (probably as a result of karbytes viewing that file on a Windows operating system instead of on Ubuntu):
+(For some reason, that file named KARLINA_OBJECT_extension_pack_16-main.zip (which is the largest zip file in karbytes2024_0) is listed as being 1083.9 megabytes in the web page at the following Uniform Resource Locator (probably as a result of karbytes viewing that file on a Windows operating system instead of on Ubuntu)):
 
 legacy_web_page: https://karbytesforlifeblog.wordpress.com/mdisc_karbytes_ultra_2024_edition_15/
