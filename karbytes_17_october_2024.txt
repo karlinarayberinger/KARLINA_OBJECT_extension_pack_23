@@ -1,0 +1,7 @@
+// karbytes_17_october_2024.txt
+
+1. Downloaded all the zip files from a public Wi-Fi.
+
+2. Revised the prose in the M_DISC files.
+
+3. Updated the file sizes (which may be a result of operating system differences or differences between zip files which are directly downloaded from GitHub and zip files which are created by compressing folders on the local machine). Also re-listed the files within each (minimum M-DISC sized) folder on that web page to be in alphabetical order (according to how those files are listed on karbytes' local Ubuntu machine).
