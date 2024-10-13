@@ -14,16 +14,8 @@ karbytes noticed that almost all of those zip file sizes were updated to larger 
 
 karbytes thinks that might be a result of downloading each of those zip files from its respective GitHub repository instead of generating that zip file by compressing a folder which is located on karbytes' local (Ubuntu) machine. GitHub might be adding some overhead data which causes the zip files it generates to be slightly larger than what the karbytes' laptop generates by compressing files inside of a folder into one zip file.
 
-* * *
-
-upload: 10.75 megabits per second
-
-download: 3.97 megabits per second
-
-Ookla Speed Test
-
-* * *
+karbytes used the following Ubuntu command line command to determine the file size (in megabytes) of a zip file whose file size was only being displayed in terms of gigabytes by the Ubuntu operating system's graphical user interface.
 
 du -BM --apparent-size <file_name> | cut -f1
 
-For KARLINA_OBJECT_extension_pack_16-main.zip which was originally displayed as 1.1 gigabytes and not in megabytes
+(That zip file is named KARLINA_OBJECT_extension_pack_16-main.zip and was originally displayed as 1.1 gigabytes and not in megabytes on the Ubuntu operating system's graphical user interface).
