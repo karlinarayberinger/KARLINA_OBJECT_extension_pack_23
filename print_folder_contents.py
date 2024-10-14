@@ -29,17 +29,19 @@ def list_files_in_folder(folder_path, output_file):
         print("\n\n--------------------------------")
         f.write("\n\n--------------------------------")
 
-        f.write(f"\n\nFiles in folder '{folder_path}':")
-        print(f"\n\nFiles in folder '{folder_path}':")
-        for file in os.listdir(folder_path):
-            file_path = os.path.join(folder_path, file)
-            if os.path.isfile(file_path):  # Only process files, not subdirectories.
-                file_size = os.path.getsize(file_path) / (1024 * 1024)  # Convert from bytes to megabytes.
-                total_size += file_size
-                file_count += 1
-                f.write(f"\n\nfile_{i}: {file} // {file_size:.2f} megabytes")
-                print(f"\n\nfile_{i}: {file} // {file_size:.2f} megabytes")
-                i += 1
+        # Walk through the folder and its subfolders
+        for root, dirs, files in os.walk(folder_path):
+            f.write(f"\n\nDirectory: {root}")
+            print(f"\n\nDirectory: {root}")
+            for file in files:
+                file_path = os.path.join(root, file)
+                if os.path.isfile(file_path):  # Only process files, not subdirectories.
+                    file_size = os.path.getsize(file_path) / (1024 * 1024)  # Convert from bytes to megabytes.
+                    total_size += file_size
+                    file_count += 1
+                    f.write(f"\n\nfile_{i}: {file} // {file_size:.2f} megabytes")
+                    print(f"\n\nfile_{i}: {file} // {file_size:.2f} megabytes")
+                    i += 1
         
         # Print totals to the output file.
         f.write("\n\n--------------------------------")
@@ -58,11 +60,10 @@ def list_files_in_folder(folder_path, output_file):
 
     # Print a horizontal divider line to the command line terminal.
     print("\n\n--------------------------------\n\n")
-# End of Function
 
 # Set the folder path to the folder you would like to analyze.
-folder_path = 'karbytes2024_0'  # Replace the value of folder_path with your actual folder path.
-output_file = 'karbytes2024_0_contents.txt'  # Replace the value of output_file with your preferred output text file path (which will overwrite that file if it exists or else generate it).
+folder_path = 'test_folder'  # Replace the value of folder_path with your actual folder path.
+output_file = 'test_folder_contents.txt'  # Replace the value of output_file with your preferred output text file path (which will overwrite that file if it exists or else generate it).
 
 # Execute the function which is defined in this program file.
 list_files_in_folder(folder_path, output_file)
