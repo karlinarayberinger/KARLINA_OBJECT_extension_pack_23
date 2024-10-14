@@ -1,0 +1,347 @@
+<hr>
+<p><strong>GREATEST_COMMON_DIVISOR_TWO</strong></p>
+<hr>
+<p><span style="background:#ffff00">The <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank" rel="noopener">Python</a> program featured in this tutorial web page computes the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Greatest_common_divisor" target="_blank" rel="noopener">greatest common divisor</a> of two <a style="background:#000000;color:#ff9000" href="https://karlinaobject.wordpress.com/numbers/" target="_blank" rel="noopener">natural numbers</a>, A and B, using the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Euclidean_algorithm" target="_blank" rel="noopener">Euclidean algorithm</a> to iteratively (i.e. in a step-by-step manner) divide A by B in order to obtain the nonnegative integer <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Remainder" target="_blank" rel="noopener">remainder</a> of that division and then (in the next step (if there is a next step)) set A to B and B to that remainder before dividing A by B in order to obtain the nonnegative integer of that division (and continuing that process until a remainder of zero is obtained). When a remainder of zero is obtained, the least common denominator of the original A and B values is the latest value of B.</p>
+<p><strong>The Python program file which is featured in this tutorial web page has many common attributes with the C++ source code file featured on the tutorial web page of this website named <a style="background:#000000;color:#00ff00" href="https://karbytesforlifeblog.wordpress.com/greatest_common_divisor/" target="_blank" rel="noopener">GREATEST_COMMON_DIVISOR</a>. Unlike that C++ source code file, this Python program file does not impose any minimum or maximum values for the input values A and B. Also, some of the output messages are slightly different.</strong></p>
+<p><em>To view hidden text inside each of the preformatted text boxes below, scroll horizontally.</em></p>
+<pre>
+// <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Pseudocode" target="_blank" rel="noopener">Pseudocode</a> describing how the Euclidean algorithm is used to compute the greatest common divisor of positive integers A and B.
+PROCEDURE gcd(A,B):
+    WHILE B IS NOT EQUAL TO ZERO:
+        LET remainder be the result of the computation A mod B.
+        LET A be B.
+        LET B be remainder.
+    END WHILE
+    RETURN B.
+END PROCEDURE
+</pre>
+<hr>
+<p><strong>SOFTWARE_APPLICATION_COMPONENTS</strong></p>
+<hr>
+<p>python_source_file: <a style="background:#000000;color:#00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_22/main/greatest_common_divisor.py" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_22/main/greatest_common_divisor.py</a></p>
+<p>plain_text_file: <a style="background:#000000;color:#ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_21/main/greatest_common_divisor_output_two.txt" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_21/main/greatest_common_divisor_output_two.txt</a></p>
+<hr>
+<p><strong>PROGRAM_INTERPRETATION_AND_EXECUTION</strong></p>
+<hr>
+<p>STEP_0: Copy and paste the Python <a style="background:#000000;color:#00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_22/main/greatest_common_divisor.py" target="_blank" rel="noopener">source code</a> into a new text editor document and save that document as the following file name:</p>
+<pre>greatest_common_divisor.py</pre>
+<p>STEP_1: Open a <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Unix" target="_blank" rel="noopener">Unix</a> command line terminal application and set the current directory to wherever the Python program file is located on the local machine (e.g. Desktop).</p>
+<pre>cd Desktop</pre>
+<p>STEP_2: Run the program by entering the following command:</p>
+<pre>python3 greatest_common_divisor.py</pre>
+<p>STEP_3: If the program interpretation command does not work, then use the following commands (in top-down order) to install the Python interpreter:</p>
+<pre>sudo apt update</pre>
+<pre>sudo apt install python3</pre>
+<p>STEP_4: After running the Python program is booted up, the following prompt will appear:</p>
+<pre>Enter the first value (A): </pre>
+<p>STEP_5: Enter a value for a using the keyboard.</p>
+<p>(Proceed from there inputting B and other program values in accordance to the prompt messages).</p>
+<p>STEP_6: Observe program results on the command line terminal and in the <a style="background:#000000;color:#ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_21/main/greatest_common_divisor_output_two.txt" target="_blank" rel="noopener">output file</a>.</p>
+<hr>
+<p><strong>PROGRAM_SOURCE_CODE</strong></p>
+<hr>
+<p>The text in the preformatted text box below appears on this web page (while rendered correctly by the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/HTML" target="_blank" rel="noopener">web browser</a>) to be identical to the content of the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank" rel="noopener">Python</a> source code file whose <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/URL" target="_blank" rel="noopener">Uniform Resource Locator</a> is displayed in the green <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Hyperlink" target="_blank" rel="noopener">hyperlink</a> below.</p>
+<p><em>Note that, unlike C++ program files (which are <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Compiler" target="_blank" rel="noopener">compiled</a> into machine-executable instructions before program runtime), Python program files are <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Interpreter_(computing)" target="_blank" rel="noopener">interpreted</a> one line at a time instead.</em></p>
+<p>python_source_file: <a style="background:#000000;color:#00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_22/main/greatest_common_divisor.py" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_22/main/greatest_common_divisor.py</a></p>
+<hr>
+<pre>
+#########################################################################################
+# file: greatest_common_divisor.py
+# type: Python
+# date: 05_OCTOBER_2024
+# author: karbytes
+# license: PUBLIC_DOMAIN 
+#########################################################################################
+
+# Include the module which defines output=os.sys.stdout
+import os
+
+"""
+Use the Euclidean algorithm to compute the greatest common divisor of positive integers A and B.
+
+Print each step of that iterative process to the output (i.e. console or file).
+"""
+def print_greatest_common_divisor_computation_steps(A, B, output):
+    i = 0
+    remainder = 0
+    output.write("\n\nComputing the greatest common divisor of A and B using the Euclidean algorithm...")
+    while B != 0:
+        remainder = A % B
+        output.write(f"\n\nstep_{i}: A = {A}, B = {B}, gcd(A,B) = A % B = {remainder}.")
+        A = B
+        B = remainder
+        i += 1
+    output.write(f"\n\nThe greatest common divisor of A and B is {A}\n")
+
+def main():
+    # Declare and initialize three variables for storing integer values.
+    A = 1
+    B = 1
+    input_additional_values = 1
+
+    """
+    If the file named greatest_common_divisor.txt does not already exist 
+    inside of the same file directory as the file named greatest_common_divisor.py, 
+    create a new file named greatest_common_divisor_output.txt in that directory.
+    
+    Open the plain-text file named greatest_common_divisor_output.txt
+    and set that file to be overwritten with program data.
+    """
+    with open("greatest_common_divisor_two_output.txt", "w") as file:
+
+        # Print an opening message to the command line terminal.
+        print("\n\n--------------------------------")
+        print("Start Of Program")
+        print("--------------------------------")
+
+        # Print an opening message to the output file.
+        file.write("--------------------------------\n")
+        file.write("Start Of Program\n")
+        file.write("--------------------------------\n")
+
+        # Print "This Python program computes the greatest common divisor of two natural numbers and prints the steps involved." to the command line terminal.
+        print("\n\nThis Python program computes the greatest common divisor of two natural numbers and prints the steps involved.")
+
+        # Print "This Python program computes the greatest common divisor of two natural numbers and prints the steps involved." to the command line terminal and to the file output stream.
+        file.write("\n\nThis Python program computes the greatest common divisor of two natural numbers and prints the steps involved.")
+
+        # Print a horizontal divider line to the command line terminal and to the output file.
+        print("\n\n--------------------------------")
+        file.write("\n\n--------------------------------")
+
+        # Continue input and computation loop until user inputs 0 for input_additional_values.
+        while input_additional_values != 0:
+            # Print the input prompt to the terminal only.
+            A = int(input("\n\nEnter the first value (A): "))
+            B = int(input("Enter the second value (B): "))
+
+            # Print a horizontal divider line to the command line terminal and to the output file.
+            print("\n\n--------------------------------")
+            file.write("\n\n--------------------------------")
+
+            # Log user inputs to the file after they are entered.
+            file.write(f"\n\nEntered values: A = {A}, B = {B}")
+            print(f"\n\nEntered values: A = {A}, B = {B}")
+
+            # Print a horizontal divider line to the command line terminal and to the output file.
+            print("\n\n--------------------------------")
+            file.write("\n\n--------------------------------")
+
+            # Execute the greatest common divisor function (defined by this Python program file) such that the computation steps and final result are printed to the output file.
+            print_greatest_common_divisor_computation_steps(A, B, file)
+
+            # Execute the greatest common divisor function (defined by this Python program file) such that the computation steps and final result are printed to the command line terminal.
+            print_greatest_common_divisor_computation_steps(A, B, output=os.sys.stdout)
+
+            # Ask the user whether or not to continue inputting values.
+            input_additional_values = int(input("\n\nWould you like to input new values for A and B? (Enter 1 if YES. Enter 0 if NO): "))
+
+        # Print a closing message to the command line terminal.
+        print("\n\n--------------------------------")
+        print("End Of Program")
+        print("--------------------------------\n\n")
+
+        # Print a closing message to the output file.
+        file.write("\n\n--------------------------------\n")
+        file.write("End Of Program\n")
+        file.write("--------------------------------\n")
+
+# Program entry point
+if __name__ == "__main__":
+    main()
+</pre>
+<hr>
+<p><strong>SAMPLE_PROGRAM_OUTPUT</strong></p>
+<hr>
+<p>The text in the preformatted text box below was generated by one use case of the Python program featured in this <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Computer_programming" target="_blank" rel="noopener">computer programming</a> tutorial web page.</p>
+<p><em>(Note that the aforementioned Python program specifies to name the output file <strong>greatest_common_divisor.txt</strong> instead of <strong>greatest_common_divisor_two.txt</strong> (which is what the hyperlinked plain-text file below is named) because karbytes did not want the <a style="background:#000000;color:#00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_21/main/greatest_common_divisor.cpp" target="_blank" rel="noopener">C++ program&#8217;s</a> output file (which is named <a style="background:#000000;color:#ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_21/main/greatest_common_divisor_output.txt" target="_blank" rel="noopener">greatest_common_divisor_output.txt</a>) to be overwritten with the Python program output file in the GitHub repository which houses both output files and which is named <a style="background:#00ff00;color:#000000" href="https://github.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_21/" target="_blank" rel="noopener">KARLINA_OBJECT_extension_pack_21</a>).</em></p>
+<p>plain_text_file: <a style="background:#000000;color:#ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_21/main/greatest_common_divisor_output_two.txt" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_21/main/greatest_common_divisor_output_two.txt</a></p>
+<hr>
+<pre>
+--------------------------------
+Start Of Program
+--------------------------------
+
+
+This Python program computes the greatest common divisor of two natural numbers and prints the steps involved.
+
+--------------------------------
+
+--------------------------------
+
+Entered values: A = 16, B = 12
+
+--------------------------------
+
+Computing the greatest common divisor of A and B using the Euclidean algorithm...
+
+step_0: A = 16, B = 12, gcd(A,B) = A % B = 4.
+
+step_1: A = 12, B = 4, gcd(A,B) = A % B = 0.
+
+The greatest common divisor of A and B is 4
+
+
+--------------------------------
+
+Entered values: A = 21, B = 9
+
+--------------------------------
+
+Computing the greatest common divisor of A and B using the Euclidean algorithm...
+
+step_0: A = 21, B = 9, gcd(A,B) = A % B = 3.
+
+step_1: A = 9, B = 3, gcd(A,B) = A % B = 0.
+
+The greatest common divisor of A and B is 3
+
+
+--------------------------------
+
+Entered values: A = -25, B = 15
+
+--------------------------------
+
+Computing the greatest common divisor of A and B using the Euclidean algorithm...
+
+step_0: A = -25, B = 15, gcd(A,B) = A % B = 5.
+
+step_1: A = 15, B = 5, gcd(A,B) = A % B = 0.
+
+The greatest common divisor of A and B is 5
+
+
+--------------------------------
+
+Entered values: A = 17384939202374, B = 32632534825
+
+--------------------------------
+
+Computing the greatest common divisor of A and B using the Euclidean algorithm...
+
+step_0: A = 17384939202374, B = 32632534825, gcd(A,B) = A % B = 24430675474.
+
+step_1: A = 32632534825, B = 24430675474, gcd(A,B) = A % B = 8201859351.
+
+step_2: A = 24430675474, B = 8201859351, gcd(A,B) = A % B = 8026956772.
+
+step_3: A = 8201859351, B = 8026956772, gcd(A,B) = A % B = 174902579.
+
+step_4: A = 8026956772, B = 174902579, gcd(A,B) = A % B = 156340717.
+
+step_5: A = 174902579, B = 156340717, gcd(A,B) = A % B = 18561862.
+
+step_6: A = 156340717, B = 18561862, gcd(A,B) = A % B = 7845821.
+
+step_7: A = 18561862, B = 7845821, gcd(A,B) = A % B = 2870220.
+
+step_8: A = 7845821, B = 2870220, gcd(A,B) = A % B = 2105381.
+
+step_9: A = 2870220, B = 2105381, gcd(A,B) = A % B = 764839.
+
+step_10: A = 2105381, B = 764839, gcd(A,B) = A % B = 575703.
+
+step_11: A = 764839, B = 575703, gcd(A,B) = A % B = 189136.
+
+step_12: A = 575703, B = 189136, gcd(A,B) = A % B = 8295.
+
+step_13: A = 189136, B = 8295, gcd(A,B) = A % B = 6646.
+
+step_14: A = 8295, B = 6646, gcd(A,B) = A % B = 1649.
+
+step_15: A = 6646, B = 1649, gcd(A,B) = A % B = 50.
+
+step_16: A = 1649, B = 50, gcd(A,B) = A % B = 49.
+
+step_17: A = 50, B = 49, gcd(A,B) = A % B = 1.
+
+step_18: A = 49, B = 1, gcd(A,B) = A % B = 0.
+
+The greatest common divisor of A and B is 1
+
+
+--------------------------------
+
+Entered values: A = 66, B = 666
+
+--------------------------------
+
+Computing the greatest common divisor of A and B using the Euclidean algorithm...
+
+step_0: A = 66, B = 666, gcd(A,B) = A % B = 66.
+
+step_1: A = 666, B = 66, gcd(A,B) = A % B = 6.
+
+step_2: A = 66, B = 6, gcd(A,B) = A % B = 0.
+
+The greatest common divisor of A and B is 6
+
+
+--------------------------------
+
+Entered values: A = -11, B = -11
+
+--------------------------------
+
+Computing the greatest common divisor of A and B using the Euclidean algorithm...
+
+step_0: A = -11, B = -11, gcd(A,B) = A % B = 0.
+
+The greatest common divisor of A and B is -11
+
+
+--------------------------------
+
+Entered values: A = 0, B = 0
+
+--------------------------------
+
+Computing the greatest common divisor of A and B using the Euclidean algorithm...
+
+The greatest common divisor of A and B is 0
+
+
+--------------------------------
+
+Entered values: A = 81, B = 17
+
+--------------------------------
+
+Computing the greatest common divisor of A and B using the Euclidean algorithm...
+
+step_0: A = 81, B = 17, gcd(A,B) = A % B = 13.
+
+step_1: A = 17, B = 13, gcd(A,B) = A % B = 4.
+
+step_2: A = 13, B = 4, gcd(A,B) = A % B = 1.
+
+step_3: A = 4, B = 1, gcd(A,B) = A % B = 0.
+
+The greatest common divisor of A and B is 1
+
+
+--------------------------------
+
+Entered values: A = 81, B = 45
+
+--------------------------------
+
+Computing the greatest common divisor of A and B using the Euclidean algorithm...
+
+step_0: A = 81, B = 45, gcd(A,B) = A % B = 36.
+
+step_1: A = 45, B = 36, gcd(A,B) = A % B = 9.
+
+step_2: A = 36, B = 9, gcd(A,B) = A % B = 0.
+
+The greatest common divisor of A and B is 9
+
+
+--------------------------------
+End Of Program
+--------------------------------
+</pre>
+<hr>
+<p>This web page was last updated on 14_OCTOBER_2024. The content displayed on this web page is licensed as <a style="background:#000000;color:#ff9000" href="https://karlinaobject.wordpress.com/public_domain/" target="_blank" rel="noopener">PUBLIC_DOMAIN</a> intellectual property.</p>
+<hr>
