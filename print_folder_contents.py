@@ -19,7 +19,7 @@ def list_files_in_folder(folder_path, output_file):
 
         # Print a horizontal divider line to the command line terminal and to the output file.
         print("\n\n--------------------------------")
-        f.write("\n\n--------------------------------")
+        f.write("--------------------------------")
 
         # Print "This Python program prints the names and file sizes (in megabytes) of each file inside of a particular folder." to the command line terminal and to the output file.
         print("\n\nThis Python program prints the names and file sizes (in megabytes) of each file inside of a particular folder.")
