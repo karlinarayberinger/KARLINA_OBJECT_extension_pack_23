@@ -1,12 +1,12 @@
 /**
  * file: karbytes_17_october_2024.txt
  * type: plain-text
- * date: 13_OCTOBER_2024
+ * date: 14_OCTOBER_2024
  * author: karbytes
  * license: PUBLIC_DOMAIN
  */
 
-1. On 12_OCTOBER_2024 karbytes downloaded each of the 112 zip files which comprise the collection of public domain digital artifacts named karbytes from a public Wi-Fi network.
+1. On 12_OCTOBER_2024 karbytes downloaded each of the 113 zip files which comprise the collection of public domain digital artifacts named karbytes from a public Wi-Fi network.
 
 2. On 12_OCTOBER_2024 karbytes revised the prose in the following two web pages which describe the contents of karbytes:
 
