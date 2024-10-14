@@ -1,0 +1,280 @@
+<hr>
+<p><strong>PASCALS_TRIANGLE_GENERATION</strong></p>
+<hr>
+<p><span style="background:#ffff00">The <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/C%2B%2B" target="_blank" rel="noopener">C++</a> program featured in this tutorial web page prints the first N rows of <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Pascal%27s_triangle" target="_blank" rel="noopener">Pascal&#8217;s Triangle</a> to the command line terminal interface and to a plain-text output file such that the output visually resembles an <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Isosceles_triangle" target="_blank" rel="noopener">isosceles</a> <a style="background:#000000;color:#00ff00" href="https://karlinaobject.wordpress.com/triangle/" target="_blank" rel="noopener">triangle</a>.</p>
+<p><strong>Pascal&#8217;s Triangle</strong> is a triangular arrangement of natural numbers (resembling an isosceles triangle) such that the top row consists solely of the number 1, each subsequent row begins and ends with 1, and every other number in the arrangement is the sum of the two numbers directly above that number.</p>
+<p><em>To view hidden text inside each of the preformatted text boxes below, scroll horizontally.</em></p>
+<hr>
+<p><strong>SOFTWARE_APPLICATION_COMPONENTS</strong></p>
+<hr>
+<p>C++_source_file: <a style="background:#000000;color:#00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_22/main/pascals_triangle_generator.cpp" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_22/main/pascals_triangle_generator.cpp</a></p>
+<p>plain-text_file: <a style="background:#000000;color:#ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_22/main/pascals_triangle_generator_output.txt" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_22/main/pascals_triangle_generator_output.txt</a></p>
+<hr>
+<p><strong>PROGRAM_COMPILATION_AND_EXECUTION</strong></p>
+<hr>
+<p>STEP_0: Copy and paste the C++ <a style="background:#000000;color:#00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_22/main/pascals_triangle_generator.cpp" target="_blank" rel="noopener">source code</a> into a new text editor document and save that document as the following file name:</p>
+<pre>pascals_triangle_generator.cpp</pre>
+<p>STEP_1: Open a <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Unix" target="_blank" rel="noopener">Unix</a> command line terminal application and set the current directory to wherever the C++ program file is located on the local machine (e.g. Desktop).</p>
+<pre>cd Desktop</pre>
+<p>STEP_2: Compile the C++ file into machine-executable instructions (i.e. object file) and then into an executable piece of software named <strong>app</strong> using the following command:</p>
+<pre>g++ pascals_triangle_generator.cpp -o app</pre>
+<p>STEP_3: If the program compilation command does not work, then use the following commands (in top-down order) to install the C/C++ compiler (which is part of the <a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/GNU_Compiler_Collection" target="_blank" rel="noopener">GNU Compiler Collection (GCC)</a>):</p>
+<pre>sudo apt install build-essential</pre>
+<pre>sudo apt-get install g++</pre>
+<p>STEP_4: After running the <strong>g++</strong> command, run the executable file using the following command:</p>
+<pre>./app</pre>
+<p>STEP_5: Once the application is running, the following prompt will appear:</p>
+<pre>Enter a natural number, N, which is the number of rows in Pascal's Triangle to generate and which is no larger than 20: </pre>
+<p>STEP_6: Enter a value for N using the keyboard.</p>
+<p>STEP_7: Observe program results on the command line terminal and in the <a style="background:#000000;color:#ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_22/main/pascals_triangle_generator_output.txt" target="_blank" rel="noopener">output file</a>.</p>
+<hr>
+<p><strong>PROGRAM_SOURCE_CODE</strong></p>
+<hr>
+<p>The text in the preformatted text box below appears on this web page (while rendered correctly by the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/HTML" target="_blank" rel="noopener">web browser</a>) to be identical to the content of the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/C%2B%2B" target="_blank" rel="noopener">C++</a> source code file whose <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/URL" target="_blank" rel="noopener">Uniform Resource Locator</a> is displayed in the green <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Hyperlink" target="_blank" rel="noopener">hyperlink</a> below. A <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Computer" target="_blank" rel="noopener">computer</a> interprets that C++ source code as a series of programmatic instructions (i.e. <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Software" target="_blank" rel="noopener">software</a>) which govern how the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Computer_hardware" target="_blank" rel="noopener">hardware</a> of that computer behaves.</p>
+<p><em>(Note that angle brackets which resemble <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/HTML" target="_blank" rel="noopener">HTML</a> tags (i.e. an &#8220;is less than&#8221; symbol (i.e. &#8216;&lt;&#8216;) followed by an &#8220;is greater than&#8221; symbol (i.e. &#8216;&gt;&#8217;) displayed in the aforementioned text box have been replaced (at the source code level of this web page) with Unicode symbols <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Less-than_sign" target="_blank" rel="noopener">U+003C</a> (which is rendered by the web browser as &#8216;&lt;&#8216;) and <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Greater-than_sign" target="_blank" rel="noopener">U+003E</a> (which is rendered by the web browser as &#8216;&gt;&#8217;). That is because the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/WordPress.com" target="_blank" rel="noopener">WordPress</a> web page editor interprets a plain-text versions of an &#8220;is less than&#8221; symbol followed by an &#8220;is greater than&#8221; symbol as being an opening HTML tag (which means that the WordPress web page editor deletes the content between those (plain-text) inequality symbols)).</em></p>
+<p>C++_source_file: <a style="background:#000000;color:#00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_22/main/pascals_triangle_generator.cpp" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_22/main/pascals_triangle_generator.cpp</a></p>
+<hr>
+<pre>/**
+ * file: pascals_triangle_generator.cpp
+ * type: C++ (source file)
+ * date: 04_OCTOBER_2024
+ * author: karbytes
+ * license: PUBLIC_DOMAIN 
+ */
+
+/** preprocessing directives */
+#include &lt;iostream&gt; // standard input (std::cin), standard output (std::cout)
+#include &lt;fstream&gt; // output file creation, output file overwriting, output file open, output file close
+#include &lt;vector&gt; // data type for representing mutable arrays in C++ 
+#include &lt;iomanip&gt;  // set width function (std::setw)
+#define MAXIMUM_N 20 // constant which represents the maximum value for N
+using namespace std; // including standard namespace makes use of std:: preface optional
+
+/** function prototypes */
+vector&lt;vector&lt;int&gt;&gt; generate_first_N_rows_of_Pascals_Triangle(int N);
+void print_pascals_triangle(const vector&lt;vector&lt;int&gt;&gt; &amp; pascals_triangle, ostream &amp; output);
+
+/** program entry point */
+int main() 
+{
+    // Declare and initialize one int type variable (which represents the number of rows in the Pascal's Triangle to generate).
+    int N = 0;
+
+    // Declare a file output stream handler (which represents the plain-text file to generate and/or overwrite with program data).
+    ofstream file;
+
+    /**
+     * Declare a vector which stores int-type values and which will be used to store the values representing the first N rows of Pascal's Triangle.
+     * 
+     * Note that a C++ vector is an allocation of contiguous memory cells for the purpose of storing elements of a single data type
+     * and that elements of a vector can be inserted and removed during that vector's instantiation.
+     * 
+     * In this case, pascals_triangle is a vector containing vectors containing int-type values.
+     */
+    vector&lt;vector&lt;int&gt;&gt; pascals_triangle;
+
+    /**
+     * If the file named pascals_triangle_generator_output.txt does not already exist 
+     * inside of the same file directory as the file named pascals_triangle_generator.cpp, 
+     * create a new file named pascals_triangle_generator_output.txt in that directory.
+     * 
+     * Open the plain-text file named pascals_triangle_generator_output.txt
+     * and set that file to be overwritten with program data.
+     */
+    file.open("pascals_triangle_generator_output.txt");
+
+    // Print an opening message to the command line terminal.
+    cout &lt;&lt; "\n\n--------------------------------";
+    cout &lt;&lt; "\nStart Of Program";
+    cout &lt;&lt; "\n--------------------------------";
+
+    // Print an opening message to the file output stream.
+    file &lt;&lt; "--------------------------------";
+    file &lt;&lt; "\nStart Of Program";
+    file &lt;&lt; "\n--------------------------------";
+
+    // Print "This C++ program generates the first N rows of Pascal's Triangle." to the command line terminal and to the file output stream.
+    cout &lt;&lt; "\n\nThis C++ program generates the first N rows of Pascal's Triangle.";
+    file &lt;&lt; "\n\nThis C++ program generates the first N rows of Pascal's Triangle.";
+
+    // Print a horizontal divider line to the command line terminal and to the file output stream.
+    std::cout &lt;&lt; "\n\n--------------------------------";
+    file &lt;&lt; "\n\n--------------------------------";
+
+    // Prompt the user to enter an input value for N (and print that prompt to the command line terminal and to the file output stream).
+    cout &lt;&lt; "\n\nEnter a natural number, N, which is the number of rows in Pascal's Triangle to generate and which is no larger than " &lt;&lt; MAXIMUM_N &lt;&lt; ": ";
+    file &lt;&lt; "\n\nEnter a natural number, N, which is the number of rows in Pascal's Triangle to generate and which is no larger than " &lt;&lt; MAXIMUM_N &lt;&lt; ": ";
+
+    // Scan the command line terminal for the most recent keyboard input value. Store that value in N.
+    cin &gt;&gt; N;
+
+    // Print "The value which was entered for N is {N}." to the command line terminal and to the file output stream.
+    cout &lt;&lt; "\nThe value which was entered for N is " &lt;&lt; N &lt;&lt; ".";
+    file &lt;&lt; "\n\nThe value which was entered for N is " &lt;&lt; N &lt;&lt; ".";
+
+    // Print a horizontal divider line to the command line terminal and to the file output stream.
+    cout &lt;&lt; "\n\n--------------------------------";
+    file &lt;&lt; "\n\n--------------------------------";
+
+    // Populate the two-dimensional vector array with values representing the first N rows of Pascal's Triangle.
+    pascals_triangle = generate_first_N_rows_of_Pascals_Triangle(N);
+
+    // Print the first N rows of Pascal's Triangle (in the spatial configuration of an isosceles triangle) to the command line terminal.
+    print_pascals_triangle(pascals_triangle, cout);
+
+    // Print the first N rows of Pascal's Triangle (in the spatial configuration of an isosceles triangle) to the output file stream.
+    print_pascals_triangle(pascals_triangle, file);
+
+    // Print a closing message to the command line terminal.
+    cout &lt;&lt; "\n\n--------------------------------";
+    cout &lt;&lt; "\nEnd Of Program";
+    cout &lt;&lt; "\n--------------------------------\n\n";
+
+    // Print a closing message to the file output stream.
+    file &lt;&lt; "\n\n--------------------------------";
+    file &lt;&lt; "\nEnd Of Program";
+    file &lt;&lt; "\n--------------------------------";
+
+    // Close the file output stream.
+    file.close();
+
+    // Exit the program.
+    return 0; 
+}
+
+/**
+ * Return a two-dimensional mutable array which represents the first N rows of Pascal's Triangle.
+ * 
+ * Pascal's Triangle is a triangular arrangement of natural numbers (resemling an isosceles triangle)
+ * such that the top row consists solely of the number 1,
+ * each subsequent row begins and ends with 1,
+ * and every other number in the arrangement is the sum of the two numbers directly above it.
+ * 
+ * Example: 
+ * 
+ * If N = 10, then the rows of Pascal's Triangle which are stored in the object returned 
+ * by this function depict the following arrangement of natural numbers...
+ * 
+ *                    1 
+ *                  1   1 
+ *                1   2   1 
+ *              1   3   3   1 
+ *            1   4   6   4   1 
+ *          1   5  10  10   5   1 
+ *        1   6  15  20  15   6   1 
+ *      1   7  21  35  35  21   7   1 
+ *    1   8  28  56  70  56  28   8   1 
+ *  1   9  36  84 126 126  84  36   9   1 
+ */
+vector&lt;vector&lt;int&gt;&gt; generate_first_N_rows_of_Pascals_Triangle(int N) 
+{
+    // Declare loop control variables and set each of their initial values to zero.
+    int i = 0, j = 0;
+
+    // Declare a vector of vectors (which is a mutable two-dimensional array) for storing values representing the first N rows of Pascal's Triangle.
+    vector&lt;vector&lt;int&gt;&gt; pascals_triangle(N);
+
+    // If N is smaller than one or larger than MAXIMUM_N, set N to ten.
+    if ((N &lt; 1) || (N &gt; MAXIMUM_N)) N = 10;
+
+    /** 
+     * For each row of Pascal's Triangle up to the Nth row 
+     * (starting at the top row (row # 0) and ending at the bottom row (row # (N -1)) in ascending row number)...
+     */
+    for (i = 0; i &lt; N; i += 1) 
+    {
+        // expand the size of the otherwise empty one-dimensional vector representing a particular row to fit all the numbers of that row...
+        pascals_triangle[i].resize(i + 1);
+
+        // and set the first and last element of that expanded one-dimensional array to 1.
+        pascals_triangle[i][0] = pascals_triangle[i][i] = 1;  
+
+        /** 
+         * For each element of the ith row of Pascal's Triangle,
+         * (starting at the leftmost element, pascals_triangle[i][0], and ending at the rightmost element, pascals_triangle[i][i - 1], in ascending row number)...
+         */
+        for (j = 1; j &lt; i; j += 1) 
+        {
+            // set the value of the current Pascal's Triangle entry to the sum of the two entries directly above it.
+            pascals_triangle[i][j] = pascals_triangle[i - 1][j - 1] + pascals_triangle[i - 1][j];
+        }
+    }
+
+    // Return the populated two-dimensional mutable array which represents the first N rows of Pascal's Triangle.
+    return pascals_triangle;
+}
+
+/**
+ *  Print Pascal's Triangle (up to some natural number of rows) in isosceles triangle form
+ *  such that the number in the top row is positioned along the vertical line which divides the 
+ *  triangular permutation of numbers in half to the output stream.
+ */
+void print_pascals_triangle(const vector&lt;vector&lt;int&gt;&gt; &amp; pascals_triangle, ostream &amp; output) 
+{
+    int N = pascals_triangle.size();
+    int max_width = to_string(pascals_triangle[N - 1][N / 2]).length();  // Get the width of the largest number in the pascals_triangle object.
+    output &lt;&lt; "\n\nPrinting the first " &lt;&lt; N &lt;&lt; " rows of Pascal's Triangle...\n\n";
+    for (int i = 0; i &lt; N; i += 1) 
+    {
+        // Print leading spaces to align the numbers in the output stream such that the numbers visually depict an isosceles triangle.
+        output &lt;&lt; setw((N - i) * (max_width + 1) / 2) &lt;&lt; "";
+
+        for (int j = 0; j &lt;= i; ++j) output &lt;&lt; setw(max_width) &lt;&lt; pascals_triangle[i][j] &lt;&lt; " ";
+
+        // Print the new line character after the last element of the ith row.
+        output &lt;&lt; "\n";
+    }
+}
+</pre>
+<hr>
+<p><strong>SAMPLE_PROGRAM_OUTPUT</strong></p>
+<hr>
+<p>The text in the preformatted text box below was generated by one use case of the C++ program featured in this <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Computer_programming" target="_blank" rel="noopener">computer programming</a> tutorial web page.</p>
+<p>plain-text_file: <a style="background:#000000;color:#ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_22/main/pascals_triangle_generator_output.txt" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_22/main/pascals_triangle_generator_output.txt</a></p>
+<hr>
+<pre>
+--------------------------------
+Start Of Program
+--------------------------------
+
+This C++ program generates the first N rows of Pascal's Triangle.
+
+--------------------------------
+
+Enter a natural number, N, which is the number of rows in Pascal's Triangle to generate and which is no larger than 100: 
+
+The value which was entered for N is 20.
+
+--------------------------------
+
+Printing the first 20 rows of Pascal's Triangle...
+
+                                                                1 
+                                                             1     1 
+                                                          1     2     1 
+                                                       1     3     3     1 
+                                                    1     4     6     4     1 
+                                                 1     5    10    10     5     1 
+                                              1     6    15    20    15     6     1 
+                                           1     7    21    35    35    21     7     1 
+                                        1     8    28    56    70    56    28     8     1 
+                                     1     9    36    84   126   126    84    36     9     1 
+                                  1    10    45   120   210   252   210   120    45    10     1 
+                               1    11    55   165   330   462   462   330   165    55    11     1 
+                            1    12    66   220   495   792   924   792   495   220    66    12     1 
+                         1    13    78   286   715  1287  1716  1716  1287   715   286    78    13     1 
+                      1    14    91   364  1001  2002  3003  3432  3003  2002  1001   364    91    14     1 
+                   1    15   105   455  1365  3003  5005  6435  6435  5005  3003  1365   455   105    15     1 
+                1    16   120   560  1820  4368  8008 11440 12870 11440  8008  4368  1820   560   120    16     1 
+             1    17   136   680  2380  6188 12376 19448 24310 24310 19448 12376  6188  2380   680   136    17     1 
+          1    18   153   816  3060  8568 18564 31824 43758 48620 43758 31824 18564  8568  3060   816   153    18     1 
+       1    19   171   969  3876 11628 27132 50388 75582 92378 92378 75582 50388 27132 11628  3876   969   171    19     1 
+
+
+--------------------------------
+End Of Program
+--------------------------------
+</pre>
+<hr>
+<p>This web page was last updated on 13_OCTOBER_2024. The content displayed on this web page is licensed as <a style="background:#000000;color:#ff9000" href="https://karlinaobject.wordpress.com/public_domain/" target="_blank" rel="noopener">PUBLIC_DOMAIN</a> intellectual property.</p>
+<hr>
