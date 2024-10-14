@@ -6,7 +6,7 @@
  * license: PUBLIC_DOMAIN
  */
 
-1. On 12_OCTOBER_2024 karbytes downloaded each of the 107 zip files which comprise the collection of public domain digital artifacts named karbytes from a public Wi-Fi network.
+1. On 12_OCTOBER_2024 karbytes downloaded each of the 112 zip files which comprise the collection of public domain digital artifacts named karbytes from a public Wi-Fi network.
 
 2. On 12_OCTOBER_2024 karbytes revised the prose in the following two web pages which describe the contents of karbytes:
 
