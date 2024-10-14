@@ -4,7 +4,7 @@ This Python program prints the names and file sizes (in megabytes) of each file 
 
 --------------------------------
 
-Files in folder 'karbytes2024_0':
+Directory: karbytes2024_0
 
 file_0: INSTAGRAM_KARBYTES_2024-main.zip // 317.29 megabytes
 
