@@ -1,0 +1,368 @@
+<hr>
+<p><strong>PRIME_NUMBER_GENERATION_TWO</strong></p>
+<hr>
+<p><span style="background:#ffff00">The <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank" rel="noopener">Python</a> program featured in this tutorial web page instantiates a dynamic array of N int-type elements and populates that array with the first N <a style="background:#000000;color:#00ff00" href="https://karbytesforlifeblog.wordpress.com/prime_factorization_two/" target="_blank" rel="noopener">prime</a> <a style="background:#000000;color:#ff9000" href="https://karlinaobject.wordpress.com/numbers/" target="_blank" rel="noopener">numbers</a> in ascending order (where the first element of that array is 2). The program uses an algorithm named the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes" target="_blank" rel="noopener">Sieve of Eratosthenes</a> to generate those prime numbers.</p>
+<p><strong>The Python program file which is featured in this tutorial web page has many common attributes with the C++ source code file featured on the tutorial web page of this website named <a style="background:#000000;color:#00ff00" href="https://karbytesforlifeblog.wordpress.com/prime_number_generation/" target="_blank" rel="noopener">PRIME_NUMBER_GENERATION</a>. Unlike that C++ source code file, this Python program generates slightly different output messages (to the command line terminal and to the generated and/or overwritten output file).</strong></p>
+<p>A <strong>prime number</strong> is a natural number which is larger than or equal to 2 and which is the multiplicative product of only itself and 1.</p>
+<p>A <strong>composite number</strong> is a natural number which is larger than 1 and which is the multiplicative product of two or more prime numbers.</p>
+<p><em>To view hidden text inside each of the preformatted text boxes below, scroll horizontally.</em></p>
+<hr>
+<p><strong>SOFTWARE_APPLICATION_COMPONENTS</strong></p>
+<hr>
+<p>python_source_file: <a style="background:#000000;color:#00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_22/main/prime_numbers_generation.py" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_22/main/prime_numbers_generation.py</a></p>
+<p>plain_text_file: <a style="background:#000000;color:#ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_21/main/prime_numbers_generation_output_two.txt" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_21/main/prime_numbers_generation_output_two.txt</a></p>
+<hr>
+<p><strong>PROGRAM_INTERPRETATION_AND_EXECUTION</strong></p>
+<hr>
+<p>STEP_0: Copy and paste the Python <a style="background:#000000;color:#00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_22/main/prime_numbers_generation.py" target="_blank" rel="noopener">source code</a> into a new text editor document and save that document as the following file name:</p>
+<pre>prime_numbers_generation.py</pre>
+<p>STEP_1: Open a <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Unix" target="_blank" rel="noopener">Unix</a> command line terminal application and set the current directory to wherever the Python program file is located on the local machine (e.g. Desktop).</p>
+<pre>cd Desktop</pre>
+<p>STEP_2: Run the program by entering the following command:</p>
+<pre>python3 prime_numbers_generation.py</pre>
+<p>STEP_3: If the program interpretation command does not work, then use the following commands (in top-down order) to install the Python interpreter:</p>
+<pre>sudo apt update</pre>
+<pre>sudo apt install python3</pre>
+<p>STEP_4: After running the Python program is booted up, the following prompt will appear:</p>
+<pre>Enter the number of prime numbers to generate (N): </pre>
+<p>STEP_5: Enter a value for a using the keyboard.</p>
+<p>STEP_6: Observe program results on the command line terminal and in the <a style="background:#000000;color:#ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_21/main/prime_numbers_generation.py" target="_blank" rel="noopener">output file</a>.</p>
+<hr>
+<p><strong>PROGRAM_SOURCE_CODE</strong></p>
+<hr>
+<p>The text in the preformatted text box below appears on this web page (while rendered correctly by the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/HTML" target="_blank" rel="noopener">web browser</a>) to be identical to the content of the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank" rel="noopener">Python</a> source code file whose <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/URL" target="_blank" rel="noopener">Uniform Resource Locator</a> is displayed in the green <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Hyperlink" target="_blank" rel="noopener">hyperlink</a> below.</p>
+<p><em>Note that, unlike C++ program files (which are <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Compiler" target="_blank" rel="noopener">compiled</a> into machine-executable instructions before program runtime), Python program files are <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Interpreter_(computing)" target="_blank" rel="noopener">interpreted</a> one line at a time instead.</em></p>
+<p>python_source_file: <a style="background:#000000;color:#00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_22/main/prime_numbers_generation.py" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_22/main/prime_numbers_generation.py</a></p>
+<hr>
+<pre>
+#########################################################################################
+# file: prime_numbers_generation.py
+# type: Python
+# date: 05_OCTOBER_2024
+# author: karbytes
+# license: PUBLIC_DOMAIN 
+#########################################################################################
+
+import math # math.log(), math.sqrt() # Note that the math.log() is the natural logarithm 
+
+def generate_primes(N):
+    """Generate an array of the first N prime numbers using the Sieve of Eratosthenes algorithm."""
+    
+    # Validate the function input and correct that input if it is determined to be an "out of range" value.
+    if N &lt; 1 or N &gt; 10000:
+        N = 10
+
+    # Calculate an upper limit for the sieve
+    limit = 15 if N &lt; 6 else int(N * math.log(N) + N * math.log(math.log(N)))
+    
+    # Create a boolean array &quot;is_prime[0..limit]&quot; and initialize all entries as true.
+    is_prime = [True] * (limit + 1)
+    is_prime[0] = is_prime[1] = False  # 0 and 1 are not prime numbers.
+    
+    # Use the Sieve of Eratosthenes.
+    for p in range(2, int(math.sqrt(limit)) + 1):
+        if is_prime[p]:
+            for i in range(p * p, limit + 1, p):
+                is_prime[i] = False
+    
+    # Collect the first N primes.
+    primes = []
+    count = 0
+    for p in range(2, limit + 1):
+        if is_prime[p]:
+            primes.append(p)
+            count += 1
+        if count == N:
+            break
+    
+    return primes
+
+def main():
+    # Declare and initialize the number of primes to generate.
+    N = 1
+
+    # Declare an empty array to store the first N primes.
+    A = []
+
+    # Open the output file for writing
+    with open(&quot;prime_numbers_generation_output.txt&quot;, &quot;w&quot;) as file:
+
+        # Print an opening message to the command line terminal.
+        print(&quot;\n\n--------------------------------&quot;)
+        print(&quot;Start Of Program&quot;)
+        print(&quot;--------------------------------&quot;)
+
+        # Print an opening message to the output file.
+        file.write(&quot;--------------------------------\n&quot;)
+        file.write(&quot;Start Of Program\n&quot;)
+        file.write(&quot;--------------------------------\n&quot;)
+
+        # Print &quot;This Python program generates the first N prime numbers using an algorithm named the Sieve of Eratosthenes.&quot; to the command line terminal and to the output file.
+        print(&quot;\n\nThis Python program generates the first N prime numbers using an algorithm named the Sieve of Eratosthenes.&quot;)
+        file.write(&quot;\n\nThis Python program generates the first N prime numbers using an algorithm named the Sieve of Eratosthenes.&quot;)
+
+        # Print a horizontal divider line to the command line terminal and to the output file.
+        print(&quot;\n\n--------------------------------&quot;)
+        file.write(&quot;\n\n--------------------------------&quot;)
+
+        # Get user input for the number of primes to generate
+        N = int(input(&quot;\n\nEnter the number of prime numbers to generate (N): &quot;))
+
+        # Log user input to the file after it is entered.
+        file.write(f&quot;\n\nEntered value: N = {N}&quot;)
+        print(f&quot;\n\nEntered value: N = {N}&quot;)
+
+        # Print a horizontal divider line to the command line terminal and to the output file.
+        print(&quot;\n\n--------------------------------&quot;)
+        file.write(&quot;\n\n--------------------------------&quot;)
+
+        # Execute the prime number generation function
+        A = generate_primes(N)
+
+        # Print each element of A to the command line terminal and to the output file.
+        for i in range(len(A)):
+            print(f&quot;\n\nA[{i}] := {A[i]}.&quot;)
+            file.write(f&quot;\n\nA[{i}] := {A[i]}.&quot;)
+
+        # Print a closing message to the command line terminal.
+        print(&quot;\n\n--------------------------------&quot;)
+        print(&quot;End Of Program&quot;)
+        print(&quot;--------------------------------\n\n&quot;)
+
+        # Print a closing message to the output file.
+        file.write(&quot;\n\n--------------------------------\n&quot;)
+        file.write(&quot;End Of Program\n&quot;)
+        file.write(&quot;--------------------------------\n&quot;)
+
+# Program entry point
+if __name__ == &quot;__main__&quot;:
+    main()
+</pre>
+<hr>
+<p><strong>SAMPLE_PROGRAM_OUTPUT</strong></p>
+<hr>
+<p>The text in the preformatted text box below was generated by one use case of the Python program featured in this <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Computer_programming" target="_blank" rel="noopener">computer programming</a> tutorial web page.</p>
+<p><em>(Note that the aforementioned Python program specifies to name the output file <strong>prime_numbers_generation_output.txt</strong> instead of <strong>prime_numbers_generation_output_two.txt</strong> (which is what the hyperlinked plain-text file below is named) because karbytes did not want the <a style="background:#000000;color:#00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_21/main/prime_numbers_generation.cpp" target="_blank" rel="noopener">C++ program&#8217;s</a> output file (which is named <a style="background:#000000;color:#ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_21/main/prime_numbers_generation_output.txt" target="_blank" rel="noopener">prime_numbers_generation_output.txt</a>) to be overwritten with the Python program output file in the GitHub repository which houses both output files and which is named <a style="background:#00ff00;color:#000000" href="https://github.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_21/" target="_blank" rel="noopener">KARLINA_OBJECT_extension_pack_21</a>).</em></p>
+<p>plain_text_file: <a style="background:#000000;color:#ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_21/main/prime_numbers_generation_output_two.txt" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_21/main/prime_numbers_generation_output_two.txt</a></p>
+<hr>
+<pre>
+--------------------------------
+Start Of Program
+--------------------------------
+
+
+This Python program generates the first N prime numbers using an algorithm named the Sieve of Eratosthenes.
+
+--------------------------------
+
+Entered value: N = 100
+
+--------------------------------
+
+A[0] := 2.
+
+A[1] := 3.
+
+A[2] := 5.
+
+A[3] := 7.
+
+A[4] := 11.
+
+A[5] := 13.
+
+A[6] := 17.
+
+A[7] := 19.
+
+A[8] := 23.
+
+A[9] := 29.
+
+A[10] := 31.
+
+A[11] := 37.
+
+A[12] := 41.
+
+A[13] := 43.
+
+A[14] := 47.
+
+A[15] := 53.
+
+A[16] := 59.
+
+A[17] := 61.
+
+A[18] := 67.
+
+A[19] := 71.
+
+A[20] := 73.
+
+A[21] := 79.
+
+A[22] := 83.
+
+A[23] := 89.
+
+A[24] := 97.
+
+A[25] := 101.
+
+A[26] := 103.
+
+A[27] := 107.
+
+A[28] := 109.
+
+A[29] := 113.
+
+A[30] := 127.
+
+A[31] := 131.
+
+A[32] := 137.
+
+A[33] := 139.
+
+A[34] := 149.
+
+A[35] := 151.
+
+A[36] := 157.
+
+A[37] := 163.
+
+A[38] := 167.
+
+A[39] := 173.
+
+A[40] := 179.
+
+A[41] := 181.
+
+A[42] := 191.
+
+A[43] := 193.
+
+A[44] := 197.
+
+A[45] := 199.
+
+A[46] := 211.
+
+A[47] := 223.
+
+A[48] := 227.
+
+A[49] := 229.
+
+A[50] := 233.
+
+A[51] := 239.
+
+A[52] := 241.
+
+A[53] := 251.
+
+A[54] := 257.
+
+A[55] := 263.
+
+A[56] := 269.
+
+A[57] := 271.
+
+A[58] := 277.
+
+A[59] := 281.
+
+A[60] := 283.
+
+A[61] := 293.
+
+A[62] := 307.
+
+A[63] := 311.
+
+A[64] := 313.
+
+A[65] := 317.
+
+A[66] := 331.
+
+A[67] := 337.
+
+A[68] := 347.
+
+A[69] := 349.
+
+A[70] := 353.
+
+A[71] := 359.
+
+A[72] := 367.
+
+A[73] := 373.
+
+A[74] := 379.
+
+A[75] := 383.
+
+A[76] := 389.
+
+A[77] := 397.
+
+A[78] := 401.
+
+A[79] := 409.
+
+A[80] := 419.
+
+A[81] := 421.
+
+A[82] := 431.
+
+A[83] := 433.
+
+A[84] := 439.
+
+A[85] := 443.
+
+A[86] := 449.
+
+A[87] := 457.
+
+A[88] := 461.
+
+A[89] := 463.
+
+A[90] := 467.
+
+A[91] := 479.
+
+A[92] := 487.
+
+A[93] := 491.
+
+A[94] := 499.
+
+A[95] := 503.
+
+A[96] := 509.
+
+A[97] := 521.
+
+A[98] := 523.
+
+A[99] := 541.
+
+--------------------------------
+End Of Program
+--------------------------------
+</pre>
+<hr>
+<p>This web page was last updated on 14_OCTOBER_2024. The content displayed on this web page is licensed as <a style="background:#000000;color:#ff9000" href="https://karlinaobject.wordpress.com/public_domain/" target="_blank" rel="noopener">PUBLIC_DOMAIN</a> intellectual property.</p>
+<hr>
