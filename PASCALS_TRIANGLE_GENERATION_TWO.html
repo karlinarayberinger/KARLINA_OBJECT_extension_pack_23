@@ -1,0 +1,185 @@
+<hr>
+<p><strong>PASCALS_TRIANGLE_GENERATION_TWO</strong></p>
+<hr>
+<p><span style="background:#ffff00">The <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank" rel="noopener">Python</a> program featured in this tutorial web page prints the first N rows of <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Pascal%27s_triangle" target="_blank" rel="noopener">Pascal&#8217;s Triangle</a> to the command line terminal interface and to a plain-text output file such that the output visually resembles an <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Isosceles_triangle" target="_blank" rel="noopener">isosceles</a> <a style="background:#000000;color:#00ff00" href="https://karlinaobject.wordpress.com/triangle/" target="_blank" rel="noopener">triangle</a>.</p>
+<p><strong>The Python program file which is featured in this tutorial web page has many common attributes with the C++ source code file featured on the tutorial web page of this website named <a style="background:#000000;color:#00ff00" href="https://karbytesforlifeblog.wordpress.com/pascals_triangle_generation/" target="_blank" rel="noopener">PASCALS_TRIANGLE_GENERATION</a>. Unlike that C++ source code file, this Python program generates slightly different output messages (to the command line terminal and to the generated and/or overwritten output file).</strong></p>
+<p><strong>Pascal&#8217;s Triangle</strong> is a triangular arrangement of natural numbers (resembling an isosceles triangle) such that the top row consists solely of the number 1, each subsequent row begins and ends with 1, and every other number in the arrangement is the sum of the two numbers directly above that number.</p>
+<p><em>To view hidden text inside each of the preformatted text boxes below, scroll horizontally.</em></p>
+<hr>
+<p><strong>SOFTWARE_APPLICATION_COMPONENTS</strong></p>
+<hr>
+<p>python_source_file: <a style="background:#000000;color:#00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_22/main/pascals_triangle_generator.py" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_22/main/pascals_triangle_generator.py</a></p>
+<p>plain_text_file: <a style="background:#000000;color:#ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_22/main/pascals_triangle_generator_output_two.txt" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_22/main/pascals_triangle_generator_output_two.txt</a></p>
+<hr>
+<p><strong>PROGRAM_INTERPRETATION_AND_EXECUTION</strong></p>
+<hr>
+<p>STEP_0: Copy and paste the Python <a style="background:#000000;color:#00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_22/main/pascals_triangle_generator.py" target="_blank" rel="noopener">source code</a> into a new text editor document and save that document as the following file name:</p>
+<pre>pascals_triangle_generator.py</pre>
+<p>STEP_1: Open a <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Unix" target="_blank" rel="noopener">Unix</a> command line terminal application and set the current directory to wherever the Python program file is located on the local machine (e.g. Desktop).</p>
+<pre>cd Desktop</pre>
+<p>STEP_2: Run the program by entering the following command:</p>
+<pre>python3 pascals_triangle_generator.py</pre>
+<p>STEP_3: If the program interpretation command does not work, then use the following commands (in top-down order) to install the Python interpreter:</p>
+<pre>sudo apt update</pre>
+<pre>sudo apt install python3</pre>
+<p>STEP_4: After running the Python program is booted up, the following prompt will appear:</p>
+<pre>Enter the number of rows for Pascal's Triangle: </pre>
+<p>STEP_5: Enter a value for a using the keyboard.</p>
+<p>STEP_6: Observe program results on the command line terminal and in the <a style="background:#000000;color:#ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_22/main/pascals_triangle_generator_output_two.txt" target="_blank" rel="noopener">output file</a>.</p>
+<hr>
+<p><strong>PROGRAM_SOURCE_CODE</strong></p>
+<hr>
+<p>The text in the preformatted text box below appears on this web page (while rendered correctly by the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/HTML" target="_blank" rel="noopener">web browser</a>) to be identical to the content of the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank" rel="noopener">Python</a> source code file whose <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/URL" target="_blank" rel="noopener">Uniform Resource Locator</a> is displayed in the green <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Hyperlink" target="_blank" rel="noopener">hyperlink</a> below.</p>
+<p><em>Note that, unlike C++ program files (which are <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Compiler" target="_blank" rel="noopener">compiled</a> into machine-executable instructions before program runtime), Python program files are <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Interpreter_(computing)" target="_blank" rel="noopener">interpreted</a> one line at a time instead.</em></p>
+<p>python_source_file: <a style="background:#000000;color:#00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_22/main/pascals_triangle_generator.py" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_22/main/pascals_triangle_generator.py</a></p>
+<hr>
+<pre>
+#########################################################################################
+# file: pascals_triangle_generation.py
+# type: Python
+# date: 05_OCTOBER_2024
+# author: karbytes
+# license: PUBLIC_DOMAIN 
+#########################################################################################
+
+def generate_first_N_rows_of_pascals_triangle(N):
+    # Initialize Pascal's triangle as a list of lists.
+    pascals_triangle = [[1]]
+
+    # If N is smaller than one or larger than twenty, set N to ten.
+    if N &lt; 1 or N &gt; 20:
+        N = 10
+
+    # Generate each row of Pascal's Triangle.
+    for i in range(1, N):
+        row = [1] * (i + 1)
+        for j in range(1, i):
+            row[j] = pascals_triangle[i - 1][j - 1] + pascals_triangle[i - 1][j]
+        pascals_triangle.append(row)
+
+    return pascals_triangle
+
+def print_pascals_triangle(pascals_triangle, output):
+    N = len(pascals_triangle)
+    
+    # Find the width of the largest number in the last row for formatting.
+    max_width = len(str(pascals_triangle[N - 1][N // 2]))
+
+    # Output header to both file and console
+    output.write("\n\nPrinting the first {} rows of Pascal's Triangle...\n\n".format(N))
+    print("\n\nPrinting the first {} rows of Pascal's Triangle...\n\n".format(N))
+
+    # Print the Pascal's triangle
+    for i in range(N):
+        # Create the leading spaces for aligning the triangle shape
+        leading_spaces = " " * ((N - i) * (max_width + 1) // 2)
+        
+        # Output leading spaces and row numbers to both file and console
+        output.write(leading_spaces)
+        print(leading_spaces, end="")
+
+        # Output each number in the current row to both file and console
+        row_numbers = " ".join(f"{pascals_triangle[i][j]:{max_width}}" for j in range(i + 1))
+        output.write(row_numbers + "\n")
+        print(row_numbers)
+
+def main():
+
+    # Open the file for writing (and generate that file if it does not exist).
+    with open("pascals_triangle_generator_output.txt", "w") as file:
+
+        # Print an opening message to the command line terminal.
+        print("\n\n--------------------------------")
+        print("Start Of Program")
+        print("--------------------------------")
+
+        # Print an opening message to the output file.
+        file.write("--------------------------------\n")
+        file.write("Start Of Program\n")
+        file.write("--------------------------------\n")
+
+        # Print "This C++ program generates the first N rows of Pascal's Triangle." to the command line terminal and to the output file.
+        print("\n\nThis Python program generates the first N rows of Pascal's Triangle.")
+        file.write("\n\nThis Python program generates the first N rows of Pascal's Triangle.")
+
+        # Print a horizontal divider line to the command line terminal and to the output file.
+        print("\n\n--------------------------------")
+        file.write("\n\n--------------------------------")
+
+        # Prompt the user to enter an input value and store that value in N.
+        N = int(input("\n\nEnter the number of rows for Pascal's Triangle: "))
+
+        # Log user input to the file after it is entered.
+        file.write(f"\n\nEntered value: N = {N}")
+        print(f"\n\nEntered value: N = {N}")
+
+        # Generate Pascal's Triangle
+        pascals_triangle = generate_first_N_rows_of_pascals_triangle(N)
+
+        # Print Pascal's Triangle to both the output file and to the command line terminal.
+        print_pascals_triangle(pascals_triangle, file)
+
+        # Print a closing message to the command line terminal.
+        print("\n\n--------------------------------")
+        print("End Of Program")
+        print("--------------------------------\n\n")
+
+        # Print a closing message to the output file.
+        file.write("\n\n--------------------------------\n")
+        file.write("End Of Program\n")
+        file.write("--------------------------------\n")
+
+# Program entry point
+if __name__ == "__main__":
+    main()
+</pre>
+<hr>
+<p><strong>SAMPLE_PROGRAM_OUTPUT</strong></p>
+<hr>
+<p>The text in the preformatted text box below was generated by one use case of the Python program featured in this <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Computer_programming" target="_blank" rel="noopener">computer programming</a> tutorial web page.</p>
+<p><em>(Note that the aforementioned Python program specifies to name the output file <strong>prime_numbers_generation_output.txt</strong> instead of <strong>prime_numbers_generation_output_two.txt</strong> (which is what the hyperlinked plain-text file below is named) because karbytes did not want the <a style="background:#000000;color:#00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_22/main/pascals_triangle_generator.cpp" target="_blank" rel="noopener">C++ program&#8217;s</a> output file (which is named <a style="background:#000000;color:#ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_22/main/pascals_triangle_generator_output.txt" target="_blank" rel="noopener">pascals_triangle_generator_output.txt</a>) to be overwritten with the Python program output file in the GitHub repository which houses both output files and which is named <a style="background:#00ff00;color:#000000" href="https://github.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_22/" target="_blank" rel="noopener">KARLINA_OBJECT_extension_pack_22</a>).</em></p>
+<p>plain_text_file: <a style="background:#000000;color:#ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_22/main/pascals_triangle_generator_output_two.txt" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_22/main/pascals_triangle_generator_output_two.txt</a></p>
+<hr>
+<pre>
+--------------------------------
+Start Of Program
+--------------------------------
+
+
+This Python program generates the first N rows of Pascal's Triangle.
+
+--------------------------------
+
+Entered value: N = 20
+
+Printing the first 20 rows of Pascal's Triangle...
+
+                                                                1
+                                                             1     1
+                                                          1     2     1
+                                                       1     3     3     1
+                                                    1     4     6     4     1
+                                                 1     5    10    10     5     1
+                                              1     6    15    20    15     6     1
+                                           1     7    21    35    35    21     7     1
+                                        1     8    28    56    70    56    28     8     1
+                                     1     9    36    84   126   126    84    36     9     1
+                                  1    10    45   120   210   252   210   120    45    10     1
+                               1    11    55   165   330   462   462   330   165    55    11     1
+                            1    12    66   220   495   792   924   792   495   220    66    12     1
+                         1    13    78   286   715  1287  1716  1716  1287   715   286    78    13     1
+                      1    14    91   364  1001  2002  3003  3432  3003  2002  1001   364    91    14     1
+                   1    15   105   455  1365  3003  5005  6435  6435  5005  3003  1365   455   105    15     1
+                1    16   120   560  1820  4368  8008 11440 12870 11440  8008  4368  1820   560   120    16     1
+             1    17   136   680  2380  6188 12376 19448 24310 24310 19448 12376  6188  2380   680   136    17     1
+          1    18   153   816  3060  8568 18564 31824 43758 48620 43758 31824 18564  8568  3060   816   153    18     1
+       1    19   171   969  3876 11628 27132 50388 75582 92378 92378 75582 50388 27132 11628  3876   969   171    19     1
+
+
+--------------------------------
+End Of Program
+--------------------------------
+</pre>
+<hr>
+<p>This web page was last updated on 13_OCTOBER_2024. The content displayed on this web page is licensed as <a style="background:#000000;color:#ff9000" href="https://karlinaobject.wordpress.com/public_domain/" target="_blank" rel="noopener">PUBLIC_DOMAIN</a> intellectual property.</p>
+<hr>
