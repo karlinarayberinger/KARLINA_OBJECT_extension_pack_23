@@ -1,0 +1,467 @@
+<hr>
+<p><strong>GREATEST_COMMON_DIVISOR</strong></p>
+<hr>
+<p><span style="background:#ffff00">The <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/C%2B%2B" target="_blank" rel="noopener">C++</a> program featured in this tutorial web page computes the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Greatest_common_divisor" target="_blank" rel="noopener">greatest common divisor</a> of two <a style="background:#000000;color:#ff9000" href="https://karlinaobject.wordpress.com/numbers/" target="_blank" rel="noopener">natural numbers</a>, A and B, using the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Euclidean_algorithm" target="_blank" rel="noopener">Euclidean algorithm</a> to iteratively (i.e. in a step-by-step manner) divide A by B in order to obtain the nonnegative integer <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Remainder" target="_blank" rel="noopener">remainder</a> of that division and then (in the next step (if there is a next step)) set A to B and B to that remainder before dividing A by B in order to obtain the nonnegative integer of that division (and continuing that process until a remainder of zero is obtained). When a remainder of zero is obtained, the least common denominator of the original A and B values is the latest value of B.</p>
+<p><em>To view hidden text inside each of the preformatted text boxes below, scroll horizontally.</em></p>
+<pre>
+// <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Pseudocode" target="_blank" rel="noopener">Pseudocode</a> describing how the Euclidean algorithm is used to compute the greatest common divisor of positive integers A and B.
+PROCEDURE gcd(A,B):
+    WHILE B IS NOT EQUAL TO ZERO:
+        LET remainder be the result of the computation A mod B.
+        LET A be B.
+        LET B be remainder.
+    END WHILE
+    RETURN B.
+END PROCEDURE
+</pre>
+<hr>
+<p><strong>SOFTWARE_APPLICATION_COMPONENTS</strong></p>
+<hr>
+<p>C++_source_file: <a style="background:#000000;color:#00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_21/main/greatest_common_divisor.cpp" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_21/main/greatest_common_divisor.cpp</a></p>
+<p>plain-text_file: <a style="background:#000000;color:#ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_21/main/greatest_common_divisor_output.txt" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_21/main/greatest_common_divisor_output.txt</a></p>
+<hr>
+<p><strong>PROGRAM_COMPILATION_AND_EXECUTION</strong></p>
+<hr>
+<p>STEP_0: Copy and paste the C++ <a style="background:#000000;color:#00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_21/main/greatest_common_divisor.cpp" target="_blank" rel="noopener">source code</a> into a new text editor document and save that document as the following file name:</p>
+<pre>greatest_common_divisor.cpp</pre>
+<p>STEP_1: Open a <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Unix" target="_blank" rel="noopener">Unix</a> command line terminal application and set the current directory to wherever the C++ program file is located on the local machine (e.g. Desktop).</p>
+<pre>cd Desktop</pre>
+<p>STEP_2: Compile the C++ file into machine-executable instructions (i.e. object file) and then into an executable piece of software named <strong>app</strong> using the following command:</p>
+<pre>g++ greatest_common_divisor.cpp -o app</pre>
+<p>STEP_3: If the program compilation command does not work, then use the following commands (in top-down order) to install the C/C++ compiler (which is part of the <a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/GNU_Compiler_Collection" target="_blank" rel="noopener">GNU Compiler Collection (GCC)</a>):</p>
+<pre>sudo apt install build-essential</pre>
+<pre>sudo apt-get install g++</pre>
+<p>STEP_4: After running the <strong>g++</strong> command, run the executable file using the following command:</p>
+<pre>./app</pre>
+<p>STEP_5: Once the application is running, the following prompt will appear:</p>
+<pre>Enter the first of two natural numbers (which will be stored in an int type variable named A) which is no larger than 10000:  </pre>
+<p>STEP_6: Enter a value for A using the keyboard.</p>
+<p>(Proceed from there inputting B and other program values in accordance to the prompt messages).</p>
+<p>STEP_7: Observe program results on the command line terminal and in the <a style="background:#000000;color:#ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_21/main/greatest_common_divisor_output.txt" target="_blank" rel="noopener">output file</a>.</p>
+<hr>
+<p><strong>PROGRAM_SOURCE_CODE</strong></p>
+<hr>
+<p>The text in the preformatted text box below appears on this web page (while rendered correctly by the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/HTML" target="_blank" rel="noopener">web browser</a>) to be identical to the content of the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/C%2B%2B" target="_blank" rel="noopener">C++</a> source code file whose <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/URL" target="_blank" rel="noopener">Uniform Resource Locator</a> is displayed in the green <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Hyperlink" target="_blank" rel="noopener">hyperlink</a> below. A <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Computer" target="_blank" rel="noopener">computer</a> interprets that C++ source code as a series of programmatic instructions (i.e. <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Software" target="_blank" rel="noopener">software</a>) which govern how the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Computer_hardware" target="_blank" rel="noopener">hardware</a> of that computer behaves.</p>
+<p><em>(Note that angle brackets which resemble <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/HTML" target="_blank" rel="noopener">HTML</a> tags (i.e. an &#8220;is less than&#8221; symbol (i.e. &#8216;&lt;&#8216;) followed by an &#8220;is greater than&#8221; symbol (i.e. &#8216;&gt;&#8217;) displayed in the aforementioned text box have been replaced (at the source code level of this web page) with Unicode symbols <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Less-than_sign" target="_blank" rel="noopener">U+003C</a> (which is rendered by the web browser as &#8216;&lt;&#8216;) and <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Greater-than_sign" target="_blank" rel="noopener">U+003E</a> (which is rendered by the web browser as &#8216;&gt;&#8217;). That is because the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/WordPress.com" target="_blank" rel="noopener">WordPress</a> web page editor interprets a plain-text versions of an &#8220;is less than&#8221; symbol followed by an &#8220;is greater than&#8221; symbol as being an opening HTML tag (which means that the WordPress web page editor deletes the content between those (plain-text) inequality symbols)).</em></p>
+<p>C++_source_file: <a style="background:#000000;color:#00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_21/main/greatest_common_divisor.cpp" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_21/main/greatest_common_divisor.cpp</a></p>
+<hr>
+<pre>
+/**
+ * file: greatest_common_divisor.cpp
+ * type: C++ (source file)
+ * date: 26_SEPTEMBER_2024
+ * author: karbytes
+ * license: PUBLIC_DOMAIN 
+ */
+
+/** preprocessing directives */
+#include &lt;iostream&gt; // standard input (std::cin), standard output (std::cout)
+#include &lt;fstream&gt; // output file creation, output file overwriting, output file open, output file close
+#define MAXIMUM_INPUT_VALUE 10000 // constant which represents the maximum value for A and for B
+
+/** function prototype */
+void print_greatest_common_divisor_computation_steps(int A, int B, std::ostream&amp; output);
+
+/** program entry point */
+int main() 
+{
+    // Declare and initialize three int type variables.
+    int A = 1, B = 1, input_additional_values = 1;
+
+    // Declare a file output stream handler.
+    std::ofstream file;
+
+    /**
+     * If the file named greatest_common_divisor.txt does not already exist 
+     * inside of the same file directory as the file named greatest_common_divisor.cpp, 
+     * create a new file named greatest_common_divisor_output.txt in that directory.
+     * 
+     * Open the plain-text file named greatest_common_divisor_output.txt
+     * and set that file to be overwritten with program data.
+     */
+    file.open("greatest_common_divisor_output.txt");
+
+    // Print an opening message to the command line terminal.
+    std::cout &lt;&lt; "\n\n--------------------------------";
+    std::cout &lt;&lt; "\nStart Of Program";
+    std::cout &lt;&lt; "\n--------------------------------";
+
+    // Print an opening message to the file output stream.
+    file &lt;&lt; "--------------------------------";
+    file &lt;&lt; "\nStart Of Program";
+    file &lt;&lt; "\n--------------------------------";
+
+    // Print "This C++ program computes the greatest common divisor of two natural numbers and prints the steps involved." to the command line terminal and to the file output stream.
+    std::cout &lt;&lt; "\n\nThis C++ program computes the greatest common divisor of two natural numbers and prints the steps involved.";
+    file &lt;&lt; "\n\nThis C++ program computes the greatest common divisor of two natural numbers and prints the steps involved.";
+
+    while (input_additional_values != 0) 
+    {
+
+        // Print a horizontal divider line to the command line terminal and to the file output stream.
+        std::cout &lt;&lt; "\n\n--------------------------------";
+        file &lt;&lt; "\n\n--------------------------------";
+
+        // Prompt the user to enter an input value for A (and print that prompt to the command line terminal and to the file output stream).
+        std::cout &lt;&lt; "\n\nEnter the first of two natural numbers (which will be stored in an int type variable named A) which is no larger than " &lt;&lt; MAXIMUM_INPUT_VALUE &lt;&lt; ": ";
+        file &lt;&lt; "\n\nEnter the first of two natural numbers (which will be stored in an int type variable named A) which is no larger than " &lt;&lt; MAXIMUM_INPUT_VALUE &lt;&lt; ": ";
+
+        // Scan the command line terminal for the most recent keyboard input value. Store that value in A.
+        std::cin &gt;&gt; A;
+
+        // Print "The value which was entered for A is {A}." to the command line terminal and to the file output stream.
+        std::cout &lt;&lt; "\nThe value which was entered for A is " &lt;&lt; A &lt;&lt; ".";
+        file &lt;&lt; "\n\nThe value which was entered for A is " &lt;&lt; A &lt;&lt; ".";
+
+        /**
+         * If A is smaller than 1 or if A is larger than MAXIMUM_INPUT_VALUE, set A to 1. 
+         * 
+         * Print "A has been reset to 1 due to the fact that the input value for A was either less than one or else greater than {MAXIMUM_INPUT_VALUE}." 
+         * to the command line terminal and to the file output stream.
+         */
+        if ((A &lt; 1) || (A &gt; MAXIMUM_INPUT_VALUE)) 
+        {
+            A = 1;
+            std::cout &lt;&lt; "\n\nA has been reset to 1 due to the fact that the input value for A was either less than one or else greater than " &lt;&lt; MAXIMUM_INPUT_VALUE &lt;&lt; ".";
+            file &lt;&lt; "\n\nA has been reset to 1 due to the fact that the input value for A was either less than one or else greater than " &lt;&lt; MAXIMUM_INPUT_VALUE &lt;&lt; ".";
+        }
+
+        // Print a horizontal divider line to the command line terminal and to the file output stream.
+        std::cout &lt;&lt; "\n\n--------------------------------";
+        file &lt;&lt; "\n\n--------------------------------";
+
+        // Prompt the user to enter an input value for B (and print that prompt to the command line terminal and to the file output stream).
+        std::cout &lt;&lt; "\n\nEnter the second of two natural numbers (which will be stored in an int type variable named B) which is no larger than " &lt;&lt; MAXIMUM_INPUT_VALUE &lt;&lt; ": ";
+        file &lt;&lt; "\n\nEnter the second of two natural numbers (which will be stored in an int type variable named B) which is no larger than " &lt;&lt; MAXIMUM_INPUT_VALUE &lt;&lt; ": ";
+
+        // Scan the command line terminal for the most recent keyboard input value. Store that value in B.
+        std::cin &gt;&gt; B;
+
+        // Print "The value which was entered for B is {B}." to the command line terminal and to the file output stream.
+        std::cout &lt;&lt; "\nThe value which was entered for B is " &lt;&lt; B &lt;&lt; ".";
+        file &lt;&lt; "\n\nThe value which was entered for B is " &lt;&lt; B &lt;&lt; ".";
+
+        /**
+         * If B is smaller than 1 or if B is larger than MAXIMUM_INPUT_VALUE, set B to 1. 
+         * 
+         * Print "B has been reset to 1 due to the fact that the input value for B was either less than one or else greater than {MAXIMUM_INPUT_VALUE}." 
+         * to the command line terminal and to the file output stream.
+         */
+        if ((B &lt; 1) || (B &gt; MAXIMUM_INPUT_VALUE)) 
+        {
+            B = 1;
+            std::cout &lt;&lt; "\n\nB has been reset to 1 due to the fact that the input value for B was either less than one or else greater than " &lt;&lt; MAXIMUM_INPUT_VALUE &lt;&lt; ".";
+            file &lt;&lt; "\n\nB has been reset to 1 due to the fact that the input value for B was either less than one or else greater than " &lt;&lt; MAXIMUM_INPUT_VALUE &lt;&lt; ".";
+        }
+
+        // Print a horizontal divider line to the command line terminal and to the file output stream.
+        std::cout &lt;&lt; "\n\n--------------------------------";
+        file &lt;&lt; "\n\n--------------------------------";
+
+        // Execute the greatest common divisor function (defined by this C++ source file) such that the computation steps and final result are printed to the comand line terminal.
+        print_greatest_common_divisor_computation_steps(A, B, std::cout);
+
+        // Execute the greatest common divisor function (defined by this C++ source file) such that the computation steps and final result are printed to the file output stream.
+        print_greatest_common_divisor_computation_steps(A, B, file);
+
+        // Ask the user whether or not to continue inputing values.
+        std::cout &lt;&lt; "\n\nWould you like to input new values for A and B? (Enter 1 if YES. Enter 0 if NO): ";
+
+        // Scan the command line terminal for the most recent keyboard input value.
+        std::cin &gt;&gt; input_additional_values;
+    }
+
+    // Print a closing message to the command line terminal.
+    std::cout &lt;&lt; "\n\n--------------------------------";
+    std::cout &lt;&lt; "\nEnd Of Program";
+    std::cout &lt;&lt; "\n--------------------------------\n\n";
+
+    // Print a closing message to the file output stream.
+    file &lt;&lt; "\n\n--------------------------------";
+    file &lt;&lt; "\nEnd Of Program";
+    file &lt;&lt; "\n--------------------------------";
+
+    // Close the file output stream.
+    file.close();
+
+    // Exit the program.
+    return 0; 
+}
+
+/**
+ * Use the Euclidean algorithm to compute the greatest common divisor of positive integers A and B.
+ *
+ * (This function assumes that A and B are each natural numbers which are not too large to be overflow values (i.e. values which are too large to be properly represented as positive quantities in the C++ int type variable)).
+ *
+ * (This function assumes that output is either std::cout, some ofstream object (pointing to a valid output file), or some other valid C++ output stream object).
+ * 
+ * Print each step of that iterative process to the output stream.
+ */
+void print_greatest_common_divisor_computation_steps(int A, int B, std::ostream&amp; output)
+{
+    int i = 0, remainder = 0;
+    output &lt;&lt; "\n\nComputing the greatest common divisor of A and B using the Euclidean algorithm...";
+    while (B != 0) 
+    {
+        remainder = A % B;
+        output &lt;&lt; "\n\nstep_" &lt;&lt; i &lt;&lt; ": ";
+        output &lt;&lt; "A = " &lt;&lt; A &lt;&lt; ", B = " &lt;&lt; B &lt;&lt; ", gcd(A,B) = A % B = " &lt;&lt; remainder &lt;&lt; ".";
+        A = B;
+        B = remainder;
+        i += 1;
+    }
+    output &lt;&lt; "\n\nThe greatest common divisor of A and B is " &lt;&lt; A;
+}
+</pre>
+<hr>
+<p><strong>SAMPLE_PROGRAM_OUTPUT</strong></p>
+<hr>
+<p>The text in the preformatted text box below was generated by one use case of the C++ program featured in this <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Computer_programming" target="_blank" rel="noopener">computer programming</a> tutorial web page.</p>
+<p>plain-text_file: <a style="background:#000000;color:#ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_21/main/greatest_common_divisor_output.txt" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_21/main/greatest_common_divisor_output.txt</a></p>
+<hr>
+<pre>
+--------------------------------
+Start Of Program
+--------------------------------
+
+This C++ program computes the greatest common divisor of two natural numbers and prints the steps involved.
+
+--------------------------------
+
+Enter the first of two natural numbers (which will be stored in an int type variable named A) which is no larger than 10000: 
+
+The value which was entered for A is 10.
+
+--------------------------------
+
+Enter the second of two natural numbers (which will be stored in an int type variable named B) which is no larger than 10000: 
+
+The value which was entered for B is 9.
+
+--------------------------------
+
+Computing the greatest common divisor of A and B using the Euclidean algorithm...
+
+step_0: A = 10, B = 9, gcd(A,B) = A % B = 1.
+
+step_1: A = 9, B = 1, gcd(A,B) = A % B = 0.
+
+The greatest common divisor of A and B is 1
+
+--------------------------------
+
+Enter the first of two natural numbers (which will be stored in an int type variable named A) which is no larger than 10000: 
+
+The value which was entered for A is 10.
+
+--------------------------------
+
+Enter the second of two natural numbers (which will be stored in an int type variable named B) which is no larger than 10000: 
+
+The value which was entered for B is 20.
+
+--------------------------------
+
+Computing the greatest common divisor of A and B using the Euclidean algorithm...
+
+step_0: A = 10, B = 20, gcd(A,B) = A % B = 10.
+
+step_1: A = 20, B = 10, gcd(A,B) = A % B = 0.
+
+The greatest common divisor of A and B is 10
+
+--------------------------------
+
+Enter the first of two natural numbers (which will be stored in an int type variable named A) which is no larger than 10000: 
+
+The value which was entered for A is 144.
+
+--------------------------------
+
+Enter the second of two natural numbers (which will be stored in an int type variable named B) which is no larger than 10000: 
+
+The value which was entered for B is 99.
+
+--------------------------------
+
+Computing the greatest common divisor of A and B using the Euclidean algorithm...
+
+step_0: A = 144, B = 99, gcd(A,B) = A % B = 45.
+
+step_1: A = 99, B = 45, gcd(A,B) = A % B = 9.
+
+step_2: A = 45, B = 9, gcd(A,B) = A % B = 0.
+
+The greatest common divisor of A and B is 9
+
+--------------------------------
+
+Enter the first of two natural numbers (which will be stored in an int type variable named A) which is no larger than 10000: 
+
+The value which was entered for A is -11.
+
+A has been reset to 1 due to the fact that the input value for A was either less than one or else greater than 10000.
+
+--------------------------------
+
+Enter the second of two natural numbers (which will be stored in an int type variable named B) which is no larger than 10000: 
+
+The value which was entered for B is -11.
+
+B has been reset to 1 due to the fact that the input value for B was either less than one or else greater than 10000.
+
+--------------------------------
+
+Computing the greatest common divisor of A and B using the Euclidean algorithm...
+
+step_0: A = 1, B = 1, gcd(A,B) = A % B = 0.
+
+The greatest common divisor of A and B is 1
+
+--------------------------------
+
+Enter the first of two natural numbers (which will be stored in an int type variable named A) which is no larger than 10000: 
+
+The value which was entered for A is 10001.
+
+A has been reset to 1 due to the fact that the input value for A was either less than one or else greater than 10000.
+
+--------------------------------
+
+Enter the second of two natural numbers (which will be stored in an int type variable named B) which is no larger than 10000: 
+
+The value which was entered for B is 10001.
+
+B has been reset to 1 due to the fact that the input value for B was either less than one or else greater than 10000.
+
+--------------------------------
+
+Computing the greatest common divisor of A and B using the Euclidean algorithm...
+
+step_0: A = 1, B = 1, gcd(A,B) = A % B = 0.
+
+The greatest common divisor of A and B is 1
+
+--------------------------------
+
+Enter the first of two natural numbers (which will be stored in an int type variable named A) which is no larger than 10000: 
+
+The value which was entered for A is 10000.
+
+--------------------------------
+
+Enter the second of two natural numbers (which will be stored in an int type variable named B) which is no larger than 10000: 
+
+The value which was entered for B is 10000.
+
+--------------------------------
+
+Computing the greatest common divisor of A and B using the Euclidean algorithm...
+
+step_0: A = 10000, B = 10000, gcd(A,B) = A % B = 0.
+
+The greatest common divisor of A and B is 10000
+
+--------------------------------
+
+Enter the first of two natural numbers (which will be stored in an int type variable named A) which is no larger than 10000: 
+
+The value which was entered for A is 0.
+
+A has been reset to 1 due to the fact that the input value for A was either less than one or else greater than 10000.
+
+--------------------------------
+
+Enter the second of two natural numbers (which will be stored in an int type variable named B) which is no larger than 10000: 
+
+The value which was entered for B is 0.
+
+B has been reset to 1 due to the fact that the input value for B was either less than one or else greater than 10000.
+
+--------------------------------
+
+Computing the greatest common divisor of A and B using the Euclidean algorithm...
+
+step_0: A = 1, B = 1, gcd(A,B) = A % B = 0.
+
+The greatest common divisor of A and B is 1
+
+--------------------------------
+
+Enter the first of two natural numbers (which will be stored in an int type variable named A) which is no larger than 10000: 
+
+The value which was entered for A is 1.
+
+--------------------------------
+
+Enter the second of two natural numbers (which will be stored in an int type variable named B) which is no larger than 10000: 
+
+The value which was entered for B is 1.
+
+--------------------------------
+
+Computing the greatest common divisor of A and B using the Euclidean algorithm...
+
+step_0: A = 1, B = 1, gcd(A,B) = A % B = 0.
+
+The greatest common divisor of A and B is 1
+
+--------------------------------
+
+Enter the first of two natural numbers (which will be stored in an int type variable named A) which is no larger than 10000: 
+
+The value which was entered for A is 666.
+
+--------------------------------
+
+Enter the second of two natural numbers (which will be stored in an int type variable named B) which is no larger than 10000: 
+
+The value which was entered for B is 303.
+
+--------------------------------
+
+Computing the greatest common divisor of A and B using the Euclidean algorithm...
+
+step_0: A = 666, B = 303, gcd(A,B) = A % B = 60.
+
+step_1: A = 303, B = 60, gcd(A,B) = A % B = 3.
+
+step_2: A = 60, B = 3, gcd(A,B) = A % B = 0.
+
+The greatest common divisor of A and B is 3
+
+--------------------------------
+
+Enter the first of two natural numbers (which will be stored in an int type variable named A) which is no larger than 10000: 
+
+The value which was entered for A is 1024.
+
+--------------------------------
+
+Enter the second of two natural numbers (which will be stored in an int type variable named B) which is no larger than 10000: 
+
+The value which was entered for B is 888.
+
+--------------------------------
+
+Computing the greatest common divisor of A and B using the Euclidean algorithm...
+
+step_0: A = 1024, B = 888, gcd(A,B) = A % B = 136.
+
+step_1: A = 888, B = 136, gcd(A,B) = A % B = 72.
+
+step_2: A = 136, B = 72, gcd(A,B) = A % B = 64.
+
+step_3: A = 72, B = 64, gcd(A,B) = A % B = 8.
+
+step_4: A = 64, B = 8, gcd(A,B) = A % B = 0.
+
+The greatest common divisor of A and B is 8
+
+--------------------------------
+End Of Program
+--------------------------------
+</pre>
+<hr>
+<p>This web page was last updated on 14_OCTOBER_2024. The content displayed on this web page is licensed as <a style="background:#000000;color:#ff9000" href="https://karlinaobject.wordpress.com/public_domain/" target="_blank" rel="noopener">PUBLIC_DOMAIN</a> intellectual property.</p>
+<hr>
