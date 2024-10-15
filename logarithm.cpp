@@ -7,49 +7,68 @@
  */
 
 /** preprocessing directives */
-#include <iostream>
-#include <cstdlib>
-#include <limits>
+#include <iostream> // standard input (std::cin), standard output (std::cout)
+#include <fstream> // file input, file output
 #define MAXIMUM_x 10000 // constant which represents maximum value of x
 #define MAXIMUM_logarithmic_base 10000 // constant which represents maximum value of logarithmic_base
 
 /** function prototypes */
-float ln(float x) 
+double ln(double x) 
 double power(double base, double exponent);
 double logarithm(double x, double logarithmic_base);
 
-int main(int argc, char *argv[]) {
-    if (argc != 3) {
-        std::cerr << "Usage: " << argv[0] << " <logarithmic_base> <x>\n";
-        return 1;
-    }
+/** program entry point */
+int main()
+{
+    // Define three double type variables for storing floating-point number values.
+    double x = 0.0, logarithmic_base = 0.0, result = 0.0;
+    
+    /**
+     * If the file named logarithm_output.txt does not already exist 
+     * inside of the same file directory as the file named logarithm.cpp, 
+     * create a new file named logarithm_output.txt in that directory.
+     * 
+     * Open the plain-text file named logarithm_output.txt
+     * and set that file to be overwritten with program data.
+     */
+    file.open("logarithm_output.txt");
 
-    // Parse the input values from command line
-    double logarithmic_base = std::atof(argv[1]);
-    double x = std::atof(argv[2]);
+    // Print an opening message to the command line terminal.
+    cout << "\n\n--------------------------------";
+    cout << "\nStart Of Program";
+    cout << "\n--------------------------------";
 
-    if (logarithmic_base <= 0 || x <= 0) {
-        std::cerr << "Error: logarithmic base and x must be positive numbers.\n";
-        return 1;
-    }
+    // Print an opening message to the file output stream.
+    file << "--------------------------------";
+    file << "\nStart Of Program";
+    file << "\n--------------------------------";
 
-    // Compute logarithm
-    double result = logarithm(x, logarithmic_base);
+    // Print "This C++ program computes the logarithm of x in some given logarithmic base." to the command line terminal and to the file output stream.
+    cout << "\n\nThis C++ program computes the logarithm of x in some given logarithmic base.";
+    file << "\n\nThis C++ program computes the logarithm of x in some given logarithmic base.";
 
-    // Output result
-    std::cout << "log_" << logarithmic_base << "(" << x << ") = " << result << std::endl;
+    // Print a horizontal divider line to the command line terminal and to the file output stream.
+    std::cout << "\n\n--------------------------------";
+    file << "\n\n--------------------------------";
 
-    return 0;
+    //....
+
+    // Print a closing message to the command line terminal.
+    cout << "\n\n--------------------------------";
+    cout << "\nEnd Of Program";
+    cout << "\n--------------------------------\n\n";
+
+    // Print a closing message to the file output stream.
+    file << "\n\n--------------------------------";
+    file << "\nEnd Of Program";
+    file << "\n--------------------------------";
+
+    // Close the file output stream.
+    file.close();
+
+    // Exit the program.
+    return 0; 
 }
-
-
-
-
-
-
-
-
-
 
 //--------------------------------------------------------------------------------------------------------------------
 // The following function and associated comments were not written by karbytes. 
@@ -77,6 +96,7 @@ int main(int argc, char *argv[]) {
 
 // ============================================
 
+/*
 float ln(float x) {
   unsigned int bx = * (unsigned int *) (&x);
   unsigned int ex = bx >> 23;
@@ -86,11 +106,27 @@ float ln(float x) {
   x = * (float *) (&bx);
   return -1.49278+(2.11263+(-0.729104+0.10969*x)*x)*x+0.6931471806*t;
 }
+*/
 // done.
 
 //--------------------------------------------------------------------------------------------------------------------
 // End of code which was not written by karbytes. 
 //--------------------------------------------------------------------------------------------------------------------
+
+// Alternate version of the natural logarithm function
+float ln(double x) {
+    unsigned int bx = * (unsigned int *) (&x);
+    unsigned int ex = bx >> 23;
+    signed int t = (signed int)ex - (signed int)127;
+    unsigned int s = (t < 0) ? (-t) : t;
+    bx = 1065353216 | (bx & 8388607);
+    x = * (float *) (&bx);
+
+    // Using ln(e) for 0.6931471806
+    const float ln_e = std::log(M_E);  // ln(e) = 1
+
+    return -1.49278 + (2.11263 + (-0.729104 + 0.10969 * x) * x) * x + ln_e * t;
+}
 
 /**
  * Reverse engineer the cmath pow() function 
