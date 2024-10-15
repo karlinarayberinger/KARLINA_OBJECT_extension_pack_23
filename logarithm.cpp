@@ -13,7 +13,10 @@
 #define MAXIMUM_logarithmic_base 10000 // constant which represents maximum value of logarithmic_base
 
 /** function prototypes */
-double ln(double x) 
+bool is_whole_number(double x);
+double absolute_value(double x);
+double power_of_e_to_x(double x);
+double ln(double x);
 double power(double base, double exponent);
 double logarithm(double x, double logarithmic_base);
 
@@ -22,7 +25,10 @@ int main()
 {
     // Define three double type variables for storing floating-point number values.
     double x = 0.0, logarithmic_base = 0.0, result = 0.0;
-    
+
+    // Declare a file output stream handler (which represents the plain-text file to generate and/or overwrite with program data).
+    std::ofstream file;
+
     /**
      * If the file named logarithm_output.txt does not already exist 
      * inside of the same file directory as the file named logarithm.cpp, 
@@ -34,9 +40,9 @@ int main()
     file.open("logarithm_output.txt");
 
     // Print an opening message to the command line terminal.
-    cout << "\n\n--------------------------------";
-    cout << "\nStart Of Program";
-    cout << "\n--------------------------------";
+    std::cout << "\n\n--------------------------------";
+    std::cout << "\nStart Of Program";
+    std::cout << "\n--------------------------------";
 
     // Print an opening message to the file output stream.
     file << "--------------------------------";
@@ -44,19 +50,32 @@ int main()
     file << "\n--------------------------------";
 
     // Print "This C++ program computes the logarithm of x in some given logarithmic base." to the command line terminal and to the file output stream.
-    cout << "\n\nThis C++ program computes the logarithm of x in some given logarithmic base.";
+    std::cout << "\n\nThis C++ program computes the logarithm of x in some given logarithmic base.";
     file << "\n\nThis C++ program computes the logarithm of x in some given logarithmic base.";
 
     // Print a horizontal divider line to the command line terminal and to the file output stream.
     std::cout << "\n\n--------------------------------";
     file << "\n\n--------------------------------";
 
-    //....
+    // Prompt the user to enter an input value for x (and print that prompt to the command line terminal and to the file output stream).
+    std::cout << "\n\nEnter a positive real number, x, to take the logarithm of and which is no larger than " << MAXIMUM_x << ": ";
+    file << "\n\nEnter a positive real number, x, to take the logarithm of and which is no larger than " << MAXIMUM_x << ": ";
+
+    // Scan the command line terminal for the most recent keyboard input value. Store that value in N.
+    std::cin >> x;
+
+    // Print "The value which was entered for x is {x}." to the command line terminal and to the file output stream.
+    std::cout << "\nThe value which was entered for x is " << x << ".";
+    file << "\n\nThe value which was entered for x is " << x << ".";
+
+    // Print a horizontal divider line to the command line terminal and to the file output stream.
+    std::cout << "\n\n--------------------------------";
+    file << "\n\n--------------------------------";
 
     // Print a closing message to the command line terminal.
-    cout << "\n\n--------------------------------";
-    cout << "\nEnd Of Program";
-    cout << "\n--------------------------------\n\n";
+    std::cout << "\n\n--------------------------------";
+    std::cout << "\nEnd Of Program";
+    std::cout << "\n--------------------------------\n\n";
 
     // Print a closing message to the file output stream.
     file << "\n\n--------------------------------";
@@ -68,6 +87,65 @@ int main()
 
     // Exit the program.
     return 0; 
+}
+
+/**
+ * If x is determined to be a whole number, return true.
+ * Otherwise, return false.
+ * 
+ *--------------------------------------------------------------------------------------------------------------------
+ * 
+ * The following function was copied from the C++ source code file featured in the following tutorial web page:
+ * 
+ * https://karlinaobject.wordpress.com/exponentiation/
+ * 
+ *--------------------------------------------------------------------------------------------------------------------
+ */
+bool is_whole_number(double x)
+{
+    return (x == (long int) x); 
+}
+
+/**
+ * Return the absolute value of a real number input, x.
+ * 
+ *--------------------------------------------------------------------------------------------------------------------
+ * 
+ * The following function was copied from the C++ source code file featured in the following tutorial web page:
+ * 
+ * https://karlinaobject.wordpress.com/exponentiation/
+ * 
+ *--------------------------------------------------------------------------------------------------------------------
+ */
+double absolute_value(double x)
+{
+    if (x < 0) return -1 * x;
+    return x;
+}
+
+/**
+ * Return the approximate value of Euler's Number to the power of some real number x.
+ * 
+ * This function is essentially identical to the C++ library math.h function exp().
+ * 
+ *--------------------------------------------------------------------------------------------------------------------
+ * 
+ * The following function was copied from the C++ source code file featured in the following tutorial web page:
+ * 
+ * https://karlinaobject.wordpress.com/exponentiation/
+ * 
+ *--------------------------------------------------------------------------------------------------------------------
+ */
+double power_of_e_to_x(double x) {
+    double a = 1.0, e = a;
+    int n = 1;
+    int invert = x < 0;
+    x = absolute_value(x);
+    for (n = 1; e != e + a; n += 1) {
+        a = a * x / n;
+        e += a;
+    }
+    return invert ? (1 / e) : e;
 }
 
 //--------------------------------------------------------------------------------------------------------------------
@@ -96,7 +174,6 @@ int main()
 
 // ============================================
 
-/*
 float ln(float x) {
   unsigned int bx = * (unsigned int *) (&x);
   unsigned int ex = bx >> 23;
@@ -106,27 +183,12 @@ float ln(float x) {
   x = * (float *) (&bx);
   return -1.49278+(2.11263+(-0.729104+0.10969*x)*x)*x+0.6931471806*t;
 }
-*/
+
 // done.
 
 //--------------------------------------------------------------------------------------------------------------------
 // End of code which was not written by karbytes. 
 //--------------------------------------------------------------------------------------------------------------------
-
-// Alternate version of the natural logarithm function
-float ln(double x) {
-    unsigned int bx = * (unsigned int *) (&x);
-    unsigned int ex = bx >> 23;
-    signed int t = (signed int)ex - (signed int)127;
-    unsigned int s = (t < 0) ? (-t) : t;
-    bx = 1065353216 | (bx & 8388607);
-    x = * (float *) (&bx);
-
-    // Using ln(e) for 0.6931471806
-    const float ln_e = std::log(M_E);  // ln(e) = 1
-
-    return -1.49278 + (2.11263 + (-0.729104 + 0.10969 * x) * x) * x + ln_e * t;
-}
 
 /**
  * Reverse engineer the cmath pow() function 
