@@ -1,0 +1,17 @@
+--------------------------------
+Start Of Program
+--------------------------------
+
+This C++ program computes the logarithm of x in some given logarithmic base.
+
+--------------------------------
+
+Enter a positive real number, x, to take the logarithm of and which is no larger than 10000: 
+
+The value which was entered for x is 1.23.
+
+--------------------------------
+
+--------------------------------
+End Of Program
+--------------------------------

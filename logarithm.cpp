@@ -16,9 +16,9 @@
 bool is_whole_number(double x);
 double absolute_value(double x);
 double power_of_e_to_x(double x);
-double ln(double x);
+float ln(float x);
 double power(double base, double exponent);
-double logarithm(double x, double logarithmic_base);
+double logarithm(float x, float logarithmic_base);
 
 /** program entry point */
 int main()
@@ -229,13 +229,15 @@ float ln(float x) {
  * For example, if x is 2 and y is -3,
  * 2 ^ -3 = power(2, -3) = 1 / (2 * 2 * 2) = 1 / 8 = 0.125.
  * 
- *--------------------------------------------------------------------------------------------------------------------
+ *----------------------------------------------------------------------------------------------------------------------------------------
  * 
- * The following function was copied from the C++ source code file featured in the following tutorial web page:
+ * The following function was copied (and slightly edited) from the C++ source code file featured in the following tutorial web page:
  * 
  * https://karlinaobject.wordpress.com/exponentiation/
+ * 
+ * (The data types of the function parameters have been changed from double to float).
  *
- *--------------------------------------------------------------------------------------------------------------------
+ *----------------------------------------------------------------------------------------------------------------------------------------
  */
 double power(double base, double exponent)
 {
