@@ -18,7 +18,7 @@ double absolute_value(double x);
 double power_of_e_to_x(double x);
 float ln(float x);
 double power(double base, double exponent);
-double logarithm(float x, float logarithmic_base);
+double logarithm(double x, double logarithmic_base);
 
 /** program entry point */
 int main()
@@ -86,6 +86,13 @@ int main()
     // Print a horizontal divider line to the command line terminal and to the file output stream.
     std::cout << "\n\n--------------------------------";
     file << "\n\n--------------------------------";
+
+    // Obtain the result of log_b(x) where b is logarithmic_base.
+    result = logarithm(x, logarithmic_base);
+
+    // Print the result of the logarithmic function to the command line terminal and to the file output stream.
+    std::cout << "\n\nresult = logarithm(x, logarithmic_base) = logarithm(" << x << ", " << logarithmic_base << ") = " << result << ".";
+    file << "\n\nresult = logarithm(x, logarithmic_base) = logarithm(" << x << ", " << logarithmic_base << ") = " << result << ".";
 
     // Print a closing message to the command line terminal.
     std::cout << "\n\n--------------------------------";

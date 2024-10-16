@@ -8,15 +8,17 @@ This C++ program computes the logarithm of x in some given logarithmic base.
 
 Enter a positive real number, x, to take the logarithm of and which is no larger than 10000: 
 
-The value which was entered for x is 102.55.
+The value which was entered for x is 16.
 
 --------------------------------
 
 Enter a positive real number, logarithmic_base, which is a positive real number other than one and which is no larger than 10000: 
 
-The value which was entered for logarithmic_base is 44.4.
+The value which was entered for logarithmic_base is 2.
 
 --------------------------------
+
+result = logarithm(x, logarithmic_base) = logarithm(16, 2) = 3.99811.
 
 --------------------------------
 End Of Program
