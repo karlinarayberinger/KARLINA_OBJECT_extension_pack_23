@@ -102,11 +102,11 @@ int main()
     }
 
     // Set logarithmic_base to 2 if logarithmic_base is out of range (and specify that such a change occurred in the command line terminal and output file stream).
-    if (!(logarithmic_base > 0) || (logarithmic_base == 1) || (logarithmic_base > MAXIMUM_logarithmic_base)) 
+    if ((logarithmic_base <= 0) || (logarithmic_base == 1) || (logarithmic_base > MAXIMUM_logarithmic_base)) 
     {
         logarithmic_base = 2; 
-        std::cout << "\n\nDue to fact that logarithmic_base was determined to be either less than zero, equal to one, or else greater than " << MAXIMUM_logarithmic_base << ", logarithmic_base was set to the default value 2.";
-        file << "\n\nDue to fact that logarithmic_base was determined to be either less than zero, equal to one, or else greater than " << MAXIMUM_logarithmic_base << ", logarithmic_base was set to the default value 2.";
+        std::cout << "\n\nDue to fact that logarithmic_base was determined to be either less than or equal to zero or else equal to one or else greater than " << MAXIMUM_logarithmic_base << ", logarithmic_base was set to the default value 2.";
+        file << "\n\nDue to fact that logarithmic_base was determined to be either less than or equal to zero or else equal to one or else greater than " << MAXIMUM_logarithmic_base << ", logarithmic_base was set to the default value 2.";
     }
 
     // Obtain the result of log_b(x) where b is logarithmic_base.
@@ -395,6 +395,6 @@ double power(double base, double exponent)
  */
 double logarithm(double x, double logarithmic_base) {
     if ((x <= 0) || (x > MAXIMUM_x)) x = 1; // Set x to 1 by default if x is out of range.
-    if (!(logarithmic_base > 0) || (logarithmic_base == 1) || (logarithmic_base > MAXIMUM_logarithmic_base)) logarithmic_base = 2; // Set logarithmic_base to 2 if logarithmic_base is out of range.
+    if ((logarithmic_base <= 0) || (logarithmic_base == 1) || (logarithmic_base > MAXIMUM_logarithmic_base)) logarithmic_base = 2; // Set logarithmic_base to 2 if logarithmic_base is out of range.
     return ln(x) / ln(logarithmic_base);
 }
