@@ -61,12 +61,27 @@ int main()
     std::cout << "\n\nEnter a positive real number, x, to take the logarithm of and which is no larger than " << MAXIMUM_x << ": ";
     file << "\n\nEnter a positive real number, x, to take the logarithm of and which is no larger than " << MAXIMUM_x << ": ";
 
-    // Scan the command line terminal for the most recent keyboard input value. Store that value in N.
+    // Scan the command line terminal for the most recent keyboard input value. Store that value in x.
     std::cin >> x;
 
     // Print "The value which was entered for x is {x}." to the command line terminal and to the file output stream.
     std::cout << "\nThe value which was entered for x is " << x << ".";
     file << "\n\nThe value which was entered for x is " << x << ".";
+
+    // Print a horizontal divider line to the command line terminal and to the file output stream.
+    std::cout << "\n\n--------------------------------";
+    file << "\n\n--------------------------------";
+
+    // Prompt the user to enter an input value for logarithmic_base (and print that prompt to the command line terminal and to the file output stream).
+    std::cout << "\n\nEnter a positive real number, logarithmic_base, which is a positive real number other than one and which is no larger than " << MAXIMUM_logarithmic_base << ": ";
+    file << "\n\nEnter a positive real number, logarithmic_base, which is a positive real number other than one and which is no larger than " << MAXIMUM_logarithmic_base << ": ";
+
+    // Scan the command line terminal for the most recent keyboard input value. Store that value in logarithmic_base.
+    std::cin >> logarithmic_base;
+
+    // Print "The value which was entered for logarithmic_base is {logarithmic_base}." to the command line terminal and to the file output stream.
+    std::cout << "\nThe value which was entered for logarithmic_base is " << logarithmic_base << ".";
+    file << "\n\nThe value which was entered for logarithmic_base is " << logarithmic_base << ".";
 
     // Print a horizontal divider line to the command line terminal and to the file output stream.
     std::cout << "\n\n--------------------------------";
@@ -297,7 +312,7 @@ double power(double base, double exponent)
  * 
  * x is required to be a positive real number.
  * 
- * logarithmic_base is required to be a positive real number which is larger than one.
+ * logarithmic_base is required to be a positive real number other than one.
  * 
  * This function works by utilizing the following Change of Base (for Logarithms) formula:
  * 
@@ -305,6 +320,6 @@ double power(double base, double exponent)
  */
 double logarithm(double x, double logarithmic_base) {
     if ((x <= 0) || (x > MAXIMUM_x)) x = 1; // Set x to 1 by default if x is out of range.
-    if ((logarithmic_base <= 1) || (logarithmic_base > MAXIMUM_logarithmic_base)) logarithmic_base = 2; // Set logarithmic_base to 2 if logarithmic_base is out of range.
+    if (!(logarithmic_base > 0) || (logarithmic_base == 1) || (logarithmic_base > MAXIMUM_logarithmic_base)) logarithmic_base = 2; // Set logarithmic_base to 2 if logarithmic_base is out of range.
     return ln(x) / ln(logarithmic_base);
 }
