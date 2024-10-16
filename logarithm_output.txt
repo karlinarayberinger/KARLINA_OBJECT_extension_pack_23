@@ -2,7 +2,77 @@
 Start Of Program
 --------------------------------
 
-This C++ program computes the logarithm of x in some given logarithmic base.
+This C++ program computes the (approximate) logarithm of x in some given logarithmic base.
+
+--------------------------------
+
+Enter a positive real number, x, to take the logarithm of and which is no larger than 10000: 
+
+The value which was entered for x is 16.
+
+--------------------------------
+
+Enter a positive real number, logarithmic_base, which is a positive real number other than one and which is no larger than 10000: 
+
+The value which was entered for logarithmic_base is 2.
+
+--------------------------------
+
+result = logarithm(x, logarithmic_base) = logarithm(16, 2) = 3.998114109039306640625.
+
+x = logarithmic_base ^ result --> 16 = 2 ^ 3.998114109039306640625.
+
+x = power(logarithmic_base, result) = power(2, 3.998114109039306640625) = 16.00697779719589419755720882676541805267333984375.
+
+--------------------------------
+
+--------------------------------
+
+Enter a positive real number, x, to take the logarithm of and which is no larger than 10000: 
+
+The value which was entered for x is -4.
+
+--------------------------------
+
+Enter a positive real number, logarithmic_base, which is a positive real number other than one and which is no larger than 10000: 
+
+The value which was entered for logarithmic_base is 2.
+
+--------------------------------
+
+Due to fact that x was determined to be either less than or equal to zero or else greater than 10000, x was set to the default value 1.
+
+result = logarithm(x, logarithmic_base) = logarithm(1, 2) = 0.0006286196294240653514862060546875.
+
+x = logarithmic_base ^ result --> 1 = 2 ^ 0.0006286196294240653514862060546875.
+
+x = power(logarithmic_base, result) = power(2, 0.0006286196294240653514862060546875) = 1.000436095069968445159247494302690029144287109375.
+
+--------------------------------
+
+--------------------------------
+
+Enter a positive real number, x, to take the logarithm of and which is no larger than 10000: 
+
+The value which was entered for x is 3.
+
+--------------------------------
+
+Enter a positive real number, logarithmic_base, which is a positive real number other than one and which is no larger than 10000: 
+
+The value which was entered for logarithmic_base is 1.
+
+--------------------------------
+
+Due to fact that logarithmic_base was determined to be either less than or equal to zero or else equal to one or else greater than 10000, logarithmic_base was set to the default value 2.
+
+result = logarithm(x, logarithmic_base) = logarithm(3, 2) = 1.5845711231231689453125.
+
+x = logarithmic_base ^ result --> 3 = 2 ^ 1.5845711231231689453125.
+
+x = power(logarithmic_base, result) = power(2, 1.5845711231231689453125) = 3.0012590833068610862710556830279529094696044921875.
+
+--------------------------------
 
 --------------------------------
 
@@ -23,6 +93,118 @@ result = logarithm(x, logarithmic_base) = logarithm(10000, 9999) = 1.00001096725
 x = logarithmic_base ^ result --> 10000 = 9999 ^ 1.000010967254638671875.
 
 x = power(logarithmic_base, result) = power(9999, 1.000010967254638671875) = 9997.626101374147765454836189746856689453125.
+
+--------------------------------
+
+--------------------------------
+
+Enter a positive real number, x, to take the logarithm of and which is no larger than 10000: 
+
+The value which was entered for x is 256.
+
+--------------------------------
+
+Enter a positive real number, logarithmic_base, which is a positive real number other than one and which is no larger than 10000: 
+
+The value which was entered for logarithmic_base is 2.
+
+--------------------------------
+
+result = logarithm(x, logarithmic_base) = logarithm(256, 2) = 7.995599269866943359375.
+
+x = logarithmic_base ^ result --> 256 = 2 ^ 7.995599269866943359375.
+
+x = power(logarithmic_base, result) = power(2, 7.995599269866943359375) = 256.111590804743400440202094614505767822265625.
+
+--------------------------------
+
+--------------------------------
+
+Enter a positive real number, x, to take the logarithm of and which is no larger than 10000: 
+
+The value which was entered for x is 144.
+
+--------------------------------
+
+Enter a positive real number, logarithmic_base, which is a positive real number other than one and which is no larger than 10000: 
+
+The value which was entered for logarithmic_base is 0.5.
+
+--------------------------------
+
+result = logarithm(x, logarithmic_base) = logarithm(144, 0.5) = -7.17379283905029296875.
+
+x = logarithmic_base ^ result --> 144 = 0.5 ^ -7.17379283905029296875.
+
+x = power(logarithmic_base, result) = power(0.5, -7.17379283905029296875) = 1.0069717383702896373876001234748400747776031494140625.
+
+--------------------------------
+
+--------------------------------
+
+Enter a positive real number, x, to take the logarithm of and which is no larger than 10000: 
+
+The value which was entered for x is 3.
+
+--------------------------------
+
+Enter a positive real number, logarithmic_base, which is a positive real number other than one and which is no larger than 10000: 
+
+The value which was entered for logarithmic_base is 10.
+
+--------------------------------
+
+result = logarithm(x, logarithmic_base) = logarithm(3, 10) = 0.477328956127166748046875.
+
+x = logarithmic_base ^ result --> 3 = 10 ^ 0.477328956127166748046875.
+
+x = power(logarithmic_base, result) = power(10, 0.477328956127166748046875) = 3.001259233165300965850974534987471997737884521484375.
+
+--------------------------------
+
+--------------------------------
+
+Enter a positive real number, x, to take the logarithm of and which is no larger than 10000: 
+
+The value which was entered for x is 666.
+
+--------------------------------
+
+Enter a positive real number, logarithmic_base, which is a positive real number other than one and which is no larger than 10000: 
+
+The value which was entered for logarithmic_base is 2.718281828459045090795598298427648842334747314453125.
+
+--------------------------------
+
+result = logarithm(x, logarithmic_base) = logarithm(666, 2.718281828459045090795598298427648842334747314453125) = 6.499555110931396484375.
+
+x = logarithmic_base ^ result --> 666 = 2.718281828459045090795598298427648842334747314453125 ^ 6.499555110931396484375.
+
+x = power(logarithmic_base, result) = power(2.718281828459045090795598298427648842334747314453125, 6.499555110931396484375) = 666.0538243024644771139719523489475250244140625.
+
+--------------------------------
+
+--------------------------------
+
+Enter a positive real number, x, to take the logarithm of and which is no larger than 10000: 
+
+The value which was entered for x is 81.
+
+--------------------------------
+
+Enter a positive real number, logarithmic_base, which is a positive real number other than one and which is no larger than 10000: 
+
+The value which was entered for logarithmic_base is 3.
+
+--------------------------------
+
+result = logarithm(x, logarithmic_base) = logarithm(81, 3) = 3.9984185695648193359375.
+
+x = logarithmic_base ^ result --> 81 = 3 ^ 3.9984185695648193359375.
+
+x = power(logarithmic_base, result) = power(3, 3.9984185695648193359375) = 80.99518093475552404925110749900341033935546875.
+
+--------------------------------
 
 --------------------------------
 End Of Program
