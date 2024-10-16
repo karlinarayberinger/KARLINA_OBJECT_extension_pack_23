@@ -336,7 +336,7 @@ double power(double base, double exponent)
  * is theoretically possible because to say that some number is multiplied by zero is logically equivalent to saying 
  * that number occurs zero times. By contrast, dividing some number by zero is logically equivalent to saying that
  * number is compartmentalized into zero equally-sized parts (and none of those parts apparently have any non-zero size and
- * infinitely many of such parts take up any space of any size)).
+ * infinitely many of such parts take up any space of any size (whether that size is zero or some positive quantity))).
  * 
  *--------------------------------------------------------------------------------------------------------------------
  * 
