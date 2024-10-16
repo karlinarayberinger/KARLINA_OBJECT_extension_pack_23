@@ -29,6 +29,12 @@ int main()
     // Declare a file output stream handler (which represents the plain-text file to generate and/or overwrite with program data).
     std::ofstream file;
 
+    // Set the number of digits of floating-point numbers which are printed to the command line terminal to 100 digits.
+    std::cout.precision(100);
+
+    // Set the number of digits of floating-point numbers which are printed to the file output stream to 100 digits.
+    file.precision(100);
+
     /**
      * If the file named logarithm_output.txt does not already exist 
      * inside of the same file directory as the file named logarithm.cpp, 
@@ -112,9 +118,9 @@ int main()
 
     // Print the inverse of the logarithmic expression to the command line terminal and to the file output stream.
     std::cout << "\n\nx = logarithmic_base ^ result --> " << x << " = " << logarithmic_base << " ^ " << result << ".";
-    std::cout << "\n\nx = power(logarithmic_base, result) = " << power(logarithmic_base, result) << ".";
+    std::cout << "\n\nx = power(logarithmic_base, result) = power(" << logarithmic_base << ", " << result << ") = " << power(logarithmic_base, result) << ".";
     file << "\n\nx = logarithmic_base ^ result --> " << x << " = " << logarithmic_base << " ^ " << result << ".";
-    file << "\n\nx = power(logarithmic_base, result) = " << power(logarithmic_base, result) << ".";
+    file << "\n\nx = power(logarithmic_base, result) = power(" << logarithmic_base << ", " << result << ") = " << power(logarithmic_base, result) << ".";
 
     // Print a closing message to the command line terminal.
     std::cout << "\n\n--------------------------------";
