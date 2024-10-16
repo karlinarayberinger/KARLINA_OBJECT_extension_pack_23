@@ -26,6 +26,9 @@ int main()
     // Define three double type variables for storing floating-point number values.
     double x = 0.0, logarithmic_base = 0.0, result = 0.0;
 
+    // Declare a variable for storing the program user's answer of whether or not to continue inputting values.
+    int input_additional_values = 1;
+
     // Declare a file output stream handler (which represents the plain-text file to generate and/or overwrite with program data).
     std::ofstream file;
 
@@ -55,9 +58,86 @@ int main()
     file << "\nStart Of Program";
     file << "\n--------------------------------";
 
-    // Print "This C++ program computes the logarithm of x in some given logarithmic base." to the command line terminal and to the file output stream.
-    std::cout << "\n\nThis C++ program computes the logarithm of x in some given logarithmic base.";
-    file << "\n\nThis C++ program computes the logarithm of x in some given logarithmic base.";
+    // Print "This C++ program computes the (approximate) logarithm of x in some given logarithmic base." to the command line terminal and to the file output stream.
+    std::cout << "\n\nThis C++ program computes the (approximate) logarithm of x in some given logarithmic base.";
+    file << "\n\nThis C++ program computes the (approximate) logarithm of x in some given logarithmic base.";
+
+    // Execute the code inside of the while loop block at least once (and until the program user inputs a value specifying to exit the program).
+    while (input_additional_values != 0)
+    {
+        // Print a horizontal divider line to the command line terminal and to the file output stream.
+        std::cout << "\n\n--------------------------------";
+        file << "\n\n--------------------------------";
+
+        // Prompt the user to enter an input value for x (and print that prompt to the command line terminal and to the file output stream).
+        std::cout << "\n\nEnter a positive real number, x, to take the logarithm of and which is no larger than " << MAXIMUM_x << ": ";
+        file << "\n\nEnter a positive real number, x, to take the logarithm of and which is no larger than " << MAXIMUM_x << ": ";
+
+        // Scan the command line terminal for the most recent keyboard input value. Store that value in x.
+        std::cin >> x;
+
+        // Print "The value which was entered for x is {x}." to the command line terminal and to the file output stream.
+        std::cout << "\nThe value which was entered for x is " << x << ".";
+        file << "\n\nThe value which was entered for x is " << x << ".";
+
+        // Print a horizontal divider line to the command line terminal and to the file output stream.
+        std::cout << "\n\n--------------------------------";
+        file << "\n\n--------------------------------";
+
+        // Prompt the user to enter an input value for logarithmic_base (and print that prompt to the command line terminal and to the file output stream).
+        std::cout << "\n\nEnter a positive real number, logarithmic_base, which is a positive real number other than one and which is no larger than " << MAXIMUM_logarithmic_base << ": ";
+        file << "\n\nEnter a positive real number, logarithmic_base, which is a positive real number other than one and which is no larger than " << MAXIMUM_logarithmic_base << ": ";
+
+        // Scan the command line terminal for the most recent keyboard input value. Store that value in logarithmic_base.
+        std::cin >> logarithmic_base;
+
+        // Print "The value which was entered for logarithmic_base is {logarithmic_base}." to the command line terminal and to the file output stream.
+        std::cout << "\nThe value which was entered for logarithmic_base is " << logarithmic_base << ".";
+        file << "\n\nThe value which was entered for logarithmic_base is " << logarithmic_base << ".";
+
+        // Print a horizontal divider line to the command line terminal and to the file output stream.
+        std::cout << "\n\n--------------------------------";
+        file << "\n\n--------------------------------";
+
+        // Set x to 1 by default if x is out of range (and specify that such a change occurred in the command line terminal and output file stream).
+        if ((x <= 0) || (x > MAXIMUM_x)) 
+        {
+            x = 1; 
+            std::cout << "\n\nDue to fact that x was determined to be either less than or equal to zero or else greater than " << MAXIMUM_x << ", x was set to the default value 1.";
+            file << "\n\nDue to fact that x was determined to be either less than or equal to zero or else greater than " << MAXIMUM_x << ", x was set to the default value 1.";
+        }
+
+        // Set logarithmic_base to 2 if logarithmic_base is out of range (and specify that such a change occurred in the command line terminal and output file stream).
+        if ((logarithmic_base <= 0) || (logarithmic_base == 1) || (logarithmic_base > MAXIMUM_logarithmic_base)) 
+        {
+            logarithmic_base = 2; 
+            std::cout << "\n\nDue to fact that logarithmic_base was determined to be either less than or equal to zero or else equal to one or else greater than " << MAXIMUM_logarithmic_base << ", logarithmic_base was set to the default value 2.";
+            file << "\n\nDue to fact that logarithmic_base was determined to be either less than or equal to zero or else equal to one or else greater than " << MAXIMUM_logarithmic_base << ", logarithmic_base was set to the default value 2.";
+        }
+
+        // Obtain the result of log_b(x) where b is logarithmic_base.
+        result = logarithm(x, logarithmic_base);
+
+        // Print the result of the logarithmic function to the command line terminal and to the file output stream.
+        std::cout << "\n\nresult = logarithm(x, logarithmic_base) = logarithm(" << x << ", " << logarithmic_base << ") = " << result << ".";
+        file << "\n\nresult = logarithm(x, logarithmic_base) = logarithm(" << x << ", " << logarithmic_base << ") = " << result << ".";
+
+        // Print the inverse of the logarithmic expression to the command line terminal and to the file output stream.
+        std::cout << "\n\nx = logarithmic_base ^ result --> " << x << " = " << logarithmic_base << " ^ " << result << ".";
+        std::cout << "\n\nx = power(logarithmic_base, result) = power(" << logarithmic_base << ", " << result << ") = " << power(logarithmic_base, result) << ".";
+        file << "\n\nx = logarithmic_base ^ result --> " << x << " = " << logarithmic_base << " ^ " << result << ".";
+        file << "\n\nx = power(logarithmic_base, result) = power(" << logarithmic_base << ", " << result << ") = " << power(logarithmic_base, result) << ".";
+
+        // Print a horizontal divider line to the command line terminal and to the file output stream.
+        std::cout << "\n\n--------------------------------";
+        file << "\n\n--------------------------------";
+
+        // Ask the user whether or not to continue inputing values.
+        std::cout << "\n\nWould you like to continue inputting program values? (Enter 1 if YES. Enter 0 if NO): ";
+
+        // Scan the command line terminal for the most recent keyboard input value.
+        std::cin >> input_additional_values;
+    }
 
     // Print a horizontal divider line to the command line terminal and to the file output stream.
     std::cout << "\n\n--------------------------------";
