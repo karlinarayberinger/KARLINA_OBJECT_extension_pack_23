@@ -298,6 +298,46 @@ double power(double base, double exponent)
  * given that the logarithmic base of the function ln(x) is Euler's Number, e 
  * (which is approximately equal to 2.71828182845904524019865766693015984856174327433109283447265625).
  * 
+ * Note that the base of a logarithm cannot be 1 because
+ * 
+ * log_1(x) = y implies (1 ^ y) = x only if x and y are identical and equal to 1.
+ * 
+ * log_1(2) = y implies (1 ^ y) = 2 when multiplying 1 by itself by any number of times should always yield the result 1; not 2 (or some other non-one number).
+ * 
+ * As an aside, any non-zero number to the power of zero is one due to the following:
+ * 
+ * Let a be any non-zero number. Then
+ * 
+ * (a ^ 3) = a * a * a
+ * 
+ * and 
+ * 
+ * (a ^ 2) = a * a
+ * 
+ * and 
+ * 
+ * (a ^ 1) = a.
+ * 
+ * Also, according to the rule of exponents, dividing a power by the base gives the next lower power. Hence,
+ * 
+ * (a ^ 2) = (a ^ 3) / a = (a ^ 2)
+ * 
+ * and
+ * 
+ * (a ^ 1) = (a ^ 2) / a
+ * 
+ * and, similarly,
+ * 
+ * (a ^ 0) = (a ^ 1) / a = a / a = 1.
+ * 
+ * ((0 ^ 1) = 0 * 1 = 0 but (0 ^ 0) = (0 ^ 1) / 0 = 0 / 0 which is technically "not a number").
+ * 
+ * (Dividing a number by zero is theoretically impossible while multiplying that number by zero (which results in zero) 
+ * is theoretically possible because to say that some number is multiplied by zero is logically equivalent to saying 
+ * that number occurs zero times. By contrast, dividing some number by zero is logically equivalent to saying that
+ * number is compartmentalized into zero equally-sized parts (and none of those parts apparently have any non-zero size and
+ * infinitely many of such parts take up any space of any size)).
+ * 
  *--------------------------------------------------------------------------------------------------------------------
  * 
  * An algorithm for computing the approximate value of Euler's Number is implemented by the C++ program 
