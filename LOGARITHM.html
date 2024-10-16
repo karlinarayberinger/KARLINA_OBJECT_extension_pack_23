@@ -1,0 +1,680 @@
+<hr>
+<p><strong>LOGARITHM</strong></p>
+<hr>
+<p><span style="background:#ffff00">The <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/C%2B%2B" target="_blank" rel="noopener">C++</a> program featured in this tutorial web computes the approximate <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Logarithm" target="_blank" rel="noopener">logarithm</a> (in some positive real <a style="background:#000000;color:#ff9000" href="https://karlinaobject.wordpress.com/numbers/" target="_blank" rel="noopener">number</a> base (other than one), <strong>logarithmic_base</strong>) of some positive real number, <strong>x</strong>. Essentially, a logarithmic function is the inverse of some <a style="background:#000000;color:#00ff00" href="https://karlinaobject.wordpress.com/exponentiation/" target="_blank" rel="noopener">exponentiation</a> (i.e. power) function.</span></p>
+<p><em>To view hidden text inside each of the preformatted text boxes below, scroll horizontally.</em></p>
+<pre>
+// log_b(x) is a logarithmic function whose base is b.
+log_b(x) = y. // logarithm: The logarithm in base b of x is y.
+b ^ y = x. // exponentiation: b raised to the power of y is x.
+</pre>
+<hr>
+<p><strong>SOFTWARE_APPLICATION_COMPONENTS</strong></p>
+<hr>
+<p>C++_source_file: <a style="background:#000000;color:#00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_23/main/logarithm.cpp" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_23/main/logarithm.cpp</a></p>
+<p>plain-text_file: <a style="background:#000000;color:#ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_23/main/logarithm_output.txt" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_23/main/logarithm_output.txt</a></p>
+<hr>
+<p><strong>PROGRAM_COMPILATION_AND_EXECUTION</strong></p>
+<hr>
+<p>STEP_0: Copy and paste the C++ <a style="background:#000000;color:#00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_23/main/logarithm.cpp" target="_blank" rel="noopener">source code</a> into a new text editor document and save that document as the following file name:</p>
+<pre>logarithm.cpp</pre>
+<p>STEP_1: Open a <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Unix" target="_blank" rel="noopener">Unix</a> command line terminal application and set the current directory to wherever the C++ program file is located on the local machine (e.g. Desktop).</p>
+<pre>cd Desktop</pre>
+<p>STEP_2: Compile the C++ file into machine-executable instructions (i.e. object file) and then into an executable piece of software named <strong>app</strong> using the following command:</p>
+<pre>g++ logarithm.cpp -o app</pre>
+<p>STEP_3: If the program compilation command does not work, then use the following commands (in top-down order) to install the C/C++ compiler (which is part of the <a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/GNU_Compiler_Collection" target="_blank" rel="noopener">GNU Compiler Collection (GCC)</a>):</p>
+<pre>sudo apt install build-essential</pre>
+<pre>sudo apt-get install g++</pre>
+<p>STEP_4: After running the <strong>g++</strong> command, run the executable file using the following command:</p>
+<pre>./app</pre>
+<p>STEP_5: Once the application is running, the following prompt will appear:</p>
+<pre>Enter a positive real number, x, to take the logarithm of and which is no larger than 10000: </pre>
+<p>STEP_6: Enter a value for x using the keyboard. Proceed with the prompts for additional input values which follow.</p>
+<p>STEP_7: Observe program results on the command line terminal and in the <a style="background:#000000;color:#ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_23/main/logarithm_output.txt" target="_blank" rel="noopener">output file</a>.</p>
+<hr>
+<p><strong>PROGRAM_SOURCE_CODE</strong></p>
+<hr>
+<p>The text in the preformatted text box below appears on this web page (while rendered correctly by the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/HTML" target="_blank" rel="noopener">web browser</a>) to be identical to the content of the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/C%2B%2B" target="_blank" rel="noopener">C++</a> source code file whose <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/URL" target="_blank" rel="noopener">Uniform Resource Locator</a> is displayed in the green <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Hyperlink" target="_blank" rel="noopener">hyperlink</a> below. A <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Computer" target="_blank" rel="noopener">computer</a> interprets that C++ source code as a series of programmatic instructions (i.e. <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Software" target="_blank" rel="noopener">software</a>) which govern how the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Computer_hardware" target="_blank" rel="noopener">hardware</a> of that computer behaves.</p>
+<p><em>(Note that angle brackets which resemble <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/HTML" target="_blank" rel="noopener">HTML</a> tags (i.e. an &#8220;is less than&#8221; symbol (i.e. &#8216;&lt;&#8216;) followed by an &#8220;is greater than&#8221; symbol (i.e. &#8216;&gt;&#8217;) displayed in the aforementioned text box have been replaced (at the source code level of this web page) with Unicode symbols <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Less-than_sign" target="_blank" rel="noopener">U+003C</a> (which is rendered by the web browser as &#8216;&lt;&#8216;) and <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Greater-than_sign" target="_blank" rel="noopener">U+003E</a> (which is rendered by the web browser as &#8216;&gt;&#8217;). That is because the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/WordPress.com" target="_blank" rel="noopener">WordPress</a> web page editor interprets a plain-text versions of an &#8220;is less than&#8221; symbol followed by an &#8220;is greater than&#8221; symbol as being an opening HTML tag (which means that the WordPress web page editor deletes the content between those (plain-text) inequality symbols)).</em></p>
+<p>C++_source_file: <a style="background:#000000;color:#00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_23/main/logarithm.cpp" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_23/main/logarithm.cpp</a></p>
+<hr>
+<pre>/**
+ * file: logarithm.cpp
+ * type: C++ (source file)
+ * date: 15_OCTOBER_2024
+ * author: karbytes
+ * license: PUBLIC_DOMAIN 
+ */
+
+/** preprocessing directives */
+#include &lt;iostream&gt; // standard input (std::cin), standard output (std::cout)
+#include &lt;fstream&gt; // file input, file output
+#define MAXIMUM_x 10000 // constant which represents maximum value of x
+#define MAXIMUM_logarithmic_base 10000 // constant which represents maximum value of logarithmic_base
+
+/** function prototypes */
+bool is_whole_number(double x);
+double absolute_value(double x);
+double power_of_e_to_x(double x);
+float ln(float x);
+double power(double base, double exponent);
+double logarithm(double x, double logarithmic_base);
+
+/** program entry point */
+int main()
+{
+    // Define three double type variables for storing floating-point number values.
+    double x = 0.0, logarithmic_base = 0.0, result = 0.0;
+
+    // Declare a variable for storing the program user's answer of whether or not to continue inputting values.
+    int input_additional_values = 1;
+
+    // Declare a file output stream handler (which represents the plain-text file to generate and/or overwrite with program data).
+    std::ofstream file;
+
+    // Set the number of digits of floating-point numbers which are printed to the command line terminal to 100 digits.
+    std::cout.precision(100);
+
+    // Set the number of digits of floating-point numbers which are printed to the file output stream to 100 digits.
+    file.precision(100);
+
+    /**
+     * If the file named logarithm_output.txt does not already exist 
+     * inside of the same file directory as the file named logarithm.cpp, 
+     * create a new file named logarithm_output.txt in that directory.
+     * 
+     * Open the plain-text file named logarithm_output.txt
+     * and set that file to be overwritten with program data.
+     */
+    file.open("logarithm_output.txt");
+
+    // Print an opening message to the command line terminal.
+    std::cout &lt;&lt; "\n\n--------------------------------";
+    std::cout &lt;&lt; "\nStart Of Program";
+    std::cout &lt;&lt; "\n--------------------------------";
+
+    // Print an opening message to the file output stream.
+    file &lt;&lt; "--------------------------------";
+    file &lt;&lt; "\nStart Of Program";
+    file &lt;&lt; "\n--------------------------------";
+
+    // Print "This C++ program computes the (approximate) logarithm of x in some given logarithmic base." to the command line terminal and to the file output stream.
+    std::cout &lt;&lt; "\n\nThis C++ program computes the (approximate) logarithm of x in some given logarithmic base.";
+    file &lt;&lt; "\n\nThis C++ program computes the (approximate) logarithm of x in some given logarithmic base.";
+
+    // Execute the code inside of the while loop block at least once (and until the program user inputs a value specifying to exit the program).
+    while (input_additional_values != 0)
+    {
+        // Print a horizontal divider line to the command line terminal and to the file output stream.
+        std::cout &lt;&lt; "\n\n--------------------------------";
+        file &lt;&lt; "\n\n--------------------------------";
+
+        // Prompt the user to enter an input value for x (and print that prompt to the command line terminal and to the file output stream).
+        std::cout &lt;&lt; "\n\nEnter a positive real number, x, to take the logarithm of and which is no larger than " &lt;&lt; MAXIMUM_x &lt;&lt; ": ";
+        file &lt;&lt; "\n\nEnter a positive real number, x, to take the logarithm of and which is no larger than " &lt;&lt; MAXIMUM_x &lt;&lt; ": ";
+
+        // Scan the command line terminal for the most recent keyboard input value. Store that value in x.
+        std::cin &gt;&gt; x;
+
+        // Print "The value which was entered for x is {x}." to the command line terminal and to the file output stream.
+        std::cout &lt;&lt; "\nThe value which was entered for x is " &lt;&lt; x &lt;&lt; ".";
+        file &lt;&lt; "\n\nThe value which was entered for x is " &lt;&lt; x &lt;&lt; ".";
+
+        // Print a horizontal divider line to the command line terminal and to the file output stream.
+        std::cout &lt;&lt; "\n\n--------------------------------";
+        file &lt;&lt; "\n\n--------------------------------";
+
+        // Prompt the user to enter an input value for logarithmic_base (and print that prompt to the command line terminal and to the file output stream).
+        std::cout &lt;&lt; "\n\nEnter a positive real number, logarithmic_base, which is a positive real number other than one and which is no larger than " &lt;&lt; MAXIMUM_logarithmic_base &lt;&lt; ": ";
+        file &lt;&lt; "\n\nEnter a positive real number, logarithmic_base, which is a positive real number other than one and which is no larger than " &lt;&lt; MAXIMUM_logarithmic_base &lt;&lt; ": ";
+
+        // Scan the command line terminal for the most recent keyboard input value. Store that value in logarithmic_base.
+        std::cin &gt;&gt; logarithmic_base;
+
+        // Print "The value which was entered for logarithmic_base is {logarithmic_base}." to the command line terminal and to the file output stream.
+        std::cout &lt;&lt; "\nThe value which was entered for logarithmic_base is " &lt;&lt; logarithmic_base &lt;&lt; ".";
+        file &lt;&lt; "\n\nThe value which was entered for logarithmic_base is " &lt;&lt; logarithmic_base &lt;&lt; ".";
+
+        // Print a horizontal divider line to the command line terminal and to the file output stream.
+        std::cout &lt;&lt; "\n\n--------------------------------";
+        file &lt;&lt; "\n\n--------------------------------";
+
+        // Set x to 1 by default if x is out of range (and specify that such a change occurred in the command line terminal and output file stream).
+        if ((x &lt;= 0) || (x &gt; MAXIMUM_x)) 
+        {
+            x = 1; 
+            std::cout &lt;&lt; "\n\nDue to fact that x was determined to be either less than or equal to zero or else greater than " &lt;&lt; MAXIMUM_x &lt;&lt; ", x was set to the default value 1.";
+            file &lt;&lt; "\n\nDue to fact that x was determined to be either less than or equal to zero or else greater than " &lt;&lt; MAXIMUM_x &lt;&lt; ", x was set to the default value 1.";
+        }
+
+        // Set logarithmic_base to 2 if logarithmic_base is out of range (and specify that such a change occurred in the command line terminal and output file stream).
+        if ((logarithmic_base &lt;= 0) || (logarithmic_base == 1) || (logarithmic_base &gt; MAXIMUM_logarithmic_base)) 
+        {
+            logarithmic_base = 2; 
+            std::cout &lt;&lt; "\n\nDue to fact that logarithmic_base was determined to be either less than or equal to zero or else equal to one or else greater than " &lt;&lt; MAXIMUM_logarithmic_base &lt;&lt; ", logarithmic_base was set to the default value 2.";
+            file &lt;&lt; "\n\nDue to fact that logarithmic_base was determined to be either less than or equal to zero or else equal to one or else greater than " &lt;&lt; MAXIMUM_logarithmic_base &lt;&lt; ", logarithmic_base was set to the default value 2.";
+        }
+
+        // Obtain the result of log_b(x) where b is logarithmic_base.
+        result = logarithm(x, logarithmic_base);
+
+        // Print the result of the logarithmic function to the command line terminal and to the file output stream.
+        std::cout &lt;&lt; "\n\nresult = logarithm(x, logarithmic_base) = logarithm(" &lt;&lt; x &lt;&lt; ", " &lt;&lt; logarithmic_base &lt;&lt; ") = " &lt;&lt; result &lt;&lt; ".";
+        file &lt;&lt; "\n\nresult = logarithm(x, logarithmic_base) = logarithm(" &lt;&lt; x &lt;&lt; ", " &lt;&lt; logarithmic_base &lt;&lt; ") = " &lt;&lt; result &lt;&lt; ".";
+
+        // Print the inverse of the logarithmic expression to the command line terminal and to the file output stream.
+        std::cout &lt;&lt; "\n\nx = logarithmic_base ^ result --&gt; " &lt;&lt; x &lt;&lt; " = " &lt;&lt; logarithmic_base &lt;&lt; " ^ " &lt;&lt; result &lt;&lt; ".";
+        std::cout &lt;&lt; "\n\nx = power(logarithmic_base, result) = power(" &lt;&lt; logarithmic_base &lt;&lt; ", " &lt;&lt; result &lt;&lt; ") = " &lt;&lt; power(logarithmic_base, result) &lt;&lt; ".";
+        file &lt;&lt; "\n\nx = logarithmic_base ^ result --&gt; " &lt;&lt; x &lt;&lt; " = " &lt;&lt; logarithmic_base &lt;&lt; " ^ " &lt;&lt; result &lt;&lt; ".";
+        file &lt;&lt; "\n\nx = power(logarithmic_base, result) = power(" &lt;&lt; logarithmic_base &lt;&lt; ", " &lt;&lt; result &lt;&lt; ") = " &lt;&lt; power(logarithmic_base, result) &lt;&lt; ".";
+
+        // Print a horizontal divider line to the command line terminal and to the file output stream.
+        std::cout &lt;&lt; "\n\n--------------------------------";
+        file &lt;&lt; "\n\n--------------------------------";
+
+        // Ask the user whether or not to continue inputing values.
+        std::cout &lt;&lt; "\n\nWould you like to continue inputting program values? (Enter 1 if YES. Enter 0 if NO): ";
+
+        // Scan the command line terminal for the most recent keyboard input value.
+        std::cin &gt;&gt; input_additional_values;
+    }
+
+    // Print a closing message to the command line terminal.
+    std::cout &lt;&lt; "\n\n--------------------------------";
+    std::cout &lt;&lt; "\nEnd Of Program";
+    std::cout &lt;&lt; "\n--------------------------------\n\n";
+
+    // Print a closing message to the file output stream.
+    file &lt;&lt; "\n\n--------------------------------";
+    file &lt;&lt; "\nEnd Of Program";
+    file &lt;&lt; "\n--------------------------------";
+
+    // Close the file output stream.
+    file.close();
+
+    // Exit the program.
+    return 0; 
+}
+
+/**
+ * If x is determined to be a whole number, return true.
+ * Otherwise, return false.
+ * 
+ *--------------------------------------------------------------------------------------------------------------------
+ * 
+ * The following function was copied from the C++ source code file featured in the following tutorial web page:
+ * 
+ * https://karlinaobject.wordpress.com/exponentiation/
+ * 
+ *--------------------------------------------------------------------------------------------------------------------
+ */
+bool is_whole_number(double x)
+{
+    return (x == (long int) x); 
+}
+
+/**
+ * Return the absolute value of a real number input, x.
+ * 
+ *--------------------------------------------------------------------------------------------------------------------
+ * 
+ * The following function was copied from the C++ source code file featured in the following tutorial web page:
+ * 
+ * https://karlinaobject.wordpress.com/exponentiation/
+ * 
+ *--------------------------------------------------------------------------------------------------------------------
+ */
+double absolute_value(double x)
+{
+    if (x &lt; 0) return -1 * x;
+    return x;
+}
+
+/**
+ * Return the approximate value of Euler's Number to the power of some real number x.
+ * 
+ * This function is essentially identical to the C++ library math.h function exp().
+ * 
+ *--------------------------------------------------------------------------------------------------------------------
+ * 
+ * The following function was copied from the C++ source code file featured in the following tutorial web page:
+ * 
+ * https://karlinaobject.wordpress.com/exponentiation/
+ * 
+ *--------------------------------------------------------------------------------------------------------------------
+ */
+double power_of_e_to_x(double x) {
+    double a = 1.0, e = a;
+    int n = 1;
+    int invert = x &lt; 0;
+    x = absolute_value(x);
+    for (n = 1; e != e + a; n += 1) {
+        a = a * x / n;
+        e += a;
+    }
+    return invert ? (1 / e) : e;
+}
+
+//--------------------------------------------------------------------------------------------------------------------
+// The following function and associated comments were not written by karbytes. 
+//
+// The following function is essentially identical to the C++ library math.h function log().
+//
+//--------------------------------------------------------------------------------------------------------------------
+//
+// The following function was copied from the C++ source code file featured in the following tutorial web page:
+//
+// https://karlinaobject.wordpress.com/exponentiation/
+//
+//--------------------------------------------------------------------------------------------------------------------
+
+// ln.c
+//
+// simple, fast, accurate natural log approximation
+// when without 
+
+// featuring * floating point bit level hacking,
+//           * x=m*2^p =&gt; ln(x)=ln(m)+ln(2)p,
+//           * Remez algorithm
+
+// by Lingdong Huang, 2020. Public domain.
+
+// ============================================
+
+float ln(float x) {
+  unsigned int bx = * (unsigned int *) (&amp;x);
+  unsigned int ex = bx &gt;&gt; 23;
+  signed int t = (signed int)ex-(signed int)127;
+  unsigned int s = (t &lt; 0) ? (-t) : t;
+  bx = 1065353216 | (bx &amp; 8388607);
+  x = * (float *) (&amp;bx);
+  return -1.49278+(2.11263+(-0.729104+0.10969*x)*x)*x+0.6931471806*t;
+}
+
+// done.
+
+//--------------------------------------------------------------------------------------------------------------------
+// End of code which was not written by karbytes. 
+//--------------------------------------------------------------------------------------------------------------------
+
+/**
+ * Reverse engineer the cmath pow() function 
+ * using the following properties of natural logarithms:
+ * 
+ * ln(x ^ y) = y * ln(x).
+ * 
+ * ln(e ^ x) = x. // e is approximately Euler's Number.
+ * 
+ * Note that the base of the logarithmic function 
+ * used by the cmath log() function is e.
+ * 
+ * Hence, log(x) is approximately the 
+ * natural log of x (i.e. ln(x)).
+ * 
+ * Note that the base of the exponential function
+ * used by the cmath exp() function is
+ * (approximately) Euler's Number.
+ * 
+ * Hence, exp(x) is approximately 
+ * x ^ e (where e is approximately Euler's Number).
+ * 
+ * Note that any number, x, raised to the power of 0 is 1.
+ * In more succinct terms, x ^ 0 = 1.
+ * 
+ * Note that any number, x, raised to the power of 1 is x.
+ * In more succinct terms, x ^ 1 = x.
+ * 
+ * Note that any whole number, x, 
+ * raised to the power of a positive whole number exponent, y, 
+ * is x multiplied by itself y times.
+ * For example, if x is 2 and y is 3, 
+ * 2 ^ 3 = power(2, 3) = 2 * 2 * 2 = 8.
+ * 
+ * Note that any whole number, x, 
+ * raised to the power of a negative exponent, y, 
+ * is 1 / (x ^ (-1 * y)).
+ * For example, if x is 2 and y is -3,
+ * 2 ^ -3 = power(2, -3) = 1 / (2 * 2 * 2) = 1 / 8 = 0.125.
+ * 
+ *----------------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * The following function was copied (and slightly edited) from the C++ source code file featured in the following tutorial web page:
+ * 
+ * https://karlinaobject.wordpress.com/exponentiation/
+ * 
+ * (The data types of the function parameters have been changed from double to float).
+ *
+ *----------------------------------------------------------------------------------------------------------------------------------------
+ */
+double power(double base, double exponent)
+{
+    double output = 1.0;
+    if (exponent == 0) return 1; 
+    if (exponent == 1) return base;
+    // if ((base == 0) &amp;&amp; (exponent &lt; 0)) return -666; // Technically 0 raised to the power of some negative exponent is undefined (i.e. not a number).
+    if (is_whole_number(exponent))
+    {
+        if (exponent &gt; 0)
+        {
+            while (exponent &gt; 0) 
+            {
+                output *= base;
+                exponent -= 1;
+            }
+            return output;
+        }
+        else 
+        {
+            exponent = absolute_value(exponent);
+            while (exponent &gt; 0)
+            {
+                output *= base;
+                exponent -= 1;
+            }
+            return 1 / output;
+        }
+    }
+    if (exponent &gt; 0) return power_of_e_to_x(ln(base) * exponent); // Return e ^ (ln(base) * exponent).
+    return power_of_e_to_x(power_of_e_to_x(ln(base) * absolute_value(exponent))); // Return e ^ (e ^ (ln(base) * absolute_value(exponent))).
+}
+
+// Function to compute logarithm base logarithmic_base of x
+
+/**
+ * This function returns the result of the following calculation: 
+ * log_b(x) where log_b is the logarithmic function whose base is b (and where b is logarithmic_base).
+ * 
+ * A logarithm is the inverse of exponentiation. 
+ * 
+ * For example, ln(x) = y is the inverse of (e ^ y) = x 
+ * given that the logarithmic base of the function ln(x) is Euler's Number, e 
+ * (which is approximately equal to 2.71828182845904524019865766693015984856174327433109283447265625).
+ * 
+ * Note that the base of a logarithm cannot be 1 because
+ * 
+ * log_1(x) = y implies (1 ^ y) = x only if x and y are identical and equal to 1.
+ * 
+ * log_1(2) = y implies (1 ^ y) = 2 when multiplying 1 by itself by any number of times should always yield the result 1; not 2 (or some other non-one number).
+ * 
+ * As an aside, any non-zero number to the power of zero is one due to the following:
+ * 
+ * Let a be any non-zero number. Then
+ * 
+ * (a ^ 3) = a * a * a
+ * 
+ * and 
+ * 
+ * (a ^ 2) = a * a
+ * 
+ * and 
+ * 
+ * (a ^ 1) = a.
+ * 
+ * Also, according to the rule of exponents, dividing a power by the base gives the next lower power. Hence,
+ * 
+ * (a ^ 2) = (a ^ 3) / a = (a ^ 2)
+ * 
+ * and
+ * 
+ * (a ^ 1) = (a ^ 2) / a
+ * 
+ * and, similarly,
+ * 
+ * (a ^ 0) = (a ^ 1) / a = a / a = 1.
+ * 
+ * ((0 ^ 1) = 0 * 1 = 0 but (0 ^ 0) = (0 ^ 1) / 0 = 0 / 0 which is technically "not a number").
+ * 
+ * (Dividing a number by zero is theoretically impossible while multiplying that number by zero (which results in zero) 
+ * is theoretically possible because to say that some number is multiplied by zero is logically equivalent to saying 
+ * that number occurs zero times. By contrast, dividing some number by zero is logically equivalent to saying that
+ * number is compartmentalized into zero equally-sized parts (and none of those parts apparently have any non-zero size and
+ * infinitely many of such parts take up any space of any size (whether that size is zero or some positive quantity))).
+ * 
+ *--------------------------------------------------------------------------------------------------------------------
+ * 
+ * An algorithm for computing the approximate value of Euler's Number is implemented by the C++ program 
+ * featured in the following tutorial web page:
+ * 
+ * https://karlinaobject.wordpress.com/eulers_number_approximation/
+ * 
+ *--------------------------------------------------------------------------------------------------------------------
+ * 
+ * Note that the equation (e ^ y) = x is functionally identical to power(e, y) = x 
+ * and essentially states that x is the product of multiplying e by itself y times.
+ * 
+ * x is required to be a positive real number.
+ * 
+ * logarithmic_base is required to be a positive real number other than one.
+ * 
+ * This function works by utilizing the following Change of Base (for Logarithms) formula:
+ * 
+ * log_b = ln(x) / ln(b)
+ */
+double logarithm(double x, double logarithmic_base) {
+    if ((x &lt;= 0) || (x &gt; MAXIMUM_x)) x = 1; // Set x to 1 by default if x is out of range.
+    if ((logarithmic_base &lt;= 0) || (logarithmic_base == 1) || (logarithmic_base &gt; MAXIMUM_logarithmic_base)) logarithmic_base = 2; // Set logarithmic_base to 2 if logarithmic_base is out of range.
+    return ln(x) / ln(logarithmic_base);
+}
+</pre>
+<hr>
+<p><strong>SAMPLE_PROGRAM_OUTPUT</strong></p>
+<hr>
+<p>The text in the preformatted text box below was generated by one use case of the C++ program featured in this <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Computer_programming" target="_blank" rel="noopener">computer programming</a> tutorial web page.</p>
+<p>plain-text_file: <a style="background:#000000;color:#ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_23/main/logarithm_output.txt" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_23/main/logarithm_output.txt</a></p>
+<hr>
+<pre>
+--------------------------------
+Start Of Program
+--------------------------------
+
+This C++ program computes the (approximate) logarithm of x in some given logarithmic base.
+
+--------------------------------
+
+Enter a positive real number, x, to take the logarithm of and which is no larger than 10000: 
+
+The value which was entered for x is 16.
+
+--------------------------------
+
+Enter a positive real number, logarithmic_base, which is a positive real number other than one and which is no larger than 10000: 
+
+The value which was entered for logarithmic_base is 2.
+
+--------------------------------
+
+result = logarithm(x, logarithmic_base) = logarithm(16, 2) = 3.998114109039306640625.
+
+x = logarithmic_base ^ result --&gt; 16 = 2 ^ 3.998114109039306640625.
+
+x = power(logarithmic_base, result) = power(2, 3.998114109039306640625) = 16.00697779719589419755720882676541805267333984375.
+
+--------------------------------
+
+--------------------------------
+
+Enter a positive real number, x, to take the logarithm of and which is no larger than 10000: 
+
+The value which was entered for x is -4.
+
+--------------------------------
+
+Enter a positive real number, logarithmic_base, which is a positive real number other than one and which is no larger than 10000: 
+
+The value which was entered for logarithmic_base is 2.
+
+--------------------------------
+
+Due to fact that x was determined to be either less than or equal to zero or else greater than 10000, x was set to the default value 1.
+
+result = logarithm(x, logarithmic_base) = logarithm(1, 2) = 0.0006286196294240653514862060546875.
+
+x = logarithmic_base ^ result --&gt; 1 = 2 ^ 0.0006286196294240653514862060546875.
+
+x = power(logarithmic_base, result) = power(2, 0.0006286196294240653514862060546875) = 1.000436095069968445159247494302690029144287109375.
+
+--------------------------------
+
+--------------------------------
+
+Enter a positive real number, x, to take the logarithm of and which is no larger than 10000: 
+
+The value which was entered for x is 3.
+
+--------------------------------
+
+Enter a positive real number, logarithmic_base, which is a positive real number other than one and which is no larger than 10000: 
+
+The value which was entered for logarithmic_base is 1.
+
+--------------------------------
+
+Due to fact that logarithmic_base was determined to be either less than or equal to zero or else equal to one or else greater than 10000, logarithmic_base was set to the default value 2.
+
+result = logarithm(x, logarithmic_base) = logarithm(3, 2) = 1.5845711231231689453125.
+
+x = logarithmic_base ^ result --&gt; 3 = 2 ^ 1.5845711231231689453125.
+
+x = power(logarithmic_base, result) = power(2, 1.5845711231231689453125) = 3.0012590833068610862710556830279529094696044921875.
+
+--------------------------------
+
+--------------------------------
+
+Enter a positive real number, x, to take the logarithm of and which is no larger than 10000: 
+
+The value which was entered for x is 10000.
+
+--------------------------------
+
+Enter a positive real number, logarithmic_base, which is a positive real number other than one and which is no larger than 10000: 
+
+The value which was entered for logarithmic_base is 9999.
+
+--------------------------------
+
+result = logarithm(x, logarithmic_base) = logarithm(10000, 9999) = 1.000010967254638671875.
+
+x = logarithmic_base ^ result --&gt; 10000 = 9999 ^ 1.000010967254638671875.
+
+x = power(logarithmic_base, result) = power(9999, 1.000010967254638671875) = 9997.626101374147765454836189746856689453125.
+
+--------------------------------
+
+--------------------------------
+
+Enter a positive real number, x, to take the logarithm of and which is no larger than 10000: 
+
+The value which was entered for x is 256.
+
+--------------------------------
+
+Enter a positive real number, logarithmic_base, which is a positive real number other than one and which is no larger than 10000: 
+
+The value which was entered for logarithmic_base is 2.
+
+--------------------------------
+
+result = logarithm(x, logarithmic_base) = logarithm(256, 2) = 7.995599269866943359375.
+
+x = logarithmic_base ^ result --&gt; 256 = 2 ^ 7.995599269866943359375.
+
+x = power(logarithmic_base, result) = power(2, 7.995599269866943359375) = 256.111590804743400440202094614505767822265625.
+
+--------------------------------
+
+--------------------------------
+
+Enter a positive real number, x, to take the logarithm of and which is no larger than 10000: 
+
+The value which was entered for x is 144.
+
+--------------------------------
+
+Enter a positive real number, logarithmic_base, which is a positive real number other than one and which is no larger than 10000: 
+
+The value which was entered for logarithmic_base is 0.5.
+
+--------------------------------
+
+result = logarithm(x, logarithmic_base) = logarithm(144, 0.5) = -7.17379283905029296875.
+
+x = logarithmic_base ^ result --&gt; 144 = 0.5 ^ -7.17379283905029296875.
+
+x = power(logarithmic_base, result) = power(0.5, -7.17379283905029296875) = 1.0069717383702896373876001234748400747776031494140625.
+
+--------------------------------
+
+--------------------------------
+
+Enter a positive real number, x, to take the logarithm of and which is no larger than 10000: 
+
+The value which was entered for x is 3.
+
+--------------------------------
+
+Enter a positive real number, logarithmic_base, which is a positive real number other than one and which is no larger than 10000: 
+
+The value which was entered for logarithmic_base is 10.
+
+--------------------------------
+
+result = logarithm(x, logarithmic_base) = logarithm(3, 10) = 0.477328956127166748046875.
+
+x = logarithmic_base ^ result --&gt; 3 = 10 ^ 0.477328956127166748046875.
+
+x = power(logarithmic_base, result) = power(10, 0.477328956127166748046875) = 3.001259233165300965850974534987471997737884521484375.
+
+--------------------------------
+
+--------------------------------
+
+Enter a positive real number, x, to take the logarithm of and which is no larger than 10000: 
+
+The value which was entered for x is 666.
+
+--------------------------------
+
+Enter a positive real number, logarithmic_base, which is a positive real number other than one and which is no larger than 10000: 
+
+The value which was entered for logarithmic_base is 2.718281828459045090795598298427648842334747314453125.
+
+--------------------------------
+
+result = logarithm(x, logarithmic_base) = logarithm(666, 2.718281828459045090795598298427648842334747314453125) = 6.499555110931396484375.
+
+x = logarithmic_base ^ result --&gt; 666 = 2.718281828459045090795598298427648842334747314453125 ^ 6.499555110931396484375.
+
+x = power(logarithmic_base, result) = power(2.718281828459045090795598298427648842334747314453125, 6.499555110931396484375) = 666.0538243024644771139719523489475250244140625.
+
+--------------------------------
+
+--------------------------------
+
+Enter a positive real number, x, to take the logarithm of and which is no larger than 10000: 
+
+The value which was entered for x is 81.
+
+--------------------------------
+
+Enter a positive real number, logarithmic_base, which is a positive real number other than one and which is no larger than 10000: 
+
+The value which was entered for logarithmic_base is 3.
+
+--------------------------------
+
+result = logarithm(x, logarithmic_base) = logarithm(81, 3) = 3.9984185695648193359375.
+
+x = logarithmic_base ^ result --&gt; 81 = 3 ^ 3.9984185695648193359375.
+
+x = power(logarithmic_base, result) = power(3, 3.9984185695648193359375) = 80.99518093475552404925110749900341033935546875.
+
+--------------------------------
+
+--------------------------------
+End Of Program
+--------------------------------
+</pre>
+<hr>
+<p>This web page was last updated on 15_OCTOBER_2024. The content displayed on this web page is licensed as <a style="background:#000000;color:#ff9000" href="https://karlinaobject.wordpress.com/public_domain/" target="_blank" rel="noopener">PUBLIC_DOMAIN</a> intellectual property.</p>
+<hr>
