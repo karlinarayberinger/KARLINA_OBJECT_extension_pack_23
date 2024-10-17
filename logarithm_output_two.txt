@@ -12,16 +12,205 @@ This Python program computes the (approximate) logarithm of x in some given loga
 The value which was entered for x is 16.0.
 
 
-The value which was entered for logarithmic_base is 4.0.
+The value which was entered for logarithmic_base is 2.0.
 
 
-result = logarithm(x, logarithmic_base) = logarithm(16.0, 4.0) = 1.0.
+result = logarithm(x, logarithmic_base) = logarithm(16.0, 2.0) = 4.000000000052508.
 
 
-x = logarithmic_base ^ result --> 16.0 = 4.0 ^ 1.0.
+x = logarithmic_base ^ result --> 16.0 = 2.0 ^ 4.000000000052508.
 
 
-x = power(logarithmic_base, result) = power(4.0, 1.0) = 4.0.
+x = power(logarithmic_base, result) = power(2.0, 4.000000000052508) = 15.999999999933769.
+
+
+--------------------------------
+
+
+The value which was entered for x is 256.0.
+
+
+The value which was entered for logarithmic_base is 2.0.
+
+
+result = logarithm(x, logarithmic_base) = logarithm(256.0, 2.0) = 7.9999999858628525.
+
+
+x = logarithmic_base ^ result --> 256.0 = 2.0 ^ 7.9999999858628525.
+
+
+x = power(logarithmic_base, result) = power(2.0, 7.9999999858628525) = 255.99999747067005.
+
+
+--------------------------------
+
+
+The value which was entered for x is 8.0.
+
+
+The value which was entered for logarithmic_base is 1.25.
+
+
+result = logarithm(x, logarithmic_base) = logarithm(8.0, 1.25) = 9.318851158743964.
+
+
+x = logarithmic_base ^ result --> 8.0 = 1.25 ^ 9.318851158743964.
+
+
+x = power(logarithmic_base, result) = power(1.25, 9.318851158743964) = 7.999999999970146.
+
+
+--------------------------------
+
+
+The value which was entered for x is 0.5.
+
+
+The value which was entered for logarithmic_base is 0.5.
+
+
+result = logarithm(x, logarithmic_base) = logarithm(0.5, 0.5) = 1.0.
+
+
+x = logarithmic_base ^ result --> 0.5 = 0.5 ^ 1.0.
+
+
+x = power(logarithmic_base, result) = power(0.5, 1.0) = 0.5.
+
+
+--------------------------------
+
+
+The value which was entered for x is 81.0.
+
+
+The value which was entered for logarithmic_base is 3.0.
+
+
+result = logarithm(x, logarithmic_base) = logarithm(81.0, 3.0) = 4.000000000004087.
+
+
+x = logarithmic_base ^ result --> 81.0 = 3.0 ^ 4.000000000004087.
+
+
+x = power(logarithmic_base, result) = power(3.0, 4.000000000004087) = 80.99999999965758.
+
+
+--------------------------------
+
+
+The value which was entered for x is 10000.0.
+
+
+The value which was entered for logarithmic_base is 10000.0.
+
+
+result = logarithm(x, logarithmic_base) = logarithm(10000.0, 10000.0) = 1.0.
+
+
+x = logarithmic_base ^ result --> 10000.0 = 10000.0 ^ 1.0.
+
+
+x = power(logarithmic_base, result) = power(10000.0, 1.0) = 10000.0.
+
+
+--------------------------------
+
+
+The value which was entered for x is 10000.0.
+
+
+The value which was entered for logarithmic_base is 9999.0.
+
+
+result = logarithm(x, logarithmic_base) = logarithm(10000.0, 9999.0) = 1.0000038753251448.
+
+
+x = logarithmic_base ^ result --> 10000.0 = 9999.0 ^ 1.0000038753251448.
+
+
+x = power(logarithmic_base, result) = power(9999.0, 1.0000038753251448) = 4954.047976737616.
+
+
+--------------------------------
+
+
+The value which was entered for x is 8.0.
+
+
+The value which was entered for logarithmic_base is 0.0.
+
+
+Due to the fact that logarithmic_base was out of range, logarithmic_base was set to the default value 2.
+
+
+result = logarithm(x, logarithmic_base) = logarithm(8.0, 2) = 3.000000000038476.
+
+
+x = logarithmic_base ^ result --> 8.0 = 2 ^ 3.000000000038476.
+
+
+x = power(logarithmic_base, result) = power(2, 3.000000000038476) = 7.999999999970146.
+
+
+--------------------------------
+
+
+The value which was entered for x is -444.0.
+
+
+The value which was entered for logarithmic_base is 1.0.
+
+
+Due to the fact that x was out of range, x was set to the default value 1.
+
+
+Due to the fact that logarithmic_base was out of range, logarithmic_base was set to the default value 2.
+
+
+result = logarithm(x, logarithmic_base) = logarithm(1, 2) = 0.0.
+
+
+x = logarithmic_base ^ result --> 1 = 2 ^ 0.0.
+
+
+x = power(logarithmic_base, result) = power(2, 0.0) = 1.
+
+
+--------------------------------
+
+
+The value which was entered for x is 666.0.
+
+
+The value which was entered for logarithmic_base is 3.33.
+
+
+result = logarithm(x, logarithmic_base) = logarithm(666.0, 3.33) = 5.404057966802309.
+
+
+x = logarithmic_base ^ result --> 666.0 = 3.33 ^ 5.404057966802309.
+
+
+x = power(logarithmic_base, result) = power(3.33, 5.404057966802309) = 665.7618761047137.
+
+
+--------------------------------
+
+
+The value which was entered for x is 8.0.
+
+
+The value which was entered for logarithmic_base is 2.0.
+
+
+result = logarithm(x, logarithmic_base) = logarithm(8.0, 2.0) = 3.000000000038476.
+
+
+x = logarithmic_base ^ result --> 8.0 = 2.0 ^ 3.000000000038476.
+
+
+x = power(logarithmic_base, result) = power(2.0, 3.000000000038476) = 7.999999999970146.
 
 
 --------------------------------
