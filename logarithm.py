@@ -43,32 +43,41 @@ def power_of_e_to_x(x):
     return (1 / e) if invert else e
 
 #-------------------------------------------------------------------------------------------------------------
-# This function converts a floating-point number (float) into its bit (binary digit) representation.
-#-------------------------------------------------------------------------------------------------------------
-def float_to_bits(f):
-    return int.from_bytes(bytearray(f.hex(), 'utf-8'), 'big')
-
-#-------------------------------------------------------------------------------------------------------------
-# This function converts a bit representation of a floating-point number back into its float representation.
-#-------------------------------------------------------------------------------------------------------------
-def bits_to_float(b):
-    return float.fromhex(b.to_bytes(4, 'big').hex())
-
-#-------------------------------------------------------------------------------------------------------------
 # Return the approximate value of the natural logarithm of x.
 # 
 # The base of a natural logarithm (ln) is Euler's Number, e.
 #  
 # e is approximately equal to 2.71828182845904524019865766693015984856174327433109283447265625.
+# 
+# This function works by implementing the Mercator series expansion of the natural logarithm:
+#
+# ln(1 + z) = z - ((z ** 2) / 2) + ((z ** 3) / 3) - ((z ** 4) / 4) + ...
+# // where z is a real number such that -1 < z <= 1
+# // and the number of summation terms approaches infinity.
+# // (Note that ** is the Python operator for ^ (i.e. exponentiation)).
 #-------------------------------------------------------------------------------------------------------------
-def ln(x):
-    bx = float_to_bits(x)
-    ex = bx >> 23
-    t = ex - 127
-    s = -t if t < 0 else t
-    bx = 1065353216 | (bx & 8388607)
-    x = bits_to_float(bx)
-    return -1.49278 + (2.11263 + (-0.729104 + 0.10969 * x) * x) * x + 0.6931471806 * t
+def ln(x, max_iterations=1000, tolerance=1e-10):
+    if x <= 0:
+        raise ValueError("ln is undefined for non-positive values.")
+    
+    # Handle the special case where x = 1 (ln(1) = 0)
+    if x == 1:
+        return 0
+    
+    # Using the logarithmic series expansion for ln(x)
+    y = (x - 1) / (x + 1)
+    y2 = y * y
+    result = 0
+    term = y
+    n = 1
+
+    # Summing the series for ln(x) with a limit on the number of iterations and a tolerance for convergence
+    while n <= max_iterations and abs(term) > tolerance:
+        result += term / (2 * n - 1)
+        term *= y2
+        n += 1
+
+    return 2 * result
 
 #-------------------------------------------------------------------------------------------------------------
 # This function returns the value of base raised to the power of exponent (i.e. base ^ exponent).
