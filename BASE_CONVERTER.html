@@ -1,96 +1,145 @@
 <hr />
-<p><strong>BASE_CONVERTER</strong></p>
+<p><strong>BEATS_MACHINE</strong></p>
 <hr />
-<p><span style="background: #ffff00">The <a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/Single-page_application" target="_blank" rel="noopener">single web page application</a> featured in this tutorial web page converts an INPUT_SEQUENCE (i.e. an unsigned integer consisting of no more than eight digits) whose base is INPUT_BASE to its equivalent representation as an unsigned integer whose base is OUTPUT_BASE.</span></p>
-<p>(The base conversion process used by this application is a more general version of the process used to convert unsigned integers from base-two to base-ten in the <a style="background: #000000;color: #00ff00" href="https://karlinaobject.wordpress.com/bits_and_bytes/" target="_blank" rel="noopener">BITS_AND_BYTES</a> tutorial web page of this website).</p>
+<p><span style="background: #ffff00">The <a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/Single-page_application" target="_blank" rel="noopener">single web page application</a> featured in this tutorial web page substantiates a beats machine which allows the user to play zero, one, two, or three sound tracks simultaneously and such that the user can customize the beat <a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/Pitch_(music)" target="_blank" rel="noopener">pitch</a> (i.e. monotone sound wave frequency) and the beat <a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/Duration_(music)" target="_blank" rel="noopener">duration</a> (i.e. time interval in which the same tone is played immediately in succession) of each one of those three sound tracks play.</span></p>
 <p><em>To view hidden text inside each of the preformatted text boxes below, scroll horizontally.</em></p>
-<pre>OUTPUT_SEQUENCE := CONVERT(INPUT_SEQUENCE, INPUT_BASE, OUTPUT_BASE). // First the base conversion process converts INPUT_SEQUENCE to its equivalent value in base-ten. Then that base-ten value is converted to its equivalent value in OUTPUT_BASE.
-</pre>
 <hr />
 <p><strong>SOFTWARE_APPLICATION_COMPONENTS</strong></p>
 <hr />
-<p>Hyper-Text-Markup-Language_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/base_converter.html" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/base_converter.html</a></p>
-<p>Cascading-Style-Sheet_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/karbytes_aesthetic.css" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/karbytes_aesthetic.css</a></p>
-<p>JavaScript_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/base_converter_interface.js" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_packk/main/base_converter_interface.js</a></p>
-<p>JavaScript_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/base_converter_arithmetic.js" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/base_converter_arithmetic.js</a></p>
-<p>JavaScript_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/time_stamp.js" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/time_stamp.js</a></p>
+<p>Hyper-Text-Markup-Language_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_20/main/beats_machine.html" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_20/main/beats_machine.html</a></p>
+<p>Cascading-Style-Sheet_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_20/main/karbytes_aesthetic.css" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_20/main/karbytes_aesthetic.css</a></p>
+<p>JavaScript_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_20/main/beats_machine.js" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_20/main/beats_machine.js</a></p>
 <hr />
 <p><strong>Hyper-Text-Markup-Language Code</strong></p>
 <hr />
-<p>The following Hyper-Text-Markup-Language (<a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/HTML" target="_blank" rel="noopener">HTML</a>) code defines the user interface component of the BASE_CONVERTER web page application. Copy the HTML code from the source code file which is linked below into a text editor and save that file as <strong>base_converter.html</strong>. Use a web browser such as <a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/Firefox" target="_blank" rel="noopener">Firefox</a> to open that HTML file (and ensure that the JavaScript and Cascading-Style-Sheet files are in the same file directory as the HTML file).</p>
-<p><em>(Note that angle brackets which resemble <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/HTML" target="_blank" rel="noopener">HTML</a> tags (i.e. an &#8220;is less than&#8221; symbol (i.e. &#8216;&lt;&#8216;) followed by an &#8220;is greater than&#8221; symbol (i.e. &#8216;&gt;&#8217;)) displayed on this web page have been replaced (at the source code level of this web page) with the Unicode symbols <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Less-than_sign" target="_blank" rel="noopener">U+003C</a> (which is rendered by the web browser as &#8216;&lt;&#8216;) and <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Greater-than_sign" target="_blank" rel="noopener">U+003E</a> (which is rendered by the web browser as &#8216;&gt;&#8217;). That is because the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/WordPress.com" target="_blank" rel="noopener">WordPress</a> web page editor or web browser interprets a plain-text version of an &#8220;is less than&#8221; symbol followed by an &#8220;is greater than&#8221; symbol as being an opening HTML tag (which means that the WordPress web page editor or web browser deletes or fails to display the those (plain-text) inequality symbols and the content between those (plain-text) inequality symbols)).</em></p>
+<p>The following Hyper-Text-Markup-Language (<a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/HTML" target="_blank" rel="noopener">HTML</a>) code defines the user interface component of the BEATS_MACHINE web page application. Copy the HTML code from the source code file which is linked below into a text editor and save that file as <strong>beats_machine.html</strong>. Use a web browser such as <a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/Firefox" target="_blank" rel="noopener">Firefox</a> to open that HTML file (and ensure that the JavaScript and Cascading-Style-Sheet files are in the same file directory as the HTML file).</p>
+<p><em>(Note that angle brackets which resemble <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/HTML" target="_blank" rel="noopener">HTML</a> tags (i.e. an &#8220;is less than&#8221; symbol (i.e. &#8216;&lt;&#8216;) followed by an &#8220;is greater than&#8221; symbol (i.e. &#8216;&gt;&#8217;)) displayed on this web page have been replaced (at the source code level of this web page) with the Unicode symbols <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Less-than_sign" target="_blank" rel="noopener">U+003C</a> (which is rendered by the web browser as &#8216;&lt;&#8216;) and <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Greater-than_sign" target="_blank" rel="noopener">U+003E</a> (which is rendered by the web browser as &#8216;&gt;&#8217;). That is because the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/WordPress.com" target="_blank" rel="noopener">WordPress</a> web page editor or web browser interprets a plain-text version of an &#8220;is less than&#8221; symbol followed by an &#8220;is greater than&#8221; symbol as being an opening HTML tag (which means that the WordPress web page editor or web browser deletes or fails to display those (plain-text) inequality symbols and the content between those (plain-text) inequality symbols)).</em></p>
 <p><em><strong>If copy-pasting the following HTML code from the preformatted text box below into a text editor, remove the <a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/Zero-width_space" target="_blank" rel="noopener">zero-width space</a> Unicode character (<span style="background:#000000;color:#fe9eff">&amp;&#8203;#8203;</span>) which is located between the &#8216;s&#8217; and the &#8216;r&#8217; in the script tag(s) which each link to a <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/JavaScript" target="_blank" rel="noopener">JavaScript</a> file.</em></strong></p>
-<p>Hyper-Text-Markup-Language_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/base_converter.html" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/base_converter.html</a></p>
-<p>image_link: <a style="background: #000000;color: #ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/base_converter_html_code_screenshot.png" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/base_converter_html_code_screenshot.png</a></p>
+<p>Hyper-Text-Markup-Language_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_20/main/beats_machine.html" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_20/main/beats_machine.html</a></p>
+<p>image_link: <a style="background: #000000;color: #ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_20/main/beats_machine_html_screenshot.png" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_20/main/beats_machine_html_screenshot.png</a></p>
 <hr />
 <pre>
 &lt;!--
 /**
- * file: base_converter.html
+ * file: beats_machine.html
  * type: Hyper-Text-Markup-Language
- * date: 10_JULY_2023
  * author: karbytes
+ * date: 09_SEPTEMBER_2024
  * license: PUBLIC_DOMAIN
  */
---&gt;
+ --&gt;
 &lt;!DOCTYPE html&gt;
-&lt;html&gt;
+&lt;html lang="en"&gt;
 &lt;head&gt;
     &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;BASE_CONVERTER&lt;/title&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;BEATS_MACHINE&lt;/title&gt;
+    &lt;!-- 
+        /**
+         * The linked Cascading-Style-Sheet file named karbytes_aesthetic.css 
+         * defines how this web page (which is named beats_machine.html) appears 
+         * when this web page is (re)loaded by the web browser. 
+         */
+     --&gt;
     &lt;link rel="stylesheet" href="karbytes_aesthetic.css"&gt;
-    &lt;script s&#8203;rc&#x3D;"base_converter_arithmetic.js"&gt;&lt;/script&gt;
-    &lt;script s&#8203;rc&#x3D;"base_converter_interface.js"&gt;&lt;/script&gt;
-    &lt;script s&#8203;rc&#x3D;"time_stamp.js"&gt;&lt;/script&gt;
+    &lt;!-- 
+        /**
+         * The linked JavaScript file named beats_machine.js 
+         * defines how this web page (which is named beats_machine.html) behaves 
+         * when the user clicks on the menus and start and stop buttons 
+         * (and when this web page is (re)loaded by the web browser). 
+         */
+     --&gt;
+    &lt;script s&#8203;rc&#x3D;"beats_machine.js"&gt;&lt;/script&gt;
     &lt;style&gt;
-        .module {
-            border-radius: 5px;
-            padding: 10px;
-        }
-        .input_step {
-            background: #8fed77;
-            color: #000000;
-        }
-        .output_step {
-            background: #b877ed;
-            color: #000000;
-        }
-        #introduction {
-            background: #ffff00;
-            color: #000000;
-        }
-        #time_stamped_messages {
-            border-color: #00ff00;
-            border-width: 1px;
+        /** Give DIV elements on this web page rounded corners and a MAGENTA border which is 2 pixels thick. */
+        div {
+            border-color: #ff00ff;
+            border-width: 2px;
             border-style: solid;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        /** 
+         * Set the button elements on this web page to have a similar visual appearance as other HTML elements 
+         * defined in the linked Cascading-Style-Sheet file (i.e. karbytes_aesthetic.css). 
+         */
+        button {
+            border-color: #ff9000;
+            border-width: 2px;
+            border-style: solid;
+            background: #00ff00;
+            color: #000000;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            font-size: 14pt;
+        }
+        /** Set the start button's background color to GREEN. */
+        #start_button {
+            background: #00ff00;
+        }
+        /** Set the stop button's background color to RED. */
+        #stop_button {
+            background: #ff0000;
+        }
+        /** Cause the start button's background color to turn CYAN when the cursor hovers over it. */
+        #start_button:hover {
+            background: #00ffff;
+        }
+        /** Cause the stop button's background color to turn CYAN when the cursor hovers over it. */
+        #stop_button:hover {
+            background: #00ffff;
         }
     &lt;/style&gt;
 &lt;/head&gt;
 &lt;body onload="initialize_application()"&gt;
-    &lt;h1&gt;BASE_CONVERTER&lt;/h1&gt;
-    &lt;p class="module" id="introduction"&gt;
-        Convert an INPUT_SEQUENCE (i.e. an unsigned integer consisting 
-        of no more than eight digits) whose base is INPUT_BASE to its 
-        equivalent representation as an unsigned integer whose base 
-        is OUTPUT_BASE.
-    &lt;/p&gt; 
-    &lt;div id="input_form"&gt;&lt;p&gt;#input_form&lt;/p&gt;&lt;/div&gt;
-    &lt;div id="output"&gt;&lt;p&gt;#output&lt;/p&gt;&lt;/div&gt;
-    &lt;div class="module console" id="time_stamped_messages"&gt;&lt;p&gt;#time_stamped_messages&lt;/p&gt;&lt;/div&gt;
+    &lt;div&gt;
+        &lt;h1&gt;BEATS_MACHINE&lt;/h1&gt;
+        &lt;p&gt;
+            This application plays zero, one, two, or three sound tracks simultaneously and such that the 
+            user can customize the beat pitch (i.e. monotone sound wave frequency) and the beat duration 
+            (i.e. time interval in which the same tone is played immediately in succession) of each one 
+            of those three sound tracks.
+        &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;!-- Track 0 --&gt;
+    &lt;div&gt;
+        &lt;h3&gt;TRACK_0&lt;/h3&gt;
+        &lt;p&gt;Select Beat Duration:&nbsp;&lt;span id="duration_0_container"&gt;???&lt;/span&gt;&lt;/p&gt;
+        &lt;p&gt;Select Beat Pitch:&nbsp;&lt;span id="pitch_0_container"&gt;???&lt;/span&gt;&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;!-- Track 1 --&gt;
+    &lt;div&gt;
+        &lt;h3&gt;TRACK_1&lt;/h3&gt;
+        &lt;p&gt;Select Beat Duration:&nbsp;&lt;span id="duration_1_container"&gt;???&lt;/span&gt;&lt;/p&gt;
+        &lt;p&gt;Select Beat Pitch:&nbsp;&lt;span id="pitch_1_container"&gt;???&lt;/span&gt;&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;!-- Track 2 --&gt;
+    &lt;div&gt;
+        &lt;h3&gt;TRACK_2&lt;/h3&gt;
+        &lt;p&gt;Select Beat Duration:&nbsp;&lt;span id="duration_2_container"&gt;???&lt;/span&gt;&lt;/p&gt;
+        &lt;p&gt;Select Beat Pitch:&nbsp;&lt;span id="pitch_2_container"&gt;???&lt;/span&gt;&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;!-- Buttons to start (or stop) playing the beats --&gt;
+    &lt;button id="start_button" onclick="startBeats()"&gt;START_BEATS&lt;/button&gt;
+    &lt;button id="stop_button" onclick="stopBeats()"&gt;STOP_BEATS&lt;/button&gt;
+    &lt;!-- CONSOLE --&gt;
+    &lt;div class="console" id="console"&gt;???&lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 </pre>
 <hr>
 
-
-<figure class="wp-block-image size-full"><img data-attachment-id="21910" data-permalink="https://karlinaobject.wordpress.com/base_converter/base_converter_html_code_screenshot-2/" data-orig-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_html_code_screenshot.png" data-orig-size="1301,1945" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="base_converter_html_code_screenshot" data-image-description="" data-image-caption="" data-medium-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_html_code_screenshot.png?w=201" data-large-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_html_code_screenshot.png?w=685" tabindex="0" role="button" width="1301" height="1945" src="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_html_code_screenshot.png" alt="" class="wp-image-21910" srcset="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_html_code_screenshot.png 1301w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_html_code_screenshot.png?w=100&amp;h=150 100w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_html_code_screenshot.png?w=201&amp;h=300 201w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_html_code_screenshot.png?w=768&amp;h=1148 768w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_html_code_screenshot.png?w=685&amp;h=1024 685w" sizes="(max-width: 1301px) 100vw, 1301px" /></figure>
+<figure class="wp-block-image size-full"><img data-attachment-id="35074" data-permalink="https://karbytesforlifeblog.wordpress.com/beats_machine/beats_machine_html_screenshot/" data-orig-file="https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_html_screenshot.png" data-orig-size="1057,2298" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="beats_machine_html_screenshot" data-image-description="" data-image-caption="" data-medium-file="https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_html_screenshot.png?w=138" data-large-file="https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_html_screenshot.png?w=471" tabindex="0" role="button" width="1057" height="2298" src="https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_html_screenshot.png" alt="" class="wp-image-35074" /></figure>
 
 
 <hr />
 <p><strong>Cascading-Style-Sheet Code</strong></p>
 <hr />
-<p>The following Cascading-Style-Sheet (<a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/CSS" target="_blank" rel="noopener">CSS</a>) code defines a stylesheet which customizes the appearance of interface components of the BASE_CONVERTER web page application. Copy the CSS code from the source code file which is linked below into a text editor and save that file as <strong>karbytes_aesthetic.css</strong>.</p>
-<p>Cascading-Style-Sheet_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/karbytes_aesthetic.css" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/karbytes_aesthetic.css</a></p>
+<p>The following Cascading-Style-Sheet (<a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/CSS" target="_blank" rel="noopener">CSS</a>) code defines a stylesheet which customizes the appearance of interface components of the BEATS_MACHINE web page application. Copy the CSS code from the source code file which is linked below into a text editor and save that file as <strong>karbytes_aesthetic.css</strong>.</p>
+<p>Cascading-Style-Sheet_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_20/main/karbytes_aesthetic.css" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_20/main/karbytes_aesthetic.css</a></p>
 <hr />
 <pre>/**
  * file: karbytes_aesthetic.css
@@ -153,1022 +202,387 @@ td {
 <hr />
 <p><strong>JavaScript Code</strong></p>
 <hr />
-<p>The following JavaScript (<a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/JavaScript" target="_blank" rel="noopener">JS</a>) code defines functions which control the behavior of the <a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/User_interface" target="_blank" rel="noopener">user interface</a> component of the BASE_CONVERTER web page application. Copy the JS code from the source code file which is linked below into a text editor and save that file as <strong>base_converter_interface.js</strong>.</p>
-<p>JavaScript_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/base_converter_interface.js" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/base_converter_interface.js</a></p>
+<p>The following JavaScript (<a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/JavaScript" target="_blank" rel="noopener">JS</a>) code defines the functions which control the behavior of the BEATS_MACHINE web page application. Copy the JS code from the source code file which is linked below into a text editor and save that file as <strong>beats_machine.js</strong>.</p>
+<p>The text in the preformatted text box below appears on this web page (while rendered correctly by the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/HTML" target="_blank" rel="noopener">web browser</a>) to be identical to the content of the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/JavaScript" target="_blank" rel="noopener">JavaScript</a> source code file whose <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/URL" target="_blank" rel="noopener">Uniform Resource Locator</a> is displayed in the green <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Hyperlink" target="_blank" rel="noopener">hyperlink</a> below.</p>
+<p>JavaScript_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_20/main/beats_machine.js" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_20/main/beats_machine.js</a></p>
 <hr />
 <pre>/**
- * file: base_converter_interface.js
+ * file: beats_machine.js
  * type: JavaScript
- * date: 10_JULY_2023
  * author: karbytes
+ * date: 10_SEPTEMBER_2024
  * license: PUBLIC_DOMAIN
  */
+    
+// global program variables    
+let audioContext;
+let intervalIds = [];
 
 /**
- * Make a particular HTML element on the web page whose source code file is base_converter.html invisible (without deleting that element).
+ * Start playing all three beat tracks with the pitch and duration parameters specified on
+ * the web page named beats_machine.html. Play all three of those tracks for an indefinitely
+ * long time period.
  * 
- * @param {String} element_id is assumed to be the id value of an existing HTML element on the web whose source code file is base_converter.html.
+ * Assume that this function is called in response to the event of the START_BUTTON being clicked on
+ * the web page named beats_machine.html (which is assumed to be in the same local directory as
+ * this file (i.e. beats_machine.js) and the file named karbytes_aesthetic.css).
+ * 
+ * This function also prints a time-stamped message indicating when the START_BUTTON was last 
+ * clicked in a DIV element on that web page whose identifier is "console" (and that time-stamped
+ * message is appended to the message that should already be printed in that DIV during the
+ * most recent web page load).
  */
-function hide_page_element(element_id) {
+function startBeats() {
+    let time_stamped_message = "", console_div = undefined;
     try {
-        let web_page_element;
-        if (arguments.length !== 1) throw "exactly one function argument is required.";
-        if (typeof element_id !== "string") throw "element_id is required to be a String type value.";
-        if (element_id.length &lt; 1) throw "element_id is required to be a non-empty string.";
-        web_page_element = document.getElementById(element_id);
-        web_page_element.style.display = "none";
+        // Populate the div whose identifier is "console" with a time stamped message indicating that this function was called (and when it was called).
+        time_stamped_message = ("The function named startBeats() was called at time: " + generate_time_stamp());
+        console.log(time_stamped_message);
+        time_stamped_message = generate_paragraph_html_element(time_stamped_message);
+        console_div = document.getElementById("console");
+        console_div.innerHTML += time_stamped_message;
     }
     catch(exception) {
-        console.log("An exception to normal functioning occurred during the runtime of hide_page_element(element_id): " + exception);
+        console.log("An exception to normal functioning occurred during the runtime of startBeats(): " + exception);
     }
+
+    /**
+     * Initialize the audio context if it has not already been created.
+     * Note that the audio context makes it possible to play the beats offline.
+     * That is because the web browser has built-in sound generating capabilities.
+     * 
+     * According to ChatGPT-4o, the AudioContext manages a flow of audio data buffers, 
+     * which are processed and sent to the output device (e.g., speakers). When creating an 
+     * AudioContext, the browser communicates with the system's sound hardware, requesting 
+     * access to manage audio streams.
+     */
+    if (!audioContext) {
+    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    // Begin playing all three tracks (for an indefinitely long period of time).
+    startTrack(0);
+    startTrack(1);
+    startTrack(2);
 }
 
 /**
- * Make a particular HTML element on the web page defined by base_converter.html visible rather than hidden.
+ * Stop playing all three beat tracks simultaneously.
  * 
- * @param {String} element_id is assumed to be the id value of an existing HTML element on the web page whos source code file is base_converter.html.
+ * Assume that this function is called in response to the event of the STOP_BUTTON being clicked on
+ * the web page named beats_machine.html (which is assumed to be in the same local directory as
+ * this file (i.e. beats_machine.js) and the file named karbytes_aesthetic.css).
+ * 
+ * This function also prints a time-stamped message indicating when the STOP_BUTTON was last 
+ * clicked in a DIV element on that web page whose identifier is "console" (and that time-stamped
+ * message is appended to the message that should already be printed in that DIV during the
+ * most recent web page load).
  */
-function unhide_page_element(element_id) {
+function stopBeats() {
+    let time_stamped_message = "", console_div = undefined;
     try {
-        let web_page_element;
-        if (arguments.length !== 1) throw "exactly one function argument is required.";
-        if (typeof element_id !== "string") throw "element_id is required to be a String type value.";
-        if (element_id.length &lt; 1) throw "element_id is required to be a non-empty string.";
-        web_page_element = document.getElementById(element_id);
-        web_page_element.style.display = "block";
+        // Populate the div whose identifier is "console" with a time stamped message indicating that this function was called (and when it was called).
+        time_stamped_message = ("The function named stopBeats() was called at time: " + generate_time_stamp());
+        console.log(time_stamped_message);
+        time_stamped_message = generate_paragraph_html_element(time_stamped_message);
+        console_div = document.getElementById("console");
+        console_div.innerHTML += time_stamped_message;
     }
     catch(exception) {
-        console.log("An exception to normal functioning occurred during the runtime of unhide_page_element(element_id): " + exception);
+        console.log("An exception to normal functioning occurred during the runtime of stopBeats(): " + exception);
     }
+    intervalIds.forEach(id =&gt; clearInterval(id)); // Clear all intervals.
+    intervalIds = []; // Reset interval ids array.
 }
 
 /**
- * Generate the name of a particular numeric base in the following format: "[base_name] (base-[base_number])".
- * 
- * @param {Number} cardinality_of_base is assumed to be a base-ten integer which is no smaller than two and no larger than sixteen.
- * 
- * @return {String} the inner HTML component of an option for a base select menu; undefined if an exception to normal functioning occurs.
+ * Start playing an individual track (whose trackNumber is assumed to be 0, 1, or 2).
  */
-function get_numeric_base_option_label(cardinality_of_base) {
+function startTrack(trackNumber) {
+    const durationSelect = document.getElementById(`track_${trackNumber}_duration`);
+    const pitchSelect = document.getElementById(`track_${trackNumber}_pitch`);
+    const beatDuration = parseFloat(durationSelect.value);
+    const beatPitch = parseFloat(pitchSelect.value);
+
+    // If the "Do Not Play" option is selected, then do not play the respective track.
+    if (beatPitch === 0) return; 
+
+    /**
+     * Play the respective track using the built-in sound generating capabilities of the web browser.
+     * 
+     * According to ChatGPT-4o, the oscillator generates a periodic waveform (like a sine wave). 
+     * Physically, an oscillator in sound represents variations in air pressure over time, which, 
+     * when processed digitally, corresponds to a series of numerical samples. These samples are 
+     * fed into the system's audio buffer, which is sent to the speakers to produce sound.
+     * 
+     * According to ChatGPT-4o, the gain node adjusts the volume of the sound by scaling the 
+     * amplitude of the waveform. At the machine level, this means multiplying each sample in 
+     * the audio buffer by a constant factor before sending it to the output device.
+     * 
+     * The GainNode controls the amplitude of the tone, creating a short beat that ramps up and down in volume.
+     */
+    function playBeat() {
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+        oscillator.frequency.value = beatPitch;
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        gainNode.gain.setValueAtTime(0, audioContext.currentTime);
+        gainNode.gain.linearRampToValueAtTime(1, audioContext.currentTime + 0.01);
+        gainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + beatDuration);
+        oscillator.start(audioContext.currentTime);
+        oscillator.stop(audioContext.currentTime + beatDuration);
+    }
+    // Set the interval to play the beat at the selected duration.
+    const intervalId = setInterval(playBeat, beatDuration * 1000);
+    intervalIds.push(intervalId);
+}
+
+/**
+ * Return a String type value which describes the number of milliseconds which have elapsed since the Unix Epoch.
+ * 
+ * Note that the Unix Epoch is 01_JANUARY_1970 at 0 hours, 0 minutes, 0 seconds, and 0 seconds 
+ * (i.e. 00:00:00) (i.e. midnight) (Coordinated Universal Time (UTC)).
+ * 
+ * @return {String} text which denotes the number of milliseconds which have elapsed since the Unix Epoch.
+ */
+function generate_time_stamp() {
+    const milliseconds_elapsed_since_unix_epoch = Date.now();
+    return milliseconds_elapsed_since_unix_epoch + " milliseconds since midnight on 01_JANUARY_1970.";
+}
+
+/**
+ * Return a String type value which is used to instantiate a paragraph type web page element such that
+ * the String type value which is passed into this function as its only input is that paragraph element's 
+ * inner HTML content.
+ * 
+ * Note that the String type constant variable values are broken up into single-character String type values 
+ * to avoid causing the WordPress web page editor to interpret HTML tags in the web page body with 
+ * source code which is hosted on that web page inside of PRE (preformatted) web page elements.
+ * 
+ * @param {String} inner_HTML is assumed to be plain text or HTML content.
+ * 
+ * @return {String} a sequence of text characters which is used to instantiate a paragraph (P) web page element.
+ */
+function generate_paragraph_html_element(inner_html) {
+    const opening_paragraph_tag = ('&lt;' + 'p' + '&gt;'), closing_paragraph_tag = ('&lt;' + '/' + 'p' + '&gt;');
     try {
-        if (arguments.length !== 1) throw "exactly one function argument is required.";
-        if (typeof cardinality_of_base !== "number") throw "cardinality_of_base is required to be a Number type value.";
-        if (cardinality_of_base !== Math.floor(cardinality_of_base)) throw "cardinality_of_base is required to be a whole number.";
-        if ((cardinality_of_base &lt; 2) || (cardinality_of_base &gt; 16)) throw "cardinality_of_base is required to be no smaller than two and no larger than sixteen.";
-        if (cardinality_of_base === 2) return "BINARY (base-2)";
-        if (cardinality_of_base === 3) return "TERNARY (base-3)";
-        if (cardinality_of_base === 4) return "QUATERNARY (base-4)";
-        if (cardinality_of_base === 5) return "QUINARY (base-5)";   
-        if (cardinality_of_base === 6) return "SENARY (base-6)"; 
-        if (cardinality_of_base === 7) return "SEPTENARY (base-7)";  
-        if (cardinality_of_base === 8) return "OCTAL (base-8)";  
-        if (cardinality_of_base === 9) return "NONARY (base-9)"; 
-        if (cardinality_of_base === 10) return "DECIMAL (base-10)"; 
-        if (cardinality_of_base === 11) return "UNDECIMAL (base-11)"; 
-        if (cardinality_of_base === 12) return "DUODECIMAL (base-12)"; 
-        if (cardinality_of_base === 13) return "TRIDECIMAL (base-13)"; 
-        if (cardinality_of_base === 14) return "TETRADECIMAL (base-14)";
-        if (cardinality_of_base === 15) return "PENTADECIMAL (base-15)"; 
-        if (cardinality_of_base === 16) return "HEXIDECIMAL (base-16)"; 
-        if (true) throw "some unexpected runtime error occurred.";
+        if (typeof inner_html.length !== "number") throw 'The expression (typeof inner_html.length !== "number") was evaluated to be true.';
+        return opening_paragraph_tag + inner_html + closing_paragraph_tag;
     }
     catch(exception) {
-        console.log("An exception to normal functioning occurred during the runtime of get_numeric_base_option_label(cardinality_of_base): " + exception);
-        return undefinied; 
+        console.log("An exception to normal functioning occurred during the runtime of generate_paragraph_html_element(inner_html): " + exception);
     }
- }
+}
 
 /**
- * Define a select element whose options are the following natural number bases: 
- * 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16.
+ * Generate a drop-down menu of various pitches (and a pitch is a particular sound wave frequency).
  * 
- * Note that the option whose value is "2" is set to be automatically selected if the application user does not click on the select menu.
+ * Return a String type value which is used to instantiate a select type web page element such that
+ * the String type value which is passed into this function as its only input is that select menu element's
+ * id property value.
  * 
- * @param {String} select_id is assumed to be the id of an existing select HTML element on the corresponding web page.
+ * When clicked on, the select menu interface element will expand to display a list of all sound frequencies
+ * (in units named hertz (which is abreviated as Hz (and which indicates some number of cycles per second)))
+ * which are nonnegative integers denoting the number of oscillations per second for each of those twenty beat frequencies.
  * 
- * @return {String} an HTML string which is used to instantiate a select element whose options are the following natural number bases: 
- *                  2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16; 
- *                  undefined if an exception to normal functioning occurs.
+ * Each of the twenty beat pitch frequencies listed in the drop-down menu are arranged in acending order 
+ * starting with the menu option at the top of the list (which is 0 Hz) 
+ * and then, starting with the second option in the list (which is 200 Hz),
+ * incrementing the beat pitch frequency value by some constant positive integer number of Hz (i.e. 45)
+ * until the menu option at the bottom of the list (which is 1010 Hz) is reached.
+ * 
+ * @param {String} select_id is assumed to be either 
+ *                 "track_0_pitch" or else
+ *                 "track_1_pitch" or else
+ *                 "track_2_pitch".
+ * 
+ * @return {String} a sequence of text characters which is used to instantiate an expandable list menu (SELECT) web page element.
  */
-function generate_html_string_for_base_select_menu(select_id) {
+function generate_pitch_menu_select_html_element(select_id) {
+    let select_menu = '', option = '', i = 0, N = 200;
+    let default_menu_option_label = "Do Not Play (i.e. 0 Hz)";
     try {
-        let html_string = "", option_value = 0;
-        if (arguments.length !== 1) throw "exactly one function argument is required.";
-        if (typeof select_id !== "string") throw "select_id is required to be a String type value.";
-        if (select_id.length &lt; 1) throw "select_id is required to be a non-empty string.";
-        html_string += '&lt;' + 'select id="' + select_id + '"' + '&gt;';
-        html_string += '&lt;' + 'option value="2" selected' + '&gt;' + get_numeric_base_option_label(2) + '&lt;' + '/' + 'option' + '&gt;';
-        for (option_value = 3; option_value &lt;= 16; option_value += 1) html_string += '&lt;' + 'option value="' + option_value + '"' + '&gt;' + get_numeric_base_option_label(option_value) + '&lt;' + '/' + 'option' + '&gt;';
-        html_string += '&lt;' + '/' + 'select' + '&gt;';
-        return html_string;
+        if (typeof select_id.length !== "number") throw 'The expression (typeof select_id.length !== "number") was evaluated to be true.';
+        if ((select_id !== "track_0_pitch") &amp;&amp;
+            (select_id !== "track_1_pitch") &amp;&amp;
+            (select_id !== "track_2_pitch"))
+        throw 'select_id must either be "track_0_pitch" or else "track_1_pitch" or "track_2_pitch".';
+        select_menu = ('&lt;' + 'select id="' + select_id + '" style="text-align:left"' + '&gt;');
+        for (i = 0; i &lt; 20; i += 1) {
+            if (i === 0) option = (('&lt;' + 'option value="0" selected' + '&gt;') + default_menu_option_label + ('&lt;' + '/' + '&gt;'));
+            else {
+                option = ('&lt;' + 'option value="' + N + '"' + '&gt;');
+                option += (N + ' Hz' + ('&lt;' + '/' + 'option' + '&gt;'));
+            }
+            select_menu += option;
+            if (i &gt; 0) N += 45;
+        }
+        select_menu += ('&lt;' + '/' + 'select' + '&gt;');
+        return select_menu;
     }
     catch(exception) {
-        console.log("An exception to normal functioning occurred during the runtime of generate_html_string_for_base_select_menu(select_id): " + exception);
-        return undefined;
-    }
- }
+        console.log("An exception to normal functioning occurred during the runtime of generate_pitch_menu_select_html_element(select_id): " + exception);
+    } 
+}
 
- /**
- * Return the value of the selected menu option of a select menu element.
+/**
+ * Generate a drop-down menu of various beat durations (and a beat duration is the time interval 
+ * in which the same tone is played immediately in succession).
  * 
- * @param {String} select_menu_identifier is assumed to be the id of an existing select HTML element on the corresponding web page.
+ * Return a String type value which is used to instantiate a select type web page element such that
+ * the String type value which is passed into this function as its only input is that select menu element's
+ * id property value.
  * 
- * @return {String} the value of the selected menu option; undefined if an exception to normal functioning occurs.
+ * When clicked on, the select menu interface element will expand to display a list of all beat durations
+ * (in units named seconds (and, according to the International System of Units (SI), the second is defined 
+ * scientifically as the duration of 9,192,631,770 periods of the radiation corresponding to the transition 
+ * between the two hyperfine levels of the ground state of the cesium-133 atom)).
+ * 
+ * Each of the ten beat durations listed in the drop-down menu are arranged in acending order 
+ * starting with the menu option at the top of the list (which is 1/16 second (i.e. 0.0625 second)) 
+ * and then incrementing the beat duration by some positive number of seconds (between 0.0625 seconds and 1 second)
+ * until the menu option at the bottom of the list (which is 2 seconds) is reached.
+ * 
+ * @param {String} select_id is assumed to be either 
+ *                 "track_0_duration" or else
+ *                 "track_1_duration" or else
+ *                 "track_2_dutation".
+ * 
+ * @return {String} a sequence of text characters which is used to instantiate an expandable list menu (SELECT) web page element.
  */
-function get_selected_menu_option_value(select_menu_identifier) {
+function generate_beat_duration_menu_select_html_element(select_id) {
+    let select_menu = '', option = '', i = 0;
+    let default_menu_option_label = "1/16 second (i.e. 0.0625 second)";
+    let menu_option_values = [0.0625, 0.25, 0.5, 0.75, 1, 1.0625, 1.25, 1.5, 1.75, 2];
+    let menu_option_label_prefaces = ["1/16", "1/4", "1/2", "3/4", "1", "17/16", "5/4", "3/2", "7/4", "2"];
     try {
-        let menu_object = {}, options_array = [], selected_option_index = 0, selected_option_object = {}, selected_option_value;
-        menu_object = document.getElementById(select_menu_identifier);
-        options_array = menu_object.options;
-        selected_option_index = menu_object.selectedIndex;
-        selected_option_object = options_array[selected_option_index];
-        selected_option_value = selected_option_object.value
-        return selected_option_value;
+        if (typeof select_id.length !== "number") throw 'The expression (typeof select_id.length !== "number") was evaluated to be true.';
+        if ((select_id !== "track_0_duration") &amp;&amp;
+            (select_id !== "track_1_duration") &amp;&amp;
+            (select_id !== "track_2_duration"))
+        throw 'select_id must either be "track_0_duration" or else "track_1_duration" or "track_2_duration".';
+        select_menu = ('&lt;' + 'select id="' + select_id + '" style="text-align:left"' + '&gt;');
+        for (i = 0; i &lt; 10; i += 1) {
+            if (i === 0) option = (('&lt;' + 'option value="' + menu_option_values[0] + '" selected' + '&gt;') + default_menu_option_label + ('&lt;' + '/' + '&gt;'));
+            else {
+                option = ('&lt;' + 'option value="' + menu_option_values[i] + '"' + '&gt;');
+                option += menu_option_label_prefaces[i];
+                if (i &gt; 4) option += (' seconds (' + menu_option_values[i] + ' seconds)');
+                else option += (' second (' + menu_option_values[i] + ' second)');
+                option += ('&lt;' + '/' + 'option' + '&gt;');
+            }
+            select_menu += option;
+        }
+        select_menu += ('&lt;' + '/' + 'select' + '&gt;');
+        return select_menu;
     }
     catch(exception) {
-        console.log("An exception to normal functioning occurred during the runtime of get_selected_menu_option(select_menu_identifier): " + exception);
-        return undefined;
-    }
+        console.log("An exception to normal functioning occurred during the runtime of generate_beat_duration_menu_select_html_element(select_id): " + exception);
+    } 
 }
 
 /**
- * Generate the digit key buttons which are used to enter digits whose base is cardinality_of_base.
+ * Respond to the event of the web page named beats_machine.html being loaded by a web browser.
  * 
- * For example, if cardinality_of_base is 16, then all sixteen digit key buttons will be generated.
+ * This function populates the six select menus on that web page with their respective menu options
+ * (and those select menus have the HTML element identifiers (ids) are as follows:
+ *      "track_0_duration",
+ *      "track_0_pitch",
+ *      "track_1_duration",
+ *      "track_1_pitch",
+ *      "track_2_duration", and
+ *      "track_2_pitch").
  * 
- * By contrast, if cardinality_of_base is 10, then only the first ten of sixteen digit key buttons will be generated.
+ * This function also prints a time-stamped message indicating when the web page was last 
+ * loaded by the web browser in a DIV element on that web page whose identifier is "console".
  * 
- * The digit key buttons are arranged vertically in descending order (where each digit button is encapsulated inside of its own paragraph element).
- * 
- * @param {Number} cardinality_of_base is assumed to be a base-ten integer which is no smaller than two and no larger than sixteen.
- * 
- * @return {String} the HTML string which is used to substantiate the content of the div element whose id is "input_sequence_digit_keys_div"; 
- *                  undefined if an exception to normal functioning occurs. 
- */
-function generate_html_string_for_input_sequence_digit_buttons(cardinality_of_base) {
-    try {
-        let html_string = "", p0 = '&lt;' + 'p' + '&gt;', p1 = '&lt;' + '/' + 'p' + '&gt;', i = 0, hexidecimal_digit_set = "0123456789ABCDEF";
-        if (arguments.length !== 1) throw "exactly one function argument is required.";
-        if (typeof cardinality_of_base !== "number") throw "cardinality_of_base is required to be a Number type value.";
-        if (cardinality_of_base !== Math.floor(cardinality_of_base)) throw "cardinality_of_base is required to be a whole number.";
-        if ((cardinality_of_base &lt; 2) || (cardinality_of_base &gt; 16)) throw "cardinality_of_base is required to be no smaller than two and no larger than sixteen.";
-        for (i = 0; i &lt; cardinality_of_base; i += 1) html_string += p0 + '&lt;' + 'input type="button" value="' + hexidecimal_digit_set[i] + '" onclick="append_digit_' + hexidecimal_digit_set[i] + '()"' + '&gt;' + p1;
-        return html_string;
-    }
-    catch(exception) {
-        console.log("An exception to normal functioning occurred during the runtime of generate_html_string_for_input_sequence_digit_buttons(cardinality_of_base): " + exception);
-        return undefined;   
-    }
-}
-
-/**
- * Determine whether or not hexidecimal_digit is an element of the following set: 
- * ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' ].
- * 
- * @param {String} hexidecimal_digit is assumed to be an element of the following set: 
- *                 ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' ].
- * 
- * @return {Boolean} true if hexidecimal is a valid hexidecimal digit as defined above; false otherwise.
- */
-function is_valid_hexidecimal_digit(hexidecimal_digit) {
-    try {
-        let i = 0, hexidecimal_digit_set = "0123456789ABCDEF";
-        if (arguments.length !== 1) throw "exactly one function argument is required.";
-        if (typeof hexidecimal_digit !== "string") throw "hexidecimal_digit is required to be a String type value.";
-        if (hexidecimal_digit.length !== 1) throw "hexidecimal_digit is required to have a length of exactly one character.";
-        for (i = 0; i &lt; 16; i += 1) if (hexidecimal_digit === hexidecimal_digit_set[i]) return true;
-        return false;
-    }
-    catch(exception) {
-        console.log("An exception to normal functioning occurred during the runtime of is_valid_hexidecimal_digit(hexidecimal_digit): " + exception);
-        return false;
-    }
-}
-
-/**
- * Remove the leftmost character from the inner HTML string of the span HTML element whose id is "input_sequence_span".
- * 
- * Append hexidecimal_digit to right end of that string (such that the total number of characters enclosed by the input sequence span is always eight).
- * 
- * @param {String} hexidecimal_digit is assumed to be an element of the following set: 
- *                 ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' ].
- */
-function append_digit(hexidecimal_digit) {
-    try {
-        let i = 0, input_sequence_span, old_input_sequence = "", new_input_sequence = "";
-        if (!is_valid_hexidecimal_digit(hexidecimal_digit)) throw "hexidecimal_digit is required to be an element of the following set: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' ].";
-        input_sequence_span = document.getElementById("input_sequence_span");
-        old_input_sequence = input_sequence_span.innerHTML;
-        for (i = 1; i &lt; 8; i += 1) new_input_sequence += old_input_sequence[i];
-        new_input_sequence += hexidecimal_digit;
-        input_sequence_span.innerHTML = new_input_sequence;
-    }
-    catch(exception) {
-        console.log("An exception to normal functioning occurred during the runtime of append_digit_1(): " + exception);
-    }
-}
-
-/**
- * Remove the leftmost character from the inner HTML string of the span HTML element whose id is "input_sequence_span".
- * 
- * Append '0' to right end of that string (such that the total number of characters enclosed by the input sequence span is always eight).
- */
-function append_digit_0() {
-    append_digit('0');
-}
-
-/**
- * Remove the leftmost character from the inner HTML string of the span HTML element whose id is "input_sequence_span".
- * 
- * Append '1' to right end of that string (such that the total number of characters enclosed by the input sequence span is always eight).
- */
-function append_digit_1() {
-    append_digit('1');
-}
-
-/**
- * Remove the leftmost character from the inner HTML string of the span HTML element whose id is "input_sequence_span".
- * 
- * Append '2' to right end of that string (such that the total number of characters enclosed by the input sequence span is always eight).
- */
-function append_digit_2() {
-    append_digit('2');
-}
-
-/**
- * Remove the leftmost character from the inner HTML string of the span HTML element whose id is "input_sequence_span".
- * 
- * Append '3' to right end of that string (such that the total number of characters enclosed by the input sequence span is always eight).
- */
-function append_digit_3() {
-    append_digit('3');
-}
-
-/**
- * Remove the leftmost character from the inner HTML string of the span HTML element whose id is "input_sequence_span".
- * 
- * Append '4' to right end of that string (such that the total number of characters enclosed by the input sequence span is always eight).
- */
-function append_digit_4() {
-    append_digit('4');
-}
-
-/**
- * Remove the leftmost character from the inner HTML string of the span HTML element whose id is "input_sequence_span".
- * 
- * Append '5' to right end of that string (such that the total number of characters enclosed by the input sequence span is always eight).
- */
-function append_digit_5() {
-    append_digit('5');
-}
-
-/**
- * Remove the leftmost character from the inner HTML string of the span HTML element whose id is "input_sequence_span".
- * 
- * Append '6' to right end of that string (such that the total number of characters enclosed by the input sequence span is always eight).
- */
-function append_digit_6() {
-    append_digit('6');
-}
-
-/**
- * Remove the leftmost character from the inner HTML string of the span HTML element whose id is "input_sequence_span".
- * 
- * Append '7' to right end of that string (such that the total number of characters enclosed by the input sequence span is always eight).
- */
-function append_digit_7() {
-    append_digit('7');
-}
-
-/**
- * Remove the leftmost character from the inner HTML string of the span HTML element whose id is "input_sequence_span".
- * 
- * Append '8' to right end of that string (such that the total number of characters enclosed by the input sequence span is always eight).
- */
-function append_digit_8() {
-    append_digit('8');
-}
-
-/**
- * Remove the leftmost character from the inner HTML string of the span HTML element whose id is "input_sequence_span".
- * 
- * Append '9' to right end of that string (such that the total number of characters enclosed by the input sequence span is always eight).
- */
-function append_digit_9() {
-    append_digit('9');
-}
-
-/**
- * Remove the leftmost character from the inner HTML string of the span HTML element whose id is "input_sequence_span".
- * 
- * Append 'A' to right end of that string (such that the total number of characters enclosed by the input sequence span is always eight).
- */
-function append_digit_A() {
-    append_digit('A');
-}
-
-/**
- * Remove the leftmost character from the inner HTML string of the span HTML element whose id is "input_sequence_span".
- * 
- * Append 'B' to right end of that string (such that the total number of characters enclosed by the input sequence span is always eight).
- */
-function append_digit_B() {
-    append_digit('B');
-}
-
-/**
- * Remove the leftmost character from the inner HTML string of the span HTML element whose id is "input_sequence_span".
- * 
- * Append 'C' to right end of that string (such that the total number of characters enclosed by the input sequence span is always eight).
- */
-function append_digit_C() {
-    append_digit('C');
-}
-
-/**
- * Remove the leftmost character from the inner HTML string of the span HTML element whose id is "input_sequence_span".
- * 
- * Append 'D' to right end of that string (such that the total number of characters enclosed by the input sequence span is always eight).
- */
-function append_digit_D() {
-    append_digit('D');
-}
-
-/**
- * Remove the leftmost character from the inner HTML string of the span HTML element whose id is "input_sequence_span".
- * 
- * Append 'E' to right end of that string (such that the total number of characters enclosed by the input sequence span is always eight).
- */
-function append_digit_E() {
-    append_digit('E');
-}
-
-/**
- * Remove the leftmost character from the inner HTML string of the span HTML element whose id is "input_sequence_span".
- * 
- * Append 'F' to right end of that string (such that the total number of characters enclosed by the input sequence span is always eight).
- */
-function append_digit_F() {
-    append_digit('F');
-}
-
-/**
- * Set the content displayed inside of the span HTML element whose id is "input_sequence_span" to "00000000".
- */
-function initialize_input_sequence_span() {
-    try {
-        document.getElementById("input_sequence_span").innerHTML = "00000000";
-    }
-    catch(exception) {
-        console.log("An exception to normal functioning occurred during the runtime of initialize_input_sequence_span(): " + exception);
-    }
-}
-
-/**
- * Set the inner HTML of the span element whose id is "input_sequence_span_2" and 
- * "input_sequence_span_3" to the inner HTML of the span element whose id is "input_sequence_span".
- */
-function update_input_sequence_span() {
-    try {
-        let input_sequence_span, input_sequence_span_2, input_sequence_span_3;
-        input_sequence_span = document.getElementById("input_sequence_span");
-        input_sequence_span_2 = document.getElementById("input_sequence_span_2");
-        input_sequence_span_3 = document.getElementById("input_sequence_span_3");
-        input_sequence_span_2.innerHTML = input_sequence_span.innerHTML;
-        input_sequence_span_3.innerHTML = input_sequence_span.innerHTML;
-    }
-    catch(exception) {
-        console.log("An exception to normal functioning occurred during the runtime of update_input_sequence_span_2(): " + exception);
-    }
-}
-
-/**
- * Set the content displayed inside of 
- * the span element whose id is "input_base_span", 
- * the span element whose id is "input_base_span_2", and 
- * the span element whose id is "input_base_span_3" to the 
- * input base option which is currently selected from the list of options 
- * displayed inside the select HTML element whose id is "input_base_menu".
- */
-function update_input_base_span() {
-    try {
-        let input_base_value = 0, input_base_span, input_base_span_2, input_base_span_3;
-        input_base_span = document.getElementById("input_base_span");
-        input_base_span_2 = document.getElementById("input_base_span_2");
-        input_base_span_3 = document.getElementById("input_base_span_3");
-        input_base_value = get_selected_menu_option_value("input_base_menu");
-        input_base_span.innerHTML = input_base_value;
-        input_base_span_2.innerHTML = input_base_value;
-        input_base_span_3.innerHTML = input_base_value;
-    }
-    catch(exception) {
-        console.log("An exception to normal functioning occurred during the runtime of update_input_base_span(): " + exception);
-    }
-}
-
-/**
- * Set the content displayed inside of the HTML element whose id is "digit_buttons_div" 
- * to display the digit buttons which correspond with the input base option 
- * which is currently selected from the list of options displayed inside the select HTML element whose id is "input_base_menu".
- */
-function update_digit_buttons_div() {
-    try {
-        let input_base_value = 0, digit_buttons_div, digit_buttons_for_selected_base;
-        digit_buttons_div = document.getElementById("digit_buttons_div");
-        input_base_value = parseInt(get_selected_menu_option_value("input_base_menu"));
-        digit_buttons_for_selected_base = generate_html_string_for_input_sequence_digit_buttons(input_base_value);
-        digit_buttons_div.innerHTML = digit_buttons_for_selected_base;
-    }
-    catch(exception) {
-        console.log("An exception to normal functioning occurred during the runtime of update_input_base_span(): " + exception);
-    }
-}
-
-/**
- * Set the content displayed inside of the span element whose id is "output_base_span_2" 
- * to the output base option which is currently selected from the list of options displayed 
- * inside the select HTML element whose id is "output_base_menu".
- */
-function update_output_base_span_2() {
-    try {
-        let output_base_value = 0, output_base_span_2;
-        output_base_span_2 = document.getElementById("output_base_span_2");
-        output_base_value = get_selected_menu_option_value("output_base_menu");
-        output_base_span_2.innerHTML = output_base_value;
-    }
-    catch(exception) {
-        console.log("An exception to normal functioning occurred during the runtime of update_output_base_span_2(): " + exception);
-    }
-}
-
-/**
- * Progress from STEP_0 to STEP_1 of the base converter application's input form (which is substantiated using the web page file named base_converter.html).
- * 
- * Assume that this function is called in response to the event of a button click of the NEXT button displayed inside of the div whose id is "step_0_div".
- * 
- * Submit the input base option which is currently selected from the list of options displayed inside the select HTML element whose id is "input_base_menu".
- * 
- * Display the digit buttons which correspond with the selected input base in the next step.
- * 
- * Append a time stamped message to the bottom of the web page indicating that this function was called.
- */
-function step_0_next() {
-    const time_stamp = generate_time_stamp(), p0 = '&lt;' + 'p' + '&gt;', p1 = '&lt;' + '/' + 'p' + '&gt;';
-    let message = "step_0_next() was called at time: " + time_stamp;
-    console.log(message);
-    document.getElementById("time_stamped_messages").innerHTML += p0 + message + p1;
-    update_input_base_span();
-    update_digit_buttons_div();
-    hide_page_element("step_0_div");
-    unhide_page_element("step_1_div");
-}
-
-/**
- * Regress from STEP_1 to STEP_0 of the base converter application's input form (which is substantiated using the web page file named base_converter.html).
- * 
- * Assume that this function is called in response to the event of a button click of the BACK button displayed inside of the div whose id is "step_1_div".
- * 
- * Reset the text displayed inside of the span element whose id is "input_sequence_span" to its initial state: 00000000.
- * 
- * Append a time stamped message to the bottom of the web page indicating that this function was called.
- */
-function step_1_back() {
-    const time_stamp = generate_time_stamp(), p0 = '&lt;' + 'p' + '&gt;', p1 = '&lt;' + '/' + 'p' + '&gt;';
-    let message = "step_1_back() was called at time: " + time_stamp;
-    console.log(message);
-    document.getElementById("time_stamped_messages").innerHTML += p0 + message + p1;
-    initialize_input_sequence_span();
-    hide_page_element("step_1_div");
-    unhide_page_element("step_0_div");
-}
-
-/**
- * Progress from STEP_1 to STEP_2 of the base converter application's input form (which is substantiated using the web page file named base_converter.html).
- * 
- * Assume that this function is called in response to the event of a button click of the NEXT button displayed inside of the div whose id is "step_1_div".
- * 
- * Update the input base and input sequence displays inside of the STEP_2 div.
- * 
- * Append a time stamped message to the bottom of the web page indicating that this function was called.
- */
-function step_1_next() {
-    const time_stamp = generate_time_stamp(), p0 = '&lt;' + 'p' + '&gt;', p1 = '&lt;' + '/' + 'p' + '&gt;';
-    let message = "step_1_next() was called at time: " + time_stamp;
-    console.log(message);
-    document.getElementById("time_stamped_messages").innerHTML += p0 + message + p1;
-    update_input_sequence_span();
-    hide_page_element("step_1_div");
-    unhide_page_element("step_2_div");
-}
-
-/**
- * Regress from STEP_2 to STEP_1 of the base converter application's input form (which is substantiated using the web page file named base_converter.html).
- * 
- * Assume that this function is called in response to the event of a button click of the BACK button displayed inside of the div whose id is "step_2_div".
- * 
- * Append a time stamped message to the bottom of the web page indicating that this function was called.
- */
-function step_2_back() {
-    const time_stamp = generate_time_stamp(), p0 = '&lt;' + 'p' + '&gt;', p1 = '&lt;' + '/' + 'p' + '&gt;';
-    let message = "step_2_back() was called at time: " + time_stamp;
-    console.log(message);
-    document.getElementById("time_stamped_messages").innerHTML += p0 + message + p1;
-    initialize_input_sequence_span();
-    hide_page_element("step_2_div");
-    unhide_page_element("step_1_div");
-}
-
-/**
- * Progress from STEP_2 to STEP_3 of the base converter application's input form (which is substantiated using the web page file named base_converter.html).
- * 
- * Assume that this function is called in response to the event of a button click of the NEXT button displayed inside of the div whose id is "step_2_div".
- * 
- * Submit the output base option which is currently selected from the list of options displayed inside the select HTML element whose id is "input_base_menu".
- * 
- * Update the input_base, input_sequence, and output_base values which are displayed inside the STEP_3 div.
- * 
- * Append a time stamped message to the bottom of the web page indicating that this function was called.
- */
-function step_2_next() {
-    const time_stamp = generate_time_stamp(), p0 = '&lt;' + 'p' + '&gt;', p1 = '&lt;' + '/' + 'p' + '&gt;';
-    let message = "step_2_next() was called at time: " + time_stamp;
-    console.log(message);
-    document.getElementById("time_stamped_messages").innerHTML += p0 + message + p1;
-    update_output_base_span_2();
-    hide_page_element("step_2_div");
-    unhide_page_element("step_3_div");
-}
-
-/**
- * Regress from STEP_3 to STEP_2 of the base converter application's input form (which is substantiated using the web page file named base_converter.html).
- * 
- * Assume that this function is called in response to the event of a button click of the BACK button displayed inside of the div whose id is "step_3_div".
- * 
- * Reset the text displayed inside of the div element whose id is "output" to its initial state: "This sentence will be replaced with base conversion results when the CONVERT button is clicked."
- * 
- * Append a time stamped message to the bottom of the web page indicating that this function was called.
- */
-function step_3_back() {
-    const time_stamp = generate_time_stamp(), p0 = '&lt;' + 'p' + '&gt;', p1 = '&lt;' + '/' + 'p' + '&gt;';
-    let message = "step_3_back() was called at time: " + time_stamp;
-    console.log(message);
-    document.getElementById("time_stamped_messages").innerHTML += p0 + message + p1;
-    initialize_output_div();
-    hide_page_element("step_3_div");
-    unhide_page_element("step_2_div");
-}
-
-/**
- * Define the application interface component (to be displayed on the web page whose source code file is base_converter.html) 
- * which enables the user to select an INPUT_BASE.
- * 
- * @return {String} an HTML string which is used to instantiate a DIV page element whose id is "step_0_div".
- */
-function generate_html_string_for_step_0_div() {
-    let html_string = '&lt;' + 'div class="module input_step" id="step_0_div"' + '&gt;', p0 = '&lt;' + 'p' + '&gt;', p1 ='&lt;' + '/' + 'p' + '&gt;';
-    html_string += p0 + "STEP_0: Select an INPUT_BASE from the expandable menu. Then click the NEXT button to proceed to the INPUT_SEQUENCE step." + p1;
-    html_string += p0 + "INPUT_BASE := " + generate_html_string_for_base_select_menu("input_base_menu") + p1;
-    html_string += p0 + '&lt;' + 'input type="button" value="NEXT" onclick="step_0_next()"' + '&gt;';
-    html_string += '&lt;' + '/' + 'div' + '&gt;';
-    return html_string;
-}
-
-/**
- * Define the application interface component (to be displayed on the web page whose source code file is base_converter.html) 
- * which enables the user to enter an INPUT_SEQUENCE.
- * 
- * @return {String} an HTML string which is used to instantiate a DIV page element whose id is "step_1_div".
- */
-function generate_html_string_for_step_1_div() {
-    let html_string = '&lt;' + 'div class="module input_step" id="step_1_div"' + '&gt;', p0 = '&lt;' + 'p' + '&gt;', p1 = '&lt;' + '/' + 'p' + '&gt;', input_sequence_span;
-    input_base_value = get_selected_menu_option_value("input_base_menu");
-    html_string += p0 + "STEP_1: Use the digit keys to enter no more than eight digits. Then click the NEXT button to proceed to the INPUT_SEQUENCE step. To re-select the INPUT_BASE, click the BACK button." + p1;
-    html_string += p0 + "INPUT_BASE := " + '&lt;' + 'span style="background:#000000;color:#ffff00" id="input_base_span"' + '&gt;' + input_base_value + '&lt;' + '/' + 'span' + '&gt;' + p1;
-    html_string += p0 + "INPUT_SEQUENCE := " + '&lt;' + 'span style="background:#000000;color:#ffff00" id="input_sequence_span"' + '&gt;' + "00000000" + '&lt;' + '/' + 'span' + '&gt;' + p1;
-    html_string += '&lt;' + 'div id="digit_buttons_div"' + '&gt;' + generate_html_string_for_input_sequence_digit_buttons(parseInt(input_base_value)) + '&lt;' + '/' + 'div' + '&gt;';
-    html_string += p0 + '&lt;' + 'input type="button" value="BACK" onclick="step_1_back()"' + '&gt;';
-    html_string += " " + '&lt;' + 'input type="button" value="NEXT" onclick="step_1_next()"' + '&gt;' + p1;
-    html_string += '&lt;' + '/' + 'div' + '&gt;';
-    return html_string;
-}
-
-/**
- * Define the application interface component (to be displayed on the web page whose source code file is base_converter.html) 
- * which enables the user to review input values before initiating the base conversion.
- * 
- * @return {String} an HTML string which is used to instantiate a DIV page element whose id is "step_2_div".
- */
-function generate_html_string_for_step_2_div() {
-    let html_string = '&lt;' + 'div class="module input_step" id="step_2_div"' + '&gt;', p0 = '&lt;' + 'p' + '&gt;', p1 ='&lt;' + '/' + 'p' + '&gt;';
-    html_string += p0 + "STEP_2: Select an OUTPUT_BASE from the expandable menu. Then click the NEXT button to proceed to the BASE_CONVERSION step. To re-enter the INPUT_SEQUENCE, click the BACK button." + p1;
-    html_string += p0 + "INPUT_BASE := " + '&lt;' + 'span style="background:#000000;color:#ffff00" id="input_base_span_2"' + '&gt;' + "???" + '&lt;' + '/' + 'span' + '&gt;' + p1;
-    html_string += p0 + "INPUT_SEQUENCE := " + '&lt;' + 'span style="background:#000000;color:#ffff00" id="input_sequence_span_2"' + '&gt;' + "???" + '&lt;' + '/' + 'span' + '&gt;' + p1;
-    html_string += p0 + "OUTPUT_BASE := " + '&lt;' + 'span style="background:#000000;color:#ffff00" id="output_base_span"' + '&gt;' + generate_html_string_for_base_select_menu("output_base_menu") + '&lt;' + '/' + 'span' + '&gt;' + p1;
-    html_string += p0 + '&lt;' + 'input type="button" value="BACK" onclick="step_2_back()"' + '&gt;';
-    html_string += " " + '&lt;' + 'input type="button" value="NEXT" onclick="step_2_next()"' + '&gt;' + p1;
-    html_string += '&lt;' + '/' + 'div' + '&gt;';
-    return html_string;    
-}
-
-/**
- * Define the application interface component (to be displayed on the web page whose source code file is base_converter.html) 
- * which enables the user to click the CONVERT button.
- * 
- * @return {String} an HTML string which is used to instantiate a DIV page element whose id is "step_3_div".
- */
-function generate_html_string_for_step_3_div() {
-    let html_string = '&lt;' + 'div class="module input_step" id="step_3_div"' + '&gt;', p0 = '&lt;' + 'p' + '&gt;', p1 ='&lt;' + '/' + 'p' + '&gt;';
-    html_string += p0 + "STEP_3: Click the CONVERT button to convert INPUT_SEQUENCE to its OUTPUT_BASE representation. To re-select the OUTPUT_BASE, click the BACK button." + p1;
-    html_string += p0 + "INPUT_BASE := " + '&lt;' + 'span style="background:#000000;color:#ffff00" id="input_base_span_3"' + '&gt;' + "???" + '&lt;' + '/' + 'span' + '&gt;' + p1;
-    html_string += p0 + "INPUT_SEQUENCE := " + '&lt;' + 'span style="background:#000000;color:#ffff00" id="input_sequence_span_3"' + '&gt;' + "???" + '&lt;' + '/' + 'span' + '&gt;' + p1;
-    html_string += p0 + "OUTPUT_BASE := " + '&lt;' + 'span style="background:#000000;color:#ffff00" id="output_base_span_2"' + '&gt;' + "???" + '&lt;' + '/' + 'span' + '&gt;' + p1;
-    html_string += p0 + '&lt;' + 'input type="button" value="BACK" onclick="step_3_back()"' + '&gt;';
-    html_string += " " + '&lt;' + 'input type="button" value="CONVERT" onclick="convert()"' + '&gt;' + p1;
-    html_string += '&lt;' + '/' + 'div' + '&gt;';
-    return html_string;
-}
-
-/**
- * Set the content displayed inside of the div HTML element whose id is "output" to its initial placeholder text.
- */
-function initialize_output_div() {
-    try {
-        let p0 = '&lt;' + 'p class="module output_step"' + '&gt;', p1 = '&lt;' + '/' + 'p' + '&gt;';
-        document.getElementById("output").innerHTML = p0 + "This sentence will be replaced with base conversion results when the CONVERT button is clicked." + p1;
-    }
-    catch(exception) {
-        console.log("An exception to normal functioning occurred during the runtime of initialize_output_div(): " + exception);
-    }
-}
-
-/**
- * Set the web page interface (i.e. base_converter.html) to its intial state.
- * 
- * Assume that this function is called in response the event of the web page being loaed by the web browser.
+ * Assume that all three files which constitute this single web page application are located
+ * in the same local file directory (and those file are 
+ * karbytes_aesthetic.css, beats_machine.js, and beats_machine.html).
  */
 function initialize_application() {
+    // Initialize variables which are local to this function.
+    let time_stamped_message = "";
+    let duration_0_container = undefined, pitch_0_container = undefined;
+    let duration_1_container = undefined, pitch_1_container = undefined;
+    let duration_2_container = undefined, pitch_2_container = undefined;
+
+    // Execute a try-catch block. If runtime exceptions are found, exit the try block and print an error message to the web browser console.
     try {
-        const time_stamp = generate_time_stamp(), p0 = '&lt;' + 'p' + '&gt;', p1 = '&lt;' + '/' + 'p' + '&gt;';
-        let message = "The web page, base_converter.html, was loaded at time: " + time_stamp;
-        let input_form_div = undefined;
-        console.log(message);
-        document.getElementById("time_stamped_messages").innerHTML = p0 + message + p1;
-        input_form_div = document.getElementById("input_form");
-        initialize_output_div();
-        input_form_div.innerHTML = generate_html_string_for_step_0_div();
-        input_form_div.innerHTML += generate_html_string_for_step_1_div();
-        input_form_div.innerHTML += generate_html_string_for_step_2_div();
-        input_form_div.innerHTML += generate_html_string_for_step_3_div();
-        hide_page_element("step_1_div");
-        hide_page_element("step_2_div");
-        hide_page_element("step_3_div");
+        // Populate the div whose identifier is "console" with a time stamped message indicating that this function was called (and when it was called).
+        time_stamped_message = ("The function named initialize_application() was called at time: " + generate_time_stamp());
+        console.log(time_stamped_message);
+        time_stamped_message = generate_paragraph_html_element(time_stamped_message);
+        console_div = document.getElementById("console");
+        console_div.innerHTML = time_stamped_message;
+
+        // Populate the "duration_0_container" span element with a select menu for choosing a duration for TRACK_0.
+        duration_0_container_span = document.getElementById("duration_0_container");
+        duration_0_container_span.innerHTML = generate_beat_duration_menu_select_html_element("track_0_duration"); 
+
+        // Populate the "pitch_0_container" span element with a select menu for choosing a pitch for TRACK_0.
+        pitch_0_container_span = document.getElementById("pitch_0_container");
+        pitch_0_container_span.innerHTML = generate_pitch_menu_select_html_element("track_0_pitch"); 
+
+        // Populate the "duration_1_container" span element with a select menu for choosing a duration for TRACK_1.
+        duration_1_container_span = document.getElementById("duration_1_container");
+        duration_1_container_span.innerHTML = generate_beat_duration_menu_select_html_element("track_1_duration"); 
+
+        // Populate the "pitch_1_container" span element with a select menu for choosing a pitch for TRACK_1.
+        pitch_1_container_span = document.getElementById("pitch_1_container");
+        pitch_1_container_span.innerHTML = generate_pitch_menu_select_html_element("track_1_pitch"); 
+
+        // Populate the "duration_2_container" span element with a select menu for choosing a duration for TRACK_2.
+        duration_2_container_span = document.getElementById("duration_2_container");
+        duration_2_container_span.innerHTML = generate_beat_duration_menu_select_html_element("track_2_duration"); 
+
+        // Populate the "pitch_2_container" span element with a select menu for choosing a pitch for TRACK_2.
+        pitch_2_container_span = document.getElementById("pitch_2_container");
+        pitch_2_container_span.innerHTML = generate_pitch_menu_select_html_element("track_2_pitch"); 
     }
     catch(exception) {
         console.log("An exception to normal functioning occurred during the runtime of initialize_application(): " + exception);
     }
 }
-
-/**
- * Perform the base converion using the input values which were submitted by the application user via the web page interface.
- * 
- * Convert an INPUT_SEQUENCE (i.e. an unsigned integer consisting of no more than eight digits) 
- * whose base is INPUT_BASE to its equivalent representation as an unsigned integer whose base is OUTPUT_BASE.
- * 
- * Append a time stamped message to the bottom of the web page indicating that this function was called.
- */
-function convert() {
-    try {
-        const time_stamp = generate_time_stamp();
-        let message = "convert() was called at time: " + time_stamp;
-        let INPUT_BASE = 0, INPUT_SEQUENCE = "", OUTPUT_BASE = 0, OUTPUT_SEQUENCE = "";
-        let  p00 = '&lt;' + 'p class="module" style="border-color: #00ffff; border-width: 1px;border-style: solid;"' + '&gt;', p0 = '&lt;' + 'p' + '&gt;', p1 = '&lt;' + '/' + 'p' + '&gt;';
-        console.log(message);
-        document.getElementById("time_stamped_messages").innerHTML += p0 + message + p1;
-        INPUT_BASE = parseInt(document.getElementById("input_base_span").innerHTML);
-        INPUT_SEQUENCE = document.getElementById("input_sequence_span").innerHTML;
-        OUTPUT_BASE = parseInt(document.getElementById("output_base_span_2").innerHTML);
-        OUTPUT_SEQUENCE = perform_base_conversion(INPUT_BASE, INPUT_SEQUENCE, OUTPUT_BASE);
-        document.getElementById("output").innerHTML = p00 + INPUT_SEQUENCE + " (in base-" + INPUT_BASE + ") is equal to " + OUTPUT_SEQUENCE + " (in base-" + OUTPUT_BASE + ")." + p1
-    }
-    catch(exception) {
-        console.log("An exception to normal functioning occurred during the runtime of convert(): " + exception); 
-    }
-}
 </pre>
 <hr />
-<p><strong>JavaScript Code</strong></p>
+<p><strong>BEATS_MACHINE Interface (Initial)</strong></p>
 <hr />
-<p>The following JavaScript (<a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/JavaScript" target="_blank" rel="noopener">JS</a>) code defines functions which perform the <a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/Arithmetic" target="_blank" rel="noopener">arithmetic</a> operations involved in converting INPUT_SEQUENCE from INPUT_BASE to OUTPUT_BASE when using the BASE_CONVERTER web page application. Copy the JS code from the source code file which is linked below into a text editor and save that file as <strong>base_converter_arithmetic.js</strong>.</p>
-<p>JavaScript_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/base_converter_arithmetic.js" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/base_converter_arithmetic.js</a></p>
-<hr />
-<pre>/**
- * file: base_converter_arithmetic.js
- * type: JavaScript
- * date: 10_JULY_2023
- * author: karbytes
- * license: PUBLIC_DOMAIN
- */
-
-/**
- * Get the result of the following calculation: base ^ exponent (i.e. base to the power of exponent (i.e. base multiplied by itself exponent times))
- * .
- * @param {Number} base is assumed to be a base-ten natural number which is no smaller than two and no larger than sixteen.
- * 
- * @param {Number} exponent is assumed to be a base-ten natural number which is no smaller than zero and no larger than seven.
- * 
- * @return {Number} base multiplied by itself exponent times if no exception is thrown; otherwise 1.
- */
-function compute_power(base, exponent) {
-    try {
-        let result = 1;
-        if (arguments.length !== 2) throw "exactly two function arguments are required.";
-        if (typeof base !== "number") throw "base is required to be a Number type value.";
-        if (typeof exponent !== "number") throw "exponent is required to be a Number type value.";
-        if (Math.floor(base) !== base) throw "base is required to be a whole number.";
-        if (Math.floor(exponent) !== exponent) throw "exponent is required to be a whole number.";
-        if ((base &lt; 2) || (base &gt; 16)) throw "base is required to be no smaller than two and no larger than sixteen.";
-        if ((exponent &lt; 0) || (exponent &gt; 7)) throw "exponent is required to be no smaller than zero and no larger than seven.";
-        while (exponent &gt; 0) {
-            result *= base;
-            exponent -= 1;
-        }
-        return result;
-    }
-    catch(exception) {
-        console.log("An exception to normal functioning occurred during the runtime of compute_power(base, exponent): " + exception);
-        return 1;        
-    }
-}
-
-/**
- * Determine whether or not the given function arguments represents a valid input_sequence with whose digits are in the input_base.
- * 
- * @param {Number} input_base is assumed to be a base-ten integer which is no smaller than two and no larger than sixteen.
- * 
- * @param {String} input_sequence is assumed to be a sequence of exactly eight characters such that each character is a digit whose numeric base is input_base.
- * 
- * @return {Boolean} true if input_sequence is a string comprised of exactly eight characters such that each character is a digit whose numeric base is input_base; false otherwise.
- */
-function validate_input_sequence(input_base, input_sequence) {
-    try {
-        let hexidecimal_digit_set = "0123456789ABCDEF", i = 0, k = 0, is_valid_input_sequence_digit = false;
-        if (arguments.length !== 2) throw "exactly two function arguments are required.";
-        if (typeof input_base !== "number") throw "input_base is required to be a Number type value.";
-        if (typeof input_sequence !== "string") throw "input_sequence is required to be a String type value.";
-        if (Math.floor(input_base) !== input_base) throw "input_base is required to be a whole number.";
-        if ((input_base &lt; 2) || (input_base &gt; 16)) throw "input_base is required to be no smaller than two and no larger than sixteen.";
-        if (input_sequence.length !== 8) throw "input_sequence is required to have a length of exactly eight characters.";
-        for (i = 0; i &lt; 8; i++) {
-            for (k = 0; k &lt; input_base; k++) if (input_sequence[i] === hexidecimal_digit_set[k]) is_valid_input_sequence_digit = true;
-            if (!is_valid_input_sequence_digit) throw "at least one character in input_sequence is not a valid digit (i.e. a digit whose base is input_base).";
-            is_valid_input_sequence_digit = false;
-        }
-        return true;
-    }
-    catch(exception) {
-        console.log("An exception to normal functioning occurred during the runtime of convert_to_decimal(input_base, input_sequence): " + exception);
-        return false;
-    }
-}
-
-/**
- * Return the decimal integer index of the hexidecimal digit which H represents where hexidecimal digits 
- * are the following set of characters arranged in the following permutation: 
- * ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
- * 
- * @param {String} H is assumed to be a single hexidecimal digit.
- * 
- * @return {Number} the decimal integer index of the hexidecimal digit which H represents.
- */
-function get_decimal_value_of_hexidecimal_digit(H) {
-    if (H === '0') return 0;
-    if (H === '1') return 1;
-    if (H === '2') return 2;
-    if (H === '3') return 3;
-    if (H === '4') return 4;
-    if (H === '5') return 5;
-    if (H === '6') return 6;
-    if (H === '7') return 7;
-    if (H === '8') return 8;
-    if (H === '9') return 9;
-    if (H === 'A') return 10;
-    if (H === 'B') return 11;
-    if (H === 'C') return 12;
-    if (H === 'D') return 13;
-    if (H === 'E') return 14;
-    if (H === 'F') return 15;
-    return 0;
-}
-
-/**
- * Get the decimal number representation of input_sequence by converting input_sequence from input_base to decimal (i.e. base-ten).
- * 
- * @param {Number} input_base is assumed to be a base-ten integer which is no smaller than two and no larger than sixteen.
- * 
- * @param {String} input_sequence is assumed to be a sequence of exactly eight characters such that each character is a digit whose numeric base is input_base.
- * 
- * @return {Number} the base-ten number which input_sequence in the input_base represents; zero if an exception to normal functioning is thrown.
- */
-function convert_to_decimal(input_base, input_sequence) {
-    try {
-        let decimal_output = 0, i = 0;
-        if (!validate_input_sequence(input_base, input_sequence)) throw "input_base or input_sequence appears to be an invalid function argument.";
-        for (i = 0; i &lt; 8; i++) decimal_output += (get_decimal_value_of_hexidecimal_digit(input_sequence[i]) * compute_power(input_base, 7 - i));
-        return decimal_output;
-    }
-    catch(exception) {
-        console.log("An exception to normal functioning occurred during the runtime of convert_to_decimal(input_base, input_sequence): " + exception);
-        return 0;
-    }
-}
-
-/**
- * Get the hexidecimal equivalent of a single decimal digit.
- * 
- * @param {Number} D is assumed to be a single base-ten digit (i.e. exactly one element within the following array: 
- *                 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]).
- * 
- * @return {String} the element of the following array whose index in the array is D: 
- *                  ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'] if D is a valid decimal digit; 
- *                  '0' otherwise.
- */
-function convert_decimal_digit_to_hexidecimal(D) {
-    try {
-        let hexidecimal_digit_set = "0123456789ABCDEF";
-        if (arguments.length !== 1) throw "exactly one function argument is required.";
-        if (typeof D !== "number") throw "D is required to be a Number type value.";
-        if (Math.floor(D) !== D) throw "D is required to be a whole number.";
-        if ((D &lt; 0) || (D &gt; 9)) "D is required to be no smaller than zero and no larger than nine.";
-        return hexidecimal_digit_set[D];
-    }
-    catch(exception) {
-        console.log("An exception to normal functioning occurred during the runtime of convert_decimal_digit_to_hexidecimal(D): " + exception);
-        return '0';
-    }
-}
-
-/**
- * Return a string whose constituent characters are identical to the characters in S except for the fact that 
- * the output string characters are in reverse order from those in S.
- * 
- * @param {String} S is assumed to be a sequence of characters.
- * 
- * @return {String} S in reverse order.
- */
-function reverse_string(S) {
-    try {
-        let output_string = "", i = 0;
-        if (arguments.length !== 1) throw "exactly one function argument is required.";
-        if (typeof S !== "string") throw "output_string is required to be a String type value.";
-        for (i = (S.length - 1); i &gt;= 0; i--) output_string += S[i];
-        return output_string;
-    }
-    catch(exception) {
-        console.log("An exception to normal functioning occurred during the runtime of reverse_string(S): " + exception);
-        return "ERROR";
-    }
-}
-
-/**
- * Get the output_base representation of decimal_number by converting decimal_number from decimal (i.e. base-ten) to output_base.
- * 
- * @param {Number} output_base is assumed to be a base-ten integer which is no smaller than two and no larger than sixteen.
- * 
- * @param {Number} decimal_number is assumed to be a base-ten integer no smaller than zero and no larger than the following sum: 
- *                 (16 * (16 ^ 7)) + (16 * (16 ^ 6)) + (16 * (16 ^ 5)) + (16 * (16 ^ 4)) + (16 * (16 ^ 3)) + (16 * (16 ^ 2)) + (16 * (16 ^ 1)) + (16 * (16 ^ 0)) = 4581298448.
- * 
- * @return {String} a sequence of one ore more hexidecimal digits which represents the value of decimal_number in the given output_base.
- */
-function convert_from_decimal(output_base, decimal_number) {
-    try {
-        let maximum_decimal_number_value = 0, i = 0, output_base_result = "";
-        if (arguments.length !== 2) throw "exactly two function arguments are required.";
-        if (typeof output_base !== "number") throw "output_base is required to be a Number type value.";
-        if (typeof decimal_number !== "number") throw "decimal_number is required to be a Number type value.";
-        if (Math.floor(output_base) !== output_base) throw "output_base is required to be a whole number.";
-        if (Math.floor(decimal_number) !== decimal_number) throw "decimal_number is required to be a whole number.";
-        if ((output_base &lt; 2) || (output_base &gt; 16)) throw "output_base is required to be no smaller than two and no larger than sixteen.";
-        for (i = 7; i &gt;= 0; i -= 1) maximum_decimal_number_value += (16 * compute_power(16, i));
-        if ((decimal_number &lt; 0) || (decimal_number &gt; maximum_decimal_number_value)) throw "decimal_number is required to be larger than zero and no larger than " + maximum_decimal_number_value + ".";
-        while (decimal_number &gt; 0) {
-            output_base_result += convert_decimal_digit_to_hexidecimal(decimal_number % output_base);
-            decimal_number = Math.floor(decimal_number / output_base);
-        }
-        return reverse_string(output_base_result);
-    }
-    catch(exception) {
-        console.log("An exception to normal functioning occurred during the runtime of convert_from_decimal(output_base, decimal_number): " + exception);
-        return '0';
-    }
-}
-
-/**
- * Convert an INPUT_SEQUENCE (i.e. an unsigned integer consisting of no more than eight digits) 
- * whose base is INPUT_BASE to its equivalent representation as an unsigned integer whose base is OUTPUT_BASE.
- * 
- * This is the "main function" of this JavaScript file (i.e. the "macro function" which implements each of the arithmetic functions defined above).
- * 
- * @param {Number} input_base is assumed to be a base-ten integer which is no smaller than two and no larger than sixteen.
- * 
- * @param {String} input_sequence is assumed to be a sequence of exactly eight characters such that each character is a digit whose numeric base is input_base.
- * 
- * @param {Number} output_base is assumed to be a base-ten integer which is no smaller than two and no larger than sixteen.
- * 
- * @return {String} input_sequence in its output_base representation if no exception to normal functioning is thrown; "0" otherwise.
- */
-function perform_base_conversion(input_base, input_sequence, output_base) {
-    try {
-        let decimal_number = convert_to_decimal(input_base, input_sequence);
-        return convert_from_decimal(output_base, decimal_number);
-    }
-    catch(exception) {
-        console.log("An exception to normal functioning occurred during the runtime of perform_base_conversion(input_base, input_sequence, output_base): " + exception);
-        return '0';
-    }
-}
-</pre>
-<hr />
-<p><strong>JavaScript Code</strong></p>
-<hr />
-<p>The following JavaScript (<a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/JavaScript" target="_blank" rel="noopener">JS</a>) code defines one function which controls the behavior of the BASE_CONVERTER web page application; namely the function which returns the number of milliseconds elapsed since the <a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/Unix_time" target="_blank" rel="noopener">Unix Epoch</a> concatenated to the <a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/String_(computer_science)" target="_blank" rel="noopener">string</a> ” milliseconds since midnight on 01_JANUARY_1970″. Copy the JS code from the source code file which is linked below into a text editor and save that file as <strong>time_stamp.js</strong>.</p>
-<p>JavaScript_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/time_stamp.js" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/time_stamp.js</a></p>
-<hr />
-<pre>/**
- * file: time_stamp.js
- * type: JavaScript
- * date: 10_JULY_2023
- * author: karbytes
- * license: PUBLIC_DOMAIN
- */
-
-/**
- * Get the Number of milliseconds which have elapsed since the Unix Epoch.
- * The Unix Epoch is 01_JANUARY_1970 at midnight (Coordinated Universal Time (UTC)).
- * 
- * @return {String} message displaying the time at which this function was called.
- */
-function generate_time_stamp() {
- 	const milliseconds_elapsed_since_unix_epoch = Date.now();
- 	return  milliseconds_elapsed_since_unix_epoch + " milliseconds since midnight on 01_JANUARY_1970.";
-}
-</pre>
-<hr />
-<p><strong>BASE_CONVERTER Interface (Initial)</strong></p>
-<hr />
-<p>The screenshot image below depicts what the BASE_CONVERTER web page interface is supposed to look like when the web page is initially loaded by a web browser.</p>
-<p>image_link: <a style="background: #000000;color: #ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/base_converter_interface_initial.png" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/base_converter_interface_initial.png</a></p>
+<p>The screenshot image below depicts what the BEATS_MACHINE web page interface is supposed to look like when the web page is initially loaded (or reloaded) by a web browser.</p>
+<p>image_link: <a style="background: #000000;color: #ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_20/main/beats_machine_interface_screenshot_p0.jpeg" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_20/main/beats_machine_interface_screenshot_p0.jpeg</a></p>
 <hr />
 
 
-<figure class="wp-block-image size-full"><img data-attachment-id="21908" data-permalink="https://karlinaobject.wordpress.com/base_converter/base_converter_interface_initial-1/" data-orig-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_interface_initial-1.png" data-orig-size="836,649" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="base_converter_interface_initial-1" data-image-description="" data-image-caption="" data-medium-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_interface_initial-1.png?w=300" data-large-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_interface_initial-1.png?w=836" tabindex="0" role="button" width="836" height="649" src="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_interface_initial-1.png" alt="" class="wp-image-21908" srcset="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_interface_initial-1.png 836w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_interface_initial-1.png?w=150&amp;h=116 150w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_interface_initial-1.png?w=300&amp;h=233 300w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_interface_initial-1.png?w=768&amp;h=596 768w" sizes="(max-width: 836px) 100vw, 836px" /></figure>
+<figure class="wp-block-image size-full"><img data-attachment-id="35079" data-permalink="https://karbytesforlifeblog.wordpress.com/beats_machine/beats_machine_interface_screenshot_p0/" data-orig-file="https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_interface_screenshot_p0.jpeg" data-orig-size="1024,1286" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="beats_machine_interface_screenshot_p0" data-image-description="" data-image-caption="" data-medium-file="https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_interface_screenshot_p0.jpeg?w=239" data-large-file="https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_interface_screenshot_p0.jpeg?w=815" tabindex="0" role="button" width="1024" height="1286" src="https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_interface_screenshot_p0.jpeg" alt="" class="wp-image-35079" /></figure>
 
 
 <hr />
-<p><strong>BASE_CONVERTER Interface (Step One)</strong></p>
+<p><strong>BEATS_MACHINE Interface (After Clicking START_BUTTON)</strong></p>
 <hr />
-<p>The screenshot image below depicts one possible configuration of what the the BASE_CONVERTER web page interface could look like after the user selects an INPUT_BASE from the expandable menu and then clicks on the NEXT button in the &#8220;step_0&#8221; module portion of the &#8220;input_form&#8221;.</p>
-<p>(Note that only digit keys in the INPUT_BASE will appear and more than eight digits can be input into INPUT_SEQUENCE. If more than eight digits are input, the leftmost digit will be removed while the most recently input digit will be appended to the rightmost end of the INPUT_SEQUENCE).</p>
-<p>image_link: <a style="background: #000000;color: #ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/base_converter_interface_step_1.png" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/base_converter_interface_step_1.png</a></p>
-<hr />
-
-
-<figure class="wp-block-image size-full"><img data-attachment-id="21905" data-permalink="https://karlinaobject.wordpress.com/base_converter/base_converter_interface_step_1-2/" data-orig-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_interface_step_1.png" data-orig-size="830,1713" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="base_converter_interface_step_1" data-image-description="" data-image-caption="" data-medium-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_interface_step_1.png?w=145" data-large-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_interface_step_1.png?w=496" tabindex="0" role="button" width="830" height="1713" src="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_interface_step_1.png" alt="" class="wp-image-21905" srcset="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_interface_step_1.png 830w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_interface_step_1.png?w=73&amp;h=150 73w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_interface_step_1.png?w=145&amp;h=300 145w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_interface_step_1.png?w=768&amp;h=1585 768w" sizes="(max-width: 830px) 100vw, 830px" /></figure>
-
-
-<hr />
-<p><strong>BASE_CONVERTER Interface (Step Two)</strong></p>
-<hr />
-<p>The screenshot image below depicts one possible configuration of what the the BASE_CONVERTER web page interface could look like after the user enters digits into an INPUT_SEQUENCE using the INPUT_BASE digit buttons and then clicks on the NEXT button in the &#8220;step_1&#8221; module portion of the &#8220;input_form&#8221;.</p>
-<p>(Note that the user can use BACK buttons to return to previous steps in order to change the input values).</p>
-<p>image_link: <a style="background: #000000;color: #ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/base_converter_interface_step_2.png" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/base_converter_interface_step_2.png</a></p>
+<p>The screenshot image below depicts what the BEATS_MACHINE web page interface could look like after the user selects pitch and duration options for each of the three sound tracks and then clicks the START_BUTTON.</p>
+<p>image_link: <a style="background: #000000;color: #ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_20/main/beats_machine_interface_screenshot_p1.jpeg" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_20/main/beats_machine_interface_screenshot_p1.jpeg</a></p>
 <hr />
 
 
-<figure class="wp-block-image size-full"><img data-attachment-id="21902" data-permalink="https://karlinaobject.wordpress.com/base_converter/base_converter_interface_step_2-2/" data-orig-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_interface_step_2.png" data-orig-size="840,875" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="base_converter_interface_step_2" data-image-description="" data-image-caption="" data-medium-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_interface_step_2.png?w=288" data-large-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_interface_step_2.png?w=840" tabindex="0" role="button" loading="lazy" width="840" height="875" src="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_interface_step_2.png" alt="" class="wp-image-21902" srcset="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_interface_step_2.png 840w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_interface_step_2.png?w=144&amp;h=150 144w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_interface_step_2.png?w=288&amp;h=300 288w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_interface_step_2.png?w=768&amp;h=800 768w" sizes="(max-width: 840px) 100vw, 840px" /></figure>
+<figure class="wp-block-image size-full"><img data-attachment-id="35082" data-permalink="https://karbytesforlifeblog.wordpress.com/beats_machine/beats_machine_interface_screenshot_p1/" data-orig-file="https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_interface_screenshot_p1.jpeg" data-orig-size="1028,1342" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="beats_machine_interface_screenshot_p1" data-image-description="" data-image-caption="" data-medium-file="https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_interface_screenshot_p1.jpeg?w=230" data-large-file="https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_interface_screenshot_p1.jpeg?w=784" tabindex="0" role="button" width="1028" height="1342" src="https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_interface_screenshot_p1.jpeg" alt="" class="wp-image-35082" /></figure>
 
 
 <hr />
-<p><strong>BASE_CONVERTER Interface (Step Three)</strong></p>
+<p><strong>BEATS_MACHINE Interface (After Clicking STOP_BUTTON)</strong></p>
 <hr />
-<p>The screenshot image below depicts one possible configuration of what the the BASE_CONVERTER web page interface could look like after the user selects an OUTPUT_BASE from the expandable menu and then clicks on the NEXT button in the &#8220;step_2&#8221; module portion of the &#8220;input_form&#8221;.</p>
-<p>image_link: <a style="background: #000000;color: #ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/base_converter_interface_step_3.png" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/base_converter_interface_step_3.png</a></p>
-<hr />
-
-
-<figure class="wp-block-image size-full"><img data-attachment-id="21901" data-permalink="https://karlinaobject.wordpress.com/base_converter/base_converter_interface_step_3-2/" data-orig-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_interface_step_3.png" data-orig-size="842,890" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="base_converter_interface_step_3" data-image-description="" data-image-caption="" data-medium-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_interface_step_3.png?w=284" data-large-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_interface_step_3.png?w=842" tabindex="0" role="button" loading="lazy" width="842" height="890" src="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_interface_step_3.png" alt="" class="wp-image-21901" srcset="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_interface_step_3.png 842w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_interface_step_3.png?w=142&amp;h=150 142w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_interface_step_3.png?w=284&amp;h=300 284w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_interface_step_3.png?w=768&amp;h=812 768w" sizes="(max-width: 842px) 100vw, 842px" /></figure>
-
-
-<hr />
-<p><strong>BASE_CONVERTER Interface (Final)</strong></p>
-<hr />
-<p>The screenshot image below depicts one possible configuration of what the BASE_CONVERTER web page interface could look like after the user clicks on the CONVERT button in the &#8220;step_3&#8221; module portion of the &#8220;input_form&#8221;.</p>
-<p>image_link: <a style="background: #000000;color: #ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/base_converter_interface_final.png" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/base_converter_interface_final.png</a></p>
+<p>The screenshot image below depicts what the BEATS_MACHINE web page interface could look like after the user selects pitch and duration options for each of the three sound tracks, clicks the START_BUTTON, and then clicks the STOP_BUTTON.</p>
+<p>image_link: <a style="background: #000000;color: #ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_20/main/beats_machine_interface_screenshot_p2.jpeg" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_20/main/beats_machine_interface_screenshot_p2.jpeg</a></p>
 <hr />
 
 
-<figure class="wp-block-image size-full"><img data-attachment-id="21900" data-permalink="https://karlinaobject.wordpress.com/base_converter/base_converter_interface_final-2/" data-orig-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_interface_final.png" data-orig-size="829,914" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="base_converter_interface_final" data-image-description="" data-image-caption="" data-medium-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_interface_final.png?w=272" data-large-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_interface_final.png?w=829" tabindex="0" role="button" loading="lazy" width="829" height="914" src="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_interface_final.png" alt="" class="wp-image-21900" srcset="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_interface_final.png 829w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_interface_final.png?w=136&amp;h=150 136w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_interface_final.png?w=272&amp;h=300 272w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/base_converter_interface_final.png?w=768&amp;h=847 768w" sizes="(max-width: 829px) 100vw, 829px" /></figure>
+<figure class="wp-block-image size-full"><img data-attachment-id="35085" data-permalink="https://karbytesforlifeblog.wordpress.com/beats_machine/beats_machine_interface_screenshot_p2/" data-orig-file="https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_interface_screenshot_p2.jpeg" data-orig-size="1013,1400" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="beats_machine_interface_screenshot_p2" data-image-description="" data-image-caption="" data-medium-file="https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_interface_screenshot_p2.jpeg?w=217" data-large-file="https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_interface_screenshot_p2.jpeg?w=741" tabindex="0" role="button" loading="lazy" width="1013" height="1400" src="https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_interface_screenshot_p2.jpeg" alt="" class="wp-image-35085" /></figure>
 
 
 <hr />
-<p>This web page was last updated on 16_OCTOBER_2024. The content displayed on this web page is licensed as <a style="background: #000000;color: #ff9000" href="https://karlinaobject.wordpress.com/public_domain/" target="_blank" rel="noopener">PUBLIC_DOMAIN</a> intellectual property.</p>
-<hr />	
+<p><strong>BEATS_MACHINE Use Case (Demonstration Video)</strong></p>
+<hr />
+<p>The video file linked below shows karbytes using its finished BEATS_MACHINE application and provides some visual and auditory details about how that application works from the end user&#8217;s perspective.</p>
+<p>video_link: <a style="background: #000000;color: #ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_20/main/beats_machine_by_karbytes_use_case_10september2024.mp4" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_20/main/beats_machine_by_karbytes_use_case_10september2024.mp4</a></p>
+<hr>
+<p>This web page was last updated on 17_OCTOBER_2024. The content displayed on this web page is licensed as <a style="background:#000000;color:#ff9000" href="https://karlinaobject.wordpress.com/public_domain/" target="_blank" rel="noopener">PUBLIC_DOMAIN</a> intellectual property.</p>
+<hr>	
