@@ -7,8 +7,8 @@
 #########################################################################################
 
 # Constants for maximum values
-MAXIMUM_x = 1e10  # Define an appropriate maximum value for x.
-MAXIMUM_logarithmic_base = 1e5  # Define an appropriate maximum value for logarithmic_base.
+MAXIMUM_x = 10000  # Define an appropriate maximum value for x.
+MAXIMUM_logarithmic_base = 10000  # Define an appropriate maximum value for logarithmic_base.
 
 #----------------------------------------------------------------------------------------
 # If x is determined to be a whole number, return true.
@@ -176,21 +176,92 @@ def logarithm(x, logarithmic_base):
     # Return ln(x) / ln(logarithmic_base).
     return ln(x) / ln(logarithmic_base)
 
+#------------------------------------------------------------------------------------------------------------------------
+# main function (prompts for user inputs, prints output messages to the command line terminal and to a text file)
+#------------------------------------------------------------------------------------------------------------------------
 def main():
-    # Get user input
-    x = float(input("Enter the value of x: "))
-    logarithmic_base = float(input("Enter the value of the logarithmic base: "))
+    # Define three variables for storing floating-point numbers.
+    x = 0.0
+    logarithmic_base = 0.0
+    result = 0.0
 
-    # Calculate the result
-    result = logarithm(x, logarithmic_base)
+    # Variable to store whether or not to continue inputting values.
+    input_additional_values = 1
 
-    # Print result with high precision
-    print(f"\nThe logarithm of {x} with base {logarithmic_base} is approximately: {result:.100f}")
-
-    # Write result to a file
+    # Open a file to write program data. This will overwrite the file if it exists.
     with open("logarithm_output.txt", "w") as file:
-        file.write(f"The logarithm of {x} with base {logarithmic_base} is approximately: {result:.100f}\n")
 
-# program entry point
-if __name__ == "__main__":
-    main()
+        # Print opening message to the console and file.
+        print("\n\n--------------------------------")
+        print("Start Of Program")
+        print("--------------------------------")
+
+        file.write("--------------------------------\n")
+        file.write("Start Of Program\n")
+        file.write("--------------------------------\n")
+
+        print("\n\nThis Python program computes the (approximate) logarithm of x in some given logarithmic base.")
+        file.write("\n\nThis Python program computes the (approximate) logarithm of x in some given logarithmic base.\n")
+
+        # Continue inputting values until the user specifies to stop.
+        while input_additional_values != 0:
+
+            # Print horizontal divider.
+            print("\n\n--------------------------------")
+            file.write("\n\n--------------------------------\n")
+
+            # Prompt the user for input value of x.
+            print(f"\n\nEnter a positive real number, x, to take the logarithm of and which is no larger than {MAXIMUM_x}: ")
+            x = float(input())
+
+            # Print the entered value of x.
+            print(f"\nThe value which was entered for x is {x}.")
+            file.write(f"\n\nThe value which was entered for x is {x}.\n")
+
+            # Prompt the user for input value of logarithmic_base.
+            print(f"\n\nEnter a positive real number, logarithmic_base, which is a positive real number other than one and which is no larger than {MAXIMUM_logarithmic_base}: ")
+            logarithmic_base = float(input())
+
+            # Print the entered value of logarithmic_base.
+            print(f"\nThe value which was entered for logarithmic_base is {logarithmic_base}.")
+            file.write(f"\n\nThe value which was entered for logarithmic_base is {logarithmic_base}.\n")
+
+            # Validate x and logarithmic_base, and set defaults if necessary.
+            if x <= 0 or x > MAXIMUM_x:
+                x = 1
+                print(f"\n\nDue to the fact that x was out of range, x was set to the default value 1.")
+                file.write(f"\n\nDue to the fact that x was out of range, x was set to the default value 1.\n")
+
+            if logarithmic_base <= 0 or logarithmic_base == 1 or logarithmic_base > MAXIMUM_logarithmic_base:
+                logarithmic_base = 2
+                print(f"\n\nDue to the fact that logarithmic_base was out of range, logarithmic_base was set to the default value 2.")
+                file.write(f"\n\nDue to the fact that logarithmic_base was out of range, logarithmic_base was set to the default value 2.\n")
+
+            # Compute the logarithm.
+            result = logarithm(x, logarithmic_base)
+
+            # Print the result of the logarithmic function.
+            print(f"\n\nresult = logarithm(x, logarithmic_base) = logarithm({x}, {logarithmic_base}) = {result}.")
+            file.write(f"\n\nresult = logarithm(x, logarithmic_base) = logarithm({x}, {logarithmic_base}) = {result}.\n")
+
+            # Print the inverse of the logarithmic expression.
+            print(f"\n\nx = logarithmic_base ^ result --> {x} = {logarithmic_base} ^ {result}.")
+            print(f"\n\nx = power(logarithmic_base, result) = power({logarithmic_base}, {result}) = {power(logarithmic_base, result)}.")
+            file.write(f"\n\nx = logarithmic_base ^ result --> {x} = {logarithmic_base} ^ {result}.\n")
+            file.write(f"\n\nx = power(logarithmic_base, result) = power({logarithmic_base}, {result}) = {power(logarithmic_base, result)}.\n")
+
+            # Ask the user whether to continue inputting values.
+            print("\n\nWould you like to continue inputting program values? (Enter 1 if YES. Enter 0 if NO): ")
+            input_additional_values = int(input())
+
+        # Print closing message to the console and file.
+        print("\n\n--------------------------------")
+        print("End Of Program")
+        print("--------------------------------\n\n")
+
+        file.write("\n\n--------------------------------\n")
+        file.write("End Of Program\n")
+        file.write("--------------------------------\n")
+
+# Run the main function.
+main()

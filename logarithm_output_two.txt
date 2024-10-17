@@ -1,1 +1,29 @@
-The logarithm of 16.0 with base 2.0 is approximately: 3.9999999999992574828411306953057646751403808593750000000000000000000000000000000000000000000000000000
+--------------------------------
+Start Of Program
+--------------------------------
+
+
+This Python program computes the (approximate) logarithm of x in some given logarithmic base.
+
+
+--------------------------------
+
+
+The value which was entered for x is 16.0.
+
+
+The value which was entered for logarithmic_base is 4.0.
+
+
+result = logarithm(x, logarithmic_base) = logarithm(16.0, 4.0) = 1.0.
+
+
+x = logarithmic_base ^ result --> 16.0 = 4.0 ^ 1.0.
+
+
+x = power(logarithmic_base, result) = power(4.0, 1.0) = 4.0.
+
+
+--------------------------------
+End Of Program
+--------------------------------
