@@ -262,7 +262,11 @@ double cosine(double x)
  * 
  *-----------------------------------------------------------------------------------------------------------------------------------
  * 
- * x is an angle measurement in radians such that x = (((2 * n) + 1) * Pi) / 2 where n is theoretically any integer
+ * x is an angle measurement in radians such that 
+ * 
+ * x = (((2 * n) + 1) * Pi) / 2 
+ * 
+ * where n is theoretically any integer
  * 
  * (but x is constrained to be in [(-1 * MAXIMUM_x), MAXIMUM_x]).
  *
