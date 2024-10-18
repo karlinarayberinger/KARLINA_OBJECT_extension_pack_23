@@ -252,7 +252,7 @@ double cosine(double x)
  * 
  * This function computes the approximate value of tangent of x (which is also expressed as tan(x)).
  * 
- * The value returned by this function is theoretically any real number:
+ * The value returned by this function can theoretically be any real number:
  * 
  * tan(x) ∈ [-INFINITY, INFINITY]
  * 
@@ -265,13 +265,13 @@ double cosine(double x)
  * 
  *-----------------------------------------------------------------------------------------------------------------------------------
  * 
- * x is an angle measurement in radians such that 
+ * x is an angle measurement in radians such that, theoretically speaking,
  * 
  * x = (((2 * n) + 1) * Pi) / 2 
  * 
- * where n is theoretically any integer
+ * where n is any integer
  * 
- * (but x is constrained to be in [(-1 * MAXIMUM_x), MAXIMUM_x]).
+ * (but, in this program, x is allowed to be any integer in [(-1 * MAXIMUM_x), MAXIMUM_x]).
  * 
  * If x is within [(-1 * MAXIMUM_x), MAXIMUM_x] but not 
  * 
@@ -298,9 +298,25 @@ double tangent(double x)
 }
 
 /**
+ *-----------------------------------------------------------------------------------------------------------------------------------
+ * 
  * This function returns the reciprocal of the tangent function:
  * 
  * cotangent(x) = cot(x) = 1 / tan(x)
+ * 
+ *------------------------------------------------------------------------------------------------------------------------------------
+ *
+ * The value returned by this function can theoretically be any real number:
+ * 
+ * cot(x) ∈ [-INFINITY, INFINITY]
+ * 
+ *------------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * x is an angle measurement in radians such that
+ * 
+ * sin(x) != 0
+ * 
+ **-----------------------------------------------------------------------------------------------------------------------------------
  */
 double cotangent(double x) 
 {
