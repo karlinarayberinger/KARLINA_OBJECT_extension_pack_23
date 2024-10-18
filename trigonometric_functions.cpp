@@ -394,7 +394,7 @@ double secant(double x)
     if ((x < (-1 * MAXIMUM_x)) || (x > MAXIMUM_x)) 
     {
         x = 1;
-        std::cout << "\n\nThe number of radians, x, in secantt(x) was out of range. Hence, x has been reset to 1.";
+        std::cout << "\n\nThe number of radians, x, in secant(x) was out of range. Hence, x has been reset to 1.";
     }
 
     return 1.0 / cosine(x);
@@ -475,10 +475,10 @@ double cosecant(double x)
 double arctangent(double x) 
 {
     // Set x to 1 if the function input value is out or range. Then print a message about that change to the command line terminal.
-    if ((x < -1) || (x > 1)) 
+    if ((x < (-1 * MAXIMUM_x)) || (x > MAXIMUM_x)) 
     {
-        x = 0;
-        std::cout << "\n\nThe number of radians, x, in arctangent(x) was out of range. Hence, x has been reset to 0.";
+        x = 1;
+        std::cout << "\n\nThe number of radians, x, in arctangent(x) was out of range. Hence, x has been reset to 1.";
     }
 
     int i = 0;
@@ -519,17 +519,17 @@ double arctangent(double x)
  * 
  * (but, in this program, x can be in [(-1 * MAXIMUM_x), MAXIMUM_x]).
  * 
- * If x is out of range of [-1, 1], then atan(x) = "not a number".
+ * If x is out of range of [-1, 1], then asin(x) = "not a number".
  * 
  *----------------------------------------------------------------------------------------------------------------------------------------------
  */
 double arcsine(double x) 
 {
     // Set x to 1 if the function input value is out or range. Then print a message about that change to the command line terminal.
-    if ((x < -1) || (x > 1)) 
+    if ((x < (-1 * MAXIMUM_x)) || (x > MAXIMUM_x)) 
     {
-        x = 0;
-        std::cout << "\n\nThe number of radians, x, in arcsine(x) was out of range. Hence, x has been reset to 0.";
+        x = 1;
+        std::cout << "\n\nThe number of radians, x, in arcsine(x) was out of range. Hence, x has been reset to 1.";
     }
 
     const int terms = MAXIMUM_t;
@@ -543,14 +543,41 @@ double arcsine(double x)
     return result;
 }
 
-// Arccosine is derived from arcsine: acos(x) = pi/2 - asin(x)
+/**
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * This function returns the inverse of the cosine function using the following formula: acos(x) = pi/2 - asin(x)
+ * 
+ * arccosine(x) = acos(x) = cos ^ -1 (x) != 1 / cos(x) = (cos(x)) ^ -1
+ * 
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * The value returned by this function can theoretically be any real number less than or equal to 0
+ * or any real number greater than or equal to Pi:
+ * 
+ * acos(x) ∈ [0, Pi]
+ * 
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * x is an angle measurement in radians and is only valid if
+ * 
+ * x ∈ [-1, 1]
+ * 
+ * where x is a real number
+ * 
+ * (but, in this program, x can be in [(-1 * MAXIMUM_x), MAXIMUM_x]).
+ * 
+ * If x is out of range of [-1, 1], then acos(x) = "not a number".
+ * 
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ */
 double arccosine(double x) 
 {
     // Set x to 1 if the function input value is out or range. Then print a message about that change to the command line terminal.
-    if ((x < -1) || (x > 1)) 
+    if ((x < (-1 * MAXIMUM_x)) || (x > MAXIMUM_x)) 
     {
-        x = 0;
-        std::cout << "\n\nThe number of radians, x, in arccosine(x) was out of range. Hence, x has been reset to 0.";
+        x = 1;
+        std::cout << "\n\nThe number of radians, x, in arccosine(x) was out of range. Hence, x has been reset to 1.";
     }
 
     return computePi(MAXIMUM_i) / 2 - arcsine(x);  
