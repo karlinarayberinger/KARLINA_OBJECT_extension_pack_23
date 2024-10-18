@@ -117,7 +117,7 @@ double computePi(int iterations)
         std::cout << "\n\nThe number of iterations for the Leibniz series in computePi(iterations) was out of range. Hence, iterations has been reset to 1.";
     }
 
-    for (i = 0; i < iterations; ++i) 
+    for (i = 0; i < iterations; i += 1) 
     {
         pi += sign / (2.0 * i + 1.0); // add next term in the series
         sign = -sign; // alternate the sign for each term
@@ -238,7 +238,7 @@ double cosine(double x)
     double result = 1.0; // first term: ((x ^ 0) / 0!)
     double term = 1.0; 
     int sign = -1; // alternating signs for each term
-    for (i = 1; i <= terms; ++i) 
+    for (i = 1; i <= terms; i += 1) 
     {
         term *= x * x / (2 * i * (2 * i - 1)); // update term for the next iteration
         result += sign * term;
@@ -452,14 +452,55 @@ double cosecant(double x)
     return 1.0 / sine(x);
 }
 
-// Arctangent using the Taylor series (valid for -1 <= x <= 1)
-
 /**
  *----------------------------------------------------------------------------------------------------------------------------------------------
  * 
  * This function returns the inverse of the cosine function using the Taylor series:
  * 
  * arctangent(x) = atan(x) = tan ^ -1 (x) != 1 / tan(x) = (tan(x)) ^ -1
+ * 
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ *
+ * The value returned by this function can theoretically be any real number less than or equal to (-1 * (Pi / 2))
+ * or any real number greater than or equal to (Pi / 2):
+ * 
+ * atan(x) ∈ [(-1 * (Pi / 2)), (Pi / 2)]
+ * 
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * x is an angle measurement in radians and can theoretically be any real number (but is constrained to be in [(-1 * MAXIMUM_x), MAXIMUM_x]).
+ * 
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ */
+double arctangent(double x) 
+{
+    // Set x to 1 if the function input value is out or range. Then print a message about that change to the command line terminal.
+    if ((x < -1) || (x > 1)) 
+    {
+        x = 0;
+        std::cout << "\n\nThe number of radians, x, in arctangent(x) was out of range. Hence, x has been reset to 0.";
+    }
+
+    int i = 0;
+    const int terms = MAXIMUM_t; // number of terms in the series
+    double result = 0.0;
+    double term = x; // first term
+    int sign = 1; // alternating signs for each term
+    for (i = 0; i < terms; i += 1) 
+    {
+        result += sign * term;
+        sign *= -1; // alternating sign
+        term *= x * x * (2 * i + 1) / (2 * i + 3); // update term for the next iteration
+    }
+    return result;
+}
+
+/**
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * This function returns the inverse of the sine function using the Taylor series:
+ * 
+ * arcsine(x) = atan(x) = tan ^ -1 (x) != 1 / tan(x) = (tan(x)) ^ -1
  * 
  *----------------------------------------------------------------------------------------------------------------------------------------------
  *
@@ -481,30 +522,6 @@ double cosecant(double x)
  * 
  *----------------------------------------------------------------------------------------------------------------------------------------------
  */
-double arctangent(double x) 
-{
-    // Set x to 1 if the function input value is out or range. Then print a message about that change to the command line terminal.
-    if ((x < -1) || (x > 1)) 
-    {
-        x = 0;
-        std::cout << "\n\nThe number of radians, x, in arctangent(x) was out of range. Hence, x has been reset to 0.";
-    }
-
-    int i = 0;
-    const int terms = MAXIMUM_t; // number of terms in the series
-    double result = 0.0;
-    double term = x; // irst term
-    int sign = 1; // alternating signs for each term
-    for (i = 0; i < terms; ++i) 
-    {
-        result += sign * term;
-        sign *= -1; // alternating sign
-        term *= x * x * (2 * i + 1) / (2 * i + 3); // update term for the next iteration
-    }
-    return result;
-}
-
-// Arcsine using the Taylor series (valid for -1 <= x <= 1)
 double arcsine(double x) 
 {
     // Set x to 1 if the function input value is out or range. Then print a message about that change to the command line terminal.
