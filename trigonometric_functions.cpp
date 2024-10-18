@@ -81,13 +81,13 @@ int main()
 }
 
 /**
- *---------------------------------------------------------------------------------------
+ *----------------------------------------------------------------------------------------------------------------------------------------------
  * 
  * This function computes the approximate value of Pi using the Leibniz series.
  * 
  * Pi ≈ 4 * (1 - (1 / 3) + (1 / 5) - (1 / 7) + (1 / 9) - ...)
  * 
- *---------------------------------------------------------------------------------------
+ *----------------------------------------------------------------------------------------------------------------------------------------------
  * 
  * Pi is a mathematical constant that is the ratio of a circle's circumference to 
  * its diameter (which is approximately equal to 3.14159).
@@ -98,11 +98,11 @@ int main()
  * 
  * https://karlinaobject.wordpress.com/pi_approximation/
  * 
- *---------------------------------------------------------------------------------------
+ *----------------------------------------------------------------------------------------------------------------------------------------------
  * 
  * iterations is assumed to be a nonnegative integer no larger than MAXIMUM_iteratons.
  * 
- *---------------------------------------------------------------------------------------
+ *----------------------------------------------------------------------------------------------------------------------------------------------
  */
 double computePi(int iterations) 
 {
@@ -334,7 +334,7 @@ double tangent(double x)
  * 
  * For example, if x = Pi, then cot(x) = "not a number".
  * 
- *------------------------------------------------------------------------------------------------------------------------------------
+ *----------------------------------------------------------------------------------------------------------------------------------------------
  */
 double cotangent(double x) 
 {
@@ -349,20 +349,20 @@ double cotangent(double x)
 }
 
 /**
- *------------------------------------------------------------------------------------------------------------------------------------
+ *----------------------------------------------------------------------------------------------------------------------------------------------
  * 
  * This function returns the reciprocal of the cosine function:
  * 
  * secant(x) = sec(x) = 1 / cos(x)
  *
- *------------------------------------------------------------------------------------------------------------------------------------
+ *----------------------------------------------------------------------------------------------------------------------------------------------
  * 
  * The value returned by this function can theoretically be any real number less than or equal to -1 
  * or else any real number greater than or equal to 1:
  * 
  * sec(x) ∈ (-INFINITY, -1] ∪ [1, INFINITY)
  * 
- *------------------------------------------------------------------------------------------------------------------------------------
+ *----------------------------------------------------------------------------------------------------------------------------------------------
  * 
  * x is an angle measurement in radians such that, theoretically speaking,
  * 
@@ -455,11 +455,29 @@ double cosecant(double x)
 // Arctangent using the Taylor series (valid for -1 <= x <= 1)
 
 /**
- *------------------------------------------------------------------------------------------------------------------------------------
+ *----------------------------------------------------------------------------------------------------------------------------------------------
  * 
  * This function returns the inverse of the cosine function using the Taylor series:
  * 
  * arctangent(x) = atan(x) = tan ^ -1 (x) != 1 / tan(x) = (tan(x)) ^ -1
+ * 
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ *
+ * The value returned by this function can theoretically be any real number:
+ * 
+ * atan(x) ∈ (-INFINITY, INFINITY)
+ * 
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * x is an angle measurement in radians and is only valid if
+ * 
+ * x ∈ [-1, 1]
+ * 
+ * where x is a real number
+ * 
+ * (but, in this program, x can be in [(-1 * MAXIMUM_x), MAXIMUM_x]).
+ * 
+ * If x is out of range of [-1, 1], then atan(x) = "not a number".
  * 
  *----------------------------------------------------------------------------------------------------------------------------------------------
  */
@@ -472,15 +490,16 @@ double arctangent(double x)
         std::cout << "\n\nThe number of radians, x, in arctangent(x) was out of range. Hence, x has been reset to 0.";
     }
 
-    const int terms = MAXIMUM_t; // Number of terms in the series
+    int i = 0;
+    const int terms = MAXIMUM_t; // number of terms in the series
     double result = 0.0;
-    double term = x; // First term
-    int sign = 1; // Alternating signs for each term
-    for (int i = 0; i < terms; ++i) 
+    double term = x; // irst term
+    int sign = 1; // alternating signs for each term
+    for (i = 0; i < terms; ++i) 
     {
         result += sign * term;
-        sign *= -1; // Alternating sign
-        term *= x * x * (2 * i + 1) / (2 * i + 3); // Update term for the next iteration
+        sign *= -1; // alternating sign
+        term *= x * x * (2 * i + 1) / (2 * i + 3); // update term for the next iteration
     }
     return result;
 }
