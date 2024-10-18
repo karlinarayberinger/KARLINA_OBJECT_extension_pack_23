@@ -338,16 +338,34 @@ double tangent(double x)
  */
 double cotangent(double x) 
 {
+    // Set x to 1 if the function input value is out or range. Then print a message about that change to the command line terminal.
+    if ((x < (-1 * MAXIMUM_x)) || (x > MAXIMUM_x)) 
+    {
+        x = 1;
+        std::cout << "\n\nThe number of radians, x, in cotangent(x) was out of range. Hence, x has been reset to 1.";
+    }
+
     return 1.0 / tangent(x);
 }
 
 /**
+ *------------------------------------------------------------------------------------------------------------------------------------
+ * 
  * This function returns the reciprocal of the cosine function:
  * 
  * secant(x) = sec(x) = 1 / cos(x)
+ *
+ *------------------------------------------------------------------------------------------------------------------------------------
  */
 double secant(double x) 
 {
+    // Set x to 1 if the function input value is out or range. Then print a message about that change to the command line terminal.
+    if ((x < (-1 * MAXIMUM_x)) || (x > MAXIMUM_x)) 
+    {
+        x = 1;
+        std::cout << "\n\nThe number of radians, x, in secantt(x) was out of range. Hence, x has been reset to 1.";
+    }
+
     return 1.0 / cosine(x);
 }
 
@@ -358,12 +376,26 @@ double secant(double x)
  */
 double cosecant(double x) 
 {
+    // Set x to 1 if the function input value is out or range. Then print a message about that change to the command line terminal.
+    if ((x < (-1 * MAXIMUM_x)) || (x > MAXIMUM_x)) 
+    {
+        x = 1;
+        std::cout << "\n\nThe number of radians, x, in cosecant(x) was out of range. Hence, x has been reset to 1.";
+    }
+
     return 1.0 / sine(x);
 }
 
 // Arctangent using the Taylor series (valid for -1 <= x <= 1)
 double arctangent(double x) 
 {
+    // Set x to 1 if the function input value is out or range. Then print a message about that change to the command line terminal.
+    if ((x < -1) || (x > 1)) 
+    {
+        x = 0;
+        std::cout << "\n\nThe number of radians, x, in arctangent(x) was out of range. Hence, x has been reset to 0.";
+    }
+
     const int terms = MAXIMUM_t; // Number of terms in the series
     double result = 0.0;
     double term = x; // First term
@@ -380,6 +412,13 @@ double arctangent(double x)
 // Arcsine using the Taylor series (valid for -1 <= x <= 1)
 double arcsine(double x) 
 {
+    // Set x to 1 if the function input value is out or range. Then print a message about that change to the command line terminal.
+    if ((x < -1) || (x > 1)) 
+    {
+        x = 0;
+        std::cout << "\n\nThe number of radians, x, in arcsine(x) was out of range. Hence, x has been reset to 0.";
+    }
+
     const int terms = MAXIMUM_t;
     double result = x;
     double term = x;
@@ -394,5 +433,12 @@ double arcsine(double x)
 // Arccosine is derived from arcsine: acos(x) = pi/2 - asin(x)
 double arccosine(double x) 
 {
-    return 3.14159265358979323846 / 2 - arcsine(x);  // Using pi = 3.14159265358979323846
+    // Set x to 1 if the function input value is out or range. Then print a message about that change to the command line terminal.
+    if ((x < -1) || (x > 1)) 
+    {
+        x = 0;
+        std::cout << "\n\nThe number of radians, x, in arccosine(x) was out of range. Hence, x has been reset to 0.";
+    }
+
+    return computePi(MAXIMUM_i) / 2 - arcsine(x);  
 }
