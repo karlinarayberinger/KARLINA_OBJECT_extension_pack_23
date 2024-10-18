@@ -28,6 +28,9 @@ double arccosine(double x);
 /** program entry point */
 int main() 
 {
+
+    double a = 0.0, b = 0.0;
+    std::cout << "\n\n 0 / 0 = " << a / b << ".";
     double x;
 
     // Declare a file output stream handler (which represents the plain-text file to generate and/or overwrite with program data).
@@ -269,6 +272,16 @@ double cosine(double x)
  * where n is theoretically any integer
  * 
  * (but x is constrained to be in [(-1 * MAXIMUM_x), MAXIMUM_x]).
+ * 
+ * If x is within [(-1 * MAXIMUM_x), MAXIMUM_x] but not 
+ * 
+ * (((2 * n) + 1) * Pi) / 2 
+ * 
+ * where n is theoretically any integer,
+ * 
+ * then the output value returned by this function will be "not a number".
+ * 
+ * For example, if x = Pi /2, then tan(x) = "not a number".
  *
  *-----------------------------------------------------------------------------------------------------------------------------------
  */
