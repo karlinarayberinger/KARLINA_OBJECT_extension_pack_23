@@ -27,6 +27,28 @@ double arccosine(double x);
 int main() 
 {
     double x;
+
+    // Declare a file output stream handler (which represents the plain-text file to generate and/or overwrite with program data).
+    std::ofstream file;
+
+    // Set the number of digits of floating-point numbers which are printed to the command line terminal to 100 digits.
+    std::cout.precision(100);
+
+    // Set the number of digits of floating-point numbers which are printed to the file output stream to 100 digits.
+    file.precision(100);
+
+    /**
+     * If the file named trigonometric_functions_output.txt does not already exist 
+     * inside of the same file directory as the file named trigonometric_functions.cpp, 
+     * create a new file named trigonometric_functions_output.txt in that directory.
+     * 
+     * Open the plain-text file named trigonometric_functions_output.txt
+     * and set that file to be overwritten with program data.
+     */
+    file.open("trigonometric_functions_output.txt");
+
+    file << "\n\nThis is just to generate the text file for now.";
+
     std::cout << "Enter an angle in radians: ";
     std::cin >> x;
 
