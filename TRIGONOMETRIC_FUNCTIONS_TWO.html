@@ -1,0 +1,810 @@
+<hr>
+<p><strong>TRIGONOMETRIC_FUNCTIONS_TWO</strong></p>
+<hr>
+<p><span style="background:#ffff00">The <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank" rel="noopener">Python</a> program featured in this tutorial web page defines the following nine <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Trigonometric_functions" target="_blank" rel="noopener">trigonometric functions</a> (whose inputs are each some angle measurement, <strong>x</strong>, in <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Radian" target="_blank" rel="noopener">radians</a> ): <strong>sine(x)</strong>, <strong>cosine(x)</strong>, <strong>tangent(x)</strong>, <strong>cotangent(x)</strong>, <strong>secant(x)</strong>, <strong>cosecant(x)</strong>, <strong>arctangent(x)</strong>, <strong>arcsine(x)</strong>, <strong>arccosine(x)</strong>.</span></p>
+<p><strong>The Python program file which is featured in this tutorial web page has many common attributes with the C++ source code file featured on the tutorial web page of this website named <a style="background:#000000;color:#00ff00" href="https://karbytesforlifeblog.wordpress.com/trigonometric_functions/" target="_blank" rel="noopener">TRIGONOMETRIC_FUNCTIONS</a>. Unlike that C++ source code file, this Python program generates slightly different output messages (to the command line terminal and to the generated and/or overwritten output file).</strong></p>
+<p><em>To view hidden text inside each of the preformatted text boxes below, scroll horizontally.</em></p>
+<hr>
+<p><strong>SOFTWARE_APPLICATION_COMPONENTS</strong></p>
+<hr>
+<p>python_source_file: <a style="background:#000000;color:#00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_23/main/trigonometric_functions.py" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_23/main/trigonometric_functions.py</a></p>
+<p>plain_text_file: <a style="background:#000000;color:#ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_23/main/trigonometric_functions_output_two.txt" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_23/main/trigonometric_functions_output_two.txt</a></p>
+<hr>
+<p><strong>PROGRAM_INTERPRETATION_AND_EXECUTION</strong></p>
+<hr>
+<p>STEP_0: Copy and paste the Python <a style="background:#000000;color:#00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_23/main/trigonometric_functions.py" target="_blank" rel="noopener">source code</a> into a new text editor document and save that document as the following file name:</p>
+<pre>trigonometric_functions.py</pre>
+<p>STEP_1: Open a <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Unix" target="_blank" rel="noopener">Unix</a> command line terminal application and set the current directory to wherever the Python program file is located on the local machine (e.g. Desktop).</p>
+<pre>cd Desktop</pre>
+<p>STEP_2: Run the program by entering the following command:</p>
+<pre>python3 trigonometric_functions.py</pre>
+<p>STEP_3: If the program interpretation command does not work, then use the following commands (in top-down order) to install the Python interpreter:</p>
+<pre>sudo apt update</pre>
+<pre>sudo apt install python3</pre>
+<p>STEP_4: After running the Python program is booted up, the following prompt will appear:</p>
+<pre>Enter a real number of radians, x, to input into trigonometric functions which is no smaller than -10000 and no larger than 10000:  </pre>
+<p>STEP_5: Enter a value for x using the keyboard. Proceed with the prompts for additional input values which follow.</p>
+<p>STEP_6: Observe program results on the command line terminal and in the <a style="background:#000000;color:#ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_23/main/trigonometric_functions_output_two.txt" target="_blank" rel="noopener">output file</a>.</p>
+<hr>
+<p><strong>PROGRAM_SOURCE_CODE</strong></p>
+<hr>
+<p>The text in the preformatted text box below appears on this web page (while rendered correctly by the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/HTML" target="_blank" rel="noopener">web browser</a>) to be identical to the content of the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank" rel="noopener">Python</a> source code file whose <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/URL" target="_blank" rel="noopener">Uniform Resource Locator</a> is displayed in the green <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Hyperlink" target="_blank" rel="noopener">hyperlink</a> below.</p>
+<p><em>Note that, unlike C++ program files (which are <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Compiler" target="_blank" rel="noopener">compiled</a> into machine-executable instructions before program runtime), Python program files are <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Interpreter_(computing)" target="_blank" rel="noopener">interpreted</a> one line at a time instead.</em></p>
+<p><em>(Note that angle brackets which resemble <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/HTML" target="_blank" rel="noopener">HTML</a> tags (i.e. an &#8220;is less than&#8221; symbol (i.e. &#8216;&lt;&#8216;) followed by an &#8220;is greater than&#8221; symbol (i.e. &#8216;&gt;&#8217;)) displayed on this web page have been replaced (at the source code level of this web page) with the Unicode symbols <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Less-than_sign" target="_blank" rel="noopener">U+003C</a> (which is rendered by the web browser as &#8216;&lt;&#8216;) and <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Greater-than_sign" target="_blank" rel="noopener">U+003E</a> (which is rendered by the web browser as &#8216;&gt;&#8217;). That is because the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/WordPress.com" target="_blank" rel="noopener">WordPress</a> web page editor or web browser interprets a plain-text version of an &#8220;is less than&#8221; symbol followed by an &#8220;is greater than&#8221; symbol as being an opening HTML tag (which means that the WordPress web page editor or web browser deletes or fails to display those (plain-text) inequality symbols and the content between those (plain-text) inequality symbols)).</em></p>
+<p>python_source_file: <a style="background:#000000;color:#00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_23/main/trigonometric_functions.py" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_23/main/trigonometric_functions.py</a></p>
+<hr>
+<pre>
+#########################################################################################
+# file: trigonometric_functions.py
+# type: Python
+# date: 18_OCTOBER_2024
+# author: karbytes
+# license: PUBLIC_DOMAIN 
+#########################################################################################
+
+MAXIMUM_i = 10000 # constant which represents maximum number of iterations in Leibniz series
+MAXIMUM_t = 10000 # constant which represents maximum number of terms in Taylor series
+MAXIMUM_x = 10000 # constant which represents maximum value of x
+
+#----------------------------------------------------------------------------------------------------------------------------------------------
+# 
+# This function computes the approximate value of Pi using the Leibniz series.
+# 
+# Pi ≈ 4 * (1 - (1 / 3) + (1 / 5) - (1 / 7) + (1 / 9) - ...)
+# 
+#----------------------------------------------------------------------------------------------------------------------------------------------
+# 
+# Pi is a mathematical constant that is the ratio of a circle's circumference to 
+# its diameter (which is approximately equal to 3.14159).
+# 
+# For more information on how to compute the approximate value of Pi
+# (using a Monte Carlo dart-throwing simulation in JavaScript), visit
+# the tutorial web page at the following Uniform Resource Locator:
+# 
+# https://karlinaobject.wordpress.com/pi_approximation/
+# 
+#----------------------------------------------------------------------------------------------------------------------------------------------
+# 
+# iterations is assumed to be a nonnegative integer no larger than MAXIMUM_iterations.
+# 
+#----------------------------------------------------------------------------------------------------------------------------------------------
+def compute_pi(iterations):
+    pi = 0.0
+    sign = 1.0  # alternates between positive and negative
+
+    # If iterations is out of range, set it to 1 and print a message
+    if iterations &lt; 0 or iterations &gt; MAXIMUM_i:  
+        iterations = 1
+        print("\n\nThe number of iterations for the Leibniz series in compute_pi(iterations) was out of range. Hence, iterations has been reset to 1.")
+
+    for i in range(iterations):
+        pi += sign / (2.0 * i + 1.0)  # Add the next term in the series
+        sign = -sign  # Alternate the sign for each term
+
+    pi *= 4.0  # Multiply by 4 to get Pi
+    return pi
+
+#----------------------------------------------------------------------------------------------------------------------------------------------
+# 
+# This function uses the Taylor series to compute the approximate value of sine of x (which is also expressed as sin(x)).
+# 
+# The value returned by this function is no smaller than -1 and no larger than 1:
+# 
+# -1 &lt;= sin(x) &lt;= 1
+# 
+#----------------------------------------------------------------------------------------------------------------------------------------------
+# 
+# The sine of an angle, x, in a right triangle is defined as the ratio of the length of 
+# the side opposite the angle to the length of the hypotenuse (the longest side of the triangle):
+# 
+# sin(x) = opposite / hypotenuse
+# 
+#----------------------------------------------------------------------------------------------------------------------------------------------
+# 
+# Note that an angle measurement in degrees can be converted to radians using the following formula:
+# 
+# radians = degrees * (Pi / 180)
+# 
+# If x is 30 degrees, then the right triangle it is the interior angle measurement of is a triangle
+# whose side opposite of x is 1 and whose hypotenuse is 2.
+# 
+# Hence, sine of 30 degrees can be computed as follows:
+# 
+# 30 degrees = Pi / 6 radians ≈ 0.5236
+# 
+# sin(0.5236) = 1 / 2 = 0.5
+#
+# ---------------------------------------------------------------------------------------------------------------------------------------------
+# 
+# x is an angle measurement in radians and can theoretically be any real number (but is constrained to be in [(-1 * MAXIMUM_x), MAXIMUM_x]).
+# 
+#----------------------------------------------------------------------------------------------------------------------------------------------
+def sine(x):
+    # If x is out of range, set it to 1 and print a message
+    if x &lt; -MAXIMUM_x or x &gt; MAXIMUM_x:
+        x = 1
+        print("\n\nThe number of radians, x, in sine(x) was out of range. Hence, x has been reset to 1.")
+
+    terms = MAXIMUM_t
+    result = 0.0
+    term = x  # First term: ((x ^ 1) / 1!)
+    sign = 1  # Alternating signs for each term
+
+    for i in range(1, terms + 1):
+        result += sign * term
+        sign *= -1  # Alternate sign
+        term *= x * x / (2 * i * (2 * i + 1))  # Update term for the next iteration
+
+    return result
+
+#----------------------------------------------------------------------------------------------------------------------------------------------
+# 
+# This function uses the Taylor series to compute the approximate value of cosine of x (which is also expressed as cos(x)).
+# 
+# The value returned by this function is no smaller than -1 and no larger than 1:
+# 
+# -1 &lt;= cos(x) &lt;= 1
+# 
+#----------------------------------------------------------------------------------------------------------------------------------------------
+# 
+# The cosine of an angle, x, in a right triangle is defined as the ratio of the length of 
+# the side adjacent to the angle to the length of the hypotenuse (the longest side of the triangle):
+# 
+# cos(x) = adjacent / hypotenuse
+# 
+#----------------------------------------------------------------------------------------------------------------------------------------------
+# 
+# Note that an angle measurement in degrees can be converted to radians using the following formula:
+# 
+# radians = degrees * (Pi / 180)
+# 
+# If x is 60 degrees, then the right triangle it is the interior angle measurement of is a triangle
+# whose side adjacent to x is 1 and whose hypotenuse is 2.
+# 
+# Hence, cosine of 60 degrees can be computed as follows:
+# 
+# 60 degrees = Pi / 3 radians ≈ 1.047
+# 
+# cos(1.047) = 1 / 2 = 0.5
+# 
+#----------------------------------------------------------------------------------------------------------------------------------------------
+# 
+# x is an angle measurement in radians and can theoretically be any real number (but is constrained to be in [(-1 * MAXIMUM_x), MAXIMUM_x]).
+# 
+#----------------------------------------------------------------------------------------------------------------------------------------------
+def cosine(x):
+    # If x is out of range, set it to 1 and print a message
+    if x &lt; -MAXIMUM_x or x &gt; MAXIMUM_x:
+        x = 1
+        print("\n\nThe number of radians, x, in cosine(x) was out of range. Hence, x has been reset to 1.")
+
+    terms = MAXIMUM_t
+    result = 1.0  # First term: ((x ^ 0) / 0!)
+    term = 1.0
+    sign = -1  # Alternating signs for each term
+
+    for i in range(1, terms + 1):
+        term *= x * x / (2 * i * (2 * i - 1))  # Update term for the next iteration
+        result += sign * term
+        sign *= -1  # Alternate sign
+
+    return result
+
+#-----------------------------------------------------------------------------------------------------------------------------------
+# 
+# This function computes the approximate value of tangent of x (which is also expressed as tan(x)).
+# 
+# The value returned by this function can theoretically be any real number:
+# 
+# tan(x) ∈ (-INFINITY, INFINITY)
+# 
+#-----------------------------------------------------------------------------------------------------------------------------------
+# 
+# The tangent of an angle, x, in a right triangle is defined as the ratio of the length of the side opposite 
+# the angle to the length of the adjacent side:
+# 
+# tan(x) = opposite / adjacent
+# 
+#-----------------------------------------------------------------------------------------------------------------------------------
+# 
+# x is an angle measurement in radians such that, theoretically speaking,
+# 
+# x = (((2 * n) + 1) * Pi) / 2 
+# 
+# where n is any integer
+# 
+# (but, in this program function, x is allowed to be any integer in [(-1 * MAXIMUM_x), MAXIMUM_x]).
+# 
+# If x is within [(-1 * MAXIMUM_x), MAXIMUM_x] but 
+# 
+# x != (((2 * n) + 1) * Pi) / 2 
+# 
+# where n is theoretically any integer,
+# 
+# then the output value returned by this function will be "not a number".
+# 
+# For example, if x = Pi / 2, then tan(x) = "not a number".
+#
+#-----------------------------------------------------------------------------------------------------------------------------------
+def tangent(x):
+    # If x is out of range, set it to 1 and print a message
+    if x &lt; -MAXIMUM_x or x &gt; MAXIMUM_x:
+        x = 1
+        print("\n\nThe number of radians, x, in tangent(x) was out of range. Hence, x has been reset to 1.")
+
+    # Calculate tangent as sine(x) / cosine(x)
+    sin_x = sine(x)
+    cos_x = cosine(x)
+
+    # Handle the case where cosine(x) is zero (i.e., x = (2n + 1) * Pi / 2)
+    if cos_x == 0:
+        print("\n\nTangent is undefined for x = (2n + 1) * Pi / 2, returning 'not a number'.")
+        return float('nan')  # Return 'not a number'
+
+    return sin_x / cos_x
+
+#-----------------------------------------------------------------------------------------------------------------------------------
+# 
+# This function returns the reciprocal of the tangent function:
+# 
+# cotangent(x) = cot(x) = 1 / tan(x)
+# 
+#------------------------------------------------------------------------------------------------------------------------------------
+#
+# The value returned by this function can theoretically be any real number:
+# 
+# cot(x) ∈ (-INFINITY, INFINITY)
+# 
+#------------------------------------------------------------------------------------------------------------------------------------
+# 
+# x is an angle measurement in radians such that, theoretically speaking,
+# 
+# sin(x) != 0
+# 
+# (i.e.
+# 
+# x != (Pi * n)
+# 
+# where n is any integer)
+# 
+# (but, in this program function, x is allowed to be any integer in [(-1 * MAXIMUM_x), MAXIMUM_x]).
+# 
+# If x is within [(-1 * MAXIMUM_x), MAXIMUM_x] but also
+# 
+# x = Pi * n 
+# 
+# where n is any integer
+# 
+# then the output value returned by this function will be "not a number".
+# 
+# For example, if x = Pi, then cot(x) = "not a number".
+# 
+#----------------------------------------------------------------------------------------------------------------------------------------------
+def cotangent(x):
+    # If x is out of range, set it to 1 and print a message
+    if x &lt; -MAXIMUM_x or x &gt; MAXIMUM_x:
+        x = 1
+        print("\n\nThe number of radians, x, in cotangent(x) was out of range. Hence, x has been reset to 1.")
+
+    # Calculate the tangent of x
+    tan_x = tangent(x)
+
+    # Handle the case where sine(x) is zero (i.e., x = Pi * n), which makes tangent undefined
+    if tan_x == 0:
+        print("\n\nCotangent is undefined for x = Pi * n, returning 'not a number'.")
+        return float('nan')  # Return 'not a number'
+
+    return 1.0 / tan_x
+
+#----------------------------------------------------------------------------------------------------------------------------------------------
+# 
+# This function returns the reciprocal of the cosine function:
+# 
+# secant(x) = sec(x) = 1 / cos(x)
+#
+#----------------------------------------------------------------------------------------------------------------------------------------------
+# 
+# The value returned by this function can theoretically be any real number less than or equal to -1 
+# or else any real number greater than or equal to 1:
+# 
+# sec(x) ∈ (-INFINITY, -1] ∪ [1, INFINITY)
+# 
+#----------------------------------------------------------------------------------------------------------------------------------------------
+# 
+# x is an angle measurement in radians such that, theoretically speaking,
+# 
+# cos(x) != 0
+# 
+# (i.e. 
+# 
+# x != (((2 * n) + 1) * Pi) / 2
+# 
+# where n is any integer)
+# 
+# (but, in this program function, x is allowed to be any integer in [(-1 * MAXIMUM_x), MAXIMUM_x]).
+# 
+# If x is within [(-1 * MAXIMUM_x), MAXIMUM_x] but also
+# 
+# x = (((2 * n) + 1) * Pi) / 2
+# 
+# where n is any integer
+# 
+# then the output value returned by this function will be "not a number".
+# 
+# For example, if x = Pi / 2, then sec(x) = "not a number".
+#
+#----------------------------------------------------------------------------------------------------------------------------------------------
+def secant(x):
+    # If x is out of range, set it to 1 and print a message
+    if x &lt; -MAXIMUM_x or x &gt; MAXIMUM_x:
+        x = 1
+        print("\n\nThe number of radians, x, in secant(x) was out of range. Hence, x has been reset to 1.")
+
+    # Calculate the cosine of x
+    cos_x = cosine(x)
+
+    # Handle the case where cosine(x) is zero (i.e., x = (2n + 1) * Pi / 2)
+    if cos_x == 0:
+        print("\n\nSecant is undefined for x = (2n + 1) * Pi / 2, returning 'not a number'.")
+        return float('nan')  # Return 'not a number'
+
+    return 1.0 / cos_x
+
+#----------------------------------------------------------------------------------------------------------------------------------------------
+# 
+# This function returns the reciprocal of the sine function:
+# 
+# cosecant(x) = csc(x) = 1 / sin(x)
+#
+#----------------------------------------------------------------------------------------------------------------------------------------------
+# 
+# The value returned by this function can theoretically be any real number less than or equal to -1 
+# or else any real number greater than or equal to 1:
+# 
+# csc(x) ∈ (-INFINITY, -1] ∪ [1, INFINITY)
+# 
+#----------------------------------------------------------------------------------------------------------------------------------------------
+# 
+# x is an angle measurement in radians such that, theoretically speaking,
+# 
+# sin(x) != 0
+# 
+# (i.e.
+# 
+# x != (Pi * n)
+# 
+# where n is any integer)
+# 
+# (but, in this program function, x is allowed to be any integer in [(-1 * MAXIMUM_x), MAXIMUM_x]).
+# 
+# If x is within [(-1 * MAXIMUM_x), MAXIMUM_x] but also
+# 
+# x = Pi * n
+# 
+# where n is any integer
+# 
+# then the output value returned by this function will be "not a number".
+# 
+# For example, if x = Pi, then csc(x) = "not a number".
+# 
+#----------------------------------------------------------------------------------------------------------------------------------------------
+def cosecant(x):
+    # If x is out of range, set it to 1 and print a message
+    if x &lt; -MAXIMUM_x or x &gt; MAXIMUM_x:
+        x = 1
+        print("\n\nThe number of radians, x, in cosecant(x) was out of range. Hence, x has been reset to 1.")
+
+    # Calculate the sine of x
+    sin_x = sine(x)
+
+    # Handle the case where sine(x) is zero (i.e., x = Pi * n)
+    if sin_x == 0:
+        print("\n\nCosecant is undefined for x = Pi * n, returning 'not a number'.")
+        return float('nan')  # Return 'not a number'
+
+    return 1.0 / sin_x
+
+#----------------------------------------------------------------------------------------------------------------------------------------------
+# 
+# This function returns the inverse of the tangent function using the Taylor series:
+# 
+# arctangent(x) = atan(x) = tan ^ -1 (x) != 1 / tan(x) = (tan(x)) ^ -1
+# 
+#----------------------------------------------------------------------------------------------------------------------------------------------
+#
+# The value returned by this function can theoretically be any real number less than or equal to (-1 * (Pi / 2))
+# or any real number greater than or equal to (Pi / 2):
+# 
+# atan(x) ∈ [(-1 * (Pi / 2)), (Pi / 2)]
+# 
+#----------------------------------------------------------------------------------------------------------------------------------------------
+# 
+# x is an angle measurement in radians and can theoretically be any real number (but is constrained to be in [(-1 * MAXIMUM_x), MAXIMUM_x]).
+# 
+#----------------------------------------------------------------------------------------------------------------------------------------------
+def arctangent(x):
+    # If x is out of range, set it to 1 and print a message
+    if x &lt; -MAXIMUM_x or x &gt; MAXIMUM_x:
+        x = 1
+        print("\n\nThe number of radians, x, in arctangent(x) was out of range. Hence, x has been reset to 1.")
+
+    terms = 20  # Number of terms in the series, MAXIMUM_t placeholder
+    result = 0.0
+    term = x  # First term
+    sign = 1  # Alternating signs for each term
+
+    for i in range(terms):
+        result += sign * term
+        sign *= -1  # Alternate sign
+        term *= x * x * (2 * i + 1) / (2 * i + 3)  # Update term for the next iteration
+
+    return result
+
+#----------------------------------------------------------------------------------------------------------------------------------------------
+# 
+# This function returns the inverse of the sine function using the Taylor series:
+# 
+# arcsine(x) = asin(x) = sin ^ -1 (x) != 1 / sin(x) = (sin(x)) ^ -1
+# 
+#----------------------------------------------------------------------------------------------------------------------------------------------
+#
+# The value returned by this function can theoretically be any real number less than or equal to (-1 * (Pi / 2))
+# or any real number greater than or equal to (Pi / 2):
+# 
+# asin(x) ∈ [(-1 * (Pi / 2)), (Pi / 2)]
+# 
+#----------------------------------------------------------------------------------------------------------------------------------------------
+# 
+# x is an angle measurement in radians and is only valid if
+# 
+# x ∈ [-1, 1]
+# 
+# where x is a real number
+# 
+# (but, in this program, x can be in [(-1 * MAXIMUM_x), MAXIMUM_x]).
+# 
+# If x is out of range of [-1, 1], then asin(x) = "not a number".
+# 
+#----------------------------------------------------------------------------------------------------------------------------------------------
+def arcsine(x):
+    # Set x to 1 if the input is out of range, then print a message
+    if x &lt; -MAXIMUM_x or x &gt; MAXIMUM_x:
+        x = 1
+        print("\n\nThe number of radians, x, in arcsine(x) was out of range. Hence, x has been reset to 1.")
+
+    # If x is out of the valid range for arcsine (i.e., |x| &gt; 1), return 'not a number'
+    if x &lt; -1 or x &gt; 1:
+        print("\n\nArcsine is undefined for |x| &gt; 1, returning 'not a number'.")
+        return float('nan')  # Return 'not a number'
+
+    terms = MAXIMUM_t
+    result = x
+    term = x
+
+    for i in range(1, terms):
+        term *= (x * x * (2 * i - 1)) / (2 * i)  # Update term using the Taylor series formula
+        result += term / (2 * i + 1)
+
+    return result
+
+#----------------------------------------------------------------------------------------------------------------------------------------------
+# 
+# This function returns the inverse of the cosine function using the following formula: acos(x) = pi/2 - asin(x)
+# 
+# arccosine(x) = acos(x) = cos ^ -1 (x) != 1 / cos(x) = (cos(x)) ^ -1
+# 
+#----------------------------------------------------------------------------------------------------------------------------------------------
+# 
+# The value returned by this function can theoretically be any real number less than or equal to 0
+# or any real number greater than or equal to Pi:
+# 
+# acos(x) ∈ [0, Pi]
+# 
+#----------------------------------------------------------------------------------------------------------------------------------------------
+# 
+# x is an angle measurement in radians and is only valid if
+# 
+# x ∈ [-1, 1]
+# 
+# where x is a real number
+# 
+# (but, in this program, x can be in [(-1 * MAXIMUM_x), MAXIMUM_x]).
+# 
+# If x is out of range of [-1, 1], then acos(x) = "not a number".
+# 
+#----------------------------------------------------------------------------------------------------------------------------------------------
+def arccosine(x):
+    # If x is out of range, set it to 1 and print a message
+    if x &lt; -MAXIMUM_x or x &gt; MAXIMUM_x:
+        x = 1
+        print("\n\nThe number of radians, x, in arccosine(x) was out of range. Hence, x has been reset to 1.")
+
+    # If x is out of the valid range for arccosine (i.e., |x| &gt; 1), return 'not a number'
+    if x &lt; -1 or x &gt; 1:
+        print("\n\nArccosine is undefined for |x| &gt; 1, returning 'not a number'.")
+        return float('nan')  # Return 'not a number'
+
+    # Compute the approximate value of Pi 
+    pi_value = compute_pi(MAXIMUM_i)
+
+    # Return acos(x) using the formula: acos(x) = Pi/2 - arcsine(x)
+    return pi_value / 2 - arcsine(x)
+
+#----------------------------------------------------------------------------------------------------------------------------------------------
+#
+# main function (prompts for user inputs, prints output messages to the command line terminal and to a text file)
+#
+#----------------------------------------------------------------------------------------------------------------------------------------------
+def main():
+    # Define one float type variable for storing a floating-point number value.
+    x = 0.0
+
+    # Declare a variable for storing the user's answer of whether to continue inputting values.
+    input_additional_values = 1
+
+    # Open a file to write the output to.
+    with open("trigonometric_functions_output.txt", "w") as file:
+        # Print opening message to the console and file.
+        print("\n\n--------------------------------")
+        print("Start Of Program")
+        print("--------------------------------")
+
+        file.write("--------------------------------\n")
+        file.write("Start Of Program\n")
+        file.write("--------------------------------\n")
+
+        # Print program information to the console and file.
+        print("\n\nThis Python program computes sine, cosine, tangent, cotangent, secant, cosecant, arctangent, arcsine, and arccosine of some angle measurement in radians, x.")
+        file.write("\n\nThis Python program computes sine, cosine, tangent, cotangent, secant, cosecant, arctangent, arcsine, and arccosine of some angle measurement in radians, x.\n")
+
+        # Execute the code in the loop until the user wants to stop.
+        while input_additional_values != 0:
+            # Print a horizontal divider line to the console and file.
+            print("\n\n--------------------------------")
+            file.write("\n\n--------------------------------\n")
+
+            # Prompt the user to enter a value for x and get input.
+            x = float(input(f"\n\nEnter a real number of radians, x, to input into trigonometric functions which is no smaller than {-MAXIMUM_x} and no larger than {MAXIMUM_x}: "))
+            file.write(f"\n\nEnter a real number of radians, x, to input into trigonometric functions which is no smaller than {-MAXIMUM_x} and no larger than {MAXIMUM_x}: {x}\n")
+
+            # Print the entered value of x to the console and file.
+            print(f"\nThe value which was entered for x is {x}.")
+            file.write(f"\nThe value which was entered for x is {x}.\n")
+
+            # Print and log trigonometric function results.
+            functions = [
+                ("sine", sine(x)),
+                ("cosine", cosine(x)),
+                ("tangent", tangent(x)),
+                ("cotangent", cotangent(x)),
+                ("secant", secant(x)),
+                ("cosecant", cosecant(x)),
+                ("arctangent", arctangent(x)),
+                ("arcsine", arcsine(x)),
+                ("arccosine", arccosine(x))
+            ]
+
+            for name, result in functions:
+                print(f"\n{name}(x) = {result}.")
+                file.write(f"\n{name}(x) = {result}.\n")
+
+            # Ask the user if they want to continue inputting values.
+            input_additional_values = int(input("\n\nWould you like to continue inputting program values? (Enter 1 if YES. Enter 0 if NO): "))
+
+        # Print a closing message to the console and file.
+        print("\n\n--------------------------------")
+        print("End Of Program")
+        print("--------------------------------\n\n")
+
+        file.write("\n\n--------------------------------\n")
+        file.write("End Of Program\n")
+        file.write("--------------------------------\n")
+
+# Run the main function.
+main()
+</pre>
+<hr>
+<p><strong>SAMPLE_PROGRAM_OUTPUT</strong></p>
+<hr>
+<p>The text in the preformatted text box below was generated by one use case of the Python program featured in this <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Computer_programming" target="_blank" rel="noopener">computer programming</a> tutorial web page.</p>
+<p><em>(Note that the aforementioned Python program specifies to name the output file <strong>trigonometric_functions_output.txt</strong> instead of <strong>trigonometric_functions_output_two.txt</strong> (which is what the hyperlinked plain-text file below is named) because karbytes did not want the <a style="background:#000000;color:#00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_23/main/trigonometric_functions.cpp" target="_blank" rel="noopener">C++ program&#8217;s</a> output file (which is named <a style="background:#000000;color:#ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_23/main/trigonometric_functions_output.txt" target="_blank" rel="noopener">trigonometric_functions_output.txt</a>) to be overwritten with the Python program output file in the GitHub repository which houses both output files and which is named <a style="background:#00ff00;color:#000000" href="https://github.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_23/" target="_blank" rel="noopener">KARLINA_OBJECT_extension_pack_23</a>).</em></p>
+<p>plain_text_file: <a style="background:#000000;color:#ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_23/main/trigonometric_functions_output_two.txt" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_23/main/trigonometric_functions_output_two.txt</a></p>
+<hr>
+<pre>
+--------------------------------
+Start Of Program
+--------------------------------
+
+
+This Python program computes sine, cosine, tangent, cotangent, secant, cosecant, arctangent, arcsine, and arccosine of some angle measurement in radians, x.
+
+
+--------------------------------
+
+
+Enter a real number of radians, x, to input into trigonometric functions which is no smaller than -10000 and no larger than 10000: -3.14159
+
+The value which was entered for x is -3.14159.
+
+sine(x) = -2.65358979382669e-06.
+
+cosine(x) = -0.9999999999964797.
+
+tangent(x) = 2.6535897938360317e-06.
+
+cotangent(x) = 376847.99750243203.
+
+secant(x) = -1.0000000000035203.
+
+cosecant(x) = -376847.99750375864.
+
+arctangent(x) = 5.671649587222872e+17.
+
+arcsine(x) = nan.
+
+arccosine(x) = nan.
+
+
+--------------------------------
+
+
+Enter a real number of radians, x, to input into trigonometric functions which is no smaller than -10000 and no larger than 10000: 0.0
+
+The value which was entered for x is 0.0.
+
+sine(x) = 0.0.
+
+cosine(x) = 1.0.
+
+tangent(x) = 0.0.
+
+cotangent(x) = nan.
+
+secant(x) = 1.0.
+
+cosecant(x) = nan.
+
+arctangent(x) = 0.0.
+
+arcsine(x) = 0.0.
+
+arccosine(x) = 1.5707463267950172.
+
+
+--------------------------------
+
+
+Enter a real number of radians, x, to input into trigonometric functions which is no smaller than -10000 and no larger than 10000: 1.0
+
+The value which was entered for x is 1.0.
+
+sine(x) = 0.8414709848078965.
+
+cosine(x) = 0.5403023058681397.
+
+tangent(x) = 1.5574077246549025.
+
+cotangent(x) = 0.6420926159343305.
+
+secant(x) = 1.850815717680926.
+
+cosecant(x) = 1.1883951057781212.
+
+arctangent(x) = 0.77290595166696.
+
+arcsine(x) = 1.5651544074531953.
+
+arccosine(x) = 0.005591919341821905.
+
+
+--------------------------------
+
+
+Enter a real number of radians, x, to input into trigonometric functions which is no smaller than -10000 and no larger than 10000: 9999.0
+
+The value which was entered for x is 9999.0.
+
+sine(x) = nan.
+
+cosine(x) = nan.
+
+tangent(x) = nan.
+
+cotangent(x) = nan.
+
+secant(x) = nan.
+
+cosecant(x) = nan.
+
+arctangent(x) = -2.5541215137631002e+154.
+
+arcsine(x) = nan.
+
+arccosine(x) = nan.
+
+
+--------------------------------
+
+
+Enter a real number of radians, x, to input into trigonometric functions which is no smaller than -10000 and no larger than 10000: 9.0
+
+The value which was entered for x is 9.0.
+
+sine(x) = 0.41211848524176553.
+
+cosine(x) = -0.9111302618847339.
+
+tangent(x) = -0.4523156594417914.
+
+cotangent(x) = -2.210845410999285.
+
+secant(x) = -1.0975379063048933.
+
+cosecant(x) = 2.4264866435519368.
+
+arctangent(x) = -4.15698489555165e+35.
+
+arcsine(x) = nan.
+
+arccosine(x) = nan.
+
+
+--------------------------------
+
+
+Enter a real number of radians, x, to input into trigonometric functions which is no smaller than -10000 and no larger than 10000: 1.33
+
+The value which was entered for x is 1.33.
+
+sine(x) = 0.9711483779210444.
+
+cosine(x) = 0.23847605343372313.
+
+tangent(x) = 4.07230983546507.
+
+cotangent(x) = 0.24556088323416997.
+
+secant(x) = 4.1932931445375425.
+
+cosecant(x) = 1.029708768232429.
+
+arctangent(x) = -1086.29684983295.
+
+arcsine(x) = nan.
+
+arccosine(x) = nan.
+
+
+--------------------------------
+
+
+Enter a real number of radians, x, to input into trigonometric functions which is no smaller than -10000 and no larger than 10000: -0.5
+
+The value which was entered for x is -0.5.
+
+sine(x) = -0.479425538604203.
+
+cosine(x) = 0.8775825618903728.
+
+tangent(x) = -0.5463024898437905.
+
+cotangent(x) = -1.830487721712452.
+
+secant(x) = 1.139493927324549.
+
+cosecant(x) = -2.085829642933488.
+
+arctangent(x) = -0.46364760900079693.
+
+arcsine(x) = -0.523598775598299.
+
+arccosine(x) = 2.094345102393316.
+
+
+--------------------------------
+End Of Program
+--------------------------------
+</pre>
+<hr>
+<p>This web page was last updated on 18_OCTOBER_2024. The content displayed on this web page is licensed as <a style="background:#000000;color:#ff9000" href="https://karlinaobject.wordpress.com/public_domain/" target="_blank" rel="noopener">PUBLIC_DOMAIN</a> intellectual property.</p>
+<hr>
