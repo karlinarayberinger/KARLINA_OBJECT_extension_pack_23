@@ -209,7 +209,7 @@ double sine(double x)
  * If x is 60 degrees, then the right triangle it is the interior angle measurement of is a triangle
  * whose side adjacent to x is 1 and whose hypotenuse is 2.
  * 
- * Hence, sine of 30 degrees can be computed as follows:
+ * Hence, cosine of 60 degrees can be computed as follows:
  * 
  * 60 degrees = Pi / 3 radians ≈ 1.047
  * 
