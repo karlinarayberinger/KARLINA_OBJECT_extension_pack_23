@@ -459,7 +459,7 @@ double cosecant(double x)
  * 
  * This function returns the inverse of the cosine function using the Taylor series:
  * 
- * arctangent(x) = atan(x) = tan ^ -1 (x) != 1 / tan(x) = (tan(x)) ^ 1
+ * arctangent(x) = atan(x) = tan ^ -1 (x) != 1 / tan(x) = (tan(x)) ^ -1
  * 
  *----------------------------------------------------------------------------------------------------------------------------------------------
  */
