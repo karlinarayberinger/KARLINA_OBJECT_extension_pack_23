@@ -1,0 +1,948 @@
+<hr>
+<p><strong>TRIGONOMETRIC_FUNCTIONS</strong></p>
+<hr>
+<p><span style="background:#ffff00">The <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/C%2B%2B" target="_blank" rel="noopener">C++</a> program featured in this tutorial web page defines the following nine <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Trigonometric_functions" target="_blank" rel="noopener">trigonometric functions</a> (whose inputs are each some angle measurement, <strong>x</strong>, in <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Radian" target="_blank" rel="noopener">radians</a> ): <strong>sine(x)</strong>, <strong>cosine(x)</strong>, <strong>tangent(x)</strong>, <strong>cotangent(x)</strong>, <strong>secant(x)</strong>, <strong>cosecant(x)</strong>, <strong>arctangent(x)</strong>, <strong>arcsine(x)</strong>, <strong>arccosine(x)</strong>.</span></p>
+<p><em>To view hidden text inside each of the preformatted text boxes below, scroll horizontally.</em></p>
+<hr>
+<p><strong>SOFTWARE_APPLICATION_COMPONENTS</strong></p>
+<hr>
+<p>C++_source_file: <a style="background:#000000;color:#00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_23/main/trigonometric_functions.cpp" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_23/main/trigonometric_functions.cpp</a></p>
+<p>plain-text_file: <a style="background:#000000;color:#ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_23/main/trigonometric_functions_output.txt" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_23/main/trigonometric_functions_output.txt</a></p>
+<hr>
+<p><strong>PROGRAM_COMPILATION_AND_EXECUTION</strong></p>
+<hr>
+<p>STEP_0: Copy and paste the C++ <a style="background:#000000;color:#00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_23/main/trigonometric_functions.cpp" target="_blank" rel="noopener">source code</a> into a new text editor document and save that document as the following file name:</p>
+<pre>trigonometric_functions.cpp</pre>
+<p>STEP_1: Open a <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Unix" target="_blank" rel="noopener">Unix</a> command line terminal application and set the current directory to wherever the C++ program file is located on the local machine (e.g. Desktop).</p>
+<pre>cd Desktop</pre>
+<p>STEP_2: Compile the C++ file into machine-executable instructions (i.e. object file) and then into an executable piece of software named <strong>app</strong> using the following command:</p>
+<pre>g++ trigonometric_functions.cpp -o app</pre>
+<p>STEP_3: If the program compilation command does not work, then use the following commands (in top-down order) to install the C/C++ compiler (which is part of the <a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/GNU_Compiler_Collection" target="_blank" rel="noopener">GNU Compiler Collection (GCC)</a>):</p>
+<pre>sudo apt install build-essential</pre>
+<pre>sudo apt-get install g++</pre>
+<p>STEP_4: After running the <strong>g++</strong> command, run the executable file using the following command:</p>
+<pre>./app</pre>
+<p>STEP_5: Once the application is running, the following prompt will appear:</p>
+<pre>Enter a real number of radians, x, to input into trigonometric functions which is no smaller than -10000 and no larger than 10000: </pre>
+<p>STEP_6: Enter a value for x using the keyboard. Proceed with the prompts for additional input values which follow.</p>
+<p>STEP_7: Observe program results on the command line terminal and in the <a style="background:#000000;color:#ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_23/main/trigonometric_functions_output.txt" target="_blank" rel="noopener">output file</a>.</p>
+<hr>
+<p><strong>PROGRAM_SOURCE_CODE</strong></p>
+<hr>
+<p>The text in the preformatted text box below appears on this web page (while rendered correctly by the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/HTML" target="_blank" rel="noopener">web browser</a>) to be identical to the content of the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/C%2B%2B" target="_blank" rel="noopener">C++</a> source code file whose <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/URL" target="_blank" rel="noopener">Uniform Resource Locator</a> is displayed in the green <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Hyperlink" target="_blank" rel="noopener">hyperlink</a> below. A <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Computer" target="_blank" rel="noopener">computer</a> interprets that C++ source code as a series of programmatic instructions (i.e. <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Software" target="_blank" rel="noopener">software</a>) which govern how the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Computer_hardware" target="_blank" rel="noopener">hardware</a> of that computer behaves.</p>
+<p><em>(Note that angle brackets which resemble <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/HTML" target="_blank" rel="noopener">HTML</a> tags (i.e. an &#8220;is less than&#8221; symbol (i.e. &#8216;&lt;&#8216;) followed by an &#8220;is greater than&#8221; symbol (i.e. &#8216;&gt;&#8217;)) displayed on this web page have been replaced (at the source code level of this web page) with the Unicode symbols <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Less-than_sign" target="_blank" rel="noopener">U+003C</a> (which is rendered by the web browser as &#8216;&lt;&#8216;) and <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Greater-than_sign" target="_blank" rel="noopener">U+003E</a> (which is rendered by the web browser as &#8216;&gt;&#8217;). That is because the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/WordPress.com" target="_blank" rel="noopener">WordPress</a> web page editor or web browser interprets a plain-text version of an &#8220;is less than&#8221; symbol followed by an &#8220;is greater than&#8221; symbol as being an opening HTML tag (which means that the WordPress web page editor or web browser deletes or fails to display those (plain-text) inequality symbols and the content between those (plain-text) inequality symbols)).</em></p>
+<p>C++_source_file: <a style="background:#000000;color:#00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_23/main/trigonometric_functions.cpp" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_23/main/trigonometric_functions.cpp</a></p>
+<hr>
+<pre>
+/**
+ * file: trigonometric_functions.cpp
+ * type: C++ (source file)
+ * date: 18_OCTOBER_2024
+ * author: karbytes
+ * license: PUBLIC_DOMAIN 
+ */
+
+/** preprocessing directives */
+#include &lt;iostream&gt; // standard input (std::cin), standard output (std::cout)
+#include &lt;fstream&gt; // file input, file output
+#define MAXIMUM_i 10000 // constant which represents maximum number of iterations in Leibniz series
+#define MAXIMUM_t 10000 // constant which represents maximum number of terms in Taylor series
+#define MAXIMUM_x 10000 // constant which represents maximum value of x
+
+/** function prototypes */
+double computePi(int iterations);
+double sine(double x);
+double cosine(double x);
+double tangent(double x);
+double cotangent(double x);
+double secant(double x);
+double cosecant(double x);
+double arctangent(double x);
+double arcsine(double x);
+double arccosine(double x);
+
+/** program entry point */
+int main() 
+{
+
+    // Define one double type variable for storing a floating-point number value.
+    double x;
+
+    // Declare a variable for storing the program user's answer of whether or not to continue inputting values.
+    int input_additional_values = 1;
+
+    // Declare a file output stream handler (which represents the plain-text file to generate and/or overwrite with program data).
+    std::ofstream file;
+
+    // Set the number of digits of floating-point numbers which are printed to the command line terminal to 100 digits.
+    std::cout.precision(100);
+
+    // Set the number of digits of floating-point numbers which are printed to the file output stream to 100 digits.
+    file.precision(100);
+
+    /**
+     * If the file named trigonometric_functions_output.txt does not already exist 
+     * inside of the same file directory as the file named trigonometric_functions.cpp, 
+     * create a new file named trigonometric_functions_output.txt in that directory.
+     * 
+     * Open the plain-text file named trigonometric_functions_output.txt
+     * and set that file to be overwritten with program data.
+     */
+    file.open("trigonometric_functions_output.txt");
+
+    // Print an opening message to the command line terminal.
+    std::cout &lt;&lt; "\n\n--------------------------------";
+    std::cout &lt;&lt; "\nStart Of Program";
+    std::cout &lt;&lt; "\n--------------------------------";
+
+    // Print an opening message to the file output stream.
+    file &lt;&lt; "--------------------------------";
+    file &lt;&lt; "\nStart Of Program";
+    file &lt;&lt; "\n--------------------------------";
+
+    // Print "This C++ program computes sine, cosine, tangent, cotangent, secant, cosecant, arctangent, arcsine, and arccosine of some angle measurement in radians, x.
+    std::cout &lt;&lt; "\n\nThis C++ program computes sine, cosine, tangent, cotangent, secant, cosecant, arctangent, arcsine, and arccosine of some angle measurement in radians, x.";
+    file &lt;&lt; "\n\nThis C++ program computes sine, cosine, tangent, cotangent, secant, cosecant, arctangent, arcsine, and arccosine of some angle measurement in radians, x.";
+
+    // Execute the code inside of the while loop block at least once (and until the program user inputs a value specifying to exit the program).
+    while (input_additional_values != 0)
+    {
+        // Print a horizontal divider line to the command line terminal and to the file output stream.
+        std::cout &lt;&lt; "\n\n--------------------------------";
+        file &lt;&lt; "\n\n--------------------------------";
+
+        // Prompt the user to enter an input value for x (and print that prompt to the command line terminal and to the file output stream).
+        std::cout &lt;&lt; "\n\nEnter a real number of radians, x, to input into trigonometric functions which is no smaller than " &lt;&lt; (-1 * MAXIMUM_x) &lt;&lt; " and no larger than " &lt;&lt; MAXIMUM_x &lt;&lt; ": ";
+        file &lt;&lt; "\n\nEnter a real number of radians, x, to input into trigonometric functions which is no smaller than " &lt;&lt; (-1 * MAXIMUM_x) &lt;&lt; " and no larger than " &lt;&lt; MAXIMUM_x &lt;&lt; ": ";
+
+        // Scan the command line terminal for the most recent keyboard input value. Store that value in x.
+        std::cin &gt;&gt; x;
+
+        // Print "The value which was entered for x is {x}." to the command line terminal and to the file output stream.
+        std::cout &lt;&lt; "\nThe value which was entered for x is " &lt;&lt; x &lt;&lt; ".";
+        file &lt;&lt; "\n\nThe value which was entered for x is " &lt;&lt; x &lt;&lt; ".";
+
+        // Print a horizontal divider line to the command line terminal and to the file output stream.
+        std::cout &lt;&lt; "\n\n--------------------------------";
+        file &lt;&lt; "\n\n--------------------------------";
+
+        // Print the value of sine of x to the command line terminal and to the output file.
+        std::cout &lt;&lt; "\n\nsine(x) = " &lt;&lt; sine(x) &lt;&lt; ".";
+        file &lt;&lt; "\n\nsine(x) = " &lt;&lt; sine(x) &lt;&lt; ".";
+
+        // Print the value of cosine of x to the command line terminal and to the output file.
+        std::cout &lt;&lt; "\n\ncosine(x) = " &lt;&lt; cosine(x) &lt;&lt; ".";
+        file &lt;&lt; "\n\ncosine(x) = " &lt;&lt; cosine(x) &lt;&lt; ".";
+
+        // Print the value of tangent of x to the command line terminal and to the output file.
+        std::cout &lt;&lt; "\n\ntangent(x) = " &lt;&lt; tangent(x) &lt;&lt; ".";
+        file &lt;&lt; "\n\ntangent(x) = " &lt;&lt; tangent(x) &lt;&lt; ".";
+
+        // Print a horizontal divider line to the command line terminal and to the file output stream.
+        std::cout &lt;&lt; "\n\n--------------------------------";
+        file &lt;&lt; "\n\n--------------------------------";
+
+        // Print the value of cotangent of x to the command line terminal and to the output file.
+        std::cout &lt;&lt; "\n\ncotangent(x) = " &lt;&lt; cotangent(x) &lt;&lt; ".";
+        file &lt;&lt; "\n\ncotangent(x) = " &lt;&lt; cotangent(x) &lt;&lt; ".";
+
+        // Print the value of secant of x to the command line terminal and to the output file.
+        std::cout &lt;&lt; "\n\nsecant(x) = " &lt;&lt; secant(x) &lt;&lt; ".";
+        file &lt;&lt; "\n\nsecant(x) = " &lt;&lt; secant(x) &lt;&lt; ".";
+
+        // Print the value of cosecant of x to the command line terminal and to the output file.
+        std::cout &lt;&lt; "\n\ncosecant(x) = " &lt;&lt; secant(x) &lt;&lt; ".";
+        file &lt;&lt; "\n\ncosecant(x) = " &lt;&lt; secant(x) &lt;&lt; ".";
+
+        // Print a horizontal divider line to the command line terminal and to the file output stream.
+        std::cout &lt;&lt; "\n\n--------------------------------";
+        file &lt;&lt; "\n\n--------------------------------";
+
+        // Print the value of arctangent of x to the command line terminal and to the output file.
+        std::cout &lt;&lt; "\n\narctangent(x) = " &lt;&lt; arctangent(x) &lt;&lt; ".";
+        file &lt;&lt; "\n\narctangent(x) = " &lt;&lt; arctangent(x) &lt;&lt; ".";
+
+        // Print the value of arcsine of x to the command line terminal and to the output file.
+        std::cout &lt;&lt; "\n\narcsine(x) = " &lt;&lt; arcsine(x) &lt;&lt; ".";
+        file &lt;&lt; "\n\narcsine(x) = " &lt;&lt; arcsine(x) &lt;&lt; ".";
+
+        // Print the value of arccosine of x to the command line terminal and to the output file.
+        std::cout &lt;&lt; "\n\narccosine(x) = " &lt;&lt; arccosine(x) &lt;&lt; ".";
+        file &lt;&lt; "\n\narccosine(x) = " &lt;&lt; arccosine(x) &lt;&lt; ".";
+
+        // Print a horizontal divider line to the command line terminal and to the file output stream.
+        std::cout &lt;&lt; "\n\n--------------------------------";
+        file &lt;&lt; "\n\n--------------------------------";
+
+        // Ask the user whether or not to continue inputing values.
+        std::cout &lt;&lt; "\n\nWould you like to continue inputting program values? (Enter 1 if YES. Enter 0 if NO): ";
+
+        // Scan the command line terminal for the most recent keyboard input value.
+        std::cin &gt;&gt; input_additional_values;
+
+    }
+
+    // Print a closing message to the command line terminal.
+    std::cout &lt;&lt; "\n\n--------------------------------";
+    std::cout &lt;&lt; "\nEnd Of Program";
+    std::cout &lt;&lt; "\n--------------------------------\n\n";
+
+    // Print a closing message to the file output stream.
+    file &lt;&lt; "\n\n--------------------------------";
+    file &lt;&lt; "\nEnd Of Program";
+    file &lt;&lt; "\n--------------------------------";
+
+    // Close the file output stream.
+    file.close();
+
+    // Exit the program.
+    return 0; 
+}
+
+/**
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * This function computes the approximate value of Pi using the Leibniz series.
+ * 
+ * Pi ≈ 4 * (1 - (1 / 3) + (1 / 5) - (1 / 7) + (1 / 9) - ...)
+ * 
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * Pi is a mathematical constant that is the ratio of a circle's circumference to 
+ * its diameter (which is approximately equal to 3.14159).
+ * 
+ * For more information on how to compute the approximate value of Pi
+ * (using a Monte Carlo dart-throwing simulation in JavaScript), visit
+ * the tutorial web page at the following Uniform Resource Locator:
+ * 
+ * https://karlinaobject.wordpress.com/pi_approximation/
+ * 
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * iterations is assumed to be a nonnegative integer no larger than MAXIMUM_iteratons.
+ * 
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ */
+double computePi(int iterations) 
+{
+    int i = 0;
+    double pi = 0.0;
+    double sign = 1.0; // alternates between positive and negative
+
+    // Set iterations to 1 if the function input value is out or range. Then print a message about that change to the command line terminal.
+    if ((iterations &lt; 0) || (iterations &gt; MAXIMUM_i)) 
+    {
+        iterations = 1;
+        std::cout &lt;&lt; "\n\nThe number of iterations for the Leibniz series in computePi(iterations) was out of range. Hence, iterations has been reset to 1.";
+    }
+
+    for (i = 0; i &lt; iterations; i += 1) 
+    {
+        pi += sign / (2.0 * i + 1.0); // add next term in the series
+        sign = -sign; // alternate the sign for each term
+    }
+
+    pi *= 4.0; // multiply by 4 to get Pi
+    return pi;
+}
+
+/**
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * This function uses the Taylor series to compute the approximate value of sine of x (which is also expressed as sin(x)).
+ * 
+ * The value returned by this function is no smaller than -1 and no larger than 1:
+ * 
+ * -1 &lt;= sin(x) &lt;= 1
+ * 
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * The sine of an angle, x, in a right triangle is defined as the ratio of the length of 
+ * the side opposite the angle to the length of the hypotenuse (the longest side of the triangle):
+ * 
+ * sin(x) = opposite / hypotenuse
+ * 
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * Note that an angle measurement in degrees can be converted to radians using the following formula:
+ * 
+ * radians = degrees * (Pi / 180)
+ * 
+ * If x is 30 degrees, then the right triangle it is the interior angle measurement of is a triangle
+ * whose side opposite of x is 1 and whose hypotenuse is 2.
+ * 
+ * Hence, sine of 30 degrees can be computed as follows:
+ * 
+ * 30 degrees = Pi / 6 radians ≈ 0.5236
+ * 
+ * sin(0.5236) = 1 / 2 = 0.5
+ *
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * x is an angle measurement in radians and can theoretically be any real number (but is constrained to be in [(-1 * MAXIMUM_x), MAXIMUM_x]).
+ * 
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ */
+double sine(double x) 
+{
+    // Set x to 1 if the function input value is out or range. Then print a message about that change to the command line terminal.
+    if ((x &lt; (-1 * MAXIMUM_x)) || (x &gt; MAXIMUM_x)) 
+    {
+        x = 1;
+        std::cout &lt;&lt; "\n\nThe number of radians, x, in sine(x) was out of range. Hence, x has been reset to 1.";
+    }
+
+    int i = 0;
+    const int terms = MAXIMUM_t; // number of terms in the Taylor series
+    double result = 0.0;
+    double term = x; // first term: ((x ^ 1) / 1!)
+    int sign = 1; // alternating signs for each term
+    for (i = 1; i &lt;= terms; i += 1) 
+    {
+        result += sign * term;
+        sign *= -1; // alternating sign
+        term *= x * x / (2 * i * (2 * i + 1)); // update term for the next iteration
+    }
+    return result;
+}
+
+/**
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * This function uses the Taylor series to compute the approximate value of cosine of x (which is also expressed as cos(x)).
+ * 
+ * The value returned by this function is no smaller than -1 and no larger than 1:
+ * 
+ * -1 &lt;= cos(x) &lt;= 1
+ * 
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * The cosine of an angle, x, in a right triangle is defined as the ratio of the length of 
+ * the side adjacent to the angle to the length of the hypotenuse (the longest side of the triangle):
+ * 
+ * cos(x) = adjacent / hypotenuse
+ * 
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * Note that an angle measurement in degrees can be converted to radians using the following formula:
+ * 
+ * radians = degrees * (Pi / 180)
+ * 
+ * If x is 60 degrees, then the right triangle it is the interior angle measurement of is a triangle
+ * whose side adjacent to x is 1 and whose hypotenuse is 2.
+ * 
+ * Hence, cosine of 60 degrees can be computed as follows:
+ * 
+ * 60 degrees = Pi / 3 radians ≈ 1.047
+ * 
+ * cos(1.047) = 1 / 2 = 0.5
+ * 
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * x is an angle measurement in radians and can theoretically be any real number (but is constrained to be in [(-1 * MAXIMUM_x), MAXIMUM_x]).
+ *
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ */
+double cosine(double x) 
+{
+    // Set x to 1 if the function input value is out or range. Then print a message about that change to the command line terminal.
+    if ((x &lt; (-1 * MAXIMUM_x)) || (x &gt; MAXIMUM_x)) 
+    {
+        x = 1;
+        std::cout &lt;&lt; "\n\nThe number of radians, x, in cosine(x) was out of range. Hence, x has been reset to 1.";
+    }
+
+    int i = 0;
+    const int terms = MAXIMUM_t; // number of terms in the Taylor series
+    double result = 1.0; // first term: ((x ^ 0) / 0!)
+    double term = 1.0; 
+    int sign = -1; // alternating signs for each term
+    for (i = 1; i &lt;= terms; i += 1) 
+    {
+        term *= x * x / (2 * i * (2 * i - 1)); // update term for the next iteration
+        result += sign * term;
+        sign *= -1; // alternating sign
+    }
+    return result;
+}
+
+/**
+ *-----------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * This function computes the approximate value of tangent of x (which is also expressed as tan(x)).
+ * 
+ * The value returned by this function can theoretically be any real number:
+ * 
+ * tan(x) ∈ (-INFINITY, INFINITY)
+ * 
+ *-----------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * The tangent of an angle, x, in a right triangle is defined as the ratio of the length of the side opposite 
+ * the angle to the length of the adjacent side:
+ * 
+ * tan(x) = opposite / adjacent
+ * 
+ *-----------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * x is an angle measurement in radians such that, theoretically speaking,
+ * 
+ * x = (((2 * n) + 1) * Pi) / 2 
+ * 
+ * where n is any integer
+ * 
+ * (but, in this program function, x is allowed to be any integer in [(-1 * MAXIMUM_x), MAXIMUM_x]).
+ * 
+ * If x is within [(-1 * MAXIMUM_x), MAXIMUM_x] but 
+ * 
+ * x != (((2 * n) + 1) * Pi) / 2 
+ * 
+ * where n is theoretically any integer,
+ * 
+ * then the output value returned by this function will be "not a number".
+ * 
+ * For example, if x = Pi /2, then tan(x) = "not a number".
+ *
+ *-----------------------------------------------------------------------------------------------------------------------------------
+ */
+double tangent(double x) 
+{
+    // Set x to 1 if the function input value is out or range. Then print a message about that change to the command line terminal.
+    if ((x &lt; (-1 * MAXIMUM_x)) || (x &gt; MAXIMUM_x)) 
+    {
+        x = 1;
+        std::cout &lt;&lt; "\n\nThe number of radians, x, in tangent(x) was out of range. Hence, x has been reset to 1.";
+    }
+
+    return sine(x) / cosine(x);
+}
+
+/**
+ *-----------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * This function returns the reciprocal of the tangent function:
+ * 
+ * cotangent(x) = cot(x) = 1 / tan(x)
+ * 
+ *------------------------------------------------------------------------------------------------------------------------------------
+ *
+ * The value returned by this function can theoretically be any real number:
+ * 
+ * cot(x) ∈ (-INFINITY, INFINITY)
+ * 
+ *------------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * x is an angle measurement in radians such that, theoretically speaking,
+ * 
+ * sin(x) != 0
+ * 
+ * (i.e. 
+ * 
+ * x != (Pi * n) 
+ * 
+ * where n is any integer)
+ * 
+ * (but, in this program function, x is allowed to be any integer in [(-1 * MAXIMUM_x), MAXIMUM_x]).
+ * 
+ * If x is within [(-1 * MAXIMUM_x), MAXIMUM_x] but also
+ * 
+ * x = Pi * n 
+ * 
+ * where n is any integer
+ * 
+ * then the output value returned by this function will be "not a number".
+ * 
+ * For example, if x = Pi, then cot(x) = "not a number".
+ * 
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ */
+double cotangent(double x) 
+{
+    // Set x to 1 if the function input value is out or range. Then print a message about that change to the command line terminal.
+    if ((x &lt; (-1 * MAXIMUM_x)) || (x &gt; MAXIMUM_x)) 
+    {
+        x = 1;
+        std::cout &lt;&lt; "\n\nThe number of radians, x, in cotangent(x) was out of range. Hence, x has been reset to 1.";
+    }
+
+    return 1.0 / tangent(x);
+}
+
+/**
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * This function returns the reciprocal of the cosine function:
+ * 
+ * secant(x) = sec(x) = 1 / cos(x)
+ *
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * The value returned by this function can theoretically be any real number less than or equal to -1 
+ * or else any real number greater than or equal to 1:
+ * 
+ * sec(x) ∈ (-INFINITY, -1] ∪ [1, INFINITY)
+ * 
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * x is an angle measurement in radians such that, theoretically speaking,
+ * 
+ * cos(x) != 0
+ * 
+ * (i.e. 
+ * 
+ * x != (((2 * n) + 1) * Pi) / 2
+ * 
+ * where n is any integer)
+ * 
+ * (but, in this program function, x is allowed to be any integer in [(-1 * MAXIMUM_x), MAXIMUM_x]).
+ * 
+ * If x is within [(-1 * MAXIMUM_x), MAXIMUM_x] but also
+ * 
+ * x = (((2 * n) + 1) * Pi) / 2
+ * 
+ * where n is any integer
+ * 
+ * then the output value returned by this function will be "not a number".
+ * 
+ * For example, if x = Pi / 2, then cot(x) = "not a number".
+ *
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ */
+double secant(double x) 
+{
+    // Set x to 1 if the function input value is out or range. Then print a message about that change to the command line terminal.
+    if ((x &lt; (-1 * MAXIMUM_x)) || (x &gt; MAXIMUM_x)) 
+    {
+        x = 1;
+        std::cout &lt;&lt; "\n\nThe number of radians, x, in secant(x) was out of range. Hence, x has been reset to 1.";
+    }
+
+    return 1.0 / cosine(x);
+}
+
+/**
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * This function returns the reciprocal of the sine function:
+ * 
+ * cosecant(x) = cos(x) = 1 / sin(x)
+ *
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * The value returned by this function can theoretically be any real number less than or equal to -1 
+ * or else any real number greater than or equal to 1:
+ * 
+ * csc(x) ∈ (-INFINITY, -1] ∪ [1, INFINITY)
+ * 
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * x is an angle measurement in radians such that, theoretically speaking,
+ * 
+ * sin(x) != 0
+ * 
+ * (i.e. 
+ * 
+ * x != (Pi * n) 
+ * 
+ * where n is any integer)
+ * 
+ * (but, in this program function, x is allowed to be any integer in [(-1 * MAXIMUM_x), MAXIMUM_x]).
+ * 
+ * If x is within [(-1 * MAXIMUM_x), MAXIMUM_x] but also
+ * 
+ * x = Pi * n 
+ * 
+ * where n is any integer
+ * 
+ * then the output value returned by this function will be "not a number".
+ * 
+ * For example, if x = Pi, then csc(x) = "not a number".
+ * 
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ */
+double cosecant(double x) 
+{
+    // Set x to 1 if the function input value is out or range. Then print a message about that change to the command line terminal.
+    if ((x &lt; (-1 * MAXIMUM_x)) || (x &gt; MAXIMUM_x)) 
+    {
+        x = 1;
+        std::cout &lt;&lt; "\n\nThe number of radians, x, in cosecant(x) was out of range. Hence, x has been reset to 1.";
+    }
+
+    return 1.0 / sine(x);
+}
+
+/**
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * This function returns the inverse of the cosine function using the Taylor series:
+ * 
+ * arctangent(x) = atan(x) = tan ^ -1 (x) != 1 / tan(x) = (tan(x)) ^ -1
+ * 
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ *
+ * The value returned by this function can theoretically be any real number less than or equal to (-1 * (Pi / 2))
+ * or any real number greater than or equal to (Pi / 2):
+ * 
+ * atan(x) ∈ [(-1 * (Pi / 2)), (Pi / 2)]
+ * 
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * x is an angle measurement in radians and can theoretically be any real number (but is constrained to be in [(-1 * MAXIMUM_x), MAXIMUM_x]).
+ * 
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ */
+double arctangent(double x) 
+{
+    // Set x to 1 if the function input value is out or range. Then print a message about that change to the command line terminal.
+    if ((x &lt; (-1 * MAXIMUM_x)) || (x &gt; MAXIMUM_x)) 
+    {
+        x = 1;
+        std::cout &lt;&lt; "\n\nThe number of radians, x, in arctangent(x) was out of range. Hence, x has been reset to 1.";
+    }
+
+    int i = 0;
+    const int terms = MAXIMUM_t; // number of terms in the series
+    double result = 0.0;
+    double term = x; // first term
+    int sign = 1; // alternating signs for each term
+    for (i = 0; i &lt; terms; i += 1) 
+    {
+        result += sign * term;
+        sign *= -1; // alternating sign
+        term *= x * x * (2 * i + 1) / (2 * i + 3); // update term for the next iteration
+    }
+    return result;
+}
+
+/**
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * This function returns the inverse of the sine function using the Taylor series:
+ * 
+ * arcsine(x) = asin(x) = sin ^ -1 (x) != 1 / sin(x) = (sin(x)) ^ -1
+ * 
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ *
+ * The value returned by this function can theoretically be any real number less than or equal to (-1 * (Pi / 2))
+ * or any real number greater than or equal to (Pi / 2):
+ * 
+ * asin(x) ∈ [(-1 * (Pi / 2)), (Pi / 2)]
+ * 
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * x is an angle measurement in radians and is only valid if
+ * 
+ * x ∈ [-1, 1]
+ * 
+ * where x is a real number
+ * 
+ * (but, in this program, x can be in [(-1 * MAXIMUM_x), MAXIMUM_x]).
+ * 
+ * If x is out of range of [-1, 1], then asin(x) = "not a number".
+ * 
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ */
+double arcsine(double x) 
+{
+    // Set x to 1 if the function input value is out or range. Then print a message about that change to the command line terminal.
+    if ((x &lt; (-1 * MAXIMUM_x)) || (x &gt; MAXIMUM_x)) 
+    {
+        x = 1;
+        std::cout &lt;&lt; "\n\nThe number of radians, x, in arcsine(x) was out of range. Hence, x has been reset to 1.";
+    }
+
+    const int terms = MAXIMUM_t;
+    double result = x;
+    double term = x;
+    for (int i = 1; i &lt; terms; ++i) 
+    {
+        term *= (x * x * (2 * i - 1)) / (2 * i);
+        result += term / (2 * i + 1);
+    }
+    return result;
+}
+
+/**
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * This function returns the inverse of the cosine function using the following formula: acos(x) = pi/2 - asin(x)
+ * 
+ * arccosine(x) = acos(x) = cos ^ -1 (x) != 1 / cos(x) = (cos(x)) ^ -1
+ * 
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * The value returned by this function can theoretically be any real number less than or equal to 0
+ * or any real number greater than or equal to Pi:
+ * 
+ * acos(x) ∈ [0, Pi]
+ * 
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * x is an angle measurement in radians and is only valid if
+ * 
+ * x ∈ [-1, 1]
+ * 
+ * where x is a real number
+ * 
+ * (but, in this program, x can be in [(-1 * MAXIMUM_x), MAXIMUM_x]).
+ * 
+ * If x is out of range of [-1, 1], then acos(x) = "not a number".
+ * 
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ */
+double arccosine(double x) 
+{
+    // Set x to 1 if the function input value is out or range. Then print a message about that change to the command line terminal.
+    if ((x &lt; (-1 * MAXIMUM_x)) || (x &gt; MAXIMUM_x)) 
+    {
+        x = 1;
+        std::cout &lt;&lt; "\n\nThe number of radians, x, in arccosine(x) was out of range. Hence, x has been reset to 1.";
+    }
+
+    return computePi(MAXIMUM_i) / 2 - arcsine(x);  
+}
+</pre>
+<hr>
+<p><strong>SAMPLE_PROGRAM_OUTPUT</strong></p>
+<hr>
+<p>The text in the preformatted text box below was generated by one use case of the C++ program featured in this <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Computer_programming" target="_blank" rel="noopener">computer programming</a> tutorial web page.</p>
+<p>plain-text_file: <a style="background:#000000;color:#ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_23/main/trigonometric_functions_output.txt" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_23/main/trigonometric_functions_output.txt</a></p>
+<hr>
+<pre>
+--------------------------------
+Start Of Program
+--------------------------------
+
+This C++ program computes sine, cosine, tangent, cotangent, secant, cosecant, arctangent, arcsine, and arccosine of some angle measurement in radians, x.
+
+--------------------------------
+
+Enter a real number of radians, x, to input into trigonometric functions which is no smaller than -10000 and no larger than 10000: 
+
+The value which was entered for x is 0.25.
+
+--------------------------------
+
+sine(x) = 0.2474039592545229371278736607564496807754039764404296875.
+
+cosine(x) = 0.96891242171064473343022882545483298599720001220703125.
+
+tangent(x) = 0.25534192122103627209384058005525730550289154052734375.
+
+--------------------------------
+
+cotangent(x) = 3.916317364645939935741125736967660486698150634765625.
+
+secant(x) = 1.0320850239843857298893681218032725155353546142578125.
+
+cosecant(x) = 1.0320850239843857298893681218032725155353546142578125.
+
+--------------------------------
+
+arctangent(x) = 0.2449786631268640879621756312189972959458827972412109375.
+
+arcsine(x) = 0.252680255142078646901637739574653096497058868408203125.
+
+arccosine(x) = 1.31806607165293865335797818261198699474334716796875.
+
+--------------------------------
+
+--------------------------------
+
+Enter a real number of radians, x, to input into trigonometric functions which is no smaller than -10000 and no larger than 10000: 
+
+The value which was entered for x is 9.
+
+--------------------------------
+
+sine(x) = 0.41211848524176553087983165823970921337604522705078125.
+
+cosine(x) = -0.911130261884733894106602747342549264430999755859375.
+
+tangent(x) = -0.45231565944179141780523423221893608570098876953125.
+
+--------------------------------
+
+cotangent(x) = -2.2108454109992852210098135401494801044464111328125.
+
+secant(x) = -1.097537906304893340347916819155216217041015625.
+
+cosecant(x) = -1.097537906304893340347916819155216217041015625.
+
+--------------------------------
+
+arctangent(x) = -nan.
+
+arcsine(x) = inf.
+
+arccosine(x) = -inf.
+
+--------------------------------
+
+--------------------------------
+
+Enter a real number of radians, x, to input into trigonometric functions which is no smaller than -10000 and no larger than 10000: 
+
+The value which was entered for x is 3.14158999999999988261834005243144929409027099609375.
+
+--------------------------------
+
+sine(x) = 2.65358979382669020406749181562044981319559155963361263275146484375e-06.
+
+cosine(x) = -0.999999999996479704833518553641624748706817626953125.
+
+tangent(x) = -2.653589793836031706926285866909864807894336991012096405029296875e-06.
+
+--------------------------------
+
+cotangent(x) = -376847.9975024320301599800586700439453125.
+
+secant(x) = -1.000000000003520295166481446358375251293182373046875.
+
+cosecant(x) = -1.000000000003520295166481446358375251293182373046875.
+
+--------------------------------
+
+arctangent(x) = -nan.
+
+arcsine(x) = inf.
+
+arccosine(x) = -inf.
+
+--------------------------------
+
+--------------------------------
+
+Enter a real number of radians, x, to input into trigonometric functions which is no smaller than -10000 and no larger than 10000: 
+
+The value which was entered for x is 0.52359999999999995434762922741356305778026580810546875.
+
+--------------------------------
+
+sine(x) = 0.50000106036260294484208088761079125106334686279296875.
+
+cosine(x) = 0.8660247915829388798414356642751954495906829833984375.
+
+tangent(x) = 0.5773519017263815111817848446662537753582000732421875.
+
+--------------------------------
+
+cotangent(x) = 1.7320459099724587748170279155601747334003448486328125.
+
+secant(x) = 1.1547013546484949930714947186061181128025054931640625.
+
+cosecant(x) = 1.1547013546484949930714947186061181128025054931640625.
+
+--------------------------------
+
+arctangent(x) = 0.482348868051956036762106805326766334474086761474609375.
+
+arcsine(x) = 0.55107102025035559211829649939318187534809112548828125.
+
+arccosine(x) = 1.019675306544661541607865729019977152347564697265625.
+
+--------------------------------
+
+--------------------------------
+
+Enter a real number of radians, x, to input into trigonometric functions which is no smaller than -10000 and no larger than 10000: 
+
+The value which was entered for x is 0.
+
+--------------------------------
+
+sine(x) = 0.
+
+cosine(x) = 1.
+
+tangent(x) = 0.
+
+--------------------------------
+
+cotangent(x) = inf.
+
+secant(x) = 1.
+
+cosecant(x) = 1.
+
+--------------------------------
+
+arctangent(x) = 0.
+
+arcsine(x) = 0.
+
+arccosine(x) = 1.5707463267950172447484646909288130700588226318359375.
+
+--------------------------------
+
+--------------------------------
+
+Enter a real number of radians, x, to input into trigonometric functions which is no smaller than -10000 and no larger than 10000: 
+
+The value which was entered for x is -1.
+
+--------------------------------
+
+sine(x) = -0.8414709848078965048756572286947630345821380615234375.
+
+cosine(x) = 0.54030230586813965398818027097149752080440521240234375.
+
+tangent(x) = -1.5574077246549025144162214928655885159969329833984375.
+
+--------------------------------
+
+cotangent(x) = -0.642092615934330535054641586611978709697723388671875.
+
+secant(x) = 1.8508157176809258981364791907253675162792205810546875.
+
+cosecant(x) = 1.8508157176809258981364791907253675162792205810546875.
+
+--------------------------------
+
+arctangent(x) = -0.78537316339750928850804712055833078920841217041015625.
+
+arcsine(x) = -1.56515440745319533988322291406802833080291748046875.
+
+arccosine(x) = 3.13590073424821280667629253002814948558807373046875.
+
+--------------------------------
+
+--------------------------------
+
+Enter a real number of radians, x, to input into trigonometric functions which is no smaller than -10000 and no larger than 10000: 
+
+The value which was entered for x is -0.01000000000000000020816681711721685132943093776702880859375.
+
+--------------------------------
+
+sine(x) = -0.00999983333416666446413767488365920144133269786834716796875.
+
+cosine(x) = 0.9999500004166652633585954390582628548145294189453125.
+
+tangent(x) = -0.0100003333466672054974377914504657383076846599578857421875.
+
+--------------------------------
+
+cotangent(x) = -99.99666664444424668545252643525600433349609375.
+
+secant(x) = 1.0000500020834179881745740203768946230411529541015625.
+
+cosecant(x) = 1.0000500020834179881745740203768946230411529541015625.
+
+--------------------------------
+
+arctangent(x) = -0.00999966668666523762765141469799345941282808780670166015625.
+
+arcsine(x) = -0.01000016667416711406424223440581044997088611125946044921875.
+
+arccosine(x) = 1.5807464934691843883030060169403441250324249267578125.
+
+--------------------------------
+
+--------------------------------
+End Of Program
+--------------------------------
+</pre>
+<hr>
+<p>This web page was last updated on 18_OCTOBER_2024. The content displayed on this web page is licensed as <a style="background:#000000;color:#ff9000" href="https://karlinaobject.wordpress.com/public_domain/" target="_blank" rel="noopener">PUBLIC_DOMAIN</a> intellectual property.</p>
+<hr>
