@@ -15,28 +15,23 @@ If the paragraph directly above the line of text prefaced by "url_0:" is true, t
 The answer to that question is as follows...
 
 karbytes wants to be discovered (but preferably not in a manner which is coercive or detrimental to any person's well-being). Hence, rather than aggressively advertise karbytes, karbytes tries to simply make karbytes immutably discoverable on the public World Wide Web (including and especially through the WayBack Machine at Archive dot Org (i.e. the Internet Archive)) and hopes (but not in a desperate manner) that curious and/or appreciative beings will eventually happen upon the discovery of that collection of files referred to as karbytes (through the medium of the public World Wide Web by visiting either of the following websites (at the following Uniform Resource Locators)):
-// karbytes' "primary" website (which is a portfolio website showcasing legacy samples of karbytes' work)
 
+// karbytes' "primary" website (which is a portfolio website showcasing legacy samples of karbytes' work)
 url_1: https://karlinaobject.wordpress.com
 
 // karbytes' "secondary" website (which is a web log (i.e. blog) showcasing karbytes' personal diaries, digital souvenirs of karbytes' adventures, and content which duplicates and augments karbytes' "primary" website (and which is intended to be updated continuously and for an indefinitely long time period (unlike karbytes' "primary" website which is intended to be left unchanged after a specific date)))
-
 url_2: https://karbytesforlifeblog.wordpress.com
 
 // karbytes' "primary" GitHub account (which contains all of the files which comprise karbytes' "primary" and "secondary" websites.
-
 url_3: https://github.com/karlinarayberinger/
 
 // karbytes' "secondary" GitHub account (which contains miscellaneous files from karbytes' "primary" GitHub account (especially source code of web pages which enumerate the zip files (and the respective zip file sizes) which comprise the entire body of intellectual property named karbytes at a specific point in time))
-
 url_4: https://github.com/karbytessupporter
 
 // the WayBack Machine (of the Internet Archive) which is a publicly searchable database of many backups of public web pages (including all the files which comprise the body of intellectual property named karbytes)
-
 url_5: https://web.archive.org
 
 Today (i.e. 17_OCTOBER_2024) karbytes revised a particular unlisted web page of karbytes which is not explicitly referenced in any of the "micro directory" web pages referenced via hyperlink on the "macro directory" web page at the following Uniform Resource Locator:
-
 url_6: https://karbytesforlifeblog.wordpress.com/raw_github_files_macro_directory/
 
 Hints at how to find that (revised and much improved) story web page are provided within the notes at the following Uniform Resource Locators:
