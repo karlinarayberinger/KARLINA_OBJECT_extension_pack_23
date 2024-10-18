@@ -412,7 +412,31 @@ double secant(double x)
  * The value returned by this function can theoretically be any real number less than or equal to -1 
  * or else any real number greater than or equal to 1:
  * 
- * cos(x) ∈ (-INFINITY, -1] ∪ [1, INFINITY)
+ * csc(x) ∈ (-INFINITY, -1] ∪ [1, INFINITY)
+ * 
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * x is an angle measurement in radians such that, theoretically speaking,
+ * 
+ * sin(x) != 0
+ * 
+ * (i.e. 
+ * 
+ * x != (Pi * n) 
+ * 
+ * where n is any integer)
+ * 
+ * (but, in this program, x is allowed to be any integer in [(-1 * MAXIMUM_x), MAXIMUM_x]).
+ * 
+ * If x is within [(-1 * MAXIMUM_x), MAXIMUM_x] but also
+ * 
+ * x = Pi * n 
+ * 
+ * where n is any integer
+ * 
+ * then the output value returned by this function will be "not a number".
+ * 
+ * For example, if x = Pi, then csc(x) = "not a number".
  * 
  *----------------------------------------------------------------------------------------------------------------------------------------------
  */
