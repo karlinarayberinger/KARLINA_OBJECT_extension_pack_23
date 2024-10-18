@@ -254,7 +254,7 @@ double cosine(double x)
  * 
  * The value returned by this function can theoretically be any real number:
  * 
- * tan(x) ∈ [-INFINITY, INFINITY]
+ * tan(x) ∈ (-INFINITY, INFINITY)
  * 
  *-----------------------------------------------------------------------------------------------------------------------------------
  * 
@@ -308,7 +308,7 @@ double tangent(double x)
  *
  * The value returned by this function can theoretically be any real number:
  * 
- * cot(x) ∈ [-INFINITY, INFINITY]
+ * cot(x) ∈ (-INFINITY, INFINITY)
  * 
  *------------------------------------------------------------------------------------------------------------------------------------
  * 
@@ -355,6 +355,12 @@ double cotangent(double x)
  * 
  * secant(x) = sec(x) = 1 / cos(x)
  *
+ *------------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * The value returned by this function can theoretically be any real number less than or equal to -1 
+ * of else any real number greater than or equal to 1:
+ * 
+ * sec(x) ∈ (-INFINITY, -1] ∪ [1, INFINITY)
  *------------------------------------------------------------------------------------------------------------------------------------
  */
 double secant(double x) 
