@@ -358,9 +358,10 @@ double cotangent(double x)
  *------------------------------------------------------------------------------------------------------------------------------------
  * 
  * The value returned by this function can theoretically be any real number less than or equal to -1 
- * of else any real number greater than or equal to 1:
+ * or else any real number greater than or equal to 1:
  * 
  * sec(x) ∈ (-INFINITY, -1] ∪ [1, INFINITY)
+ * 
  *------------------------------------------------------------------------------------------------------------------------------------
  * 
  * x is an angle measurement in radians such that, theoretically speaking,
@@ -384,6 +385,8 @@ double cotangent(double x)
  * then the output value returned by this function will be "not a number".
  * 
  * For example, if x = Pi / 2, then cot(x) = "not a number".
+ *
+ *----------------------------------------------------------------------------------------------------------------------------------------------
  */
 double secant(double x) 
 {
@@ -398,9 +401,20 @@ double secant(double x)
 }
 
 /**
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ * 
  * This function returns the reciprocal of the sine function:
  * 
  * cosecant(x) = cos(x) = 1 / sin(x)
+ *
+ *------------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * The value returned by this function can theoretically be any real number less than or equal to -1 
+ * or else any real number greater than or equal to 1:
+ * 
+ * cos(x) ∈ (-INFINITY, -1] ∪ [1, INFINITY)
+ * 
+ *----------------------------------------------------------------------------------------------------------------------------------------------
  */
 double cosecant(double x) 
 {
