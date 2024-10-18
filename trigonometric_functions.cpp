@@ -453,6 +453,16 @@ double cosecant(double x)
 }
 
 // Arctangent using the Taylor series (valid for -1 <= x <= 1)
+
+/**
+ *------------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * This function returns the inverse of the cosine function using the Taylor series:
+ * 
+ * arctangent(x) = atan(x) = tan ^ -1 (x) != 1 / tan(x) = (tan(x)) ^ 1
+ * 
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ */
 double arctangent(double x) 
 {
     // Set x to 1 if the function input value is out or range. Then print a message about that change to the command line terminal.
