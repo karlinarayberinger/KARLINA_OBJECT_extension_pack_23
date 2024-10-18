@@ -271,7 +271,7 @@ double cosine(double x)
  * 
  * where n is any integer
  * 
- * (but, in this program, x is allowed to be any integer in [(-1 * MAXIMUM_x), MAXIMUM_x]).
+ * (but, in this program function, x is allowed to be any integer in [(-1 * MAXIMUM_x), MAXIMUM_x]).
  * 
  * If x is within [(-1 * MAXIMUM_x), MAXIMUM_x] but 
  * 
@@ -322,7 +322,7 @@ double tangent(double x)
  * 
  * where n is any integer)
  * 
- * (but, in this program, x is allowed to be any integer in [(-1 * MAXIMUM_x), MAXIMUM_x]).
+ * (but, in this program function, x is allowed to be any integer in [(-1 * MAXIMUM_x), MAXIMUM_x]).
  * 
  * If x is within [(-1 * MAXIMUM_x), MAXIMUM_x] but also
  * 
@@ -374,7 +374,7 @@ double cotangent(double x)
  * 
  * where n is any integer)
  * 
- * (but, in this program, x is allowed to be any integer in [(-1 * MAXIMUM_x), MAXIMUM_x]).
+ * (but, in this program function, x is allowed to be any integer in [(-1 * MAXIMUM_x), MAXIMUM_x]).
  * 
  * If x is within [(-1 * MAXIMUM_x), MAXIMUM_x] but also
  * 
@@ -407,7 +407,7 @@ double secant(double x)
  * 
  * cosecant(x) = cos(x) = 1 / sin(x)
  *
- *------------------------------------------------------------------------------------------------------------------------------------
+ *----------------------------------------------------------------------------------------------------------------------------------------------
  * 
  * The value returned by this function can theoretically be any real number less than or equal to -1 
  * or else any real number greater than or equal to 1:
@@ -426,7 +426,7 @@ double secant(double x)
  * 
  * where n is any integer)
  * 
- * (but, in this program, x is allowed to be any integer in [(-1 * MAXIMUM_x), MAXIMUM_x]).
+ * (but, in this program function, x is allowed to be any integer in [(-1 * MAXIMUM_x), MAXIMUM_x]).
  * 
  * If x is within [(-1 * MAXIMUM_x), MAXIMUM_x] but also
  * 
