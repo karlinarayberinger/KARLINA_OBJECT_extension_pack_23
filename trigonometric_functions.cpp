@@ -500,13 +500,14 @@ double arctangent(double x)
  * 
  * This function returns the inverse of the sine function using the Taylor series:
  * 
- * arcsine(x) = atan(x) = tan ^ -1 (x) != 1 / tan(x) = (tan(x)) ^ -1
+ * arcsine(x) = asin(x) = sin ^ -1 (x) != 1 / sin(x) = (sin(x)) ^ -1
  * 
  *----------------------------------------------------------------------------------------------------------------------------------------------
  *
- * The value returned by this function can theoretically be any real number:
+ * The value returned by this function can theoretically be any real number less than or equal to (-1 * (Pi / 2))
+ * or any real number greater than or equal to (Pi / 2):
  * 
- * atan(x) ∈ (-INFINITY, INFINITY)
+ * asin(x) ∈ [(-1 * (Pi / 2)), (Pi / 2)]
  * 
  *----------------------------------------------------------------------------------------------------------------------------------------------
  * 
