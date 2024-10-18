@@ -138,7 +138,7 @@ double computePi(int iterations)
  * 
  *----------------------------------------------------------------------------------------------------------------------------------------------
  * 
- * The sine of an angle in a right triangle is defined as the ratio of the length of 
+ * The sine of an angle, x, in a right triangle is defined as the ratio of the length of 
  * the side opposite the angle to the length of the hypotenuse (the longest side of the triangle):
  * 
  * sin(x) = opposite / hypotenuse
@@ -198,7 +198,7 @@ double sine(double x)
  * 
  *----------------------------------------------------------------------------------------------------------------------------------------------
  * 
- * The cosine of an angle in a right triangle is defined as the ratio of the length of 
+ * The cosine of an angle, x, in a right triangle is defined as the ratio of the length of 
  * the side adjacent to the angle to the length of the hypotenuse (the longest side of the triangle):
  * 
  * cos(x) = adjacent / hypotenuse
@@ -258,7 +258,7 @@ double cosine(double x)
  * 
  *-----------------------------------------------------------------------------------------------------------------------------------
  * 
- * The tangent of an angle in a right triangle is defined as the ratio of the length of the side opposite 
+ * The tangent of an angle, x, in a right triangle is defined as the ratio of the length of the side opposite 
  * the angle to the length of the adjacent side:
  * 
  * tan(x) = opposite / adjacent
@@ -297,19 +297,31 @@ double tangent(double x)
     return sine(x) / cosine(x);
 }
 
-// Cotangent is 1 / tangent
+/**
+ * This function returns the reciprocal of the tangent function:
+ * 
+ * cotangent(x) = cot(x) = 1 / tan(x)
+ */
 double cotangent(double x) 
 {
     return 1.0 / tangent(x);
 }
 
-// Secant is 1 / cosine
+/**
+ * This function returns the reciprocal of the cosine function:
+ * 
+ * secant(x) = sec(x) = 1 / cos(x)
+ */
 double secant(double x) 
 {
     return 1.0 / cosine(x);
 }
 
-// Cosecant is 1 / sine
+/**
+ * This function returns the reciprocal of the sine function:
+ * 
+ * cosecant(x) = cos(x) = 1 / sin(x)
+ */
 double cosecant(double x) 
 {
     return 1.0 / sine(x);
