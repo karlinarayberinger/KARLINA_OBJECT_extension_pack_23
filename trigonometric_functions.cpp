@@ -29,9 +29,11 @@ double arccosine(double x);
 int main() 
 {
 
-    double a = 0.0, b = 0.0;
-    std::cout << "\n\n 0 / 0 = " << a / b << ".";
+    // Define one double type variable for storing a floating-point number value.
     double x;
+
+    // Declare a variable for storing the program user's answer of whether or not to continue inputting values.
+    int input_additional_values = 1;
 
     // Declare a file output stream handler (which represents the plain-text file to generate and/or overwrite with program data).
     std::ofstream file;
@@ -52,32 +54,113 @@ int main()
      */
     file.open("trigonometric_functions_output.txt");
 
-    file << "\n\nThis is just to generate the text file for now.";
+    // Print an opening message to the command line terminal.
+    std::cout << "\n\n--------------------------------";
+    std::cout << "\nStart Of Program";
+    std::cout << "\n--------------------------------";
 
-    std::cout << "Enter an angle in radians: ";
-    std::cin >> x;
+    // Print an opening message to the file output stream.
+    file << "--------------------------------";
+    file << "\nStart Of Program";
+    file << "\n--------------------------------";
 
-    std::cout << "Sine: " << sine(x) << std::endl;
-    std::cout << "Cosine: " << cosine(x) << std::endl;
-    std::cout << "Tangent: " << tangent(x) << std::endl;
+    // Print "This C++ program computes sine, cosine, tangent, cotangent, secant, cosecant, arctangent, arcsine, and arccosine of some angle measurement in radians, x.
+    std::cout << "\n\nThis C++ program computes sine, cosine, tangent, cotangent, secant, cosecant, arctangent, arcsine, and arccosine of some angle measurement in radians, x.";
+    file << "\n\nThis C++ program computes sine, cosine, tangent, cotangent, secant, cosecant, arctangent, arcsine, and arccosine of some angle measurement in radians, x.";
 
-    std::cout << "Cotangent: " << cotangent(x) << std::endl;
-    std::cout << "Secant: " << secant(x) << std::endl;
-    std::cout << "Cosecant: " << cosecant(x) << std::endl;
-
-    // Inverse trigonometric functions
-    std::cout << "Arctangent: " << arctangent(x) << std::endl;
-    if (x >= -1 && x <= 1) 
+    // Execute the code inside of the while loop block at least once (and until the program user inputs a value specifying to exit the program).
+    while (input_additional_values != 0)
     {
-        std::cout << "Arcsine: " << arcsine(x) << std::endl;
-        std::cout << "Arccosine: " << arccosine(x) << std::endl;
-    } 
-    else 
-    {
-        std::cout << "Arcsine and Arccosine require a value between -1 and 1." << std::endl;
+        // Print a horizontal divider line to the command line terminal and to the file output stream.
+        std::cout << "\n\n--------------------------------";
+        file << "\n\n--------------------------------";
+
+        // Prompt the user to enter an input value for x (and print that prompt to the command line terminal and to the file output stream).
+        std::cout << "\n\nEnter a real number of radians, x, to input into trigonometric functions which is no smaller than " << (-1 * MAXIMUM_x) << " and no larger than " << MAXIMUM_x << ": ";
+        file << "\n\nEnter a real number of radians, x, to input into trigonometric functions which is no smaller than " << (-1 * MAXIMUM_x) << " and no larger than " << MAXIMUM_x << ": ";
+
+        // Scan the command line terminal for the most recent keyboard input value. Store that value in x.
+        std::cin >> x;
+
+        // Print "The value which was entered for x is {x}." to the command line terminal and to the file output stream.
+        std::cout << "\nThe value which was entered for x is " << x << ".";
+        file << "\n\nThe value which was entered for x is " << x << ".";
+
+        // Print a horizontal divider line to the command line terminal and to the file output stream.
+        std::cout << "\n\n--------------------------------";
+        file << "\n\n--------------------------------";
+
+        // Print the value of sine of x to the command line terminal and to the output file.
+        std::cout << "\n\nsine(x) = " << sine(x) << ".";
+        file << "\n\nsine(x) = " << sine(x) << ".";
+
+        // Print the value of cosine of x to the command line terminal and to the output file.
+        std::cout << "\n\ncosine(x) = " << cosine(x) << ".";
+        file << "\n\ncosine(x) = " << cosine(x) << ".";
+
+        // Print the value of tangent of x to the command line terminal and to the output file.
+        std::cout << "\n\ntangent(x) = " << tangent(x) << ".";
+        file << "\n\ntangent(x) = " << tangent(x) << ".";
+
+        // Print a horizontal divider line to the command line terminal and to the file output stream.
+        std::cout << "\n\n--------------------------------";
+        file << "\n\n--------------------------------";
+
+        // Print the value of cotangent of x to the command line terminal and to the output file.
+        std::cout << "\n\ncotangent(x) = " << cotangent(x) << ".";
+        file << "\n\ncotangent(x) = " << cotangent(x) << ".";
+
+        // Print the value of secant of x to the command line terminal and to the output file.
+        std::cout << "\n\nsecant(x) = " << secant(x) << ".";
+        file << "\n\nsecant(x) = " << secant(x) << ".";
+
+        // Print the value of cosecant of x to the command line terminal and to the output file.
+        std::cout << "\n\ncosecant(x) = " << secant(x) << ".";
+        file << "\n\ncosecant(x) = " << secant(x) << ".";
+
+        // Print a horizontal divider line to the command line terminal and to the file output stream.
+        std::cout << "\n\n--------------------------------";
+        file << "\n\n--------------------------------";
+
+        // Print the value of arctangent of x to the command line terminal and to the output file.
+        std::cout << "\n\narctangent(x) = " << arctangent(x) << ".";
+        file << "\n\narctangent(x) = " << arctangent(x) << ".";
+
+        // Print the value of arcsine of x to the command line terminal and to the output file.
+        std::cout << "\n\narcsine(x) = " << arcsine(x) << ".";
+        file << "\n\narcsine(x) = " << arcsine(x) << ".";
+
+        // Print the value of arccosine of x to the command line terminal and to the output file.
+        std::cout << "\n\narccosine(x) = " << arccosine(x) << ".";
+        file << "\n\narccosine(x) = " << arccosine(x) << ".";
+
+        // Print a horizontal divider line to the command line terminal and to the file output stream.
+        std::cout << "\n\n--------------------------------";
+        file << "\n\n--------------------------------";
+
+        // Ask the user whether or not to continue inputing values.
+        std::cout << "\n\nWould you like to continue inputting program values? (Enter 1 if YES. Enter 0 if NO): ";
+
+        // Scan the command line terminal for the most recent keyboard input value.
+        std::cin >> input_additional_values;
+
     }
 
-    return 0;
+    // Print a closing message to the command line terminal.
+    std::cout << "\n\n--------------------------------";
+    std::cout << "\nEnd Of Program";
+    std::cout << "\n--------------------------------\n\n";
+
+    // Print a closing message to the file output stream.
+    file << "\n\n--------------------------------";
+    file << "\nEnd Of Program";
+    file << "\n--------------------------------";
+
+    // Close the file output stream.
+    file.close();
+
+    // Exit the program.
+    return 0; 
 }
 
 /**
