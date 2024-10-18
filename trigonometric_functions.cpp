@@ -103,38 +103,44 @@ int main()
  */
 double computePi(int iterations) 
 {
+    int i = 0;
     double pi = 0.0;
-    double sign = 1.0;  // alternates between positive and negative
+    double sign = 1.0; // alternates between positive and negative
 
+    // Set iterations to 1 if the function input value is out or range. Then print a message about that change to the command line terminal.
     if ((iterations < 0) || (iterations > MAXIMUM_i)) 
     {
         iterations = 1;
-        std::cout << "\n\nThe number of iterations for the Leibniz series in computePi(int iterations) was out of range. Hence it has been reset to 1.";
+        std::cout << "\n\nThe number of iterations for the Leibniz series in computePi(iterations) was out of range. Hence, iterations has been reset to 1.";
     }
 
-    for (int i = 0; i < iterations; ++i) 
+    for (i = 0; i < iterations; ++i) 
     {
-        pi += sign / (2.0 * i + 1.0);  // add next term in the series
-        sign = -sign;  // alternate the sign for each term
+        pi += sign / (2.0 * i + 1.0); // add next term in the series
+        sign = -sign; // alternate the sign for each term
     }
 
-    pi *= 4.0;  // multiply by 4 to get Pi
+    pi *= 4.0; // multiply by 4 to get Pi
     return pi;
 }
 
 /**
- *-----------------------------------------------------------------------------------------------------------------------------------
+ *----------------------------------------------------------------------------------------------------------------------------------------------
  * 
- * This function uses the Taylor series to compute the approximate value of sine of x.
+ * This function uses the Taylor series to compute the approximate value of sine of x (which is also expressed as sin(x)).
  * 
- *-----------------------------------------------------------------------------------------------------------------------------------
+ * The value returned by this function is no smaller than -1 and no larger than 1:
+ * 
+ * -1 <= sin(x) <= 1
+ * 
+ *----------------------------------------------------------------------------------------------------------------------------------------------
  * 
  * The sine of an angle in a right triangle is defined as the ratio of the length of 
  * the side opposite the angle to the length of the hypotenuse (the longest side of the triangle):
  * 
  * sin(x) = opposite / hypotenuse
  * 
- *-----------------------------------------------------------------------------------------------------------------------------------
+ *----------------------------------------------------------------------------------------------------------------------------------------------
  * 
  * Note that an angle measurement in degrees can be converted to radians using the following formula:
  * 
@@ -149,14 +155,21 @@ double computePi(int iterations)
  * 
  * sin(0.5236) = 1 / 2 = 0.5
  *
- *-----------------------------------------------------------------------------------------------------------------------------------
+ *----------------------------------------------------------------------------------------------------------------------------------------------
  * 
- * x is an angle measurement in radians and can theoretically be any real number (but is assumed to be in [-MAXIMUM_x, MAXIMUM_x]).
+ * x is an angle measurement in radians and can theoretically be any real number (but is constrained to be in [(-1 * MAXIMUM_x), MAXIMUM_x]).
  * 
- *-----------------------------------------------------------------------------------------------------------------------------------
+ *----------------------------------------------------------------------------------------------------------------------------------------------
  */
 double sine(double x) 
 {
+    // Set x to 1 if the function input value is out or range. Then print a message about that change to the command line terminal.
+    if ((x < (-1 * MAXIMUM_x)) || (x > MAXIMUM_x)) 
+    {
+        x = 1;
+        std::cout << "\n\nThe number of radians, x, in sine(x) was out of range. Hence, x has been reset to 1.";
+    }
+
     int i = 0;
     const int terms = MAXIMUM_t; // number of terms in the Taylor series
     double result = 0.0;
@@ -172,34 +185,98 @@ double sine(double x)
 }
 
 /**
- * This function uses the Taylor series to compute the approximate value of cosine of x.
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * This function uses the Taylor series to compute the approximate value of cosine of x (which is also expressed as cos(x)).
+ * 
+ * The value returned by this function is no smaller than -1 and no larger than 1:
+ * 
+ * -1 <= cos(x) <= 1
+ * 
+ *----------------------------------------------------------------------------------------------------------------------------------------------
  * 
  * The cosine of an angle in a right triangle is defined as the ratio of the length of 
- * the side adjacent to the angle to the length of the hypotenuse (the longest side of the triangle).
+ * the side adjacent to the angle to the length of the hypotenuse (the longest side of the triangle):
  * 
  * cos(x) = adjacent / hypotenuse
  * 
- * x is an angle measurement in radians and can theoretically be any real number (but is assumed to in [-MAXIMUM_x, MAXIMUM_x]).
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * Note that an angle measurement in degrees can be converted to radians using the following formula:
+ * 
+ * radians = degrees * (Pi / 180)
+ * 
+ * If x is 60 degrees, then the right triangle it is the interior angle measurement of is a triangle
+ * whose side adjacent to x is 1 and whose hypotenuse is 2.
+ * 
+ * Hence, sine of 30 degrees can be computed as follows:
+ * 
+ * 60 degrees = Pi / 3 radians ≈ 1.047
+ * 
+ * cos(1.047) = 1 / 2 = 0.5
+ * 
+ *----------------------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * x is an angle measurement in radians and can theoretically be any real number (but is constrained to be in [(-1 * MAXIMUM_x), MAXIMUM_x]).
+ *
+ *----------------------------------------------------------------------------------------------------------------------------------------------
  */
 double cosine(double x) 
 {
-    const int terms = MAXIMUM_t; // Number of terms in the Taylor series
-    double result = 1.0; // First term (x^0 / 0!)
-    double term = 1.0; 
-    int sign = -1; // Alternating signs for each term
-    for (int i = 1; i <= terms; ++i) 
+    // Set x to 1 if the function input value is out or range. Then print a message about that change to the command line terminal.
+    if ((x < (-1 * MAXIMUM_x)) || (x > MAXIMUM_x)) 
     {
-        term *= x * x / (2 * i * (2 * i - 1)); // Update term for the next iteration
+        x = 1;
+        std::cout << "\n\nThe number of radians, x, in cosine(x) was out of range. Hence, x has been reset to 1.";
+    }
+
+    int i = 0;
+    const int terms = MAXIMUM_t; // number of terms in the Taylor series
+    double result = 1.0; // first term: ((x ^ 0) / 0!)
+    double term = 1.0; 
+    int sign = -1; // alternating signs for each term
+    for (i = 1; i <= terms; ++i) 
+    {
+        term *= x * x / (2 * i * (2 * i - 1)); // update term for the next iteration
         result += sign * term;
-        sign *= -1; // Alternating sign
+        sign *= -1; // alternating sign
     }
     return result;
 }
 
 /**
- * This function computes the approximate value of tangent of x.
+ *-----------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * This function computes the approximate value of tangent of x (which is also expressed as tan(x)).
+ * 
+ * The value returned by this function is theoretically any real number:
+ * 
+ * tan(x) ∈ [-INFINITY, INFINITY]
+ * 
+ *-----------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * The tangent of an angle in a right triangle is defined as the ratio of the length of the side opposite 
+ * the angle to the length of the adjacent side:
+ * 
+ * tan(x) = opposite / adjacent
+ * 
+ *-----------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * x is an angle measurement in radians such that x = (((2 * n) + 1) * Pi) / 2 where n is theoretically any integer
+ * 
+ * (but x is constrained to be in [(-1 * MAXIMUM_x), MAXIMUM_x]).
+ *
+ *-----------------------------------------------------------------------------------------------------------------------------------
+ */
 double tangent(double x) 
 {
+    // Set x to 1 if the function input value is out or range. Then print a message about that change to the command line terminal.
+    if ((x < (-1 * MAXIMUM_x)) || (x > MAXIMUM_x)) 
+    {
+        x = 1;
+        std::cout << "\n\nThe number of radians, x, in tangent(x) was out of range. Hence, x has been reset to 1.";
+    }
+
     return sine(x) / cosine(x);
 }
 
