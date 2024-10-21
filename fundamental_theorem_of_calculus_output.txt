@@ -22,41 +22,41 @@ Enter the number which corresponds with one of the following functions:
 
 Enter Option Here: 
 
-The value which was entered for option is 5.
+The value which was entered for option is 4.
 
-The single-variable function which was selected from the list of such functions is f(x) = 2x + 3.
+The single-variable function which was selected from the list of such functions is f(x) = sqrt(x).
 
 --------------------------------
 
 Enter a value to store in double-type variable a (which represents the left end of the x-axis interval): 
 
-The value which was entered for a is -10.
+The value which was entered for a is 1.
 
 Enter a value to store in double-type variable b (which represents the right end of the x-axis interval): 
 
-The value which was entered for b is 10.
+The value which was entered for b is 20.
 
 --------------------------------
 
 Enter a value to store in double-type variable x (which represents a point inside of the selected x-axis interval): 
 
-The value which was entered for x is 8.
+The value which was entered for x is 12.
 
 --------------------------------
 
-f(x) = f(8) ≈ 19.
+f(x) = f(12) ≈ 3.46410161513775438635320824687369167804718017578125.
 
-f'(x) = f'(8) ≈ 1.9999999999242843440327987991622649133205413818359375. // derivative
-
---------------------------------
-
-whole_interval_area ≈ 60.00000000000002131628207280300557613372802734375 // value of the definite integral of y = f(t) on the x-axis interval [a,b]
-
-S f(x) dt (where dt is the interval [a,b]) = selected_interval_area = 17.999999999999932498440102790482342243194580078125 // value of the definite integral of y = f(t) on the x-axis interval [a,x]
+f'(x) = f'(12) ≈ 0.14433756729825830689151189289987087249755859375. // derivative
 
 --------------------------------
 
-original_function ≈ derivative(integ, x) --> original_function(x) ≈ original_function(8) = 18.999999999999996447286321199499070644378662109375  // f(x) = d/dx ( S integ(t) dt ) = ( S integ(t) dt )'
+whole_interval_area ≈ 58.96181857239222523503485717810690402984619140625 // value of the definite integral of y = f(t) on the x-axis interval [a,b]
+
+S f(x) dt (where dt is the interval [a,b]) = selected_interval_area = 27.046148047560141236544950515963137149810791015625 // value of the definite integral of y = f(t) on the x-axis interval [a,x]
+
+--------------------------------
+
+original_function ≈ derivative(integ, x) --> original_function(x) ≈ original_function(12) = 3.238208911395112910014404405956156551837921142578125  // f(x) = d/dx ( S integ(t) dt ) = ( S integ(t) dt )'
 
 --------------------------------
 End Of Program
