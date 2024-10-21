@@ -136,12 +136,12 @@ int main()
     double func_prime_of_x = func_prime(x);
 
     // Print the value of f(x) to the command line terminal and to the file output stream.
-    std::cout << "\n\nf(x) = f(" << x << ") = " << func_of_x << ".";
-    file << "\n\nf(x) = f(" << x << ") = " << func_of_x << ".";
+    std::cout << "\n\nf(x) = f(" << x << ") ≈ " << func_of_x << ".";
+    file << "\n\nf(x) = f(" << x << ") ≈ " << func_of_x << ".";
 
     // Print the value of f'(x) to the command line terminal and to the file output stream.
-    std::cout << "\n\nf'(x) = f'(" << x << ") = " << func_prime_of_x << ". // derivative";
-    file << "\n\nf'(x) = f'(" << x << ") = " << func_prime_of_x << ". // derivative";
+    std::cout << "\n\nf'(x) = f'(" << x << ") ≈ " << func_prime_of_x << ". // derivative";
+    file << "\n\nf'(x) = f'(" << x << ") ≈ " << func_prime_of_x << ". // derivative";
 
     // Print a horizontal divider line to the command line terminal and to the file output stream.
     std::cout << "\n\n--------------------------------";
@@ -157,8 +157,8 @@ int main()
     double selected_interval_area = integ(x);
 
     // Print the value of the definite integral (of y = f(t) on the x-axis interval [a,b]) to the command line terminal and to the output file stream.
-    std::cout << "\n\nwhole_interval_area = " << whole_interval_area << " // value of the definite integral of y = f(t) on the x-axis interval [a,b]";
-    file << "\n\nwhole_interval_area = " << whole_interval_area << " // value of the definite integral of y = f(t) on the x-axis interval [a,b]";
+    std::cout << "\n\nwhole_interval_area ≈ " << whole_interval_area << " // value of the definite integral of y = f(t) on the x-axis interval [a,b]";
+    file << "\n\nwhole_interval_area ≈ " << whole_interval_area << " // value of the definite integral of y = f(t) on the x-axis interval [a,b]";
 
     // Print the value of the definite integral (of y = f(t) on the x-axis interval [x,b]) to the command line terminal and to the output file stream.
     std::cout << "\n\nS f(x) dt (where dt is the interval [a,b]) = selected_interval_area = " << selected_interval_area << " // value of the definite integral of y = f(t) on the x-axis interval [a,x]";
@@ -172,8 +172,8 @@ int main()
     Function original_function = derivative(integ, x);
 
     // Print the derivative of the integral at x to the command line terminal and to the output file stream.
-    std::cout << "\n\noriginal_function = derivative(integ, x) --> original_function(x) = " << "original_function(" << x << ") = " << original_function(x) << "  // f(x) = d/dx ( S integ(t) dt ) = ( S integ(t) dt )'";
-    file << "\n\noriginal_function = derivative(integ, x) --> original_function(x) = " << "original_function(" << x << ") = " << original_function(x) << "  // f(x) = d/dx ( S integ(t) dt ) = ( S integ(t) dt )'";
+    std::cout << "\n\noriginal_function ≈ derivative(integ, x) --> original_function(x) ≈ " << "original_function(" << x << ") = " << original_function(x) << "  // f(x) = d/dx ( S integ(t) dt ) = ( S integ(t) dt )'";
+    file << "\n\noriginal_function ≈ derivative(integ, x) --> original_function(x) ≈ " << "original_function(" << x << ") = " << original_function(x) << "  // f(x) = d/dx ( S integ(t) dt ) = ( S integ(t) dt )'";
 
     // Print a closing message to the command line terminal.
     std::cout << "\n\n--------------------------------";
