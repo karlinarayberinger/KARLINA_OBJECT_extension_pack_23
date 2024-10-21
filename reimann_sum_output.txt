@@ -1,0 +1,187 @@
+--------------------------------
+Start Of Program
+--------------------------------
+
+Enter the number which corresponds with one of the following functions:
+
+0 --> f(x) = x^2
+
+1 --> f(x) = x^3
+
+2 --> f(x) = sin(x)
+
+3 --> f(x) = cos(x)
+
+4 --> f(x) = sqrt(x)
+
+5 --> f(x) = 2x + 3
+
+Enter Option Here: 
+
+The value which was entered for option is 3.
+
+The single-variable function which was selected from the list of such functions is f(x) = cos(x).
+
+--------------------------------
+
+Enter a value to store in double-type variable a (which represents the left end of the x-axis interval): 
+
+The value which was entered for a is -10.
+
+Enter a value to store in double-type variable b (which represents the right end of the x-axis interval): 
+
+The value which was entered for b is 0.
+
+Enter a value to store in int-type variable n (which represents the number of equally-sized partitions to divide x-axis interval [a,b] into): 
+
+The value which was entered for n is 10.
+
+The x-axis interval which was selected to partition is [-10,0].
+
+The selected number of equally-sized partitions to divide that interval into is 10.
+
+--------------------------------
+
+Enter the number which corresponds with one of the following rectangle construction methods:
+
+0 --> "left"
+
+1 --> "right"
+
+2 --> "midpoint"
+
+Enter Option Here: 
+
+The value which was entered for option is 0.
+
+The rectangle construction method which was selected from the list of such methods is "left" (i.e. using the left end-point of each of the n partitions of [a,b] to set the height of each of the n rectangles).
+
+--------------------------------
+
+dx = (b - a) / n = (0 - -10) / 10 = 1. // the length of each of the n equally-sized partitions of x-axis interval, [a,b]
+
+~~~~~~~~~~~~~~
+
+i = 0. // current iteration of the for loop (of 10 iterations)
+
+x = a + i * dx = -10 + 0 * 1 = -10. // the left end-point of the ith partition of [a,b].
+
+rectangle_area_x = func(x) * dx = -0.83907152907645243811174395887064747512340545654296875 * 1 = -0.83907152907645243811174395887064747512340545654296875. // area of the ith rectangle
+
+sum += rectangle_x; // Add rectangle_x to sum and store the result in sum (in the C++ program).
+
+sum = -0.83907152907645243811174395887064747512340545654296875. // the current value stored in the variable named sum
+
+~~~~~~~~~~~~~~
+
+i = 1. // current iteration of the for loop (of 10 iterations)
+
+x = a + i * dx = -10 + 1 * 1 = -9. // the left end-point of the ith partition of [a,b].
+
+rectangle_area_x = func(x) * dx = -0.91113026188467693966543947681202553212642669677734375 * 1 = -0.91113026188467693966543947681202553212642669677734375. // area of the ith rectangle
+
+sum += rectangle_x; // Add rectangle_x to sum and store the result in sum (in the C++ program).
+
+sum = -1.7502017909611293777771834356826730072498321533203125. // the current value stored in the variable named sum
+
+~~~~~~~~~~~~~~
+
+i = 2. // current iteration of the for loop (of 10 iterations)
+
+x = a + i * dx = -10 + 2 * 1 = -8. // the left end-point of the ith partition of [a,b].
+
+rectangle_area_x = func(x) * dx = -0.14550003380861353807773639346123673021793365478515625 * 1 = -0.14550003380861353807773639346123673021793365478515625. // area of the ith rectangle
+
+sum += rectangle_x; // Add rectangle_x to sum and store the result in sum (in the C++ program).
+
+sum = -1.8957018247697430268772222916595637798309326171875. // the current value stored in the variable named sum
+
+~~~~~~~~~~~~~~
+
+i = 3. // current iteration of the for loop (of 10 iterations)
+
+x = a + i * dx = -10 + 3 * 1 = -7. // the left end-point of the ith partition of [a,b].
+
+rectangle_area_x = func(x) * dx = 0.75390225434330460085874392461846582591533660888671875 * 1 = 0.75390225434330460085874392461846582591533660888671875. // area of the ith rectangle
+
+sum += rectangle_x; // Add rectangle_x to sum and store the result in sum (in the C++ program).
+
+sum = -1.14179957042643831499617590452544391155242919921875. // the current value stored in the variable named sum
+
+~~~~~~~~~~~~~~
+
+i = 4. // current iteration of the for loop (of 10 iterations)
+
+x = a + i * dx = -10 + 4 * 1 = -6. // the left end-point of the ith partition of [a,b].
+
+rectangle_area_x = func(x) * dx = 0.96017028665036596724036144223646260797977447509765625 * 1 = 0.96017028665036596724036144223646260797977447509765625. // area of the ith rectangle
+
+sum += rectangle_x; // Add rectangle_x to sum and store the result in sum (in the C++ program).
+
+sum = -0.18162928377607234775581446228898130357265472412109375. // the current value stored in the variable named sum
+
+~~~~~~~~~~~~~~
+
+i = 5. // current iteration of the for loop (of 10 iterations)
+
+x = a + i * dx = -10 + 5 * 1 = -5. // the left end-point of the ith partition of [a,b].
+
+rectangle_area_x = func(x) * dx = 0.283662185463226246273649167051189579069614410400390625 * 1 = 0.283662185463226246273649167051189579069614410400390625. // area of the ith rectangle
+
+sum += rectangle_x; // Add rectangle_x to sum and store the result in sum (in the C++ program).
+
+sum = 0.102032901687153898517834704762208275496959686279296875. // the current value stored in the variable named sum
+
+~~~~~~~~~~~~~~
+
+i = 6. // current iteration of the for loop (of 10 iterations)
+
+x = a + i * dx = -10 + 6 * 1 = -4. // the left end-point of the ith partition of [a,b].
+
+rectangle_area_x = func(x) * dx = -0.65364362086361194048578227011603303253650665283203125 * 1 = -0.65364362086361194048578227011603303253650665283203125. // area of the ith rectangle
+
+sum += rectangle_x; // Add rectangle_x to sum and store the result in sum (in the C++ program).
+
+sum = -0.55161071917645809747909879661165177822113037109375. // the current value stored in the variable named sum
+
+~~~~~~~~~~~~~~
+
+i = 7. // current iteration of the for loop (of 10 iterations)
+
+x = a + i * dx = -10 + 7 * 1 = -3. // the left end-point of the ith partition of [a,b].
+
+rectangle_area_x = func(x) * dx = -0.9899924966004454152113112286315299570560455322265625 * 1 = -0.9899924966004454152113112286315299570560455322265625. // area of the ith rectangle
+
+sum += rectangle_x; // Add rectangle_x to sum and store the result in sum (in the C++ program).
+
+sum = -1.5416032157769035126904100252431817352771759033203125. // the current value stored in the variable named sum
+
+~~~~~~~~~~~~~~
+
+i = 8. // current iteration of the for loop (of 10 iterations)
+
+x = a + i * dx = -10 + 8 * 1 = -2. // the left end-point of the ith partition of [a,b].
+
+rectangle_area_x = func(x) * dx = -0.416146836547142406903532219075714237987995147705078125 * 1 = -0.416146836547142406903532219075714237987995147705078125. // area of the ith rectangle
+
+sum += rectangle_x; // Add rectangle_x to sum and store the result in sum (in the C++ program).
+
+sum = -1.957750052324045864082791013061068952083587646484375. // the current value stored in the variable named sum
+
+~~~~~~~~~~~~~~
+
+i = 9. // current iteration of the for loop (of 10 iterations)
+
+x = a + i * dx = -10 + 9 * 1 = -1. // the left end-point of the ith partition of [a,b].
+
+rectangle_area_x = func(x) * dx = 0.540302305868139765010482733487151563167572021484375 * 1 = 0.540302305868139765010482733487151563167572021484375. // area of the ith rectangle
+
+sum += rectangle_x; // Add rectangle_x to sum and store the result in sum (in the C++ program).
+
+sum = -1.417447746455906099072308279573917388916015625. // the current value stored in the variable named sum
+
+~~~~~~~~~~~~~~
+
+--------------------------------
+End Of Program
+--------------------------------
