@@ -640,13 +640,14 @@ double computeRiemannSum(Function func, double a, double b, int n, const std::st
 
     /**
      * Print an error message to the console window (and output file) if
-     * b is smaller than or equal to a
+     * b is smaller than or equal to a or if
+     * b is larger than MAXIMUM_b
      * and exit the function by returning zero.
      */
-    if ((b <= a) || (b > MAXIMUM_a))
+    if ((b <= a) || (b > MAXIMUM_b))
     {
-        // std::cout << "\n\nInvalid interval. b is required to represent a value which is larger than a.";
-        // file << "\n\nInvalid interval. b is required to represent a value which is larger than a.";
+        // std::cout << "\n\nInvalid interval. b is required to represent a value which is larger than a and no larger than " << MAXIMUM_b << ".";
+        // file << "\n\nInvalid interval. b is required to represent a value which is larger than a and no larger than " << MAXIMUM_b << ".";
         return 0.0;
     }
 
