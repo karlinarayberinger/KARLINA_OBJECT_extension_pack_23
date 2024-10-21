@@ -1,7 +1,7 @@
 /**
  * file: karbytes_23_october_2024.txt
  * type: plain-text
- * date: 19_OCTOBER_2024
+ * date: 20_OCTOBER_2024
  * author: karbytes
  * license: PUBLIC_DOMAIN
  */
@@ -24,7 +24,7 @@ karbytes_1: “There is no epistemological way to definitively prove that any in
 
 karbytes_0: “What is going to happen to the humans of the future who turn to AI instead of to their fellow humans? Won’t that make humans not want to sexually reproduce anymore? Won’t that make humans not want to interact with each other anymore?”
 
-karbytes_1: “I doubt that humans will want to completely stop interacting with each other (given that humans are hard-wired to crave human interaction). What I do think is likely (or at least very possible) is that most humans will not want to sexually reproduce anymore (given how costly it is and how unsatisfying it is compared to being childless). If there are not enough new born humans to replace the ones which die, then the human species will likely go extinct after there are too humans left to sustain civilization (but artificial intelligence may be all that is needed to keep civilization’s infrastructure running (which means that possibly even one human remaining in such a civilization could effectively live ‘on its own’ with the help of AI (and it is possible (at least hypothetically) for a human to extend its lifetime and functionality for an indefinitely long period of time through technological means such as growing replacement body parts via stem cells and creating or discovering new universes to inhabit in order to escape the “heat death” of that human’s current universe))). What matters to me is quality of life; not longevity. If I had to choose one or the other, I would always choose quality. What good is eternity spent being miserable?”
+karbytes_1: “I doubt that humans will want to completely stop interacting with each other (given that humans are hard-wired to crave human interaction). What I do think is likely (or at least very possible) is that most humans will not want to sexually reproduce anymore (given how costly it is and how unsatisfying it is compared to being childless). If there are not enough new born humans to replace the ones which die, then the human species will likely go extinct after there are too humans left to sustain civilization (but artificial intelligence may be all that is needed to keep civilization’s infrastructure running (which means that possibly even one human remaining in such a civilization could effectively live ‘on its own’ with the help of AI (and it is possible (at least hypothetically) for a human to extend its lifetime and functionality for an indefinitely long period of time through technological means such as growing replacement body parts via stem cells and creating or discovering new universes to inhabit in order to escape the ‘heat death’ of that human’s current universe))). What matters to me is quality of life; not longevity. If I had to choose one or the other, I would always choose quality. What good is eternity spent being miserable?”
 
 karbytes_0: “Is that a rhetorical questions?”
 
